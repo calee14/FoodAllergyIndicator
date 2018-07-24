@@ -15,6 +15,9 @@
 		B3C0914B210791840058E046 /* Storyboards+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914A210791840058E046 /* Storyboards+Utility.swift */; };
 		B3C0914D2107995E0058E046 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914C2107995E0058E046 /* UserService.swift */; };
 		B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */; };
+		B3C091512107BEA50058E046 /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091502107BEA50058E046 /* Allergy.swift */; };
+		B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */; };
+		B3C091552107CC630058E046 /* AllergyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091542107CC630058E046 /* AllergyService.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -40,6 +43,9 @@
 		B3C0914A210791840058E046 /* Storyboards+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+Utility.swift"; sourceTree = "<group>"; };
 		B3C0914C2107995E0058E046 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		B3C091502107BEA50058E046 /* Allergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
+		B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTableViewCell.swift; sourceTree = "<group>"; };
+		B3C091542107CC630058E046 /* AllergyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyService.swift; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C0914C2107995E0058E046 /* UserService.swift */,
+				B3C091542107CC630058E046 /* AllergyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E1EF1D2106830A009B24AA /* CameraController.swift */,
+				B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C0914821078F6D0058E046 /* User.swift */,
+				B3C091502107BEA50058E046 /* Allergy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,8 +348,11 @@
 				B3C0914D2107995E0058E046 /* UserService.swift in Sources */,
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
 				B3C0914921078F6D0058E046 /* User.swift in Sources */,
+				B3C091512107BEA50058E046 /* Allergy.swift in Sources */,
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
+				B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */,
 				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
+				B3C091552107CC630058E046 /* AllergyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

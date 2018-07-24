@@ -30,6 +30,10 @@ class CreateUsernameViewController: UIViewController {
             
             User.setCurrent(user, writeToUserDefaults: true)
             
+            AllergyService.setAllergies(for: user, allergies: self.initializeEmptyAllergies(), completion: { (allergy) in
+                print(allergy)
+            })
+            
             let initialViewController = UIStoryboard.initializeViewController(for: .main)
             
             self.view.window?.rootViewController = initialViewController
@@ -37,4 +41,12 @@ class CreateUsernameViewController: UIViewController {
         }
     }
     
+    func initializeEmptyAllergies() -> [Allergy] {
+        var allergyArray = [Allergy]()
+        for allergyName in Constants.Allergens.allergenNames {
+            let allergy = Allergy(allergyName, isAllergic: false)
+            allergyArray.append(allergy)
+        }
+        return allergyArray
+    }
 }

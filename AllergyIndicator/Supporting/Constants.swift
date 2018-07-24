@@ -16,4 +16,13 @@ struct Constants {
     struct UserDefaults {
         static let currentUser = "currentUser"
     }
+    
+    struct Allergens {
+        static let allergenNames = ["Egg", "Nuts", "Fish", "Dairy products", "Shellfish", "Wheat", "Gluten", "Peanuts",
+                                    "Soy", "Fruits", "Citrus Fruits", "Kiwi Fruits", "Strawberries", "Apples", "Pears",
+                                    "Peaches", "Apricots", "Nectarines", "Plums", "Cherries", "Melons", "Avocado",
+                                    "Vegetables", "Tomatoes", "Carrots", "Corn", "Celery", "Garlic", "Eggplant", "Beans",
+                                    "Peas", "Lentils", "Lupin", "Legumes", "Sesame seeds", "Buckwheat", "Mustart",
+                                    "Curry", "Glutamate", "Mayonnaise", "Colorants"]
+    }
 }
