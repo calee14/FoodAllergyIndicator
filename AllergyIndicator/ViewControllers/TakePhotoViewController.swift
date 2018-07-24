@@ -52,7 +52,8 @@ class TakePhotoViewController: UIViewController {
                 print(error ?? "Image capture error")
                 return
             }
-
+            
+            print(image)
         }
     }
 }

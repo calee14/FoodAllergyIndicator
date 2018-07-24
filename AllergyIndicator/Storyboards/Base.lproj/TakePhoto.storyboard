@@ -26,7 +26,7 @@
                                 <rect key="frame" x="172" y="599" width="30" height="30"/>
                                 <connections>
                                     <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
-                                    <segue destination="LON-i2-Ezs" kind="show" id="nYi-cU-qmW"/>
+                                    <segue destination="LON-i2-Ezs" kind="show" id="yzf-Xd-GGU"/>
                                 </connections>
                             </button>
                         </subviews>
