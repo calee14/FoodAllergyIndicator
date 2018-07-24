@@ -1,0 +1,2 @@
+Pods/ filter=lfs diff=lfs merge=lfs -text
+Pods/Clarifai-Apple-SDK/Clarifai_Apple_SDK.framework/Clarifai_Apple_SDK filter=lfs diff=lfs merge=lfs -text

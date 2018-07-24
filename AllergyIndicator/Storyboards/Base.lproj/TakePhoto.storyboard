@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uAM-cW-PCJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Take Photo-->
+        <scene sceneID="bNu-hR-klP">
+            <objects>
+                <viewController id="uAM-cW-PCJ" customClass="TakePhotoViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="99E-8H-WjP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-Xx-COr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-uM-qwM">
+                                <rect key="frame" x="172" y="599" width="30" height="30"/>
+                                <connections>
+                                    <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
+                                    <segue destination="LON-i2-Ezs" kind="show" id="nYi-cU-qmW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6hu-Xx-COr" firstAttribute="trailing" secondItem="FpZ-QC-2xn" secondAttribute="trailing" id="BSV-Dz-nBM"/>
+                            <constraint firstItem="6hu-Xx-COr" firstAttribute="top" secondItem="99E-8H-WjP" secondAttribute="top" id="ElF-02-FOp"/>
+                            <constraint firstItem="6hu-Xx-COr" firstAttribute="centerX" secondItem="1Qg-uM-qwM" secondAttribute="centerX" id="pml-PG-6fD"/>
+                            <constraint firstItem="6hu-Xx-COr" firstAttribute="leading" secondItem="FpZ-QC-2xn" secondAttribute="leading" id="qDc-Eo-n6J"/>
+                            <constraint firstItem="1Qg-uM-qwM" firstAttribute="top" secondItem="FpZ-QC-2xn" secondAttribute="top" constant="535" id="syt-YS-xWD"/>
+                            <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="6hu-Xx-COr" secondAttribute="bottom" id="tCe-lR-6dW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FpZ-QC-2xn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Take Photo" id="0sc-rI-6ef"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="captureButton" destination="1Qg-uM-qwM" id="zQf-UJ-o2G"/>
+                        <outlet property="previewView" destination="6hu-Xx-COr" id="4k0-fX-U5o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZq-U8-SJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351.2" y="-57.121439280359823"/>
+        </scene>
+        <!--Photo Results View Controller-->
+        <scene sceneID="Ovk-G4-MeY">
+            <objects>
+                <viewController id="LON-i2-Ezs" customClass="PhotoResultsViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JLs-4B-QDp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drf-Ya-Muh">
+                                <rect key="frame" x="164" y="601" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bHW-08-V83"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vo0-av-GtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="-57"/>
+        </scene>
+    </scenes>
+</document>
