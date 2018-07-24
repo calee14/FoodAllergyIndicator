@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
+		B3C0914321078C9B0058E046 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C0914121078C9B0058E046 /* Login.storyboard */; };
+		B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914421078D0D0058E046 /* LoginViewController.swift */; };
+		B3C0914721078EC20058E046 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914621078EC20058E046 /* Constants.swift */; };
+		B3C0914921078F6D0058E046 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914821078F6D0058E046 /* User.swift */; };
+		B3C0914B210791840058E046 /* Storyboards+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914A210791840058E046 /* Storyboards+Utility.swift */; };
+		B3C0914D2107995E0058E046 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914C2107995E0058E046 /* UserService.swift */; };
+		B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -17,7 +24,6 @@
 		B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1D2106830A009B24AA /* CameraController.swift */; };
 		B3E1EF2021068850009B24AA /* SetAllergiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1F21068850009B24AA /* SetAllergiesViewController.swift */; };
 		B3F902B52104316800FD552E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F902B42104316800FD552E /* AppDelegate.swift */; };
-		B3F902B72104316900FD552E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F902B62104316900FD552E /* ViewController.swift */; };
 		B3F902BA2104316900FD552E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F902B82104316900FD552E /* Main.storyboard */; };
 		B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F902BB2104316A00FD552E /* Assets.xcassets */; };
 		B3F902BF2104316A00FD552E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F902BD2104316A00FD552E /* LaunchScreen.storyboard */; };
@@ -27,6 +33,13 @@
 		48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
 		5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
 		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3C0914221078C9B0058E046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		B3C0914421078D0D0058E046 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B3C0914621078EC20058E046 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B3C0914821078F6D0058E046 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B3C0914A210791840058E046 /* Storyboards+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+Utility.swift"; sourceTree = "<group>"; };
+		B3C0914C2107995E0058E046 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -37,7 +50,6 @@
 		B3E1EF1F21068850009B24AA /* SetAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAllergiesViewController.swift; sourceTree = "<group>"; };
 		B3F902B12104316800FD552E /* AllergyIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllergyIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F902B42104316800FD552E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3F902B62104316900FD552E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3F902B92104316900FD552E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3F902BB2104316A00FD552E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3F902BE2104316A00FD552E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +91,7 @@
 				B3F902B82104316900FD552E /* Main.storyboard */,
 				B3E1EF1321065905009B24AA /* TakePhoto.storyboard */,
 				B3E1EF1A210675A8009B24AA /* SetAllergies.storyboard */,
+				B3C0914121078C9B0058E046 /* Login.storyboard */,
 				B3F902BD2104316A00FD552E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -87,11 +100,12 @@
 		B367C5B321063C7400192BE6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3F902B62104316900FD552E /* ViewController.swift */,
 				B3E1EF1121065248009B24AA /* HomeViewController.swift */,
 				B3E1EF1621066E30009B24AA /* TakePhotoViewController.swift */,
 				B3E1EF1821067177009B24AA /* PhotoResultsViewController.swift */,
 				B3E1EF1F21068850009B24AA /* SetAllergiesViewController.swift */,
+				B3C0914421078D0D0058E046 /* LoginViewController.swift */,
+				B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -99,6 +113,7 @@
 		B367C5B421063C8100192BE6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B3C0914C2107995E0058E046 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -114,6 +129,7 @@
 		B367C5B621063C8E00192BE6 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				B3C0914A210791840058E046 /* Storyboards+Utility.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -121,6 +137,7 @@
 		B367C5B721063D0C00192BE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B3C0914821078F6D0058E046 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +147,7 @@
 			children = (
 				B3F902C02104316A00FD552E /* Info.plist */,
 				B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */,
+				B3C0914621078EC20058E046 /* Constants.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -231,6 +249,7 @@
 			files = (
 				B3F902BF2104316A00FD552E /* LaunchScreen.storyboard in Resources */,
 				B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */,
+				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
 				B3E1EF1C210675A8009B24AA /* SetAllergies.storyboard in Resources */,
@@ -312,17 +331,30 @@
 			files = (
 				B3E1EF2021068850009B24AA /* SetAllergiesViewController.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
-				B3F902B72104316900FD552E /* ViewController.swift in Sources */,
+				B3C0914B210791840058E046 /* Storyboards+Utility.swift in Sources */,
 				B3F902B52104316800FD552E /* AppDelegate.swift in Sources */,
+				B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,
+				B3C0914D2107995E0058E046 /* UserService.swift in Sources */,
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
+				B3C0914921078F6D0058E046 /* User.swift in Sources */,
+				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
+				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B3C0914121078C9B0058E046 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3C0914221078C9B0058E046 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
 		B3E1EF1321065905009B24AA /* TakePhoto.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

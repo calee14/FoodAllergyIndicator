@@ -26,7 +26,6 @@
                                 <rect key="frame" x="172" y="599" width="30" height="30"/>
                                 <connections>
                                     <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
-                                    <segue destination="LON-i2-Ezs" kind="show" id="yzf-Xd-GGU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,6 +45,7 @@
                     <connections>
                         <outlet property="captureButton" destination="1Qg-uM-qwM" id="zQf-UJ-o2G"/>
                         <outlet property="previewView" destination="6hu-Xx-COr" id="4k0-fX-U5o"/>
+                        <segue destination="LON-i2-Ezs" kind="show" id="bPd-tD-wmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZq-U8-SJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
