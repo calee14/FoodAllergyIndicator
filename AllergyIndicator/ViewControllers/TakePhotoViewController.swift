@@ -46,6 +46,13 @@ class TakePhotoViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
-        
+        cameraController.captureImage { (image, error) in
+            // get image
+            guard let image = image else {
+                print(error ?? "Image capture error")
+                return
+            }
+
+        }
     }
 }

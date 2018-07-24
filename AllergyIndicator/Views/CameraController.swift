@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class CameraController : NSObject{
+class CameraController : NSObject {
     
     var captureSession: AVCaptureSession?
     var frontCamera: AVCaptureDevice?
@@ -123,7 +123,7 @@ class CameraController : NSObject{
         let settings = AVCapturePhotoSettings()
         settings.flashMode = self.flashMode
         
-        self.photoOutput?.capturePhoto(with: settings, delegate: self as! AVCapturePhotoCaptureDelegate)
+        self.photoOutput?.capturePhoto(with: settings, delegate: self as AVCapturePhotoCaptureDelegate)
         self.photoCaptureCompletionBlock = completion
     }
 }
@@ -145,6 +145,20 @@ extension CameraController {
 }
 
 extension CameraController: AVCapturePhotoCaptureDelegate{
+    @available(iOS 11.0, *)
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Swift.Error?) {
+        if let error = error { self.photoCaptureCompletionBlock?(nil, error)}
+        
+        else if let data = photo.fileDataRepresentation(),
+            let image = UIImage(data: data) {
+            
+            self.photoCaptureCompletionBlock?(image, nil)
+        }
+        else {
+            self.photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
+        }
+    }
+    
     public func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
                         resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Swift.Error?) {
         if let error = error { self.photoCaptureCompletionBlock?(nil, error) }
