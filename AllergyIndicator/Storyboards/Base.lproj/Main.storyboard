@@ -28,7 +28,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                                 <state key="normal" title="Take Picture"/>
                                                 <connections>
-                                                    <segue destination="AGA-dJ-NJG" kind="show" id="BeS-Hb-Gwv"/>
+                                                    <action selector="takePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTc-m7-9uf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -47,7 +47,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                                 <state key="normal" title="Set Allergies"/>
                                                 <connections>
-                                                    <segue destination="0Bf-8W-56m" kind="show" id="Fft-vy-KFF"/>
+                                                    <action selector="setAllergiesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXt-t0-FZd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -104,6 +104,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="BS7-FF-hbS"/>
+                    <connections>
+                        <outlet property="setAllergiesButton" destination="tyP-Q7-BnG" id="ZdQ-Xy-vNg"/>
+                        <outlet property="takePhotoButton" destination="sFa-V6-b6V" id="Ul1-4c-LJA"/>
+                        <segue destination="0Bf-8W-56m" kind="show" identifier="setAllergySegue" id="KsS-Sz-LGO"/>
+                        <segue destination="AGA-dJ-NJG" kind="show" identifier="takePhotoSegue" id="SFs-T3-bpa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,26 +10,23 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var takePhotoButton: UIButton!
+    @IBOutlet weak var setAllergiesButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        print("Home")
-//        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
-//            print("user \(User.current.username)")
-//            let allergyCount = allergies.count
-//            print("allergy \(allergyCount) \(allergies)")
-//            if allergyCount == 0 {
-//                // if the user hasn't set allergies yet
-//                AllergyService.setAllergies(for: User.current, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergies) in
-//                    
-//                    self.goToSetAllergiesViewController()
-//                })
-//            } else {
-//                // do something if the user has already set allergies
-//            }
-//        }
+        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
+            let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
+            if doesHaveAllergies.count == 0 {
+                print("move to next controleler")
+                self.goToSetAllergiesViewController()
+            } else {
+                // Do something if the user has already set their allergies
+            }
+        }
     }
     
     func goToSetAllergiesViewController() {
@@ -38,5 +35,21 @@ class HomeViewController: UIViewController {
         let setAllergiesController = storyboard.instantiateViewController(withIdentifier: "SetAllergiesViewController") as! SetAllergiesViewController
         
         self.navigationController?.pushViewController(setAllergiesController, animated: true)
+    }
+    
+    func goToTakePhotoViewController() {
+        let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
+        
+        let setAllergiesController = storyboard.instantiateViewController(withIdentifier: "TakePhotoViewController") as! TakePhotoViewController
+        
+        self.navigationController?.pushViewController(setAllergiesController, animated: true)
+    }
+    
+    @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        self.goToTakePhotoViewController()
+    }
+    
+    @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
+        self.goToSetAllergiesViewController()
     }
 }

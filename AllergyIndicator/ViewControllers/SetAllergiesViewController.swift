@@ -63,6 +63,4 @@ extension SetAllergiesViewController: IsAllergicCellDelegate {
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
-    
-
 }
