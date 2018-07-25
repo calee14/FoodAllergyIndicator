@@ -18,8 +18,8 @@ class SetAllergiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // load allergies
         AllergyService.retrieveAllergies(for: user) { (allergies) in
             self.allergens = allergies
             self.tableView.reloadData()

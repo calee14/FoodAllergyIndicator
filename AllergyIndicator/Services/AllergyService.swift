@@ -64,4 +64,13 @@ struct AllergyService {
             success(error == nil)
         }
     }
+    
+    static func initializeEmptyAllergies() -> [Allergy] {
+        var allergyArray = [Allergy]()
+        for allergyName in Constants.Allergens.allergenNames {
+            let allergy = Allergy(allergyName, isAllergic: false)
+            allergyArray.append(allergy)
+        }
+        return allergyArray
+    }
 }
