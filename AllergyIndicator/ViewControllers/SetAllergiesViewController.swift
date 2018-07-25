@@ -21,13 +21,10 @@ class SetAllergiesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         AllergyService.retrieveAllergies(for: user) { (allergies) in
-            
             self.allergens = allergies
-            
             self.tableView.reloadData()
         }
     }
-    
 }
 
 extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -56,8 +53,15 @@ extension SetAllergiesViewController: IsAllergicCellDelegate {
         isAllergicSwitch.isUserInteractionEnabled = false
         
         self.allergens[indexPath.row].isAllergic = isAllergicSwitch.isOn
-        print(self.allergens[indexPath.row].isAllergic)
-//        let allergen =
+        
+        AllergyService.updateAllergy(for: user, allergy: self.allergens[indexPath.row]) { (success) in
+            defer {
+                isAllergicSwitch.isUserInteractionEnabled = true
+            }
+            guard success else { return }
+            
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
     
 

@@ -25,4 +25,7 @@ struct Constants {
                                     "Peas", "Lentils", "Lupin", "Legumes", "Sesame seeds", "Buckwheat", "Mustart",
                                     "Curry", "Glutamate", "Mayonnaise", "Colorants"]
     }
+    struct DatabasePath {
+        static let allergies = "allergies"
+    }
 }
