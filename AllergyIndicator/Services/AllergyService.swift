@@ -36,7 +36,7 @@ struct AllergyService {
             })
         }
     }
-    static func retrieveAllergies(for user: User, completion: @escaping ([Allergy?]) -> Void) {
+    static func retrieveAllergies(for user: User, completion: @escaping ([Allergy]) -> Void) {
         var allergens = [Allergy]()
         
         let ref = Database.database().reference().child("allergies").child(user.uid)
@@ -48,8 +48,7 @@ struct AllergyService {
                 let allergy: Allergy = Allergy(allergyName, isAllergic: isAllergic)
                 allergens.append(allergy)
             }
+            completion(allergens)
         }
-        
-        completion(allergens)
     }
 }

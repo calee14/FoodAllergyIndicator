@@ -11,7 +11,7 @@ import FirebaseDatabase.FIRDataSnapshot
 
 class Allergy {
     let allergyName: String
-    let isAllergic: Bool
+    var isAllergic: Bool
     
     init(_ allergyName: String, isAllergic: Bool) {
         self.allergyName = allergyName

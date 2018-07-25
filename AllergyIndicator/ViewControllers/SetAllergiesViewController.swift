@@ -14,18 +14,25 @@ class SetAllergiesViewController: UIViewController {
     
     var allergens = [Allergy]()
     
+    private var user = User.current
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        AllergyService.retrieveAllergies(for: user) { (allergies) in
+            
+            self.allergens = allergies
+            
+            self.tableView.reloadData()
+        }
     }
     
 }
 
 extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.Allergens.allergenNames.count
+        return self.allergens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,7 +43,9 @@ extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func configure(cell: AllergyTableViewCell, atIndexPath indexPath: IndexPath) {
-        
+        let allergy = allergens[indexPath.row]
+        cell.allergenName?.text = allergy.allergyName
+        cell.isAllergicSwitch.isOn = allergy.isAllergic
     }
 }
 
@@ -45,6 +54,9 @@ extension SetAllergiesViewController: IsAllergicCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         
         isAllergicSwitch.isUserInteractionEnabled = false
+        
+        self.allergens[indexPath.row].isAllergic = isAllergicSwitch.isOn
+        print(self.allergens[indexPath.row].isAllergic)
 //        let allergen =
     }
     
