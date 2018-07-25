@@ -45,7 +45,7 @@ struct AllergyService {
         ref.observeSingleEvent(of: .value) { (snapshot) in
             guard let dict = snapshot.value as? [String : Any] else { return }
             for allergyName in Constants.Allergens.allergenNames {
-                guard let isAllergic: Bool = dict[allergyName] as? Bool else { fatalError("There was no boolean in \(allergyName)") }
+                guard let isAllergic: Bool = dict[allergyName] as? Bool else { fatalError("There was no boolean data type in \(allergyName)") }
                 let allergy: Allergy = Allergy(allergyName, isAllergic: isAllergic)
                 allergens.append(allergy)
             }

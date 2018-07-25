@@ -15,19 +15,21 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
-        AllergyService.retrieveAllergies(for: User.current) { (alleriges) in
-            let allergyCount = alleriges.count
-            if allergyCount == 0 {
-                // if the user hasn't set allergies yet
-                AllergyService.setAllergies(for: User.current, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergies) in
-                    
-                    self.goToSetAllergiesViewController()
-                })
-            } else {
-                // do something if the user has already set allergies
-            }
-        }
+        print("Home")
+//        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
+//            print("user \(User.current.username)")
+//            let allergyCount = allergies.count
+//            print("allergy \(allergyCount) \(allergies)")
+//            if allergyCount == 0 {
+//                // if the user hasn't set allergies yet
+//                AllergyService.setAllergies(for: User.current, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergies) in
+//                    
+//                    self.goToSetAllergiesViewController()
+//                })
+//            } else {
+//                // do something if the user has already set allergies
+//            }
+//        }
     }
     
     func goToSetAllergiesViewController() {
