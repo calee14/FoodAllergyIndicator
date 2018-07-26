@@ -54,6 +54,14 @@ class TakePhotoViewController: UIViewController {
                 return
             }
             
+            PredictService.predictImage(image: image, completion: { (concepts) in
+                guard let concepts = concepts else { return }
+                for concept in concepts {
+                    print("Prediction name: \(concept.name)")
+                    print("Prediction score: \(concept.score)")
+                }
+            })
+            // Store image on Firebase server
             PostImageService.create(for: image)
         }
     }

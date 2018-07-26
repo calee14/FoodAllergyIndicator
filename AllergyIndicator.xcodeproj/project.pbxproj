@@ -12,6 +12,7 @@
 		B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC321092E980066B3FD /* PostImageService.swift */; };
 		B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC5210930390066B3FD /* AllergyImagePost.swift */; };
 		B37FDFC8210A3A8B0066B3FD /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC7210A3A8B0066B3FD /* StorageReference+Post.swift */; };
+		B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC9210A46950066B3FD /* PredictService.swift */; };
 		B3C0914321078C9B0058E046 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C0914121078C9B0058E046 /* Login.storyboard */; };
 		B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914421078D0D0058E046 /* LoginViewController.swift */; };
 		B3C0914721078EC20058E046 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914621078EC20058E046 /* Constants.swift */; };
@@ -44,6 +45,7 @@
 		B37FDFC321092E980066B3FD /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
 		B37FDFC5210930390066B3FD /* AllergyImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyImagePost.swift; sourceTree = "<group>"; };
 		B37FDFC7210A3A8B0066B3FD /* StorageReference+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
+		B37FDFC9210A46950066B3FD /* PredictService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictService.swift; sourceTree = "<group>"; };
 		B3C0914221078C9B0058E046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B3C0914421078D0D0058E046 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3C0914621078EC20058E046 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B3C091542107CC630058E046 /* AllergyService.swift */,
 				B37FDFC121092AAF0066B3FD /* StorageService.swift */,
 				B37FDFC321092E980066B3FD /* PostImageService.swift */,
+				B37FDFC9210A46950066B3FD /* PredictService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
 				B3C0914921078F6D0058E046 /* User.swift in Sources */,
 				B3C091512107BEA50058E046 /* Allergy.swift in Sources */,
+				B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */,
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
 				B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */,
 				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
