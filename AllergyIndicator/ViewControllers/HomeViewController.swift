@@ -40,9 +40,9 @@ class HomeViewController: UIViewController {
     func goToTakePhotoViewController() {
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
-        let setAllergiesController = storyboard.instantiateViewController(withIdentifier: "TakePhotoViewController") as! TakePhotoViewController
+        let takePhotoController = storyboard.instantiateViewController(withIdentifier: "TakePhotoViewController") as! TakePhotoViewController
         
-        self.navigationController?.pushViewController(setAllergiesController, animated: true)
+        self.navigationController?.pushViewController(takePhotoController, animated: true)
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
