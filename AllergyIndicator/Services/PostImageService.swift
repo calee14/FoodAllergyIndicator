@@ -12,15 +12,27 @@ import FirebaseDatabase
 
 struct PostImageService {
     static func create(for image: UIImage) {
-        let imageRef = Storage.storage().reference().child("test_image.jpg")
+        let imageRef = StorageReference.newPostImageReference()
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
             guard let downloadURL = downloadURL else {
                 return
             }
             
             let urlString = downloadURL.absoluteString
-            print("image url: \(urlString)")
+            create(forURLString: urlString, aspectHeight: 320)
         }
+    }
+    
+    static func create(forURLString urlString: String, aspectHeight: CGFloat) {
+        
+        let currentUser = User.current
+        let post = AllergyImagePost(imageURL: urlString, imageHeight: aspectHeight)
+        
+        let dict = post.dictValue
+        
+        let rootRef = Database.database().reference()
+        let newPostRef = rootRef.child("images").child(currentUser.uid).childByAutoId()
+        newPostRef.updateChildValues(dict)
     }
 }
 

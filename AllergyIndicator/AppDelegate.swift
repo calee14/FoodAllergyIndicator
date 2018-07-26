@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Launch Clarifai SDK
         Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        
         // Configure Firebase
         FirebaseApp.configure()
         
