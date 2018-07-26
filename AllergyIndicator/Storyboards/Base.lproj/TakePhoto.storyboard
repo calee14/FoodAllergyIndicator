@@ -23,7 +23,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-uM-qwM">
-                                <rect key="frame" x="172" y="599" width="30" height="30"/>
+                                <rect key="frame" x="160" y="599" width="55" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="05d-VC-iOB"/>
+                                    <constraint firstAttribute="height" constant="55" id="k3N-hK-aLp"/>
+                                </constraints>
                                 <connections>
                                     <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
                                 </connections>
@@ -33,6 +38,7 @@
                         <constraints>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="trailing" secondItem="FpZ-QC-2xn" secondAttribute="trailing" id="BSV-Dz-nBM"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="top" secondItem="99E-8H-WjP" secondAttribute="top" id="ElF-02-FOp"/>
+                            <constraint firstItem="1Qg-uM-qwM" firstAttribute="centerX" secondItem="99E-8H-WjP" secondAttribute="centerX" id="e1G-2i-dy0"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="centerX" secondItem="1Qg-uM-qwM" secondAttribute="centerX" id="pml-PG-6fD"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="leading" secondItem="FpZ-QC-2xn" secondAttribute="leading" id="qDc-Eo-n6J"/>
                             <constraint firstItem="1Qg-uM-qwM" firstAttribute="top" secondItem="FpZ-QC-2xn" secondAttribute="top" constant="535" id="syt-YS-xWD"/>

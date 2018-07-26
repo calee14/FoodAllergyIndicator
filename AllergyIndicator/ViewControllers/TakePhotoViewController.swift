@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import FirebaseStorage
 
 class TakePhotoViewController: UIViewController {
 
@@ -53,7 +54,7 @@ class TakePhotoViewController: UIViewController {
                 return
             }
             
-            print(image)
+            PostImageService.create(for: image)
         }
     }
 }

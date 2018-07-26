@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
+		B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC121092AAF0066B3FD /* StorageService.swift */; };
+		B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC321092E980066B3FD /* PostImageService.swift */; };
+		B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC5210930390066B3FD /* AllergyImagePost.swift */; };
 		B3C0914321078C9B0058E046 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C0914121078C9B0058E046 /* Login.storyboard */; };
 		B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914421078D0D0058E046 /* LoginViewController.swift */; };
 		B3C0914721078EC20058E046 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914621078EC20058E046 /* Constants.swift */; };
@@ -36,6 +39,9 @@
 		48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
 		5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
 		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B37FDFC121092AAF0066B3FD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		B37FDFC321092E980066B3FD /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
+		B37FDFC5210930390066B3FD /* AllergyImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyImagePost.swift; sourceTree = "<group>"; };
 		B3C0914221078C9B0058E046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B3C0914421078D0D0058E046 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3C0914621078EC20058E046 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 			children = (
 				B3C0914C2107995E0058E046 /* UserService.swift */,
 				B3C091542107CC630058E046 /* AllergyService.swift */,
+				B37FDFC121092AAF0066B3FD /* StorageService.swift */,
+				B37FDFC321092E980066B3FD /* PostImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -147,6 +155,7 @@
 			children = (
 				B3C0914821078F6D0058E046 /* User.swift */,
 				B3C091502107BEA50058E046 /* Allergy.swift */,
+				B37FDFC5210930390066B3FD /* AllergyImagePost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,9 +349,12 @@
 			files = (
 				B3E1EF2021068850009B24AA /* SetAllergiesViewController.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
+				B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */,
 				B3C0914B210791840058E046 /* Storyboards+Utility.swift in Sources */,
 				B3F902B52104316800FD552E /* AppDelegate.swift in Sources */,
 				B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */,
+				B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */,
+				B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,
 				B3C0914D2107995E0058E046 /* UserService.swift in Sources */,
