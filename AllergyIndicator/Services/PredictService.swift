@@ -33,4 +33,8 @@ struct PredictService {
         }
         
     }
+    
+    static func predictFoodImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
+        // add the api here
+    }
 }

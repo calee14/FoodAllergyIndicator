@@ -13,15 +13,15 @@ class PhotoResultsViewController: UIViewController {
 
     @IBOutlet weak var resultsTextView: UITextView!
     var concepts: [Concept] = []
-    var g = ""
+    var resultString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for concept in concepts {
-            g += ("Prediction name: \(concept.name) \n")
-            g += ("Prediction score: \(concept.score) \n")
+            resultString += ("Prediction name: \(concept.name) \n")
+            resultString += ("Prediction score: \(concept.score) \n")
         }
-        resultsTextView.text = g
+        resultsTextView.text = resultString
         // Do any additional setup after loading the view.
         print("Photo Result")
     }
