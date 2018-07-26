@@ -1,4 +1,21 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Clarifai (2.3.2):
+    - AFNetworking (~> 3.1)
   - Clarifai-Apple-SDK (3.0.0-beta20)
   - Firebase/Auth (5.4.0):
     - Firebase/CoreOnly
@@ -46,6 +63,7 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - Clarifai
   - Clarifai-Apple-SDK (= 3.0.0-beta20)
   - Firebase/Auth
   - Firebase/Core
@@ -55,6 +73,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Clarifai
     - Clarifai-Apple-SDK
     - Firebase
     - FirebaseAnalytics
@@ -70,6 +90,8 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Clarifai: 6d6cce2b31aefcf33893f2c3a18588b266771d11
   Clarifai-Apple-SDK: e1023ab08623a9e96b6a991ac343c6425c838ee0
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -84,6 +106,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: b5fceebe327df79a75f0a852341de62b5cb5bd63
+PODFILE CHECKSUM: cd92992d1dc66b2f85f7b143976449468b052ce1
 
 COCOAPODS: 1.5.3

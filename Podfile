@@ -14,5 +14,5 @@ target 'AllergyIndicator' do
   pod 'Firebase/Storage'
 
   pod 'Clarifai-Apple-SDK', '3.0.0-beta20'
-
+  pod 'Clarifai'
 end
