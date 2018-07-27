@@ -14,7 +14,7 @@ class PhotoResultsViewController: UIViewController {
 
     @IBOutlet weak var resultsTextView: UITextView!
     var concepts: [ClarifaiConcept] = []
-    var resultString = ""
+    var resultString = "These are the results \n"
     override func viewDidLoad() {
         super.viewDidLoad()
         concepts = [ClarifaiConcept(conceptName: "Egg"), ClarifaiConcept(conceptName: "Nuts")]
