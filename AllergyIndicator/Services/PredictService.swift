@@ -43,8 +43,7 @@ struct PredictService {
                 let clarifaiImage = ClarifaiImage(image: image)!
                 model?.predict(on: [clarifaiImage], completion: { (outputs, error) in
                     print("%@", error ?? "no error")
-                    guard let outputs = outputs else { return completion(nil)}
-                    print(outputs.first)
+                    guard let outputs = outputs else { return completion(nil) }
                     if let output = outputs.first {
                         let concepts = output.concepts
                         completion(concepts)
