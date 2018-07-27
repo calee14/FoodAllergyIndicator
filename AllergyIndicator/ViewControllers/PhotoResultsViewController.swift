@@ -17,7 +17,13 @@ class PhotoResultsViewController: UIViewController {
     var resultString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        concepts = [ClarifaiConcept(conceptName: "Egg"), ClarifaiConcept(conceptName: "Nuts")]
+        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
+            CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
+                guard let allergens = allergens else { return }
+                print(allergens)
+            })
+        }
         for concept in concepts {
             resultString += ("Prediction name: \(concept.conceptName) \n")
             resultString += ("Prediction score: \(concept.score) \n")
