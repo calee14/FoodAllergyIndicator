@@ -8,7 +8,7 @@
 
 import UIKit
 import Clarifai_Apple_SDK
-
+import Clarifai
 struct PredictService {
     static func predictImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
         // initialize variables
@@ -34,7 +34,23 @@ struct PredictService {
         
     }
     
-    static func predictFoodImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
+    static func predictFoodImage(image: UIImage, completion: @escaping ([ClarifaiConcept]?) -> Void) {
         // add the api here
+        let app = ClarifaiApp(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        
+        if let app = app {
+            app.getModelByName("food-items-v1.0", completion: { (model, error) in
+                let clarifaiImage = ClarifaiImage(image: image)!
+                model?.predict(on: [clarifaiImage], completion: { (outputs, error) in
+                    print("%@", error ?? "no error")
+                    guard let outputs = outputs else { return completion(nil)}
+                    print(outputs.first)
+                    if let output = outputs.first {
+                        let concepts = output.concepts
+                        completion(concepts)
+                    }
+                })
+            })
+        }
     }
 }

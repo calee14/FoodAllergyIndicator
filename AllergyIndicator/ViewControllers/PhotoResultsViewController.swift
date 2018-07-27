@@ -8,17 +8,18 @@
 
 import UIKit
 import Clarifai_Apple_SDK
+import Clarifai
 
 class PhotoResultsViewController: UIViewController {
 
     @IBOutlet weak var resultsTextView: UITextView!
-    var concepts: [Concept] = []
+    var concepts: [ClarifaiConcept] = []
     var resultString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for concept in concepts {
-            resultString += ("Prediction name: \(concept.name) \n")
+            resultString += ("Prediction name: \(concept.conceptName) \n")
             resultString += ("Prediction score: \(concept.score) \n")
         }
         resultsTextView.text = resultString

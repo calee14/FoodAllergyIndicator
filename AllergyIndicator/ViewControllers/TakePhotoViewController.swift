@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import FirebaseStorage
 import Clarifai_Apple_SDK
+import Clarifai
 
 class TakePhotoViewController: UIViewController {
 
@@ -55,20 +56,20 @@ class TakePhotoViewController: UIViewController {
                 return
             }
             
-            PredictService.predictImage(image: image, completion: { (concepts) in
-                guard let concepts = concepts else { return }
-                self.goToShowResultsViewController(concepts: concepts)
-            })
-//            PredictService.predictFoodImage(image: image, completion: { (concepts) in
+//            PredictService.predictImage(image: image, completion: { (concepts) in
 //                guard let concepts = concepts else { return }
 //                self.goToShowResultsViewController(concepts: concepts)
 //            })
+            PredictService.predictFoodImage(image: image, completion: { (concepts) in
+                guard let concepts = concepts else { return }
+                self.goToShowResultsViewController(concepts: concepts)
+            })
             // Store image on Firebase server
             PostImageService.create(for: image)
         }
     }
     
-    func goToShowResultsViewController(concepts: [Concept]) {
+    func goToShowResultsViewController(concepts: [ClarifaiConcept]) {
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
         let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
