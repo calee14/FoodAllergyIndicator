@@ -55,14 +55,14 @@ class TakePhotoViewController: UIViewController {
                 return
             }
             
-//            PredictService.predictImage(image: image, completion: { (concepts) in
-//                guard let concepts = concepts else { return }
-//                self.goToShowResultsViewController(concepts: concepts)
-//            })
-            PredictService.predictFoodImage(image: image, completion: { (concepts) in
+            PredictService.predictImage(image: image, completion: { (concepts) in
                 guard let concepts = concepts else { return }
                 self.goToShowResultsViewController(concepts: concepts)
             })
+//            PredictService.predictFoodImage(image: image, completion: { (concepts) in
+//                guard let concepts = concepts else { return }
+//                self.goToShowResultsViewController(concepts: concepts)
+//            })
             // Store image on Firebase server
             PostImageService.create(for: image)
         }
