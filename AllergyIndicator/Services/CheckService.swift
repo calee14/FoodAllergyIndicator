@@ -41,8 +41,6 @@ struct CheckService {
         var d = [[Int]]()
         var n: Int
         var m: Int
-//        var i: Int
-//        var j: Int
         var s_i: Character
         var t_j: Character
         var cost: Int
