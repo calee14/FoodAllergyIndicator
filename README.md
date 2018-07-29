@@ -17,4 +17,16 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 # Authors
 - **Cap Lee** - Pretty much going to be the only contributor
 
+# Todo
+- Indicate user that they've taken a photo
+- Alert user about allergies in the the food
+- Include recipe API to double check on allergens
+- Add UI
+- Add disclaimers
+- Log out feature
+
+# Future Features
+- Make it so that it can recognize food packages or food bar scanners to get indgredients on food
+-
+
 
