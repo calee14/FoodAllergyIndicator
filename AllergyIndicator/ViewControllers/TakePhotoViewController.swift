@@ -21,6 +21,8 @@ class TakePhotoViewController: UIViewController {
     
     let cameraController = CameraController()
     
+    let imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,7 +47,14 @@ class TakePhotoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.cameraController.previewLayer?.isHidden = false
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.imageView.removeFromSuperview()
+        print("Disappear")
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
@@ -56,21 +65,27 @@ class TakePhotoViewController: UIViewController {
                 return
             }
             
+            // change ui view
+            self.cameraController.previewLayer?.isHidden = true
+            self.imageView.frame = self.previewView.frame
+            self.imageView.image = image
+            self.previewView.insertSubview(self.imageView, at: 0)
+            
 //            PredictService.predictImage(image: image, completion: { (concepts) in
 //                guard let concepts = concepts else { return }
 //                self.goToShowResultsViewController(concepts: concepts)
 //            })
-            PredictService.predictFoodImage(image: image, completion: { (concepts) in
-                guard let concepts = concepts else { return }
-                DispatchQueue.main.async {
-                    self.goToShowResultsViewController(concepts: concepts)
-                }
-            })
-            
+//            PredictService.predictFoodImage(image: image, completion: { (concepts) in
+//                guard let concepts = concepts else { return }
+//                DispatchQueue.main.async {
+//                    self.goToShowResultsViewController(concepts: concepts)
+//                }
+//            })
+//
             // Store image on Firebase server
-            PostImageService.create(for: image)
+//            PostImageService.create(for: image)
         }
-//        self.goToShowResultsViewController(concepts: [ClarifaiConcept]())
+        self.goToShowResultsViewController(concepts: [ClarifaiConcept]())
     }
     
     func goToShowResultsViewController(concepts: [ClarifaiConcept]) {
