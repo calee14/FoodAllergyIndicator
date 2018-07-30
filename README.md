@@ -32,6 +32,6 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
--
+  - https://www.cloudmersive.com/products
 
 
