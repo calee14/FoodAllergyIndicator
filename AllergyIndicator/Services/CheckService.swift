@@ -57,7 +57,6 @@ struct CheckService {
         d = [[Int]](repeating: newM, count: n+1)
 
         for i in 1...n {
-            print(i)
             d[i][0] = i
         }
 
