@@ -19,14 +19,19 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 
 # Todo
 - Indicate user that they've taken a photo
+  - https://stackoverflow.com/questions/48180635/how-to-insert-image-on-uiview
+  - https://stackoverflow.com/questions/28485621/create-uibutton-programmatically-with-constraints-in-swift
 - Alert user about allergies in the the food
+  - Use table view
 - Include recipe API to double check on allergens
+  - http://www.recipepuppy.com/about/api/
+  - https://www.themealdb.com/api.php
 - Add UI
 - Add disclaimers
 - Log out feature
 
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
--
+  - https://www.cloudmersive.com/products
 
 
