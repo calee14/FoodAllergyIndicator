@@ -17,8 +17,7 @@ class PhotoResultsViewController: UIViewController {
     
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
-    var resultString = "These are the results \n"
-    
+    var allergens: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,14 +28,11 @@ class PhotoResultsViewController: UIViewController {
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
                 guard let allergens = allergens else { return }
+                self.allergens = allergens
+                self.tableView.reloadData()
                 print(allergens)
             })
         }
-        for concept in concepts {
-            resultString += ("Prediction name: \(concept.conceptName) \n")
-            resultString += ("Prediction score: \(concept.score) \n")
-        }
-//        resultsTextView.text = resultString
         // Do any additional setup after loading the view.
         print("Photo Result")
     }
@@ -45,11 +41,18 @@ class PhotoResultsViewController: UIViewController {
 
 extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return concepts
+        return concepts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
-        cell.ingredientLabel = concepts
-        return UITableViewCell()
+        let ingredientdata = concepts[indexPath.row]
+        cell.ingredientLabel.text = ingredientdata.conceptName
+        cell.scoreLabel.text = String(ingredientdata.score)
+        if allergens.contains(ingredientdata.conceptName) {
+            cell.ingredientLabel.textColor = .red
+        } else {
+            cell.ingredientLabel.textColor = .green
+        }
+        return cell
     }
 }

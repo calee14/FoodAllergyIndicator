@@ -48,6 +48,7 @@ class TakePhotoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.cameraController.previewLayer?.isHidden = false
+        self.captureButton.isUserInteractionEnabled = true
         
     }
     
@@ -64,6 +65,7 @@ class TakePhotoViewController: UIViewController {
                 print(error ?? "Image capture error")
                 return
             }
+            self.captureButton.isUserInteractionEnabled = false
             
             // change ui view
             self.cameraController.previewLayer?.isHidden = true
@@ -81,7 +83,7 @@ class TakePhotoViewController: UIViewController {
 //                    self.goToShowResultsViewController(concepts: concepts)
 //                }
 //            })
-//
+
             // Store image on Firebase server
 //            PostImageService.create(for: image)
         }
