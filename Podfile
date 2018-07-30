@@ -15,4 +15,8 @@ target 'AllergyIndicator' do
 
   pod 'Clarifai-Apple-SDK', '3.0.0-beta20'
   pod 'Clarifai'
+
+  pod 'SwiftyJSON'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+
 end
