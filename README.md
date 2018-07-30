@@ -25,6 +25,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - Use table view
 - Include recipe API to double check on allergens
   - http://www.recipepuppy.com/about/api/
+  - https://www.themealdb.com/api.php
 - Add UI
 - Add disclaimers
 - Log out feature
