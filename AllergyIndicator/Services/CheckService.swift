@@ -39,7 +39,9 @@ struct CheckService {
                 case .success:
                     let decoder = JSONDecoder()
                     let result = try? decoder.decode(RecipeResult.self, from: response.data!)
-                    let possibleRecipes = result?.results.filter{ (r) -> Bool in
+                    
+                    // filter out recipes that doesn't match our food string
+                    let possibleRecipes: [Recipe] = (result?.results.filter{ (r: Recipe) -> Bool in
                         var lensum = Double(r.title.count)
                         if r.title.count < query.count {
                             lensum = Double(query.count)
@@ -53,8 +55,12 @@ struct CheckService {
                             return true
                         }
                         return false
-                    }
+                        })!
+                    let ingredients = possibleRecipes.map { $0.ingredients.components(separatedBy: ", ")}
+                    
+                    print("Results \(ingredients)")
                     print("Results \(possibleRecipes)")
+                    
                 case .failure(let error):
                     print("Error: \(error)")
                 }
