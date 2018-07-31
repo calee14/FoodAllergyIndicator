@@ -8,6 +8,7 @@
 
 import Foundation
 import Clarifai
+import Alamofire
 
 struct CheckService {
     static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: @escaping ([String]?) -> Void) {
@@ -25,6 +26,15 @@ struct CheckService {
             }
         }
         completion(possibleAllergies)
+    }
+    static func checkRecipe(foodQuery: String, completion: @escaping (RecipeResult?) -> Void) {
+        var apiCallString = "http://www.recipepuppy.com/api/?q="
+        apiCallString += foodQuery
+        Alamofire.request(apiCallString).response { (response) in
+            let decoder = JSONDecoder()
+            let result = try? decoder.decode(RecipeResult.self, from: response.data!)
+            completion(result)
+        }
     }
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a
