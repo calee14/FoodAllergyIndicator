@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Recipe: Decodable {
+struct Recipe: Codable {
     let title: String
     let href: String
     let ingredients: String
     let thumbnail: String
 }
 
-struct RecipeResult: Decodable {
+struct RecipeResult: Codable {
     let title: String
     let version: Double
     let href: String

@@ -9,6 +9,7 @@
 import Foundation
 import Clarifai
 import Alamofire
+import SwiftyJSON
 
 struct CheckService {
     static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: @escaping ([String]?) -> Void) {
@@ -30,10 +31,17 @@ struct CheckService {
     static func checkRecipe(foodQuery: String, completion: @escaping (RecipeResult?) -> Void) {
         var apiCallString = "http://www.recipepuppy.com/api/?q="
         apiCallString += foodQuery
-        Alamofire.request(apiCallString).response { (response) in
-            let decoder = JSONDecoder()
-            let result = try? decoder.decode(RecipeResult.self, from: response.data!)
-            completion(result)
+        Alamofire.request(apiCallString).validate().responseJSON() { response in
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                let result = try? decoder.decode(RecipeResult.self, from: response.data!)
+                print("Results \(result?.results[0].ingredients)")
+                completion(result)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
         }
     }
     static func minimum(a: Int, b: Int, c: Int) -> Int{

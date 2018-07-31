@@ -34,7 +34,7 @@ class PhotoResultsViewController: UIViewController {
             })
         }
         CheckService.checkRecipe(foodQuery: concepts[0].conceptName) { (result) in
-            
+//            print(result?.results[0].ingredients)
         }
         // Do any additional setup after loading the view.
         print("Photo Result")
