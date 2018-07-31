@@ -24,7 +24,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        concepts = [ClarifaiConcept(conceptName: "Pizza"), ClarifaiConcept(conceptName: "Spaghetti")]
+        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "Chocolate Cookie")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
                 guard let allergens = allergens else { return }
@@ -34,7 +34,13 @@ class PhotoResultsViewController: UIViewController {
             })
             CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
                 guard let ingredients = result else { return }
-                let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies)
+                guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+//                if allergiesInRecipe.count > 1 {
+//                    for i in allergiesInRecipe {
+//                        print(i)
+//                        print("WARNING")
+//                    }
+//                }
             }
         }
         

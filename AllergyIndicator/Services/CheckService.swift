@@ -16,13 +16,17 @@ struct CheckService {
         var possibleAllergies = [String]()
         for i in ingreidents {
             for j in allergies {
-                if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
-                    print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
-                    print("blah \(dist) \((1 - (dist/min(i.conceptName.count, j.allergyName.count)))) \((dist/min(i.conceptName.count, j.allergyName.count))) \(min(i.conceptName.count, j.allergyName.count))")
-                    print(((1 - (dist/min(i.conceptName.count, j.allergyName.count))) * 100) >= 90)
-                    print(i.conceptName)
-                    print(j.allergyName)
-                    possibleAllergies.append(i.conceptName)
+                if j.isAllergic {
+                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
+                        print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
+                        print("blah \(dist) \((1 - (dist/min(i.conceptName.count, j.allergyName.count)))) \((dist/min(i.conceptName.count, j.allergyName.count))) \(min(i.conceptName.count, j.allergyName.count))")
+                        print(((1 - (dist/min(i.conceptName.count, j.allergyName.count))) * 100) >= 90)
+                        print(i.conceptName)
+                        print(j.allergyName)
+                        possibleAllergies.append(i.conceptName)
+                    }
+                } else {
+                    continue
                 }
             }
         }
@@ -75,13 +79,21 @@ struct CheckService {
         var possibleAllergies = [String]()
         for ingredient in recipeIngredients {
             for allergy in allergies {
-                var lsum = Double(ingredient.count)
-                if ingredient.count < allergy.allergyName.count {
-                    lsum = Double(allergy.allergyName.count)
-                }
-                let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
-                if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                    possibleAllergies.append(ingredient)
+                if allergy.isAllergic {
+                    var lsum = Double(ingredient.count)
+                    if ingredient.count < allergy.allergyName.count {
+                        lsum = Double(allergy.allergyName.count)
+                    }
+                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
+                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
+                        possibleAllergies.append(ingredient)
+                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30)")
+                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0))")
+                        print("WARN \(ingredient)")
+                        print("WARM AL \(allergy.allergyName)")
+                    }
+                } else {
+                    continue
                 }
             }
         }
