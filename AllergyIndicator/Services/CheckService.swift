@@ -28,9 +28,9 @@ struct CheckService {
         }
         completion(possibleAllergies)
     }
-    static func checkRecipe(foodQueries: [String], completion: @escaping (RecipeResult?) -> Void) {
+    static func checkRecipe(foodQueries: [String], completion: @escaping ([String]?) -> Void) {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
-        var possibleIngredients: [String] = []
+        var possibleIngredients: [String] = [String]()
         let group = DispatchGroup()
         for query in foodQueries {
             group.enter()
@@ -51,14 +51,13 @@ struct CheckService {
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
                         if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 25 {
-                            
                             return true
                         }
                         return false
                         })!
-                    let ingredients = possibleRecipes.map { $0.ingredients.components(separatedBy: ", ")}
-                    
-                    print("Results \(ingredients)")
+                    for recipe in possibleRecipes {
+                        possibleIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
+                    }
                     print("Results \(possibleRecipes)")
                     
                 case .failure(let error):
@@ -68,12 +67,25 @@ struct CheckService {
             }
         }
         group.notify(queue: .main) {
-            
             print("finished all tasks")
+            completion(possibleIngredients)
         }
     }
-    static func checkIngredientsInRecipe(recipe: RecipeResult, foodName: String) -> [String]? {
-        return nil
+    static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
+        var possibleAllergies = [String]()
+        for ingredient in recipeIngredients {
+            for allergy in allergies {
+                var lsum = Double(ingredient.count)
+                if ingredient.count < allergy.allergyName.count {
+                    lsum = Double(allergy.allergyName.count)
+                }
+                let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
+                if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
+                    possibleAllergies.append(ingredient)
+                }
+            }
+        }
+        return possibleAllergies
     }
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a

@@ -32,10 +32,12 @@ class PhotoResultsViewController: UIViewController {
                 self.tableView.reloadData()
                 print(allergens)
             })
+            CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
+                guard let ingredients = result else { return }
+                let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies)
+            }
         }
-        CheckService.checkRecipe(foodQueries: concepts.map { $0.conceptName }) { (result) in
-//            print(result?.results[0].ingredients)
-        }
+        
         // Do any additional setup after loading the view.
         print("Photo Result")
     }
