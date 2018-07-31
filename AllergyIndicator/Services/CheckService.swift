@@ -28,21 +28,46 @@ struct CheckService {
         }
         completion(possibleAllergies)
     }
-    static func checkRecipe(foodQuery: String, completion: @escaping (RecipeResult?) -> Void) {
-        var apiCallString = "http://www.recipepuppy.com/api/?q="
-        apiCallString += foodQuery
-        Alamofire.request(apiCallString).validate().responseJSON() { response in
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try? decoder.decode(RecipeResult.self, from: response.data!)
-                print("Results \(result?.results[0].ingredients)")
-                completion(result)
-            case .failure(let error):
-                print("Error: \(error)")
+    static func checkRecipe(foodQueries: [String], completion: @escaping (RecipeResult?) -> Void) {
+        let apiCallString = "http://www.recipepuppy.com/api/?q="
+        var possibleIngredients: [String] = []
+        let group = DispatchGroup()
+        for query in foodQueries {
+            group.enter()
+            Alamofire.request(apiCallString + query).validate().responseJSON() { response in
+                switch response.result {
+                case .success:
+                    let decoder = JSONDecoder()
+                    let result = try? decoder.decode(RecipeResult.self, from: response.data!)
+                    let possibleRecipes = result?.results.filter{ (r) -> Bool in
+                        var lensum = Double(r.title.count)
+                        if r.title.count < query.count {
+                            lensum = Double(query.count)
+                        }
+                        let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased())!
+                        print("Results \(query)")
+                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
+                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
+                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 25 {
+                            
+                            return true
+                        }
+                        return false
+                    }
+                    print("Results \(possibleRecipes)")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+                group.leave()
             }
-            
         }
+        group.notify(queue: .main) {
+            
+            print("finished all tasks")
+        }
+    }
+    static func checkIngredientsInRecipe(recipe: RecipeResult, foodName: String) -> [String]? {
+        return nil
     }
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a
