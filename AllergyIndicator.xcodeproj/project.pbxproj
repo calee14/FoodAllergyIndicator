@@ -35,6 +35,7 @@
 		B3E1EF1C210675A8009B24AA /* SetAllergies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1A210675A8009B24AA /* SetAllergies.storyboard */; };
 		B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1D2106830A009B24AA /* CameraController.swift */; };
 		B3E1EF2021068850009B24AA /* SetAllergiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1F21068850009B24AA /* SetAllergiesViewController.swift */; };
+		B3EAE2A7211114AF009311AC /* WarningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAE2A6211114AF009311AC /* WarningController.swift */; };
 		B3F902B52104316800FD552E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F902B42104316800FD552E /* AppDelegate.swift */; };
 		B3F902BA2104316900FD552E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F902B82104316900FD552E /* Main.storyboard */; };
 		B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F902BB2104316A00FD552E /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		B3E1EF1B210675A8009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SetAllergies.storyboard; sourceTree = "<group>"; };
 		B3E1EF1D2106830A009B24AA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		B3E1EF1F21068850009B24AA /* SetAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAllergiesViewController.swift; sourceTree = "<group>"; };
+		B3EAE2A6211114AF009311AC /* WarningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningController.swift; sourceTree = "<group>"; };
 		B3F902B12104316800FD552E /* AllergyIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllergyIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F902B42104316800FD552E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F902B92104316900FD552E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				B3E1EF1D2106830A009B24AA /* CameraController.swift */,
 				B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */,
 				B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */,
+				B3EAE2A6211114AF009311AC /* WarningController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,
 				B3C0914D2107995E0058E046 /* UserService.swift in Sources */,
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
+				B3EAE2A7211114AF009311AC /* WarningController.swift in Sources */,
 				B3C0914921078F6D0058E046 /* User.swift in Sources */,
 				B3C091512107BEA50058E046 /* Allergy.swift in Sources */,
 				B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */,

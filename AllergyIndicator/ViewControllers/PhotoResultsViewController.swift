@@ -18,6 +18,10 @@ class PhotoResultsViewController: UIViewController {
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
     var allergens: [String] = []
+    
+    let warningController = WarningController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,8 +50,12 @@ class PhotoResultsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         print("Photo Result")
+        showWarningMenu()
     }
-
+    
+    func showWarningMenu() {
+        warningController.showWarningMenu()
+    }
 }
 
 extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource {
