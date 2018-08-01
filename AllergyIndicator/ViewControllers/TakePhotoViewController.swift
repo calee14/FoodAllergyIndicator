@@ -75,7 +75,7 @@ class TakePhotoViewController: UIViewController {
             
 //            PredictService.predictImage(image: image, completion: { (concepts) in
 //                guard let concepts = concepts else { return }
-//                self.goToShowResultsViewController(concepts: concepts)
+//                self.goToShowResultsViewController(concepts: concepts, image: image)
 //            })
 //            PredictService.predictFoodImage(image: image, completion: { (concepts) in
 //                guard let concepts = concepts else { return }
@@ -86,16 +86,20 @@ class TakePhotoViewController: UIViewController {
 
             // Store image on Firebase server
 //            PostImageService.create(for: image)
+            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
         }
-        self.goToShowResultsViewController(concepts: [ClarifaiConcept]())
     }
     
-    func goToShowResultsViewController(concepts: [ClarifaiConcept]) {
+    func goToShowResultsViewController(concepts: [ClarifaiConcept], image: UIImage?) {
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
         let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
         
         photoResultsController.concepts = concepts
+        
+        if let image = image {
+            photoResultsController.foodImage = image
+        }
         
         self.navigationController?.pushViewController(photoResultsController, animated: true)
     }

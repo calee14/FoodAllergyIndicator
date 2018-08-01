@@ -38,7 +38,7 @@ struct CheckService {
         let group = DispatchGroup()
         for query in foodQueries {
             group.enter()
-            Alamofire.request(apiCallString + query).validate().responseJSON() { response in
+            Alamofire.request(apiCallString + query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!).validate().responseJSON() { response in
                 switch response.result {
                 case .success:
                     let decoder = JSONDecoder()

@@ -35,7 +35,13 @@ class WarningController: NSObject {
         return textView
     }()
     
-    func showWarningMenu() {
+    func showWarningMenu(allergies: [String]) {
+        var allergyString = ""
+        for allergyName in allergies {
+            allergyString += "\(allergyName) \n"
+        }
+        allergiesTextView.text = allergyString
+        
         if let window = UIApplication.shared.keyWindow {
             
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)

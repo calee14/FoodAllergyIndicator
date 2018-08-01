@@ -12,8 +12,8 @@ import Clarifai
 
 class PhotoResultsViewController: UIViewController {
 
-    @IBOutlet weak var resultsTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var foodImageView: UIImageView!
     
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
@@ -21,6 +21,7 @@ class PhotoResultsViewController: UIViewController {
     
     let warningController = WarningController()
     
+    var foodImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,9 @@ class PhotoResultsViewController: UIViewController {
             CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
                 guard let ingredients = result else { return }
                 guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                if allergiesInRecipe.count > 1 {
+                    self.showWarningMenu(allergies: allergiesInRecipe)
+                }
 //                if allergiesInRecipe.count > 1 {
 //                    for i in allergiesInRecipe {
 //                        print(i)
@@ -48,13 +52,14 @@ class PhotoResultsViewController: UIViewController {
             }
         }
         
+        guard let foodImage = foodImage else { return }
+        self.foodImageView.image = foodImage
         // Do any additional setup after loading the view.
         print("Photo Result")
-        showWarningMenu()
     }
     
-    func showWarningMenu() {
-        warningController.showWarningMenu()
+    func showWarningMenu(allergies: [String]) {
+        warningController.showWarningMenu(allergies: allergies)
     }
 }
 
