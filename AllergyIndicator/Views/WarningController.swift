@@ -73,7 +73,7 @@ class WarningController: NSObject {
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
-                self.collectionView.frame = CGRect(x: 0, y: 0 - self.collectionView.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }
     }
