@@ -67,9 +67,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hfg-qo-smT">
-                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-1g-J45">
+                                <rect key="frame" x="102" y="74" width="171" height="230"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hfg-qo-smT">
+                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultsCell" rowHeight="61" id="oyg-xr-ogM" customClass="ResultsTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
@@ -108,19 +110,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There were no allergens in you food." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHt-KB-vhF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bHW-08-V83" firstAttribute="top" secondItem="RIZ-1g-J45" secondAttribute="bottom" constant="-240" id="7ZE-lQ-97y"/>
+                            <constraint firstItem="Hfg-qo-smT" firstAttribute="top" secondItem="RIZ-1g-J45" secondAttribute="bottom" constant="8" id="9Wd-Un-BDE"/>
+                            <constraint firstItem="Hfg-qo-smT" firstAttribute="trailing" secondItem="bHW-08-V83" secondAttribute="trailing" id="R3e-2g-RIH"/>
+                            <constraint firstItem="Hfg-qo-smT" firstAttribute="leading" secondItem="bHW-08-V83" secondAttribute="leading" id="WSP-QY-mNQ"/>
+                            <constraint firstItem="RIZ-1g-J45" firstAttribute="top" secondItem="bHW-08-V83" secondAttribute="top" constant="10" id="cnz-zd-EtN"/>
+                            <constraint firstItem="RIZ-1g-J45" firstAttribute="leading" secondItem="bHW-08-V83" secondAttribute="leading" constant="102" id="jRU-vD-4rt"/>
+                            <constraint firstItem="Hfg-qo-smT" firstAttribute="bottom" secondItem="bHW-08-V83" secondAttribute="bottom" id="mFK-T0-CCi"/>
+                            <constraint firstItem="bHW-08-V83" firstAttribute="trailing" secondItem="RIZ-1g-J45" secondAttribute="trailing" constant="102" id="neh-Nx-x2k"/>
+                            <constraint firstItem="RIZ-1g-J45" firstAttribute="centerX" secondItem="JLs-4B-QDp" secondAttribute="centerX" id="ueo-gl-gXF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bHW-08-V83"/>
                     </view>
                     <connections>
-                        <outlet property="resultsTitleLabel" destination="vHt-KB-vhF" id="NJU-u4-ahz"/>
                         <outlet property="tableView" destination="Hfg-qo-smT" id="icG-hc-K8H"/>
                     </connections>
                 </viewController>
