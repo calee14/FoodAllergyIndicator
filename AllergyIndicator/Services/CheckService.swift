@@ -86,7 +86,9 @@ struct CheckService {
                     }
                     let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
                     if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                        possibleAllergies.append(ingredient)
+                        if !possibleAllergies.contains(ingredient) {
+                            possibleAllergies.append(ingredient)
+                        }
                         print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30)")
                         print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0))")
                         print("WARN \(ingredient)")

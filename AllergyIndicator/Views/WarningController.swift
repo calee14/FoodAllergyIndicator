@@ -29,7 +29,7 @@ class WarningController: NSObject {
     let allergiesTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.text = "lajsdlf;jaslk;dfj\n laksjdfl;ajsd\n alsjdflk;ajsdlkfj\n alksjdl;fkjaslk;djfkl\nalsdjf;laskjdf\nlajsflajslkdfjal;sd\n;ljasdl;fkjalk;djf\nlajsdf;lkajsdkl;f\nl;lklkl"
+        textView.text = ""
         textView.font = UIFont.boldSystemFont(ofSize: 18)
         textView.isEditable = false
         return textView
@@ -53,7 +53,7 @@ class WarningController: NSObject {
             window.addSubview(collectionView)
             
             let height: CGFloat = 200
-            let y = window.frame.height - height
+            let y = (window.frame.height / 2) - (height / 2)
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
             
@@ -73,7 +73,7 @@ class WarningController: NSObject {
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
-                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: 0, y: 0 - self.collectionView.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }
     }
