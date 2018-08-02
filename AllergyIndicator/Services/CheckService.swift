@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 struct CheckService {
-    static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: @escaping ([String]?) -> Void) {
+    static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?) -> Void) {
         var possibleAllergies = [String]()
         for i in ingreidents {
             for j in allergies {

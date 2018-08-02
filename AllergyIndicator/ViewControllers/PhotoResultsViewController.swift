@@ -52,10 +52,20 @@ class PhotoResultsViewController: UIViewController {
             }
         }
         
+        setupLayout()
+        
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
-        // Do any additional setup after loading the view.
-        print("Photo Result")
+        
+        
+    }
+    
+    func setupLayout() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(homeTapped))
+    }
+    
+    @objc func homeTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func showWarningMenu(allergies: [String]) {
