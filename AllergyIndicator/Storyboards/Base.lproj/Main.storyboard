@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,38 +24,67 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-Qa-iVu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFa-V6-b6V">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
-                                                <state key="normal" title="Take Picture"/>
-                                                <connections>
-                                                    <action selector="takePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTc-m7-9uf"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-HG-MpJ">
+                                                <rect key="frame" x="10" y="10" width="355" height="181"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFa-V6-b6V">
+                                                        <rect key="frame" x="5" y="5" width="345" height="171"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <state key="normal" title="Take Picture"/>
+                                                        <connections>
+                                                            <action selector="takePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTc-m7-9uf"/>
+                                                            <action selector="takePhotoEnd:" destination="BYZ-38-t0r" eventType="touchDragExit" id="DZa-yo-CJ2"/>
+                                                            <action selector="takePhotoHighlight:" destination="BYZ-38-t0r" eventType="touchDown" id="Epl-In-ed0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="sFa-V6-b6V" firstAttribute="leading" secondItem="fsF-HG-MpJ" secondAttribute="leading" constant="5" id="1Rk-kB-03P"/>
+                                                    <constraint firstItem="sFa-V6-b6V" firstAttribute="top" secondItem="fsF-HG-MpJ" secondAttribute="top" constant="5" id="4kf-eS-DnP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sFa-V6-b6V" secondAttribute="trailing" constant="5" id="6a8-J2-Jy1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sFa-V6-b6V" secondAttribute="bottom" constant="5" id="c61-89-SX6"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="sFa-V6-b6V" firstAttribute="top" secondItem="F2r-Qa-iVu" secondAttribute="top" id="AOe-D0-bnx"/>
-                                            <constraint firstAttribute="bottom" secondItem="sFa-V6-b6V" secondAttribute="bottom" id="Lwd-t9-LYW"/>
-                                            <constraint firstItem="sFa-V6-b6V" firstAttribute="leading" secondItem="F2r-Qa-iVu" secondAttribute="leading" id="aD5-s4-pZt"/>
-                                            <constraint firstAttribute="trailing" secondItem="sFa-V6-b6V" secondAttribute="trailing" id="j9l-z5-Des"/>
+                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="top" secondItem="F2r-Qa-iVu" secondAttribute="top" constant="10" id="Ocd-yH-wdp"/>
+                                            <constraint firstAttribute="bottom" secondItem="fsF-HG-MpJ" secondAttribute="bottom" constant="10" id="g0k-Jp-ux4"/>
+                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="leading" secondItem="F2r-Qa-iVu" secondAttribute="leading" constant="10" id="mT0-WE-PVZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="fsF-HG-MpJ" secondAttribute="trailing" constant="10" id="t8z-fE-3mh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXd-gz-XNy">
                                         <rect key="frame" x="0.0" y="201" width="375" height="201"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyP-Q7-BnG">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
-                                                <state key="normal" title="Set Allergies"/>
-                                                <connections>
-                                                    <action selector="setAllergiesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXt-t0-FZd"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R38-wL-qxa">
+                                                <rect key="frame" x="10" y="10" width="355" height="181"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyP-Q7-BnG">
+                                                        <rect key="frame" x="5" y="5" width="345" height="171"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <state key="normal" title="Set Allergies"/>
+                                                        <connections>
+                                                            <action selector="setAllergiesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXt-t0-FZd"/>
+                                                            <action selector="setAllergiesHighlight:" destination="BYZ-38-t0r" eventType="touchDown" id="lcU-jh-BkK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="tyP-Q7-BnG" secondAttribute="bottom" constant="5" id="NCl-OM-gd8"/>
+                                                    <constraint firstItem="tyP-Q7-BnG" firstAttribute="top" secondItem="R38-wL-qxa" secondAttribute="top" constant="5" id="Ytw-CX-y6O"/>
+                                                    <constraint firstItem="tyP-Q7-BnG" firstAttribute="leading" secondItem="R38-wL-qxa" secondAttribute="leading" constant="5" id="hee-sv-XGw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tyP-Q7-BnG" secondAttribute="trailing" constant="5" id="nvb-Eh-YwL"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="tyP-Q7-BnG" firstAttribute="top" secondItem="cXd-gz-XNy" secondAttribute="top" id="Ig7-on-BqH"/>
-                                            <constraint firstAttribute="trailing" secondItem="tyP-Q7-BnG" secondAttribute="trailing" id="Jmc-rR-lMV"/>
-                                            <constraint firstItem="tyP-Q7-BnG" firstAttribute="leading" secondItem="cXd-gz-XNy" secondAttribute="leading" id="VFL-6X-SjO"/>
-                                            <constraint firstAttribute="bottom" secondItem="tyP-Q7-BnG" secondAttribute="bottom" id="iuU-O0-hSd"/>
+                                            <constraint firstItem="R38-wL-qxa" firstAttribute="top" secondItem="cXd-gz-XNy" secondAttribute="top" constant="10" id="8gf-dJ-2sO"/>
+                                            <constraint firstItem="R38-wL-qxa" firstAttribute="leading" secondItem="cXd-gz-XNy" secondAttribute="leading" constant="10" id="ZSM-nd-jDl"/>
+                                            <constraint firstAttribute="bottom" secondItem="R38-wL-qxa" secondAttribute="bottom" constant="10" id="eKh-Bt-5Yq"/>
+                                            <constraint firstAttribute="trailing" secondItem="R38-wL-qxa" secondAttribute="trailing" constant="10" id="w7h-yW-n27"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-mE-Hlv">
@@ -103,9 +132,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BS7-FF-hbS"/>
+                    <navigationItem key="navigationItem" title="Home" id="BS7-FF-hbS"/>
                     <connections>
+                        <outlet property="setAllergiesBackground" destination="R38-wL-qxa" id="F7b-sa-kPK"/>
                         <outlet property="setAllergiesButton" destination="tyP-Q7-BnG" id="ZdQ-Xy-vNg"/>
+                        <outlet property="takePhotoBackground" destination="fsF-HG-MpJ" id="G0O-fr-kEt"/>
                         <outlet property="takePhotoButton" destination="sFa-V6-b6V" id="Ul1-4c-LJA"/>
                         <segue destination="0Bf-8W-56m" kind="show" identifier="setAllergySegue" id="KsS-Sz-LGO"/>
                         <segue destination="AGA-dJ-NJG" kind="show" identifier="takePhotoSegue" id="SFs-T3-bpa"/>

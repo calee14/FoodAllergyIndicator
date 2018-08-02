@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var setAllergiesButton: UIButton!
+    @IBOutlet weak var takePhotoBackground: UIView!
+    @IBOutlet weak var setAllergiesBackground: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,31 @@ class HomeViewController: UIViewController {
                 // Do something if the user has already set their allergies
             }
         }
+        setupLayout()
+    }
+    
+    func setupLayout() {
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        
+        navigationController?.navigationBar.applyNavigationGradient(colors: [lightblue , cyan])
+        
+        takePhotoButton.backgroundColor = cyan
+        
+        takePhotoButton.layer.cornerRadius = 6
+        takePhotoButton.clipsToBounds = false
+        
+        takePhotoBackground.layer.cornerRadius = 6
+        takePhotoBackground.layer.masksToBounds = true
+        
+        setAllergiesButton.backgroundColor = cyan
+
+        setAllergiesButton.layer.cornerRadius = 6
+        setAllergiesButton.clipsToBounds = false
+        
+        setAllergiesBackground.layer.cornerRadius = 6
+        setAllergiesBackground.layer.masksToBounds = true
+        
     }
     
     func goToSetAllergiesViewController() {
@@ -49,7 +76,46 @@ class HomeViewController: UIViewController {
         self.goToTakePhotoViewController()
     }
     
+    @IBAction func takePhotoHighlight(_ sender: UIButton) {
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.takePhotoButton.backgroundColor = .white
+        
+        self.takePhotoButton.titleLabel?.textColor = lightblue
+        self.takePhotoBackground.applyGradient(colours: [lightblue , cyan])
+        
+    }
+    @IBAction func takePhotoEnd(_ sender: UIButton) {
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.takePhotoButton.backgroundColor = cyan
+        self.takePhotoButton.titleLabel?.textColor = lightblue
+        self.takePhotoBackground.backgroundColor = cyan
+        self.takePhotoBackground.removeGradient()
+    }
+    
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
         self.goToSetAllergiesViewController()
     }
+    
+    @IBAction func setAllergiesHighlight(_ sender: UIButton) {
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.setAllergiesButton.backgroundColor = .white
+        self.setAllergiesBackground.applyGradient(colours: [lightblue , cyan])
+        self.setAllergiesButton.titleLabel?.textColor = lightblue
+        
+    }
+    
+    
+//        let lightblue = UIColor(rgb: 0x0093DD)
+//        let cyan = UIColor(rgb: 0x0AD2A8)
+//        self.setAllergiesButton.backgroundColor = cyan
+//        setAllergiesButton.layer.cornerRadius = 6
+//        setAllergiesButton.clipsToBounds = false
+//        self.setAllergiesBackground.backgroundColor = cyan
+//        setAllergiesButton.titleLabel?.textColor = lightblue
+//        setAllergiesBackground.layer.cornerRadius = 6
+//        setAllergiesBackground.layer.masksToBounds = true
+    
 }
