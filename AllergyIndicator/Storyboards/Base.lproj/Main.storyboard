@@ -67,6 +67,7 @@
                                                         <state key="normal" title="Set Allergies"/>
                                                         <connections>
                                                             <action selector="setAllergiesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXt-t0-FZd"/>
+                                                            <action selector="setAllergiesEnd:" destination="BYZ-38-t0r" eventType="touchDragExit" id="nm5-La-Lv7"/>
                                                             <action selector="setAllergiesHighlight:" destination="BYZ-38-t0r" eventType="touchDown" id="lcU-jh-BkK"/>
                                                         </connections>
                                                     </button>
