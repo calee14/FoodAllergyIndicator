@@ -89,10 +89,7 @@ struct CheckService {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }
-                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30)")
-                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0))")
-                        print("WARN \(ingredient)")
-                        print("WARM AL \(allergy.allergyName)")
+                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30) \(((1.0 - (Double(dist!)/lsum)) * 100.0)) \(ingredient) \(allergy.allergyName)")
                     }
                 } else {
                     continue
@@ -156,4 +153,5 @@ struct CheckService {
         }
         return d[n][m]
     }
+    
 }

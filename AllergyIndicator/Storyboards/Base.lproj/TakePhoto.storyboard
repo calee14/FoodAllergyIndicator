@@ -23,33 +23,45 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-uM-qwM">
-                                <rect key="frame" x="160" y="599" width="55" height="55"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-NX-g7X">
+                                <rect key="frame" x="157" y="567" width="60" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-uM-qwM">
+                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="05d-VC-iOB"/>
+                                            <constraint firstAttribute="height" constant="50" id="k3N-hK-aLp"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="05d-VC-iOB"/>
-                                    <constraint firstAttribute="height" constant="55" id="k3N-hK-aLp"/>
+                                    <constraint firstAttribute="width" constant="60" id="4DL-jI-YFU"/>
+                                    <constraint firstItem="1Qg-uM-qwM" firstAttribute="centerY" secondItem="gRD-NX-g7X" secondAttribute="centerY" id="LG0-KP-Aao"/>
+                                    <constraint firstAttribute="height" constant="60" id="a4d-XD-ozf"/>
+                                    <constraint firstItem="1Qg-uM-qwM" firstAttribute="centerX" secondItem="gRD-NX-g7X" secondAttribute="centerX" id="yNJ-Sd-yeZ"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="takePhotoButtonTapped:" destination="uAM-cW-PCJ" eventType="touchUpInside" id="VRI-CH-WEV"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="trailing" secondItem="FpZ-QC-2xn" secondAttribute="trailing" id="BSV-Dz-nBM"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="top" secondItem="99E-8H-WjP" secondAttribute="top" id="ElF-02-FOp"/>
-                            <constraint firstItem="1Qg-uM-qwM" firstAttribute="centerX" secondItem="99E-8H-WjP" secondAttribute="centerX" id="e1G-2i-dy0"/>
-                            <constraint firstItem="6hu-Xx-COr" firstAttribute="centerX" secondItem="1Qg-uM-qwM" secondAttribute="centerX" id="pml-PG-6fD"/>
+                            <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="gRD-NX-g7X" secondAttribute="bottom" constant="40" id="QIU-df-E4z"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="leading" secondItem="FpZ-QC-2xn" secondAttribute="leading" id="qDc-Eo-n6J"/>
-                            <constraint firstItem="1Qg-uM-qwM" firstAttribute="top" secondItem="FpZ-QC-2xn" secondAttribute="top" constant="535" id="syt-YS-xWD"/>
                             <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="6hu-Xx-COr" secondAttribute="bottom" id="tCe-lR-6dW"/>
+                            <constraint firstItem="gRD-NX-g7X" firstAttribute="centerX" secondItem="99E-8H-WjP" secondAttribute="centerX" id="tGb-hp-Aqk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FpZ-QC-2xn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take Photo" id="0sc-rI-6ef"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="buttonBackground" destination="gRD-NX-g7X" id="xPi-Uo-wc0"/>
                         <outlet property="captureButton" destination="1Qg-uM-qwM" id="zQf-UJ-o2G"/>
                         <outlet property="previewView" destination="6hu-Xx-COr" id="4k0-fX-U5o"/>
                         <segue destination="LON-i2-Ezs" kind="show" id="bPd-tD-wmh"/>

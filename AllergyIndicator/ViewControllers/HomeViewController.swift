@@ -89,8 +89,8 @@ class HomeViewController: UIViewController {
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan
         self.takePhotoButton.setTitleColor(.white, for: .normal)
-        self.takePhotoBackground.backgroundColor = cyan
         self.takePhotoBackground.removeGradient()
+        
     }
     
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {

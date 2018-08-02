@@ -16,6 +16,7 @@ class TakePhotoViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var buttonBackground: UIView!
     
     // MARK: - Properties
     
@@ -37,12 +38,20 @@ class TakePhotoViewController: UIViewController {
             try? self.cameraController.displayPreview(on: self.previewView)
         }
         
-        captureButton.layer.zPosition = 10
-        captureButton.layer.borderColor = UIColor.black.cgColor
-        captureButton.layer.borderWidth = 2
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
         
+        
+        captureButton.layer.zPosition = 10
+//        captureButton.layer.borderColor = UIColor.black.cgColor
+        captureButton.layer.borderWidth = 2
+        captureButton.layer.borderColor = UIColor.clear.cgColor
         captureButton.layer.cornerRadius = min(captureButton.frame.width, captureButton.frame.height) / 2
         
+        buttonBackground.applyGradient(colours: [lightblue, cyan])
+        buttonBackground.layer.cornerRadius = min(buttonBackground.frame.width, buttonBackground.frame.height) / 2
+        buttonBackground.layer.masksToBounds = true
+        buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
     }
 
     override func viewWillAppear(_ animated: Bool) {
