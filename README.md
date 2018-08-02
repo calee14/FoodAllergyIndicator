@@ -31,11 +31,12 @@ It should be intuitive enough to open the app in xCode and running it on a simul
     - alert the user
   - https://www.themealdb.com/api.php
 - Add UI
+  - Color Theme: light blue or green cyan
 - Add disclaimers
 - Log out feature
+- User Dice's Coefficient, which is better than Levenshtein's Distance, to compare strings
 
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
-- User Dice's Coefficient, which is better than Levenshtein's Distance, to compare strings
 - Fix Memory Issues
