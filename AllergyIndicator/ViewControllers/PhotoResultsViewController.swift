@@ -29,7 +29,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "Chocolate Cookie")]
+//        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "Chocolate Cookie")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
                 guard let allergens = allergens else { return }
