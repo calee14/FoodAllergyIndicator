@@ -178,9 +178,6 @@ struct CheckService {
         if s.count < 2 || t.count < 2 {
             return 0
         }
-        
-//        var firstArray = bigrams(s: s)
-//        var secondArray = bigrams(s: t)
 
         let sortedBigrams: [String] = bigrams(s: s).sorted()
         let otherSortedBigrams = bigrams(s: t).sorted()
