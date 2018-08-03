@@ -85,6 +85,9 @@ struct CheckService {
         for ingredient in recipeIngredients {
             for allergy in allergies {
                 if allergy.isAllergic {
+//                    IngredientService.doesIngredientExists(ingredientName: ingredient) { (bool) in
+//                        
+//                    }
                     var lsum = Double(ingredient.count)
                     if ingredient.count < allergy.allergyName.count {
                         lsum = Double(allergy.allergyName.count)

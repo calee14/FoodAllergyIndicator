@@ -80,6 +80,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.takePhotoButton.backgroundColor = cyan
+        self.takePhotoButton.setTitleColor(.white, for: .normal)
+        self.takePhotoBackground.removeGradient()
         self.goToTakePhotoViewController()
     }
     
@@ -101,6 +105,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.setAllergiesButton.backgroundColor = cyan
+        self.setAllergiesBackground.removeGradient()
+        self.setAllergiesButton.setTitleColor(.white, for: .normal)
         self.goToSetAllergiesViewController()
     }
     
