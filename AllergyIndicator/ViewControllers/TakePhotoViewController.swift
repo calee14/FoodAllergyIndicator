@@ -37,10 +37,12 @@ class TakePhotoViewController: UIViewController {
             
             try? self.cameraController.displayPreview(on: self.previewView)
         }
-        
+        setupLayout()
+    }
+
+    func setupLayout() {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
-        
         
         captureButton.layer.zPosition = 10
 //        captureButton.layer.borderColor = UIColor.black.cgColor
@@ -53,7 +55,6 @@ class TakePhotoViewController: UIViewController {
         buttonBackground.layer.masksToBounds = true
         buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.cameraController.previewLayer?.isHidden = false
@@ -86,6 +87,7 @@ class TakePhotoViewController: UIViewController {
 //                guard let concepts = concepts else { return }
 //                self.goToShowResultsViewController(concepts: concepts, image: image)
 //            })
+            
             PredictService.predictFoodImage(image: image, completion: { (concepts) in
                 guard let concepts = concepts else { return }
                 DispatchQueue.main.async {

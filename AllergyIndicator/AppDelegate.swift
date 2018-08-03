@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Launch Clarifai SDK
-        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
-        
         // Configure Firebase
         FirebaseApp.configure()
         
+//        // Launch Clarifai SDK
+//        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
+
         // Configure LoginViewController
         configureInitialRootViewController(for: window)
         return true

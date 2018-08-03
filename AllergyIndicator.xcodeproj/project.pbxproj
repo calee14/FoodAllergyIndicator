@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
+		B30831162114B7790088DD64 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* IngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
 		B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */; };
 		B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */; };
@@ -47,6 +48,7 @@
 		48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
 		5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
 		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30831152114B7790088DD64 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+Colors.swift"; sourceTree = "<group>"; };
 		B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResult.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				B37FDFC321092E980066B3FD /* PostImageService.swift */,
 				B37FDFC9210A46950066B3FD /* PredictService.swift */,
 				B392114F210B93400048E6DD /* CheckService.swift */,
+				B30831152114B7790088DD64 /* IngredientService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
 				B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */,
+				B30831162114B7790088DD64 /* IngredientService.swift in Sources */,
 				B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */,
 				B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */,
 				B37FDFC8210A3A8B0066B3FD /* StorageReference+Post.swift in Sources */,

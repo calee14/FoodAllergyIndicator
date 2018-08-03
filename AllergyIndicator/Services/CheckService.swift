@@ -17,14 +17,19 @@ struct CheckService {
         for i in ingreidents {
             for j in allergies {
                 if j.isAllergic {
-                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
-                        print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
-                        print("blah \(dist) \((1 - (dist/min(i.conceptName.count, j.allergyName.count)))) \((dist/min(i.conceptName.count, j.allergyName.count))) \(min(i.conceptName.count, j.allergyName.count))")
-                        print(((1 - (dist/min(i.conceptName.count, j.allergyName.count))) * 100) >= 90)
-                        print(i.conceptName)
-                        print(j.allergyName)
+                    let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
+                    print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
+                    if coefficient * 100.0 > 26.0 {
                         possibleAllergies.append(i.conceptName)
                     }
+//                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
+//                        print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
+//                        print("blah \(dist) \((1 - (dist/min(i.conceptName.count, j.allergyName.count)))) \((dist/min(i.conceptName.count, j.allergyName.count))) \(min(i.conceptName.count, j.allergyName.count))")
+//                        print(((1 - (dist/min(i.conceptName.count, j.allergyName.count))) * 100) >= 90)
+//                        print(i.conceptName)
+//                        print(j.allergyName)
+//                        possibleAllergies.append(i.conceptName)
+//                    }
                 } else {
                     continue
                 }
@@ -84,12 +89,25 @@ struct CheckService {
                     if ingredient.count < allergy.allergyName.count {
                         lsum = Double(allergy.allergyName.count)
                     }
-                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
-                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
+                    let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
+                    print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
+                    if coefficient*100.0 > 26.0 {
+                        print("Greater \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
+                    }
+//                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
+//                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
+                    if coefficient*100.0 > 35.0 {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }
-                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30) \(((1.0 - (Double(dist!)/lsum)) * 100.0)) \(ingredient) \(allergy.allergyName)")
+//                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30) \(((1.0 - (Double(dist!)/lsum)) * 100.0)) \(ingredient) \(allergy.allergyName)")
+//                        butter
+//                        eggs
+//                        nutmeg
+//                        egg yolks
+//                        peanuts
+//                        oats
+//                        nuts
                     }
                 } else {
                     continue
@@ -170,7 +188,7 @@ struct CheckService {
      - parameter otherString: string to compare with
      - returns: A Float from 0 to 1, where 1 indicates strings are identical
      */
-    static func diceCoefficient(s: String, t: String) -> Float {
+    static func diceCoefficient(s: String, t: String) -> Double {
         if s == t {
             return 1
         }
@@ -180,8 +198,8 @@ struct CheckService {
         }
 
         let sortedBigrams: [String] = bigrams(s: s).sorted()
-        let otherSortedBigrams = bigrams(s: t).sorted()
-
+        let otherSortedBigrams: [String] = bigrams(s: t).sorted()
+        
         var matches = 0
         var i = 0
         var j = 0
@@ -197,8 +215,7 @@ struct CheckService {
                 j += 1
             }
         }
-
-        return Float(matches * 2) / Float(sortedBigrams.count + otherSortedBigrams.count)
+        return Double(matches*2) / Double(sortedBigrams.count + otherSortedBigrams.count)
     }
    
     static func diceCoeffitient(s: String, t: String) -> Double {
@@ -234,5 +251,4 @@ struct CheckService {
         }
         return (2.0 * Double(intersectionSize)) / Double(s.count + t.count - 2)
     }
-    
 }
