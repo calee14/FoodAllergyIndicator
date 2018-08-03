@@ -17,7 +17,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        print(CheckService.diceCoefficient(s: "diary products", t: "curry powder"))
+//        fatalError()
         // Do any additional setup after loading the view.
         
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in

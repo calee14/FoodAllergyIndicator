@@ -154,4 +154,88 @@ struct CheckService {
         return d[n][m]
     }
     
+    static func bigrams(s: String) -> [String] {
+        var result: [String] = []
+        for i in 0..<s.count - 1 {
+            let index = s.lowercased().index(s.startIndex, offsetBy: i)
+            let indexStartOfText = s.index(s.startIndex, offsetBy: i)
+            let indexEndOfText = s.index(s.startIndex, offsetBy: i+1)
+            result.append(String(s.lowercased()[indexStartOfText...indexEndOfText]))
+        }
+        return result
+    }
+
+    /**
+     Calculates the case insensitive string similarity (Sørensen–Dice coefficient) between two strings
+     - parameter otherString: string to compare with
+     - returns: A Float from 0 to 1, where 1 indicates strings are identical
+     */
+    static func diceCoefficient(s: String, t: String) -> Float {
+        if s == t {
+            return 1
+        }
+
+        if s.count < 2 || t.count < 2 {
+            return 0
+        }
+        
+//        var firstArray = bigrams(s: s)
+//        var secondArray = bigrams(s: t)
+
+        let sortedBigrams: [String] = bigrams(s: s).sorted()
+        let otherSortedBigrams = bigrams(s: t).sorted()
+
+        var matches = 0
+        var i = 0
+        var j = 0
+
+        while i < sortedBigrams.count && j < otherSortedBigrams.count {
+            if sortedBigrams[i] == otherSortedBigrams[j] {
+                matches += 1
+                i += 1
+                j += 1
+            } else if sortedBigrams[i] < otherSortedBigrams[j] {
+                i += 1
+            } else {
+                j += 1
+            }
+        }
+
+        return Float(matches * 2) / Float(sortedBigrams.count + otherSortedBigrams.count)
+    }
+   
+    static func diceCoeffitient(s: String, t: String) -> Double {
+        if s.count < 2 || t.count < 2 {
+            return 0
+        }
+        var bigrams = [String : Int]()
+        for i in 0..<s.count - 1 {
+            let bigram = String(s[i...i+2])
+            print(bigram)
+            var count = 0
+            if bigrams[bigram] != nil {
+                count = bigrams[bigram]! + 1
+            } else {
+                count = 1
+            }
+            bigrams[bigram] = count
+        }
+
+        var intersectionSize = 0
+        for i in 0...t.count {
+            let bigram = String(s[i...i+2])
+            var count = 0
+            if bigrams[bigram] != nil {
+                count = bigrams[bigram]!
+            } else {
+                count = 0
+            }
+            if count > 0 {
+                bigrams[bigram] = count - 1
+                intersectionSize += 1
+            }
+        }
+        return (2.0 * Double(intersectionSize)) / Double(s.count + t.count - 2)
+    }
+    
 }
