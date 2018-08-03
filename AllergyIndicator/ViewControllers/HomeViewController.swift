@@ -88,12 +88,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoHighlight(_ sender: UIButton) {
-        let lightblue = UIColor(rgb: 0x0093DD)
-        let cyan = UIColor(rgb: 0x0AD2A8)
-        self.takePhotoButton.backgroundColor = .white
-        self.takePhotoButton.setTitleColor(lightblue, for: .normal)
-        self.takePhotoButton.titleLabel?.textColor = lightblue
-        self.takePhotoBackground.applyGradient(colours: [lightblue , cyan])
+        UIView.animate(withDuration: 0.1) {
+            let lightblue = UIColor(rgb: 0x0093DD)
+            let cyan = UIColor(rgb: 0x0AD2A8)
+            self.takePhotoButton.backgroundColor = .white
+            self.takePhotoButton.setTitleColor(lightblue, for: .normal)
+            self.takePhotoBackground.applyGradient(colours: [lightblue , cyan])
+        }
         
     }
     @IBAction func takePhotoEnd(_ sender: UIButton) {
@@ -113,11 +114,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesHighlight(_ sender: UIButton) {
-        let lightblue = UIColor(rgb: 0x0093DD)
-        let cyan = UIColor(rgb: 0x0AD2A8)
-        self.setAllergiesButton.backgroundColor = .white
-        self.setAllergiesBackground.applyGradient(colours: [lightblue , cyan])
-        self.setAllergiesButton.setTitleColor(lightblue, for: .normal)
+        UIView.animate(withDuration: 0.1) {
+            let lightblue = UIColor(rgb: 0x0093DD)
+            let cyan = UIColor(rgb: 0x0AD2A8)
+            self.setAllergiesButton.backgroundColor = .white
+            self.setAllergiesBackground.applyGradient(colours: [lightblue , cyan])
+            self.setAllergiesButton.setTitleColor(lightblue, for: .normal)
+        }
         
     }
     @IBAction func setAllergiesEnd(_ sender: UIButton) {
