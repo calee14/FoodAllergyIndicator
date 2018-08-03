@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(CheckService.diceCoefficient(s: "diary products", t: "curry powder"))
+        print("test \(CheckService.diceCoefficient(s: "curry powder ", t: "dairy products"))")
 //        fatalError()
         // Do any additional setup after loading the view.
         

@@ -157,7 +157,7 @@ struct CheckService {
     static func bigrams(s: String) -> [String] {
         var result: [String] = []
         for i in 0..<s.count - 1 {
-            let index = s.lowercased().index(s.startIndex, offsetBy: i)
+//            let index = s.lowercased().index(s.startIndex, offsetBy: i)
             let indexStartOfText = s.index(s.startIndex, offsetBy: i)
             let indexEndOfText = s.index(s.startIndex, offsetBy: i+1)
             result.append(String(s.lowercased()[indexStartOfText...indexEndOfText]))
