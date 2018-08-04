@@ -12,7 +12,7 @@ import FirebaseDatabase
 struct IngredientService {
     private static let ingredientsPath = Constants.DatabasePath.ingredients
     
-    static func addIngredient(ingredientNames: [String], success: @escaping (Bool) -> Void) {
+    static func addIngredient(ingredientNames: [String], success: @escaping (Bool?) -> Void) {
         let ref = Database.database().reference().child(ingredientsPath)
         var data = [String : String]()
         for ingredient in ingredientNames {

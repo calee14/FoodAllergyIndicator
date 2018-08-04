@@ -39,7 +39,7 @@ struct CheckService {
     }
     static func checkRecipe(foodQueries: [String], completion: @escaping ([String]?) -> Void) {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
-        var possibleIngredients: [String] = [String]()
+        var recipeIngredients: [String] = [String]()
         let group = DispatchGroup()
         for query in foodQueries {
             group.enter()
@@ -65,7 +65,7 @@ struct CheckService {
                         return false
                         })!
                     for recipe in possibleRecipes {
-                        possibleIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
+                        recipeIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
                     }
                     print("Results \(possibleRecipes)")
                     
@@ -77,7 +77,11 @@ struct CheckService {
         }
         group.notify(queue: .main) {
             print("finished all tasks")
-            completion(possibleIngredients)
+            IngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
+                guard let success = success else { return }
+                print(success)
+            })
+            completion(recipeIngredients)
         }
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
@@ -109,6 +113,7 @@ struct CheckService {
         }
         return possibleAllergies
     }
+    
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a
         if b < mi {

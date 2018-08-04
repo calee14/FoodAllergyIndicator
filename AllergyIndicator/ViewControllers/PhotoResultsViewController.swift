@@ -29,38 +29,20 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-//        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "Chocolate Cookie")]
+        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
                 guard let allergens = allergens else { return }
                 self.allergens = allergens
                 self.tableView.reloadData()
-                print(allergens)
             })
             CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
                 guard let ingredients = result else { return }
-                let dispatchGroup = DispatchGroup()
-                var foods = [String]()
-                for ingredient in ingredients {
-                    dispatchGroup.enter()
-//                    if IngredientService.doesIngredientExists(ingredientName: ingredient) {
-//                        foods.append(ingredient)
-//                    }
-                    dispatchGroup.leave()
-                }
-                dispatchGroup.notify(queue: .main) {
-                    guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
-                    if allergiesInRecipe.count > 1 {
-                        self.showWarningMenu(allergies: allergiesInRecipe)
-                    }
-                }
                 
-//                if allergiesInRecipe.count > 1 {
-//                    for i in allergiesInRecipe {
-//                        print(i)
-//                        print("WARNING")
-//                    }
-//                }
+                guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                if allergiesInRecipe.count > 1 {
+                    self.showWarningMenu(allergies: allergiesInRecipe)
+                }
             }
         }
         
