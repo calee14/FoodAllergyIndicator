@@ -21,7 +21,7 @@ class PhotoResultsViewController: UIViewController {
     
     let warningController = WarningController()
     
-    var foodImage: UIImage?
+    weak var foodImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,22 @@ class PhotoResultsViewController: UIViewController {
             })
             CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
                 guard let ingredients = result else { return }
-                guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
-                if allergiesInRecipe.count > 1 {
-                    self.showWarningMenu(allergies: allergiesInRecipe)
+                let dispatchGroup = DispatchGroup()
+                var foods = [String]()
+                for ingredient in ingredients {
+                    dispatchGroup.enter()
+//                    if IngredientService.doesIngredientExists(ingredientName: ingredient) {
+//                        foods.append(ingredient)
+//                    }
+                    dispatchGroup.leave()
                 }
+                dispatchGroup.notify(queue: .main) {
+                    guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                    if allergiesInRecipe.count > 1 {
+                        self.showWarningMenu(allergies: allergiesInRecipe)
+                    }
+                }
+                
 //                if allergiesInRecipe.count > 1 {
 //                    for i in allergiesInRecipe {
 //                        print(i)

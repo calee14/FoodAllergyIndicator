@@ -29,6 +29,7 @@
 		B3C091512107BEA50058E046 /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091502107BEA50058E046 /* Allergy.swift */; };
 		B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */; };
 		B3C091552107CC630058E046 /* AllergyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091542107CC630058E046 /* AllergyService.swift */; };
+		B3CBA83A21165264004E43D1 /* UIButton+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA83921165264004E43D1 /* UIButton+Utility.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -69,6 +70,7 @@
 		B3C091502107BEA50058E046 /* Allergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
 		B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTableViewCell.swift; sourceTree = "<group>"; };
 		B3C091542107CC630058E046 /* AllergyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyService.swift; sourceTree = "<group>"; };
+		B3CBA83921165264004E43D1 /* UIButton+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Utility.swift"; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				B37FDFC7210A3A8B0066B3FD /* StorageReference+Post.swift */,
 				B3921151210BA3BF0048E6DD /* String+Substring.swift */,
 				B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */,
+				B3CBA83921165264004E43D1 /* UIButton+Utility.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				B37FDFC8210A3A8B0066B3FD /* StorageReference+Post.swift in Sources */,
 				B3C0914B210791840058E046 /* Storyboards+Utility.swift in Sources */,
 				B3921150210B93400048E6DD /* CheckService.swift in Sources */,
+				B3CBA83A21165264004E43D1 /* UIButton+Utility.swift in Sources */,
 				B3F902B52104316800FD552E /* AppDelegate.swift in Sources */,
 				B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */,
 				B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */,

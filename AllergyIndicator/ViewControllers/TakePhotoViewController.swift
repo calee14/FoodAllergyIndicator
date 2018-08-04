@@ -96,7 +96,7 @@ class TakePhotoViewController: UIViewController {
             })
 
             // Store image on Firebase server
-            PostImageService.create(for: image)
+//            PostImageService.create(for: image)
 //            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
         }
 //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)

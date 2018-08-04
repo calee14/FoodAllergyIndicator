@@ -59,7 +59,7 @@ struct CheckService {
                         print("Results \(query)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
-                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 30 {
+                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 50 {
                             return true
                         }
                         return false
@@ -82,25 +82,21 @@ struct CheckService {
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
         var possibleAllergies = [String]()
-        let dispatchGroup = DispatchGroup()
         for ingredient in recipeIngredients {
             for allergy in allergies {
                 if allergy.isAllergic {
-//                    IngredientService.doesIngredientExists(ingredientName: ingredient) { (bool) in
-//                        
-//                    }
                     var lsum = Double(ingredient.count)
                     if ingredient.count < allergy.allergyName.count {
                         lsum = Double(allergy.allergyName.count)
                     }
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
                     print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
-                    if coefficient*100.0 > 35.0 {
+                    if coefficient*100.0 > 50.0 {
                         print("Greater \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
                     }
 //                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
 //                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                    if coefficient*100.0 > 40.0 {
+                    if coefficient*100.0 > 50.0 {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }
