@@ -40,3 +40,6 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
 - Fix Memory Issues
+- Zoom In with camera
+- Organize allergies in the setter view
+  - Use search bar or sort
