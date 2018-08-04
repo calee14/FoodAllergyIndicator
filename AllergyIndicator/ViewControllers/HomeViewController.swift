@@ -97,6 +97,7 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
     @IBAction func takePhotoEnd(_ sender: UIButton) {
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan

@@ -19,7 +19,7 @@ struct CheckService {
                 if j.isAllergic {
                     let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
                     print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
-                    if coefficient * 100.0 > 26.0 {
+                    if coefficient * 100.0 > 50.0 {
                         possibleAllergies.append(i.conceptName)
                     }
 //                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
@@ -59,7 +59,7 @@ struct CheckService {
                         print("Results \(query)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
-                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 25 {
+                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 30 {
                             return true
                         }
                         return false
@@ -82,6 +82,7 @@ struct CheckService {
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
         var possibleAllergies = [String]()
+        let dispatchGroup = DispatchGroup()
         for ingredient in recipeIngredients {
             for allergy in allergies {
                 if allergy.isAllergic {
@@ -94,23 +95,16 @@ struct CheckService {
                     }
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
                     print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
-                    if coefficient*100.0 > 26.0 {
+                    if coefficient*100.0 > 35.0 {
                         print("Greater \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
                     }
 //                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
 //                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                    if coefficient*100.0 > 35.0 {
+                    if coefficient*100.0 > 40.0 {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }
 //                        print("WARN \(((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30) \(((1.0 - (Double(dist!)/lsum)) * 100.0)) \(ingredient) \(allergy.allergyName)")
-//                        butter
-//                        eggs
-//                        nutmeg
-//                        egg yolks
-//                        peanuts
-//                        oats
-//                        nuts
                     }
                 } else {
                     continue

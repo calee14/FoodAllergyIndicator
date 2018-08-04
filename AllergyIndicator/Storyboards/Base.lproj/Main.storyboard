@@ -25,10 +25,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-HG-MpJ">
-                                                <rect key="frame" x="10" y="10" width="355" height="181"/>
+                                                <rect key="frame" x="10" y="10" width="355" height="191"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFa-V6-b6V">
-                                                        <rect key="frame" x="5" y="5" width="345" height="171"/>
+                                                        <rect key="frame" x="5" y="5" width="345" height="181"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <state key="normal" title="Take Picture"/>
                                                         <connections>
@@ -50,7 +50,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="fsF-HG-MpJ" firstAttribute="top" secondItem="F2r-Qa-iVu" secondAttribute="top" constant="10" id="Ocd-yH-wdp"/>
-                                            <constraint firstAttribute="bottom" secondItem="fsF-HG-MpJ" secondAttribute="bottom" constant="10" id="g0k-Jp-ux4"/>
+                                            <constraint firstAttribute="bottom" secondItem="fsF-HG-MpJ" secondAttribute="bottom" id="g0k-Jp-ux4"/>
                                             <constraint firstItem="fsF-HG-MpJ" firstAttribute="leading" secondItem="F2r-Qa-iVu" secondAttribute="leading" constant="10" id="mT0-WE-PVZ"/>
                                             <constraint firstAttribute="trailing" secondItem="fsF-HG-MpJ" secondAttribute="trailing" constant="10" id="t8z-fE-3mh"/>
                                         </constraints>
