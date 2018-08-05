@@ -12,8 +12,9 @@ import Alamofire
 import SwiftyJSON
 
 struct CheckService {
-    static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?) -> Void) {
+    static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?, [String]?) -> Void) {
         var possibleAllergies = [String]()
+        var safeIngredients = [String]()
         for i in ingreidents {
             for j in allergies {
                 if j.isAllergic {
@@ -21,6 +22,10 @@ struct CheckService {
                     print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
                     if coefficient * 100.0 > 50.0 {
                         possibleAllergies.append(i.conceptName)
+                        break
+                    } else {
+                        safeIngredients.append(i.conceptName)
+                        break
                     }
 //                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
 //                        print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
@@ -35,7 +40,7 @@ struct CheckService {
                 }
             }
         }
-        completion(possibleAllergies)
+        completion(possibleAllergies, safeIngredients)
     }
     static func checkRecipe(foodQueries: [String], completion: @escaping ([String]?) -> Void) {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
@@ -96,10 +101,6 @@ struct CheckService {
         for ingredient in recipeIngredients {
             for allergy in allergies {
                 if allergy.isAllergic {
-                    var lsum = Double(ingredient.count)
-                    if ingredient.count < allergy.allergyName.count {
-                        lsum = Double(allergy.allergyName.count)
-                    }
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
                     print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
                     if coefficient*100.0 > 90.0 {

@@ -18,6 +18,8 @@ class PhotoResultsViewController: UIViewController {
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
     var allergens: [String] = []
+    var safeIngredients: [String] = []
+    var ingredientsInFood: [String] = []
     
     let warningController = WarningController()
     
@@ -31,10 +33,12 @@ class PhotoResultsViewController: UIViewController {
         
         concepts = [ClarifaiConcept(conceptName: "pad thai"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
-            CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
+            CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
                 guard let allergens = allergens else { return }
+                guard let safeIngredients = safeIngredients else { return }
                 self.allergens = allergens
-                self.tableView.reloadData()
+                self.safeIngredients = safeIngredients
+                self.combineAllergensAndSafeIngredientsAndUpdateTable()
                 var foods = [String]()
                 let group = DispatchGroup()
                 for concept in self.concepts {
@@ -50,8 +54,9 @@ class PhotoResultsViewController: UIViewController {
                     print(foods)
                     CheckService.checkRecipe(foodQueries: foods) { (result) in
                         guard let ingredients = result else { return }
-                        
                         guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                        self.allergens.append(contentsOf: allergiesInRecipe)
+                        self.combineAllergensAndSafeIngredientsAndUpdateTable()
                         if allergiesInRecipe.count > 1 {
                             self.showWarningMenu(allergies: allergiesInRecipe)
                         }
@@ -66,6 +71,11 @@ class PhotoResultsViewController: UIViewController {
         self.foodImageView.image = foodImage
         
         
+    }
+    
+    func combineAllergensAndSafeIngredientsAndUpdateTable() {
+        ingredientsInFood = allergens + safeIngredients
+        self.tableView.reloadData()
     }
     
     func setupLayout() {
@@ -83,18 +93,14 @@ class PhotoResultsViewController: UIViewController {
 
 extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return concepts.count
+        return ingredientsInFood.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
-        let ingredientdata = concepts[indexPath.row]
-        cell.ingredientLabel.text = ingredientdata.conceptName
-        cell.scoreLabel.text = String(ingredientdata.score)
-        if allergens.contains(ingredientdata.conceptName) {
-            cell.ingredientLabel.textColor = .red
-        } else {
-            cell.ingredientLabel.textColor = .green
-        }
+        let ingredientdata = ingredientsInFood[indexPath.row]
+        cell.ingredientLabel.text = ingredientdata
+        cell.scoreLabel.text = indexPath.row < allergens.count ? "Bad" : "Good"
+        cell.ingredientLabel.textColor = indexPath.row < allergens.count ? .red : .green
         return cell
     }
 }
