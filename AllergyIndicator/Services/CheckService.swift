@@ -41,6 +41,7 @@ struct CheckService {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
         var recipeIngredients: [String] = [String]()
         let group = DispatchGroup()
+        print("foods \(foodQueries)")
         for query in foodQueries {
             group.enter()
             Alamofire.request(apiCallString + query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!).validate().responseJSON() { response in
@@ -59,7 +60,12 @@ struct CheckService {
                         print("Results \(query)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
                         print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
-                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 50 {
+                        let coefficient = diceCoefficient(s: r.title, t: query)
+                        
+//                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 50 {
+//                            return true
+//                        }
+                        if coefficient * 100.0 >= 50 {
                             return true
                         }
                         return false
@@ -77,11 +83,12 @@ struct CheckService {
         }
         group.notify(queue: .main) {
             print("finished all tasks")
+            print(recipeIngredients)
             IngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
                 guard let success = success else { return }
                 print(success)
+                completion(recipeIngredients)
             })
-            completion(recipeIngredients)
         }
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
@@ -95,12 +102,12 @@ struct CheckService {
                     }
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
                     print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
-                    if coefficient*100.0 > 50.0 {
+                    if coefficient*100.0 > 90.0 {
                         print("Greater \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
                     }
 //                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
 //                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                    if coefficient*100.0 > 50.0 {
+                    if coefficient*100.0 > 80.0 {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }

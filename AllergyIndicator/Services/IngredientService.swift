@@ -27,16 +27,14 @@ struct IngredientService {
         }
     }
     
-    static func doesIngredientExists(ingredientName: String) -> Bool{
+    static func doesIngredientExists(ingredientName: String, completion: @escaping (Bool) -> Void) {
         let ref = Database.database().reference().child(ingredientsPath)
-        var existence = false
         ref.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.hasChild(ingredientName) {
-                existence = true
+                completion(true)
             } else {
-                existence = false
+                completion(false)
             }
         }
-        return existence
     }
 }

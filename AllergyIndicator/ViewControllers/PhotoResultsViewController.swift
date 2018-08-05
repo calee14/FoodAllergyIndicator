@@ -29,21 +29,35 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        concepts = [ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
+        concepts = [ClarifaiConcept(conceptName: "pad thai"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens) in
                 guard let allergens = allergens else { return }
                 self.allergens = allergens
                 self.tableView.reloadData()
-            })
-            CheckService.checkRecipe(foodQueries: self.concepts.map { $0.conceptName }) { (result) in
-                guard let ingredients = result else { return }
-                
-                guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
-                if allergiesInRecipe.count > 1 {
-                    self.showWarningMenu(allergies: allergiesInRecipe)
+                var foods = [String]()
+                let group = DispatchGroup()
+                for concept in self.concepts {
+                    group.enter()
+                    IngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
+                        if !exist {
+                            foods.append(concept.conceptName)
+                        }
+                        group.leave()
+                    })
                 }
-            }
+                group.notify(queue: .main) {
+                    print(foods)
+                    CheckService.checkRecipe(foodQueries: foods) { (result) in
+                        guard let ingredients = result else { return }
+                        
+                        guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                        if allergiesInRecipe.count > 1 {
+                            self.showWarningMenu(allergies: allergiesInRecipe)
+                        }
+                    }
+                }
+            })
         }
         
         setupLayout()
