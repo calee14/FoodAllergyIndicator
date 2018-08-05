@@ -30,9 +30,12 @@ It should be intuitive enough to open the app in xCode and running it on a simul
     - Then check the possible allergens list and check if they match any of the users allergies
     - alert the user
   - https://www.themealdb.com/api.php
-- [ ] Add UI
+- [X] Add UI
   - [X] Color Theme: light blue or green cyan (used both)
-- [ ] User Dice's Coefficient, which is better than Levenshtein's Distance, to compare strings
+- [X] User Dice's Coefficient, which is better than Levenshtein's Distance, to compare strings
+- [X] Improve api search algorithm
+  - [X] Store ingredients on a databse so we don't search it
+  - [X] Update thresholds so that the app will function
 - [ ] Add disclaimers
 - [ ] Log out feature
 
