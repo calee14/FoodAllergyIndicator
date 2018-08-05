@@ -70,7 +70,7 @@ struct CheckService {
 //                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 50 {
 //                            return true
 //                        }
-                        if coefficient * 100.0 >= 50 {
+                        if coefficient * 100.0 >= 35.0 {
                             return true
                         }
                         return false

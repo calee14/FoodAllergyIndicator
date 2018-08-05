@@ -31,7 +31,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        concepts = [ClarifaiConcept(conceptName: "pad thai"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
+        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
                 guard let allergens = allergens else { return }
@@ -57,9 +57,7 @@ class PhotoResultsViewController: UIViewController {
                         guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
                         self.allergens.append(contentsOf: allergiesInRecipe)
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
-                        if allergiesInRecipe.count > 1 {
-                            self.showWarningMenu(allergies: true)
-                        }
+                        self.showWarningMenu(allergies: self.allergens.count >= 1)
                     }
                 }
             })
