@@ -35,11 +35,10 @@ class WarningController: NSObject {
         return textView
     }()
     
-    func showWarningMenu(allergies: [String]) {
+    let widthDifference: CGFloat = 50
+    
+    func showWarningMenu(allergies: Bool) {
         var allergyString = ""
-        for allergyName in allergies {
-            allergyString += "\(allergyName) \n"
-        }
         allergiesTextView.text = allergyString
         
         if let window = UIApplication.shared.keyWindow {
@@ -54,7 +53,8 @@ class WarningController: NSObject {
             
             let height: CGFloat = 200
             let y = (window.frame.height / 2) - (height / 2)
-            collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+            
+            collectionView.frame = CGRect(x: widthDifference / 2, y: window.frame.height, width: window.frame.width - self.widthDifference, height: height)
             
             
             blackView.frame = window.frame
@@ -63,7 +63,7 @@ class WarningController: NSObject {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
                 
-                self.collectionView.frame = CGRect(x: 0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: self.widthDifference / 2, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }, completion: nil)
         }
     }
@@ -73,7 +73,7 @@ class WarningController: NSObject {
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
-                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                self.collectionView.frame = CGRect(x: self.widthDifference / 2, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }
     }
@@ -88,6 +88,7 @@ class WarningController: NSObject {
     }
     
     func setupLayout() {
+        
         warningTitleLabel.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 50)
         warningTitleLabel.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 10).isActive = true
         warningTitleLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true

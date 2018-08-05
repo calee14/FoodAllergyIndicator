@@ -58,7 +58,7 @@ class PhotoResultsViewController: UIViewController {
                         self.allergens.append(contentsOf: allergiesInRecipe)
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
                         if allergiesInRecipe.count > 1 {
-                            self.showWarningMenu(allergies: allergiesInRecipe)
+                            self.showWarningMenu(allergies: true)
                         }
                     }
                 }
@@ -69,8 +69,6 @@ class PhotoResultsViewController: UIViewController {
         
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
-        
-        
     }
     
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
@@ -86,7 +84,7 @@ class PhotoResultsViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func showWarningMenu(allergies: [String]) {
+    func showWarningMenu(allergies: Bool) {
         warningController.showWarningMenu(allergies: allergies)
     }
 }
