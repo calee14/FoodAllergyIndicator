@@ -27,6 +27,8 @@ class TakePhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        IAPHelper.shared.getProducts()
+        
         // Do any additional setup after loading the view.
         print("Take photo")
         
@@ -55,6 +57,7 @@ class TakePhotoViewController: UIViewController {
         buttonBackground.layer.masksToBounds = true
         buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.cameraController.previewLayer?.isHidden = false
@@ -70,38 +73,54 @@ class TakePhotoViewController: UIViewController {
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         Pictures.decrementPictureCount()
-        print(Pictures.current.numpictures)
-        cameraController.captureImage { (image, error) in
-            // get image
-            guard let image = image else {
-                print(error ?? "Image capture error")
-                return
-            }
-            self.captureButton.isUserInteractionEnabled = false
-            
-            // change ui view
-            self.cameraController.previewLayer?.isHidden = true
-            self.imageView.frame = self.previewView.frame
-            self.imageView.image = image
-            self.previewView.insertSubview(self.imageView, at: 0)
-            
-//            PredictService.predictImage(image: image, completion: { (concepts) in
-//                guard let concepts = concepts else { return }
-//                self.goToShowResultsViewController(concepts: concepts, image: image)
-//            })
-            
-//            PredictService.predictFoodImage(image: image, completion: { (concepts) in
-//                guard let concepts = concepts else { return }
-//                DispatchQueue.main.async {
-//                    self.goToShowResultsViewController(concepts: concepts, image: image)
-//                }
-//            })
+        let pictureCount = Pictures.current.numpictures
+        print("Pic \(pictureCount)")
+        
+        if pictureCount > 0 {
+            cameraController.captureImage { (image, error) in
+                // get image
+                guard let image = image else {
+                    print(error ?? "Image capture error")
+                    return
+                }
+                
+                // change ui view
+                self.captureButton.isUserInteractionEnabled = false
+                self.cameraController.previewLayer?.isHidden = true
+                self.imageView.frame = self.previewView.frame
+                self.imageView.image = image
+                self.previewView.insertSubview(self.imageView, at: 0)
+                
+    //            PredictService.predictImage(image: image, completion: { (concepts) in
+    //                guard let concepts = concepts else { return }
+    //                self.goToShowResultsViewController(concepts: concepts, image: image)
+    //            })
+                
+                PredictService.predictFoodImage(image: image, completion: { (concepts) in
+                    guard let concepts = concepts else { return }
+                    DispatchQueue.main.async {
+                        self.goToShowResultsViewController(concepts: concepts, image: image)
+                    }
+                })
 
-            // Store image on Firebase server
-//            PostImageService.create(for: image)
-            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
+                // Store image on Firebase server
+    //            PostImageService.create(for: image)
+//                self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
+            }
+    //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
+        } else if pictureCount <= 0 {
+            print("Out of pictures")
+            purchaseMorePictures()
+//            Pictures.incrementPictureCount()
         }
-//        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
+    }
+    
+    func purchaseMorePictures() {
+        defer {
+            self.captureButton.isUserInteractionEnabled = true
+        }
+        self.captureButton.isUserInteractionEnabled = false
+        IAPHelper.shared.purchase(product: .Picture)
     }
     
     func goToShowResultsViewController(concepts: [ClarifaiConcept], image: UIImage?) {

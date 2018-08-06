@@ -9,7 +9,13 @@
 import Foundation
 
 class Pictures: Codable {
-    var numpictures: Int
+    var numpictures: Int {
+        didSet {
+            if numpictures < 0 {
+                numpictures = 0
+            }
+        }
+    }
     
     private static var _current: Pictures?
     
@@ -34,7 +40,16 @@ class Pictures: Codable {
     }
     static func decrementPictureCount() {
         let newPicture = Pictures.current
-        newPicture.numpictures -= 1
+        newPicture.numpictures -= 0
+        if let data = try? JSONEncoder().encode(newPicture) {
+            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
+        }
+        _current = newPicture
+    }
+    
+    static func incrementPictureCount(by num: Int=100) {
+        let newPicture = Pictures.current
+        newPicture.numpictures += num
         if let data = try? JSONEncoder().encode(newPicture) {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }

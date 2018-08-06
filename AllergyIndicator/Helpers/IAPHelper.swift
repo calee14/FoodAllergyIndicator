@@ -26,16 +26,6 @@ class IAPHelper: NSObject {
     }
     
     func purchase(product: IAPProduct) {
-        print("purchasing")
-        print(product.rawValue)
-        print(products.filter({ (p) -> Bool in
-            print("ID \(p.productIdentifier)")
-            if p.productIdentifier == product.rawValue {
-                print(product.rawValue)
-                print("ID \(p.productIdentifier)")
-            }
-            return false
-        }))
         guard let productToPurchase = products.filter({ $0.productIdentifier == product.rawValue }).first else { return }
         let payment = SKPayment(product: productToPurchase)
         print(payment)
@@ -59,8 +49,17 @@ extension IAPHelper: SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchasing:
                 break
+            case .purchased:
+                Pictures.incrementPictureCount()
+                print(Pictures.current.numpictures)
+                SKPaymentQueue.default().finishTransaction(transaction as SKPaymentTransaction)
+                break
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction as SKPaymentTransaction)
+                break
             default:
                 queue.finishTransaction(transaction)
+//                Pictures.incrementPictureCount()
             }
         }
     }
