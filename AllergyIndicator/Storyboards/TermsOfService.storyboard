@@ -37,6 +37,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Terms Of Service" id="6Za-Gf-9iX"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="0dD-JB-yNV" id="JEI-xm-5Zp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVJ-Jr-VYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
