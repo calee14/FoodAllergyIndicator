@@ -92,22 +92,40 @@
                                         <rect key="frame" x="0.0" y="402" width="375" height="201"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feW-EZ-rlU">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
+                                                <rect key="frame" x="10" y="0.0" width="355" height="201"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FN-21-TaP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="201"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="201"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="purchase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEU-2M-dIQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0C-yz-Uyf">
-                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="201"/>
-                                                        <state key="normal" title="Button"/>
-                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="san-ZF-qpp">
+                                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="201"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0C-yz-Uyf">
+                                                                <rect key="frame" x="5" y="5" width="167.5" height="191"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                                <state key="normal" title="Terms Of Service"/>
+                                                                <connections>
+                                                                    <action selector="termsEnd:" destination="BYZ-38-t0r" eventType="touchDragExit" id="fkV-Mu-A7I"/>
+                                                                    <action selector="termsHighlight:" destination="BYZ-38-t0r" eventType="touchDown" id="EhD-Bz-xJc"/>
+                                                                    <action selector="termsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hf-rp-JHG"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="y0C-yz-Uyf" secondAttribute="trailing" constant="5" id="Ih1-G5-XGj"/>
+                                                            <constraint firstItem="y0C-yz-Uyf" firstAttribute="top" secondItem="san-ZF-qpp" secondAttribute="top" constant="5" id="Ni6-7c-kUc"/>
+                                                            <constraint firstItem="y0C-yz-Uyf" firstAttribute="leading" secondItem="san-ZF-qpp" secondAttribute="leading" constant="5" id="duU-9O-Bke"/>
+                                                            <constraint firstAttribute="bottom" secondItem="y0C-yz-Uyf" secondAttribute="bottom" constant="5" id="jfb-w8-4dg"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="y0C-yz-Uyf" firstAttribute="width" secondItem="9FN-21-TaP" secondAttribute="width" id="WL8-gC-jiz"/>
+                                                    <constraint firstItem="san-ZF-qpp" firstAttribute="width" secondItem="9FN-21-TaP" secondAttribute="width" id="Syp-ub-vYN"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -115,8 +133,8 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="feW-EZ-rlU" secondAttribute="bottom" id="6kM-xB-o3A"/>
                                             <constraint firstItem="feW-EZ-rlU" firstAttribute="top" secondItem="5sz-mE-Hlv" secondAttribute="top" id="C4Z-ym-mMy"/>
-                                            <constraint firstAttribute="trailing" secondItem="feW-EZ-rlU" secondAttribute="trailing" id="Q2a-k8-034"/>
-                                            <constraint firstItem="feW-EZ-rlU" firstAttribute="leading" secondItem="5sz-mE-Hlv" secondAttribute="leading" id="WV2-Pu-ldg"/>
+                                            <constraint firstAttribute="trailing" secondItem="feW-EZ-rlU" secondAttribute="trailing" constant="10" id="Q2a-k8-034"/>
+                                            <constraint firstItem="feW-EZ-rlU" firstAttribute="leading" secondItem="5sz-mE-Hlv" secondAttribute="leading" constant="10" id="WV2-Pu-ldg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -142,8 +160,11 @@
                         <outlet property="setAllergiesButton" destination="tyP-Q7-BnG" id="ZdQ-Xy-vNg"/>
                         <outlet property="takePhotoBackground" destination="fsF-HG-MpJ" id="G0O-fr-kEt"/>
                         <outlet property="takePhotoButton" destination="sFa-V6-b6V" id="Ul1-4c-LJA"/>
+                        <outlet property="termsBackground" destination="san-ZF-qpp" id="b32-iO-Th1"/>
+                        <outlet property="termsButton" destination="y0C-yz-Uyf" id="1Ap-Qn-jQb"/>
                         <segue destination="0Bf-8W-56m" kind="show" identifier="setAllergySegue" id="KsS-Sz-LGO"/>
                         <segue destination="AGA-dJ-NJG" kind="show" identifier="takePhotoSegue" id="SFs-T3-bpa"/>
+                        <segue destination="BrN-ky-zZY" kind="show" id="PuS-v7-Rl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,7 +185,15 @@
                 <viewControllerPlaceholder storyboardName="SetAllergies" id="0Bf-8W-56m" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NV2-zC-1mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="154"/>
+            <point key="canvasLocation" x="1709" y="31"/>
+        </scene>
+        <!--TermsOfService-->
+        <scene sceneID="KC2-0u-u9q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TermsOfService" id="BrN-ky-zZY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8V-y0-kqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DLK-bo-MVa">
