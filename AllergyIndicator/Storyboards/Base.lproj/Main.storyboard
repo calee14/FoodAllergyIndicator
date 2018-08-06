@@ -97,6 +97,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FN-21-TaP">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="201"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="purchase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEU-2M-dIQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0C-yz-Uyf">
                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="201"/>

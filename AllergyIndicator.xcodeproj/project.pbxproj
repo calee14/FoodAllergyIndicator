@@ -30,6 +30,9 @@
 		B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */; };
 		B3C091552107CC630058E046 /* AllergyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091542107CC630058E046 /* AllergyService.swift */; };
 		B3CBA83A21165264004E43D1 /* UIButton+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA83921165264004E43D1 /* UIButton+Utility.swift */; };
+		B3CBA83C2117C170004E43D1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CBA83B2117C170004E43D1 /* StoreKit.framework */; };
+		B3CBA83E2117C5D1004E43D1 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA83D2117C5D1004E43D1 /* IAPProduct.swift */; };
+		B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA8402117C67D004E43D1 /* IAPHelper.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -71,6 +74,9 @@
 		B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTableViewCell.swift; sourceTree = "<group>"; };
 		B3C091542107CC630058E046 /* AllergyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyService.swift; sourceTree = "<group>"; };
 		B3CBA83921165264004E43D1 /* UIButton+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Utility.swift"; sourceTree = "<group>"; };
+		B3CBA83B2117C170004E43D1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B3CBA83D2117C5D1004E43D1 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
+		B3CBA8402117C67D004E43D1 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */,
+				B3CBA83C2117C170004E43D1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,7 @@
 		AE8E90755B72D8A6B34373DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3CBA83B2117C170004E43D1 /* StoreKit.framework */,
 				81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */,
 			);
 			name = Frameworks;
@@ -186,6 +194,7 @@
 				B3C091502107BEA50058E046 /* Allergy.swift */,
 				B37FDFC5210930390066B3FD /* AllergyImagePost.swift */,
 				B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */,
+				B3CBA83D2117C5D1004E43D1 /* IAPProduct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +207,14 @@
 				B3C0914621078EC20058E046 /* Constants.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		B3CBA83F2117C660004E43D1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3CBA8402117C67D004E43D1 /* IAPHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B3F902A82104316800FD552E = {
@@ -222,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F902B42104316800FD552E /* AppDelegate.swift */,
+				B3CBA83F2117C660004E43D1 /* Helpers */,
 				B367C5B421063C8100192BE6 /* Services */,
 				B367C5B821063D1300192BE6 /* Supporting */,
 				B367C5B721063D0C00192BE6 /* Models */,
@@ -269,6 +287,11 @@
 				TargetAttributes = {
 					B3F902B02104316800FD552E = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -403,6 +426,7 @@
 				B3921152210BA3BF0048E6DD /* String+Substring.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,
+				B3CBA83E2117C5D1004E43D1 /* IAPProduct.swift in Sources */,
 				B3C0914D2107995E0058E046 /* UserService.swift in Sources */,
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
 				B3EAE2A7211114AF009311AC /* WarningController.swift in Sources */,
@@ -412,6 +436,7 @@
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
 				B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */,
 				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
+				B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */,
 				B3C091552107CC630058E046 /* AllergyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
