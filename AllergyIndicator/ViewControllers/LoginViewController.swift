@@ -16,11 +16,19 @@ typealias FIRUser = FirebaseAuth.User
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupLayout()
+    }
+    
+    func setupLayout() {
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        backgroundView.applyGradient(colours: [lightblue, cyan])
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
