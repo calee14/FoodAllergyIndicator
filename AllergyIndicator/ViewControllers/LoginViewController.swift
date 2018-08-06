@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
         backgroundView.applyGradient(colours: [lightblue, cyan])
+        
+        loginButton.layer.cornerRadius = CGFloat(10)
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {

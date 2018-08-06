@@ -84,8 +84,8 @@ class WarningController: NSObject {
             
             dissmissButton.frame = CGRect(x: widthDifference / 2, y: window.frame.height + collectionView.frame.height, width: window.frame.width - self.widthDifference, height: 50)
             let lightblue = UIColor(rgb: 0x0093DD)
-            let cyan = UIColor(rgb: 0x0AD2A8)
-            dissmissButton.applyGradient(colours: [lightblue, cyan])
+            dissmissButton.backgroundColor = lightblue
+            
             rectShape = CAShapeLayer()
             rectShape.bounds = dissmissButton.frame
             rectShape.position = dissmissButton.center

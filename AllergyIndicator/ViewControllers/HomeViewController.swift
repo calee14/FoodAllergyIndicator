@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         let cyan = UIColor(rgb: 0x0AD2A8)
         
         self.navigationController?.navigationBar.applyNavigationGradient(colors: [lightblue , cyan])
+        self.navigationController?.navigationBar.tintColor = .white
         
         takePhotoButton.backgroundColor = cyan
         
