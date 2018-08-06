@@ -15,6 +15,7 @@ struct Constants {
     
     struct UserDefaults {
         static let currentUser = "currentUser"
+        static let currentPicture = "currentPicture"
     }
     
     struct Allergens {

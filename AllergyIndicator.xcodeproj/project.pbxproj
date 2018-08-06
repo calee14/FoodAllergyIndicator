@@ -13,6 +13,7 @@
 		B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */; };
 		B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */; };
 		B35239DB2118B2390041BA36 /* Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = B35239DA2118B2390041BA36 /* Terms.txt */; };
+		B35239DE2118C6140041BA36 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35239DD2118C6140041BA36 /* Pictures.swift */; };
 		B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC121092AAF0066B3FD /* StorageService.swift */; };
 		B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC321092E980066B3FD /* PostImageService.swift */; };
 		B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC5210930390066B3FD /* AllergyImagePost.swift */; };
@@ -60,6 +61,7 @@
 		B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResult.swift; sourceTree = "<group>"; };
 		B35239DA2118B2390041BA36 /* Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Terms.txt; sourceTree = "<group>"; };
+		B35239DD2118C6140041BA36 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		B37FDFC121092AAF0066B3FD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B37FDFC321092E980066B3FD /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
 		B37FDFC5210930390066B3FD /* AllergyImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyImagePost.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				B37FDFC5210930390066B3FD /* AllergyImagePost.swift */,
 				B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */,
 				B3CBA83D2117C5D1004E43D1 /* IAPProduct.swift */,
+				B35239DD2118C6140041BA36 /* Pictures.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */,
 				B3EAE2A7211114AF009311AC /* WarningController.swift in Sources */,
 				B3C0914921078F6D0058E046 /* User.swift in Sources */,
+				B35239DE2118C6140041BA36 /* Pictures.swift in Sources */,
 				B3C091512107BEA50058E046 /* Allergy.swift in Sources */,
 				B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */,
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,

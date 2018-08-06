@@ -69,6 +69,8 @@ class TakePhotoViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        Pictures.decrementPictureCount()
+        print(Pictures.current.numpictures)
         cameraController.captureImage { (image, error) in
             // get image
             guard let image = image else {

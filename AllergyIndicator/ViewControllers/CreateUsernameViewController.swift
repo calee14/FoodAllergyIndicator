@@ -39,6 +39,7 @@ class CreateUsernameViewController: UIViewController {
             guard let user = user else { return }
             
             User.setCurrent(user, writeToUserDefaults: true)
+            Pictures.setCurrent(Pictures(numpictures: 100), writeToUserDefaults: true)
             
             AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
                 print(allergy)

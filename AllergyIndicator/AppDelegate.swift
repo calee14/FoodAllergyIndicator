@@ -62,8 +62,12 @@ extension AppDelegate {
         
         if let _ = Auth.auth().currentUser,
             let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
-            let user = try? JSONDecoder().decode(User.self, from: userData) {
+            let user = try? JSONDecoder().decode(User.self, from: userData),
+            let pictureData = defaults.object(forKey: Constants.UserDefaults.currentPicture) as? Data,
+            let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
             User.setCurrent(user)
+            Pictures.setCurrent(picture)
+            print("Pic \(Pictures.current.numpictures)")
             initialViewController = UIStoryboard.initializeViewController(for: .main)
         } else {
             initialViewController = UIStoryboard.initializeViewController(for: .login)
