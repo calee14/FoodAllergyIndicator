@@ -72,6 +72,8 @@ class TakePhotoViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
+        if !onGoingtransactions { return }
         Pictures.decrementPictureCount()
         let pictureCount = Pictures.current.numpictures
         print("Pic \(pictureCount)")
@@ -96,16 +98,16 @@ class TakePhotoViewController: UIViewController {
     //                self.goToShowResultsViewController(concepts: concepts, image: image)
     //            })
                 
-                PredictService.predictFoodImage(image: image, completion: { (concepts) in
-                    guard let concepts = concepts else { return }
-                    DispatchQueue.main.async {
-                        self.goToShowResultsViewController(concepts: concepts, image: image)
-                    }
-                })
+//                PredictService.predictFoodImage(image: image, completion: { (concepts) in
+//                    guard let concepts = concepts else { return }
+//                    DispatchQueue.main.async {
+//                        self.goToShowResultsViewController(concepts: concepts, image: image)
+//                    }
+//                })
 
                 // Store image on Firebase server
     //            PostImageService.create(for: image)
-//                self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
+                self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
             }
     //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
         } else if pictureCount <= 0 {
