@@ -36,7 +36,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [X] Improve api search algorithm
   - [X] Store ingredients on a databse so we don't search it
   - [X] Update thresholds so that the app will function
-- [ ] Add disclaimers
+- [X] Add disclaimers
 - [ ] Log out feature
 
 # Future Features
