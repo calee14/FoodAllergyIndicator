@@ -33,6 +33,14 @@ class HomeViewController: UIViewController {
 //        fatalError()
         // Do any additional setup after loading the view.
         
+//        AllergyService.checkIfUserHasSetAllergies(for: User.current) { (hasSet) in
+//            if !hasSet {
+//                print("move to next controleler")
+//                self.goToSetAllergiesViewController()
+//            } else {
+//                // Do something if the user has already set their allergies
+//            }
+//        }
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
             if doesHaveAllergies.count == 0 {

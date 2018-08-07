@@ -43,9 +43,13 @@ struct AllergyService {
         let ref = Database.database().reference().child(DatabaseAllergiesPath).child(user.uid)
         
         ref.observeSingleEvent(of: .value) { (snapshot) in
-            guard let dict = snapshot.value as? [String : Any] else { return }
+            guard let dict = snapshot.value as? [String : Bool] else { return }
+//            for (key, bool) in dict {
+//                let allergy = Allergy(key, isAllergic: bool)
+//                allergens.append(allergy)
+//            }
             for allergyName in Constants.Allergens.allergenNames {
-                guard let isAllergic: Bool = dict[allergyName] as? Bool else { fatalError("There was no boolean data type in \(allergyName)") }
+                guard let isAllergic: Bool = dict[allergyName] else { fatalError("There was no boolean data type in \(allergyName)") }
                 let allergy: Allergy = Allergy(allergyName, isAllergic: isAllergic)
                 allergens.append(allergy)
             }
@@ -72,5 +76,16 @@ struct AllergyService {
             allergyArray.append(allergy)
         }
         return allergyArray
+    }
+    
+    static func checkIfUserHasSetAllergies(for user: User, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child(DatabaseAllergiesPath)
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.hasChild(user.uid) {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
     }
 }

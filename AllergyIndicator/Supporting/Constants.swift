@@ -19,7 +19,7 @@ struct Constants {
     }
     
     struct Allergens {
-        static let allergenNames = ["Egg", "Nuts", "Fish", "Dairy products", "Shellfish", "Wheat", "Gluten", "Peanuts",
+        static let allergenNames = ["Egg", "Nuts", "Fish", "Milk", "Cheese", "Shellfish", "Wheat", "Gluten", "Peanuts",
                                     "Soy", "Fruits", "Citrus Fruits", "Kiwi Fruits", "Strawberries", "Apples", "Pears",
                                     "Peaches", "Apricots", "Nectarines", "Plums", "Cherries", "Melons", "Avocado",
                                     "Vegetables", "Tomatoes", "Carrots", "Corn", "Celery", "Garlic", "Eggplant", "Beans",
