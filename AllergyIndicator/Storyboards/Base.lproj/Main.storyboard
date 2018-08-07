@@ -105,7 +105,7 @@
                                                         <rect key="frame" x="177.5" y="0.0" width="177.5" height="201"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0C-yz-Uyf">
-                                                                <rect key="frame" x="5" y="5" width="167.5" height="191"/>
+                                                                <rect key="frame" x="5" y="30" width="167.5" height="141"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <state key="normal" title="Terms Of Service"/>
                                                                 <connections>
@@ -118,9 +118,9 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="y0C-yz-Uyf" secondAttribute="trailing" constant="5" id="Ih1-G5-XGj"/>
-                                                            <constraint firstItem="y0C-yz-Uyf" firstAttribute="top" secondItem="san-ZF-qpp" secondAttribute="top" constant="5" id="Ni6-7c-kUc"/>
+                                                            <constraint firstItem="y0C-yz-Uyf" firstAttribute="top" secondItem="san-ZF-qpp" secondAttribute="top" constant="30" id="Ni6-7c-kUc"/>
                                                             <constraint firstItem="y0C-yz-Uyf" firstAttribute="leading" secondItem="san-ZF-qpp" secondAttribute="leading" constant="5" id="duU-9O-Bke"/>
-                                                            <constraint firstAttribute="bottom" secondItem="y0C-yz-Uyf" secondAttribute="bottom" constant="5" id="jfb-w8-4dg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="y0C-yz-Uyf" secondAttribute="bottom" constant="30" id="jfb-w8-4dg"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
