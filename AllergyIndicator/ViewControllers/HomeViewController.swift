@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var setAllergiesBackground: UIView!
     @IBOutlet weak var termsButton: UIButton!
     @IBOutlet weak var termsBackground: UIView!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var leftButtonBackground: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +75,14 @@ class HomeViewController: UIViewController {
         
         termsBackground.layer.cornerRadius = 6
         termsBackground.layer.masksToBounds = true
+        
+        leftButton.layer.cornerRadius = 6
+        leftButton.clipsToBounds = false
+        
+        leftButton.backgroundColor = cyan
+        
+        leftButtonBackground.layer.cornerRadius = 6
+        leftButtonBackground.layer.masksToBounds = true
     }
     
     func toggleTakePhotoButton(status: Bool) {
@@ -86,10 +97,15 @@ class HomeViewController: UIViewController {
         termsButton.isUserInteractionEnabled = status
     }
     
+    func toggleLeftButton(status: Bool) {
+        leftButton.isUserInteractionEnabled = status
+    }
+    
     func goToSetAllergiesViewController() {
         defer {
             toggleTakePhotoButton(status: true)
             toggleTermsButton(status: true)
+            toggleLeftButton(status: true)
         }
         let storyboard = UIStoryboard(name: "SetAllergies", bundle: nil)
         
@@ -102,6 +118,7 @@ class HomeViewController: UIViewController {
         defer {
             toggleSetAllergiesButton(status: true)
             toggleTermsButton(status: true)
+            toggleLeftButton(status: true)
         }
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
@@ -114,6 +131,7 @@ class HomeViewController: UIViewController {
         defer {
             toggleSetAllergiesButton(status: true)
             toggleTakePhotoButton(status: true)
+            toggleLeftButton(status: true)
         }
         let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
         
@@ -121,9 +139,17 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(termsViewController, animated: true)
     }
     
+    func goDoWhateverLeftButtonDoes() {
+        defer {
+            toggleSetAllergiesButton(status: true)
+            toggleTakePhotoButton(status: true)
+            toggleTermsButton(status: true)
+        }
+    }
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan
         self.takePhotoButton.setTitleColor(.white, for: .normal)
@@ -134,6 +160,7 @@ class HomeViewController: UIViewController {
     @IBAction func takePhotoHighlight(_ sender: UIButton) {
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -146,6 +173,7 @@ class HomeViewController: UIViewController {
     @IBAction func takePhotoEnd(_ sender: UIButton) {
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan
         self.takePhotoButton.setTitleColor(.white, for: .normal)
@@ -156,6 +184,7 @@ class HomeViewController: UIViewController {
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.setAllergiesButton.backgroundColor = cyan
         self.setAllergiesBackground.removeGradient()
@@ -166,6 +195,7 @@ class HomeViewController: UIViewController {
     @IBAction func setAllergiesHighlight(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -178,6 +208,7 @@ class HomeViewController: UIViewController {
     @IBAction func setAllergiesEnd(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.setAllergiesButton.backgroundColor = cyan
         self.setAllergiesBackground.removeGradient()
@@ -185,14 +216,10 @@ class HomeViewController: UIViewController {
         self.goToSetAllergiesViewController()
     }
     
-    @IBAction func purchase(_ sender: UIButton) {
-        print("tapped")
-        IAPHelper.shared.purchase(product: .Picture)
-    }
-    
     @IBAction func termsTapped(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.termsButton.backgroundColor = cyan
         self.termsBackground.removeGradient()
@@ -203,6 +230,7 @@ class HomeViewController: UIViewController {
     @IBAction func termsHighlight(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
+        toggleLeftButton(status: false)
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -215,11 +243,49 @@ class HomeViewController: UIViewController {
     @IBAction func termsEnd(_ sender: UIButton) {
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
+        toggleLeftButton(status: false)
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.termsButton.backgroundColor = cyan
         self.termsBackground.removeGradient()
         self.termsButton.setTitleColor(.white, for: .normal)
         self.goToTermsOfServiceViewController()
+    }
+    
+    @IBAction func leftButtonTapped(_ sender: UIButton) {
+        toggleTakePhotoButton(status: false)
+        toggleSetAllergiesButton(status: false)
+        toggleTermsButton(status: false)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.leftButton.backgroundColor = cyan
+        self.leftButtonBackground.removeGradient()
+        self.leftButton.setTitleColor(.white, for: .normal)
+        self.goDoWhateverLeftButtonDoes()
+    }
+    
+    
+    @IBAction func leftButtonHighlighted(_ sender: UIButton) {
+        toggleTakePhotoButton(status: false)
+        toggleSetAllergiesButton(status: false)
+        toggleTermsButton(status: false)
+        UIView.animate(withDuration: 0.1) {
+            let lightblue = UIColor(rgb: 0x0093DD)
+            let cyan = UIColor(rgb: 0x0AD2A8)
+            self.leftButton.backgroundColor = .white
+            self.leftButtonBackground.applyGradient(colours: [lightblue , cyan])
+            self.leftButton.setTitleColor(lightblue, for: .normal)
+        }
+    }
+    
+    @IBAction func leftButtonEnd(_ sender: UIButton) {
+        toggleTakePhotoButton(status: false)
+        toggleSetAllergiesButton(status: false)
+        toggleTermsButton(status: false)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        self.leftButton.backgroundColor = cyan
+        self.leftButtonBackground.removeGradient()
+        self.leftButton.setTitleColor(.white, for: .normal)
+        self.goDoWhateverLeftButtonDoes()
+//        sender.isSelected = false
     }
     
     
