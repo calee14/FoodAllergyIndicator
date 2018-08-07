@@ -21,7 +21,17 @@ class SetAllergiesViewController: UIViewController {
         
         // load allergies
         AllergyService.retrieveAllergies(for: user) { (allergies) in
-            self.allergens = allergies
+            var allergens = [Allergy]()
+            for allergy in allergies {
+                if allergy.isAllergic {
+                    print("stuff")
+                    allergens.insert(allergy, at: 0)
+                } else {
+                    allergens.append(allergy)
+                }
+                
+            }
+            self.allergens = allergens
             self.tableView.reloadData()
         }
     }

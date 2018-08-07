@@ -77,7 +77,7 @@ class WarningController: NSObject {
             rectShape = CAShapeLayer()
             rectShape.bounds = collectionView.frame
             rectShape.position = collectionView.center
-            rectShape.path = UIBezierPath(roundedRect: collectionView.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 20, height: 20)).cgPath
+            rectShape.path = UIBezierPath(roundedRect: collectionView.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
             //Here I'm masking the textView's layer with rectShape layer
             
             collectionView.layer.mask = rectShape
@@ -89,7 +89,7 @@ class WarningController: NSObject {
             rectShape = CAShapeLayer()
             rectShape.bounds = dissmissButton.frame
             rectShape.position = dissmissButton.center
-            rectShape.path = UIBezierPath(roundedRect: dissmissButton.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 20, height: 20)).cgPath
+            rectShape.path = UIBezierPath(roundedRect: dissmissButton.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
             //Here I'm masking the textView's layer with rectShape layer
             dissmissButton.layer.mask = rectShape
             
