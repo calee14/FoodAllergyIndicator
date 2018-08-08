@@ -37,7 +37,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [X] Store ingredients on a databse so we don't search it
   - [X] Update thresholds so that the app will function
 - [X] Add disclaimers
-- [ ] Add disclaimers in the home page when the user first logs in
+- [X] Add disclaimers in the home page when the user first logs in
 - [X] Update Terms of Service
 - [X] Add more allergens
   - [X] Correct spelling of mustard
@@ -45,7 +45,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [X] Remove colorants
   - [X] Add in all the nuts and sea food
 - [X] Add counter for number of pictures (in the home screen page, credits square)
-- [ ] Add UI for (good . and bad x results)
+- [X] Add UI for (good . and bad x results)
 - [ ] Fix the api search (tomatoes)
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
