@@ -42,15 +42,14 @@ class CreateUsernameViewController: UIViewController {
             guard let user = user else { return }
             
             User.setCurrent(user, writeToUserDefaults: true)
-            Pictures.setCurrent(Pictures(numpictures: 100), writeToUserDefaults: true)
             
             AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
                 print(allergy)
             })
             
-            guard let initialViewController = UIStoryboard.initializeViewController(for: .main) as? HomeViewController else { return }
+            let initialViewController = UIStoryboard.initializeViewController(for: .main)
             
-            initialViewController.shouldDisplayDisclaimer = true
+            HomeViewController.shouldDisplayDisclaimer = true
             
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()

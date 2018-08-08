@@ -67,13 +67,20 @@ extension AppDelegate {
                 let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
                 Pictures.setCurrent(picture)
             } else {
-                User.setCurrent(user, writeToUserDefaults: true)
+                print("couldn't find anything")
                 Pictures.setCurrent(Pictures(numpictures: 100), writeToUserDefaults: true)
             }
             User.setCurrent(user)
             print("Pic \(Pictures.current.numpictures)")
             initialViewController = UIStoryboard.initializeViewController(for: .main)
         } else {
+            if let pictureData = defaults.object(forKey: Constants.UserDefaults.currentPicture) as? Data,
+                let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
+                Pictures.setCurrent(picture)
+            } else {
+                print("couldn't find anything")
+                Pictures.setCurrent(Pictures(numpictures: 100), writeToUserDefaults: true)
+            }
             initialViewController = UIStoryboard.initializeViewController(for: .login)
         }
         

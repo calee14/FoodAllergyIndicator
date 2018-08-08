@@ -21,7 +21,7 @@ class Pictures: Codable {
     
     static var current: Pictures {
         guard let currentNum = _current else {
-            fatalError("Error: current user doesn't exist")
+            fatalError("Error: current picture doesn't exist")
         }
         return currentNum
     }

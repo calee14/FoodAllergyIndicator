@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftButtonBackground: UIView!
     
-    public var shouldDisplayDisclaimer: Bool = true
+    static var shouldDisplayDisclaimer: Bool = false
     
     let warningController = WarningController()
     
@@ -35,7 +35,10 @@ class HomeViewController: UIViewController {
 //        print("test \(CheckService.diceCoefficient(s: "I bet my life", t: "I bet your life"))")
 //        fatalError()
         // Do any additional setup after loading the view.
-        if shouldDisplayDisclaimer {
+        let randNum = arc4random_uniform(10)
+        HomeViewController.shouldDisplayDisclaimer = randNum <= 2 && HomeViewController.shouldDisplayDisclaimer != true ? true : false
+        
+        if HomeViewController.shouldDisplayDisclaimer {
             let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
             warningController.showWarningMenu(title: "Disclaimer", content: content)

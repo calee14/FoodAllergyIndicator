@@ -60,7 +60,7 @@ extension LoginViewController: FUIAuthDelegate {
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
                 
-//                initialViewController.shouldDisplayDisclaimer = true
+                HomeViewController.shouldDisplayDisclaimer = true
                 
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
