@@ -49,6 +49,16 @@ struct AllergyService {
 //                allergens.append(allergy)
 //            }
             for allergyName in Constants.Allergens.allergenNames {
+                if !snapshot.hasChild(allergyName) {
+                    let allergy = Allergy(allergyName, isAllergic: false)
+                    updateAllergy(for: user, allergy: allergy, completion: { (snapshot) in
+                        guard let data = snapshot?.value as? [String : Bool] else { return }
+                        guard let isAllergic: Bool = data[allergyName] else { fatalError("There was no boolean data type in \(allergyName)") }
+                        let allergy: Allergy = Allergy(allergyName, isAllergic: isAllergic)
+                        allergens.append(allergy)
+                    })
+                    continue
+                }
                 guard let isAllergic: Bool = dict[allergyName] else { fatalError("There was no boolean data type in \(allergyName)") }
                 let allergy: Allergy = Allergy(allergyName, isAllergic: isAllergic)
                 allergens.append(allergy)
@@ -57,15 +67,17 @@ struct AllergyService {
         }
     }
     
-    static func updateAllergy(for user: User, allergy: Allergy, success: @escaping (Bool) -> Void) {
+    static func updateAllergy(for user: User, allergy: Allergy, completion: @escaping (DataSnapshot?) -> Void) {
         let ref = Database.database().reference().child(DatabaseAllergiesPath).child(user.uid)
         let allergyData = [allergy.allergyName : allergy.isAllergic]
         ref.updateChildValues(allergyData) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
-                success(false)
+                completion(nil)
             }
-            success(error == nil)
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                completion(snapshot)
+            })
         }
     }
     

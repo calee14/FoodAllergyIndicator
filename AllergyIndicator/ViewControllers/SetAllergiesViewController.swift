@@ -29,7 +29,6 @@ class SetAllergiesViewController: UIViewController {
                 } else {
                     allergens.append(allergy)
                 }
-                
             }
             self.allergens = allergens
             self.tableView.reloadData()
@@ -38,6 +37,7 @@ class SetAllergiesViewController: UIViewController {
 }
 
 extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allergens.count
     }
@@ -64,11 +64,11 @@ extension SetAllergiesViewController: IsAllergicCellDelegate {
         
         self.allergens[indexPath.row].isAllergic = isAllergicSwitch.isOn
         
-        AllergyService.updateAllergy(for: user, allergy: self.allergens[indexPath.row]) { (success) in
+        AllergyService.updateAllergy(for: user, allergy: self.allergens[indexPath.row]) { (snapshot) in
             defer {
                 isAllergicSwitch.isUserInteractionEnabled = true
             }
-            guard success else { return }
+            guard snapshot != nil else { return }
             
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }

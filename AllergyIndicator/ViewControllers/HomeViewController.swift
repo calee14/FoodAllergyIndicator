@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
         leftButton.clipsToBounds = false
         
         leftButton.backgroundColor = cyan
+        leftButton.setTitle("Pictures: \(Pictures.current.numpictures)", for: .normal)
         
         leftButtonBackground.layer.cornerRadius = 6
         leftButtonBackground.layer.masksToBounds = true

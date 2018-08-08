@@ -19,12 +19,7 @@ struct Constants {
     }
     
     struct Allergens {
-        static let allergenNames = ["Egg", "Nuts", "Fish", "Milk", "Cheese", "Shellfish", "Wheat", "Gluten", "Peanuts",
-                                    "Soy", "Fruits", "Citrus Fruits", "Kiwi Fruits", "Strawberries", "Apples", "Pears",
-                                    "Peaches", "Apricots", "Nectarines", "Plums", "Cherries", "Melons", "Avocado",
-                                    "Vegetables", "Tomatoes", "Carrots", "Corn", "Celery", "Garlic", "Eggplant", "Beans",
-                                    "Peas", "Lentils", "Lupin", "Legumes", "Sesame seeds", "Buckwheat", "Mustart",
-                                    "Curry", "Glutamate", "Mayonnaise", "Colorants"]
+        static let allergenNames = ["Egg", "Nuts", "Fish", "Milk", "Butter", "Cheese", "Yogurt", "Shellfish", "Wheat", "Gluten", "Peanuts", "Almond", "Pecan", "Walnut", "Pistachio","Hazelnut", "Macadamia", "Brazilnut", "Cashew", "Chestnut", "Pinenut", "Coconut", "Soy", "Fruits", "Kiwi Fruits", "Strawberries", "Anchovy", "Bass", "Cod", "Eel", "Flounder", "Grouper", "Halibut", "Herring", "Lingcod", "Mackerel", "Mahi Mahi", "Orange ruffy", "Pollock", "Salmon", "Sanddab", "Sardine", "Smelt", "Snapper", "Sole", "Sturgeon", "Tilapia", "Trout", "Tuna", "Whitefish", "Crab", "Lobser", "Shrimp", "Clam", "Crayfish", "Cuttlefish", "Mussel", "Octopus", "Oysters", "Scalop", "Squid", "Snails", "Apples", "Pears", "Peaches", "Apricots", "Nectarines", "Plums", "Cherries", "Melons", "Avocado", "Tomato", "Carrot", "Corn", "Celery", "Garlic", "Eggplant", "Bean", "Peas", "Lentils", "Lupin", "Legumes", "Sesame seeds", "Buckwheat", "Mustard", "Curry", "Mayonnaise"]
     }
     struct DatabasePath {
         static let allergies = "allergies"

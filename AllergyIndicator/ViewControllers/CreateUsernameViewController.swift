@@ -26,6 +26,9 @@ class CreateUsernameViewController: UIViewController {
     func setupLayout() {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
+        
+        backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
+
         backgroundView.applyGradient(colours: [lightblue, cyan])
         
         nextButton.layer.cornerRadius = CGFloat(10)
