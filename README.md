@@ -38,7 +38,13 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [X] Update thresholds so that the app will function
 - [X] Add disclaimers
 - [ ] Log out feature
-
+- [ ] Update Terms of Service
+- [ ] Add more allergens
+  - [ ] Correct spelling of mustard
+  - [ ] Remove gutamate
+  - [ ] Remove colorants
+  - [ ] Add in all the nuts
+  - [ ] 
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
