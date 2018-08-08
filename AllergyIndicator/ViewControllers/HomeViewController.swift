@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftButtonBackground: UIView!
     
+    public var shouldDisplayDisclaimer: Bool = true
+    
+    let warningController = WarningController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,11 @@ class HomeViewController: UIViewController {
 //        print("test \(CheckService.diceCoefficient(s: "I bet my life", t: "I bet your life"))")
 //        fatalError()
         // Do any additional setup after loading the view.
-        
+        if shouldDisplayDisclaimer {
+            let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
+            guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
+            warningController.showWarningMenu(title: "Disclaimer", content: content)
+        }
 //        AllergyService.checkIfUserHasSetAllergies(for: User.current) { (hasSet) in
 //            if !hasSet {
 //                print("move to next controleler")
@@ -41,10 +48,11 @@ class HomeViewController: UIViewController {
 //                // Do something if the user has already set their allergies
 //            }
 //        }
+        
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
             if doesHaveAllergies.count == 0 {
-                print("move to next controleler")
+                print("move to next controller")
                 self.goToSetAllergiesViewController()
             } else {
                 // Do something if the user has already set their allergies

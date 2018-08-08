@@ -14,6 +14,7 @@
 		B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */; };
 		B35239DE2118C6140041BA36 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35239DD2118C6140041BA36 /* Pictures.swift */; };
 		B35239E0211B4C830041BA36 /* Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = B35239DF211B4C830041BA36 /* Terms.txt */; };
+		B35239E2211B97770041BA36 /* Disclaimer.txt in Resources */ = {isa = PBXBuildFile; fileRef = B35239E1211B97770041BA36 /* Disclaimer.txt */; };
 		B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC121092AAF0066B3FD /* StorageService.swift */; };
 		B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC321092E980066B3FD /* PostImageService.swift */; };
 		B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC5210930390066B3FD /* AllergyImagePost.swift */; };
@@ -62,6 +63,7 @@
 		B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResult.swift; sourceTree = "<group>"; };
 		B35239DD2118C6140041BA36 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		B35239DF211B4C830041BA36 /* Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Terms.txt; sourceTree = "<group>"; };
+		B35239E1211B97770041BA36 /* Disclaimer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Disclaimer.txt; sourceTree = "<group>"; };
 		B37FDFC121092AAF0066B3FD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B37FDFC321092E980066B3FD /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
 		B37FDFC5210930390066B3FD /* AllergyImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyImagePost.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		B35239D92118B0A20041BA36 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				B35239E1211B97770041BA36 /* Disclaimer.txt */,
 				B35239DF211B4C830041BA36 /* Terms.txt */,
 			);
 			path = Others;
@@ -341,6 +344,7 @@
 				B3F902BF2104316A00FD552E /* LaunchScreen.storyboard in Resources */,
 				B3CBA8432117FF07004E43D1 /* TermsOfService.storyboard in Resources */,
 				B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */,
+				B35239E2211B97770041BA36 /* Disclaimer.txt in Resources */,
 				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
@@ -630,7 +634,8 @@
 			baseConfigurationReference = 5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cappillen Lee (4LXCXPV855)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GCR8UYL38U;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AllergyIndicator/Supporting/Info.plist";
@@ -641,6 +646,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.FoodAllergyIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FoodAllergyIndicatorDevelopmentProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -651,7 +657,8 @@
 			baseConfigurationReference = 48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cappillen Lee (GCR8UYL38U)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GCR8UYL38U;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AllergyIndicator/Supporting/Info.plist";
@@ -662,6 +669,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.FoodAllergyIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FoodAllergyIndicatorDistributionProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

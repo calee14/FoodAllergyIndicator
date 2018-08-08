@@ -30,7 +30,6 @@ class WarningController: NSObject {
     let allergiesTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.text = ""
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.isEditable = false
         textView.textAlignment = .center
@@ -46,22 +45,16 @@ class WarningController: NSObject {
     
     let widthDifference: CGFloat = 50
     
-    func showWarningMenu(allergies: Bool) {
-        var titleString = "BE CAREFUL"
-        var allergyString = "Possiblle Allergens Detected!!! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
-        if allergies == false {
-            titleString = "Should Be Safe To Eat"
-            allergyString = "Reminder! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
-        }
+    func showWarningMenu(title: String, content: String) {
         
-        warningTitleLabel.text = titleString
-        allergiesTextView.text = allergyString
+        warningTitleLabel.text = title
+        allergiesTextView.text = content
         
         if let window = UIApplication.shared.keyWindow {
             
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             
-            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+//            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
             
             window.addSubview(blackView)
             

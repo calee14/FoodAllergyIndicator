@@ -16,15 +16,15 @@ struct CheckService {
         var possibleAllergies = [String]()
         var safeIngredients = [String]()
         for i in ingreidents {
+            var foundAllergy = false
             for j in allergies {
                 if j.isAllergic {
                     let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
                     print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
                     if coefficient * 100.0 > 50.0 {
                         possibleAllergies.append(i.conceptName)
+                        foundAllergy = true
                         break
-                    } else {
-                        safeIngredients.append(i.conceptName)
                     }
 //                    if let dist = LevenshteinDistance(s: i.conceptName.lowercased(), t: j.allergyName.lowercased()), ((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0) >= 90 {
 //                        print("blah \(((1.0 - (Double(dist)/Double(min(i.conceptName.count, j.allergyName.count)))) * 100.0)) \(j.allergyName) \(i.conceptName)")
@@ -37,6 +37,9 @@ struct CheckService {
                 } else {
                     continue
                 }
+            }
+            if !foundAllergy {
+                safeIngredients.append(i.conceptName)
             }
         }
         completion(possibleAllergies, safeIngredients)

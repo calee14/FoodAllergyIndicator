@@ -31,7 +31,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-//        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "egg")]
+        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
                 guard let allergens = allergens else { return }
@@ -83,7 +83,13 @@ class PhotoResultsViewController: UIViewController {
     }
     
     func showWarningMenu(allergies: Bool) {
-        warningController.showWarningMenu(allergies: allergies)
+        var titleString = "BE CAREFUL"
+        var allergyString = "Possiblle Allergens Detected!!! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
+        if allergies == false {
+            titleString = "Should Be Safe To Eat"
+            allergyString = "Reminder! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
+        }
+        warningController.showWarningMenu(title: titleString, content: allergyString)
     }
 }
 
@@ -95,8 +101,8 @@ extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
         let ingredientdata = ingredientsInFood[indexPath.row]
         cell.ingredientLabel.text = ingredientdata
-        cell.scoreLabel.text = indexPath.row < allergens.count ? "Bad" : "Good"
-        cell.ingredientLabel.textColor = indexPath.row < allergens.count ? .red : .green
+        cell.scoreLabel.text = indexPath.row < allergens.count ? "❌" : "✔️"
+        cell.ingredientLabel.textColor = indexPath.row < allergens.count ? .red : .black
         return cell
     }
 }

@@ -48,7 +48,9 @@ class CreateUsernameViewController: UIViewController {
                 print(allergy)
             })
             
-            let initialViewController = UIStoryboard.initializeViewController(for: .main)
+            guard let initialViewController = UIStoryboard.initializeViewController(for: .main) as? HomeViewController else { return }
+            
+            initialViewController.shouldDisplayDisclaimer = true
             
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
