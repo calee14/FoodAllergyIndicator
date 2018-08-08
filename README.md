@@ -37,8 +37,16 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [X] Store ingredients on a databse so we don't search it
   - [X] Update thresholds so that the app will function
 - [X] Add disclaimers
-- [ ] Log out feature
-
+- [ ] Add disclaimers in the home page when the user first logs in
+- [ ] Update Terms of Service
+- [ ] Add more allergens
+  - [ ] Correct spelling of mustard
+  - [ ] Remove gutamate
+  - [ ] Remove colorants
+  - [ ] Add in all the nuts and sea food
+- [ ] Add counter for number of pictures (in the home screen page, credits square)
+- [ ] Add UI for (good . and bad x results)
+- [ ] Fix the api search (tomatoes)
 # Future Features
 - Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
@@ -49,3 +57,4 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - Have the user add their own allergies
 - Create sub allergens of broad foods
 - Improve api search in some way
+- Log out feature
