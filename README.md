@@ -46,3 +46,6 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - Zoom In with camera
 - Organize allergies in the setter view
   - Use search bar or sort
+- Have the user add their own allergies
+- Create sub allergens of broad foods
+- Improve api search in some way
