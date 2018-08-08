@@ -36,7 +36,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [X] Improve api search algorithm
   - [X] Store ingredients on a databse so we don't search it
   - [X] Update thresholds so that the app will function
-- [ ] Add disclaimers
+- [X] Add disclaimers
 - [ ] Log out feature
 
 # Future Features
@@ -46,3 +46,6 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - Zoom In with camera
 - Organize allergies in the setter view
   - Use search bar or sort
+- Have the user add their own allergies
+- Create sub allergens of broad foods
+- Improve api search in some way
