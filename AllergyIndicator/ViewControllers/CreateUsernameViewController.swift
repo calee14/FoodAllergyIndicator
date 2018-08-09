@@ -15,6 +15,7 @@ class CreateUsernameViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,26 +35,56 @@ class CreateUsernameViewController: UIViewController {
         nextButton.layer.cornerRadius = CGFloat(10)
     }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        guard let firUser = Auth.auth().currentUser,
-            let username = usernameTextField.text,
-            !username.isEmpty else { return }
+        let username = usernameTextField.text!
+        let password = passwordTextField.text
+        let email = "\(username)@test.com"
         
-        UserService.create(firUser, username: username) { (user) in
-            guard let user = user else { return }
+        Auth.auth().createUser(withEmail: email, password: password!) { (authData, error) in
+            if let error = error {
+                assertionFailure("Error: creating user: \(error.localizedDescription)")
+                return
+            }
+            guard (authData?.user) != nil else { return }
             
-            User.setCurrent(user, writeToUserDefaults: true)
+            guard let firUser = Auth.auth().currentUser,
+                let username = self.usernameTextField.text,
+                !username.isEmpty else { return }
             
-            AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-                print(allergy)
-            })
+            UserService.create(firUser, username: username) { (user) in
+                guard let user = user else { return }
+                
+                User.setCurrent(user, writeToUserDefaults: true)
+                
+                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
+                    print(allergy)
+                })
+                
+                let initialViewController = UIStoryboard.initializeViewController(for: .main)
+                
+                HomeViewController.shouldDisplayDisclaimer = true
+                
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+            }
             
-            let initialViewController = UIStoryboard.initializeViewController(for: .main)
-            
-            HomeViewController.shouldDisplayDisclaimer = true
-            
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
         }
+        
+//        UserService.create(firUser, username: username) { (user) in
+//            guard let user = user else { return }
+//
+//            User.setCurrent(user, writeToUserDefaults: true)
+//
+//            AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
+//                print(allergy)
+//            })
+//
+//            let initialViewController = UIStoryboard.initializeViewController(for: .main)
+//
+//            HomeViewController.shouldDisplayDisclaimer = true
+//
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
+//        }
     }
     
     

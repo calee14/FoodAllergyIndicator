@@ -37,39 +37,40 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        guard let authUI = FUIAuth.defaultAuthUI() else { return }
-        authUI.delegate = self
-        
-        let authViewController = authUI.authViewController()
-        
-        present(authViewController, animated: true)
+//        guard let authUI = FUIAuth.defaultAuthUI() else { return }
+//        authUI.delegate = self
+//
+//        let authViewController = authUI.authViewController()
+//
+//        present(authViewController, animated: true)
+        self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
     }
 }
 
 extension LoginViewController: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        if let error = error {
-            assertionFailure("Error: signing in: \(error.localizedDescription)")
-            return
-        }
-        
-        guard let user = user else { return }
-        
-        UserService.show(forUID: user.uid) { (user) in
-            if let user = user {
-                User.setCurrent(user, writeToUserDefaults: true)
-                
-                let initialViewController = UIStoryboard.initializeViewController(for: .main)
-                
-                HomeViewController.shouldDisplayDisclaimer = true
-                
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-            } else {
-                self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
-            }
-        }
-        print("handle user signup / login")
-    }
+//    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+//        if let error = error {
+//            assertionFailure("Error: signing in: \(error.localizedDescription)")
+//            return
+//        }
+//
+//        guard let user = user else { return }
+//
+//        UserService.show(forUID: user.uid) { (user) in
+//            if let user = user {
+//                User.setCurrent(user, writeToUserDefaults: true)
+//
+//                let initialViewController = UIStoryboard.initializeViewController(for: .main)
+//
+//                HomeViewController.shouldDisplayDisclaimer = true
+//
+//                self.view.window?.rootViewController = initialViewController
+//                self.view.window?.makeKeyAndVisible()
+//            } else {
+//                self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
+//            }
+//        }
+//        print("handle user signup / login")
+//    }
     
 }

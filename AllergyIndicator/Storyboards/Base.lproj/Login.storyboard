@@ -88,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YoMamma" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-lI-MVa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-lI-MVa">
                                 <rect key="frame" x="15" y="266" width="345" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0us-XJ-6Qj"/>
@@ -98,19 +98,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-7V-DwX">
-                                <rect key="frame" x="15" y="326" width="345" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.57647058823529407" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1VC-Qd-Ral"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="w6b-MV-vtB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextButtonTapped:" destination="Lqv-Ac-JgK" eventType="touchUpInside" id="Qft-IH-1dQ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-zN-NM7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
                                 <subviews>
@@ -138,24 +125,47 @@
                                     <constraint firstItem="EYu-e3-e3y" firstAttribute="top" secondItem="Ft7-aq-yvp" secondAttribute="bottom" constant="30" id="o2f-NG-l97"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2o-a7-Ntj">
+                                <rect key="frame" x="10" y="324" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-7V-DwX">
+                                <rect key="frame" x="15" y="362" width="345" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.57647058823529407" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1VC-Qd-Ral"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="w6b-MV-vtB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Lqv-Ac-JgK" eventType="touchUpInside" id="Qft-IH-1dQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Hg-Hl-uqq" firstAttribute="trailing" secondItem="cFq-lI-MVa" secondAttribute="trailing" constant="15" id="5Qx-AR-3ku"/>
                             <constraint firstItem="6Hg-Hl-uqq" firstAttribute="top" secondItem="f4h-zN-NM7" secondAttribute="bottom" constant="-236" id="BIY-jc-PU0"/>
+                            <constraint firstItem="4Zh-7V-DwX" firstAttribute="top" secondItem="V2o-a7-Ntj" secondAttribute="bottom" constant="8" id="CDc-5C-zFq"/>
                             <constraint firstItem="cFq-lI-MVa" firstAttribute="leading" secondItem="6Hg-Hl-uqq" secondAttribute="leading" constant="15" id="GDg-sT-sr3"/>
                             <constraint firstItem="f4h-zN-NM7" firstAttribute="leading" secondItem="6Hg-Hl-uqq" secondAttribute="leading" id="Qnw-ig-yyW"/>
                             <constraint firstItem="4Zh-7V-DwX" firstAttribute="leading" secondItem="6Hg-Hl-uqq" secondAttribute="leading" constant="15" id="WGw-XJ-Pem"/>
-                            <constraint firstItem="4Zh-7V-DwX" firstAttribute="top" secondItem="cFq-lI-MVa" secondAttribute="bottom" constant="10" id="Wn6-Mh-hcZ"/>
                             <constraint firstItem="6Hg-Hl-uqq" firstAttribute="trailing" secondItem="4Zh-7V-DwX" secondAttribute="trailing" constant="15" id="aND-hR-86t"/>
                             <constraint firstAttribute="trailing" secondItem="f4h-zN-NM7" secondAttribute="trailing" id="f4c-Hl-zwL"/>
                             <constraint firstItem="cFq-lI-MVa" firstAttribute="top" secondItem="f4h-zN-NM7" secondAttribute="bottom" constant="10" id="fZ7-zl-Pcj"/>
+                            <constraint firstItem="V2o-a7-Ntj" firstAttribute="top" secondItem="cFq-lI-MVa" secondAttribute="bottom" constant="8" id="kFY-mc-P3K"/>
+                            <constraint firstItem="V2o-a7-Ntj" firstAttribute="leading" secondItem="6Hg-Hl-uqq" secondAttribute="leading" constant="10" id="kxy-VL-tQ1"/>
+                            <constraint firstItem="6Hg-Hl-uqq" firstAttribute="trailing" secondItem="V2o-a7-Ntj" secondAttribute="trailing" constant="10" id="lQx-qC-D22"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Hg-Hl-uqq"/>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="f4h-zN-NM7" id="gys-nL-BOC"/>
                         <outlet property="nextButton" destination="4Zh-7V-DwX" id="Lcm-9f-SRb"/>
+                        <outlet property="passwordTextField" destination="V2o-a7-Ntj" id="0Cg-aH-mvz"/>
                         <outlet property="usernameTextField" destination="cFq-lI-MVa" id="340-P6-wKx"/>
                     </connections>
                 </viewController>
