@@ -66,7 +66,7 @@ class PhotoResultsViewController: UIViewController {
         setupLayout()
         
         guard let foodImage = foodImage else { return }
-//        self.foodImageView.image = foodImage
+        self.foodImageView.image = foodImage
     }
     
     func combineAllergensAndSafeIngredientsAndUpdateTable() {

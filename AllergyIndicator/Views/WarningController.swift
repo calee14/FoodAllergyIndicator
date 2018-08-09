@@ -30,7 +30,7 @@ class WarningController: NSObject {
     let allergiesTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 18)
+        textView.font = UIFont.systemFont(ofSize: 17)
         textView.isEditable = false
         textView.textAlignment = .center
         return textView
@@ -129,7 +129,7 @@ class WarningController: NSObject {
         warningTitleLabel.textColor = .black
         
 //        allergiesTextView.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 100)
-        allergiesTextView.topAnchor.constraint(equalTo: warningTitleLabel.bottomAnchor, constant: 10).isActive = true
+        allergiesTextView.topAnchor.constraint(equalTo: warningTitleLabel.bottomAnchor, constant: 0).isActive = true
         allergiesTextView.leftAnchor.constraint(equalTo: collectionView.leftAnchor).isActive = true
         allergiesTextView.rightAnchor.constraint(equalTo: collectionView.rightAnchor).isActive = true
         allergiesTextView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0).isActive = true

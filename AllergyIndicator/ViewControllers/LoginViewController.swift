@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseUI
-import FirebaseDatabase
-
-typealias FIRUser = FirebaseAuth.User
+//import FirebaseAuth
+//import FirebaseUI
+//import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
@@ -43,11 +41,12 @@ class LoginViewController: UIViewController {
 //        let authViewController = authUI.authViewController()
 //
 //        present(authViewController, animated: true)
+        
         self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
     }
 }
 
-extension LoginViewController: FUIAuthDelegate {
+//extension LoginViewController: FUIAuthDelegate {
 //    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
 //        if let error = error {
 //            assertionFailure("Error: signing in: \(error.localizedDescription)")
@@ -72,5 +71,4 @@ extension LoginViewController: FUIAuthDelegate {
 //        }
 //        print("handle user signup / login")
 //    }
-    
-}
+//}

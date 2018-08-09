@@ -49,7 +49,6 @@ class HomeViewController: UIViewController {
         if !HomeViewController.shouldDisplayDisclaimer {
             HomeViewController.shouldDisplayDisclaimer = randNum <= 2 ? true : false
         }
-        
         if HomeViewController.shouldDisplayDisclaimer {
             let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
@@ -64,7 +63,6 @@ class HomeViewController: UIViewController {
                 self.goToSetAllergiesViewController()
             } else {
                 // Do something if the user has already set their allergies
-                // show disclaimer
                 
             }
         }
