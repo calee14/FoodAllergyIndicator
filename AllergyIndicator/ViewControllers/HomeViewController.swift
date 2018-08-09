@@ -35,14 +35,7 @@ class HomeViewController: UIViewController {
 //        print("test \(CheckService.diceCoefficient(s: "I bet my life", t: "I bet your life"))")
 //        fatalError()
         // Do any additional setup after loading the view.
-        let randNum = arc4random_uniform(10)
-        HomeViewController.shouldDisplayDisclaimer = randNum <= 2 && HomeViewController.shouldDisplayDisclaimer != true ? true : false
         
-        if HomeViewController.shouldDisplayDisclaimer {
-            let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
-            guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
-            warningController.showWarningMenu(title: "Disclaimer", content: content)
-        }
 //        AllergyService.checkIfUserHasSetAllergies(for: User.current) { (hasSet) in
 //            if !hasSet {
 //                print("move to next controleler")
@@ -52,6 +45,18 @@ class HomeViewController: UIViewController {
 //            }
 //        }
         
+        let randNum = arc4random_uniform(10)
+        if !HomeViewController.shouldDisplayDisclaimer {
+            HomeViewController.shouldDisplayDisclaimer = randNum <= 2 ? true : false
+        }
+        
+        if HomeViewController.shouldDisplayDisclaimer {
+            let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
+            guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
+            self.warningController.showWarningMenu(title: "Disclaimer", content: content)
+            HomeViewController.shouldDisplayDisclaimer = false
+        }
+        
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
             if doesHaveAllergies.count == 0 {
@@ -59,8 +64,15 @@ class HomeViewController: UIViewController {
                 self.goToSetAllergiesViewController()
             } else {
                 // Do something if the user has already set their allergies
+                // show disclaimer
+                
             }
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupLayout()
     }
     

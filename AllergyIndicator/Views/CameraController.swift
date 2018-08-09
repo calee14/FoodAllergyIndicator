@@ -151,7 +151,6 @@ extension CameraController: AVCapturePhotoCaptureDelegate{
         
         else if let data = photo.fileDataRepresentation(),
             let image = UIImage(data: data) {
-            
             self.photoCaptureCompletionBlock?(image, nil)
         }
         else {

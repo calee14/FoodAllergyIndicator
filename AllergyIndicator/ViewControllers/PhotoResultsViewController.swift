@@ -31,7 +31,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
+//        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
                 guard let allergens = allergens else { return }
@@ -66,7 +66,7 @@ class PhotoResultsViewController: UIViewController {
         setupLayout()
         
         guard let foodImage = foodImage else { return }
-        self.foodImageView.image = foodImage
+//        self.foodImageView.image = foodImage
     }
     
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
