@@ -15,9 +15,10 @@ struct CheckService {
     static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?, [String]?) -> Void) {
         var possibleAllergies = [String]()
         var safeIngredients = [String]()
+        let usersAllergies = getOnlyAllergic(allergens: allergies)
         for i in ingreidents {
             var foundAllergy = false
-            for j in allergies {
+            for j in usersAllergies {
                 if j.isAllergic {
                     let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
                     print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
@@ -100,8 +101,9 @@ struct CheckService {
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
         var possibleAllergies = [String]()
+        let usersAllergies = getOnlyAllergic(allergens: allergies)
         for ingredient in recipeIngredients {
-            for allergy in allergies {
+            for allergy in usersAllergies {
                 if allergy.isAllergic {
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
                     print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
@@ -124,6 +126,9 @@ struct CheckService {
         return possibleAllergies
     }
     
+    static func getOnlyAllergic(allergens: [Allergy]) -> [Allergy] {
+        return allergens.filter { $0.isAllergic }
+    }
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a
         if b < mi {
