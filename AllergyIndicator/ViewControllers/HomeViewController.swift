@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         
         let randNum = arc4random_uniform(10)
         if !HomeViewController.shouldDisplayDisclaimer {
-            HomeViewController.shouldDisplayDisclaimer = randNum <= 2 ? true : false
+            HomeViewController.shouldDisplayDisclaimer = randNum <= 4 ? true : false
         }
         if HomeViewController.shouldDisplayDisclaimer {
             let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")

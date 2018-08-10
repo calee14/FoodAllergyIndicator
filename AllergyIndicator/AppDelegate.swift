@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import Clarifai_Apple_SDK
+//import Clarifai_Apple_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

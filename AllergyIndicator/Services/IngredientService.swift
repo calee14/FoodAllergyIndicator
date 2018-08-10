@@ -14,9 +14,9 @@ struct IngredientService {
     
     static func addIngredient(ingredientNames: [String], success: @escaping (Bool?) -> Void) {
         let ref = Database.database().reference().child(ingredientsPath)
-        var data = [String : String]()
+        var data = [String : Bool]()
         for ingredient in ingredientNames {
-            data[ingredient] = ingredient
+            data[ingredient] = false
         }
         ref.updateChildValues(data) { (error, ref) in
             if let error = error {

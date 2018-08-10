@@ -17,6 +17,7 @@ struct CheckService {
         var safeIngredients = [String]()
         let usersAllergies = getOnlyAllergic(allergens: allergies)
         for i in ingreidents {
+            if i.score < 0.5 { continue }
             var foundAllergy = false
             for j in usersAllergies {
                 if j.isAllergic {
