@@ -40,8 +40,35 @@ class TakePhotoViewController: UIViewController {
             try? self.cameraController.displayPreview(on: self.previewView)
         }
         setupLayout()
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: previewView, action: nil)
+        pinch(pinchGesture)
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = previewView.bounds.size
+        if let touchPoint = touches.first {
+            let x = touchPoint.location(in: previewView).y / screenSize.height
+            let y = 1.0 - touchPoint.location(in: previewView).x / screenSize.width
+            let focusPoint = CGPoint(x: x, y: y)
+            
+            if let device = cameraController.rearCamera {
+                do {
+                    try device.lockForConfiguration()
+                    
+                    device.focusPointOfInterest = focusPoint
+                    device.focusMode = .autoFocus
+                    device.exposurePointOfInterest = focusPoint
+                    device.exposureMode = AVCaptureDevice.ExposureMode.continuousAutoExposure
+                    device.unlockForConfiguration()
+                }
+                catch {
+                    // ignore
+                }
+            }
+        }
+    }
+    
     func setupLayout() {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
@@ -70,6 +97,7 @@ class TakePhotoViewController: UIViewController {
         self.imageView.removeFromSuperview()
         print("Disappear")
     }
+    
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         
