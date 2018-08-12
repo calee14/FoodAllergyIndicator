@@ -31,6 +31,17 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        if concepts == [ClarifaiConcept]() {
+            
+            self.cameraAutherization()
+            
+            setupLayout()
+            
+            guard let foodImage = foodImage else { return }
+            self.foodImageView.image = foodImage
+            
+            return
+        }
 //        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
@@ -82,6 +93,9 @@ class PhotoResultsViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    func cameraAutherization() {
+        
+    }
     func showWarningMenu(allergies: Bool) {
         var titleString = "BE CAREFUL"
         var allergyString = "Possiblle Allergens Detected!!! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."

@@ -78,7 +78,8 @@ class TakePhotoViewController: UIViewController {
         
         switch cameraAuthorizationStatus {
         case .denied:
-            self.previewView.
+            let blankImage = self.previewView.asImage()
+            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
         case .authorized:
             break
         case .restricted:
