@@ -22,6 +22,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-Xx-COr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7F0-Le-7ZZ" appends="YES" id="tpk-jM-Uyd"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-NX-g7X">
                                 <rect key="frame" x="157" y="567" width="60" height="60"/>
@@ -68,6 +72,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZq-U8-SJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="7F0-Le-7ZZ">
+                    <connections>
+                        <action selector="pinchToZoom:" destination="uAM-cW-PCJ" id="PHW-n3-0pF"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1351.2" y="-57.121439280359823"/>
         </scene>

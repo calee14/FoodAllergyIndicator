@@ -39,6 +39,7 @@ class TakePhotoViewController: UIViewController {
             
             try? self.cameraController.displayPreview(on: self.previewView)
         }
+        
         setupLayout()
         
     }
@@ -96,6 +97,40 @@ class TakePhotoViewController: UIViewController {
         print("Disappear")
     }
     
+    let minimumZoom: CGFloat = 1.0
+    let maximumZoom: CGFloat = 3.0
+    var lastZoomFactor: CGFloat = 1.0
+
+    @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
+        
+        guard let device = cameraController.rearCamera else { return }
+        
+        // Return zoom value between the minimum and maximum zoom values
+        func minMaxZoom(_ factor: CGFloat) -> CGFloat {
+            return min(min(max(factor, minimumZoom), maximumZoom), device.activeFormat.videoMaxZoomFactor)
+        }
+        
+        func update(scale factor: CGFloat) {
+            do {
+                try device.lockForConfiguration()
+                defer { device.unlockForConfiguration() }
+                device.videoZoomFactor = factor
+            } catch {
+                print("\(error.localizedDescription)")
+            }
+        }
+        
+        let newScaleFactor = minMaxZoom(sender.scale * lastZoomFactor)
+        
+        switch sender.state {
+        case .began: fallthrough
+        case .changed: update(scale: newScaleFactor)
+        case .ended:
+            lastZoomFactor = minMaxZoom(newScaleFactor)
+            update(scale: lastZoomFactor)
+        default: break
+        }
+    }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         
