@@ -41,8 +41,6 @@ class TakePhotoViewController: UIViewController {
         }
         setupLayout()
         
-        let pinchGesture = UIPinchGestureRecognizer(target: previewView, action: nil)
-        pinch(pinchGesture)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
