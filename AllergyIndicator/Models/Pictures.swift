@@ -40,7 +40,7 @@ class Pictures: Codable {
     }
     static func decrementPictureCount() {
         let newPicture = Pictures.current
-        newPicture.numpictures -= 1
+        newPicture.numpictures -= 0
         if let data = try? JSONEncoder().encode(newPicture) {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }

@@ -22,6 +22,7 @@ class WarningController: NSObject {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Warning!"
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 30)
         return label

@@ -72,6 +72,28 @@ class TakePhotoViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        
+        let cameraMediaType = AVMediaType.video
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
+        
+        switch cameraAuthorizationStatus {
+        case .denied:
+            self.previewView.
+        case .authorized:
+            break
+        case .restricted:
+            break
+        case .notDetermined:
+            // Prompting user for the permission to use the camera.
+            AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                if granted {
+                    print("Granted access to \(cameraMediaType)")
+                } else {
+                    print("Denied access to \(cameraMediaType)")
+                }
+            }
+        }
+        
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
         if !onGoingtransactions { return }
         Pictures.decrementPictureCount()
