@@ -46,7 +46,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [X] Add in all the nuts and sea food
 - [X] Add counter for number of pictures (in the home screen page, credits square)
 - [X] Add UI for (good . and bad x results)
-- [ ] Fix the api search (tomatoes)
+- [X] Fix the api search (tomatoes)
 - [X] Remove email and password authentication (or something like that)
 - [X] Change font size so that all of the text can fit in the box
 # Future Features
