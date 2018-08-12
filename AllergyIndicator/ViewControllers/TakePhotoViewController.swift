@@ -80,6 +80,7 @@ class TakePhotoViewController: UIViewController {
         case .denied:
             let blankImage = self.previewView.asImage()
             self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
+            return
         case .authorized:
             break
         case .restricted:

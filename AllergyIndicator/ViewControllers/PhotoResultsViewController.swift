@@ -35,6 +35,8 @@ class PhotoResultsViewController: UIViewController {
             
             self.cameraAutherization()
             
+            ingredientsInFood.append("No data provided.")
+            
             setupLayout()
             
             guard let foodImage = foodImage else { return }
@@ -94,6 +96,9 @@ class PhotoResultsViewController: UIViewController {
     }
     
     func cameraAutherization() {
+        let titleString = "Camera not available"
+        let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
+        warningController.showWarningMenu(title: titleString, content: contentString)
         
     }
     func showWarningMenu(allergies: Bool) {
