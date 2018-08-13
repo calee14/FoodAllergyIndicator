@@ -50,13 +50,13 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [X] Remove email and password authentication (or something like that)
 - [X] Change font size so that all of the text can fit in the box
 # Future Features
-- Make it so that it can recognize food packages or food bar scanners to get indgredients on food
+- [ ] Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
-- Fix Memory Issues
-- Zoom In with camera
-- Organize allergies in the setter view
+- [ ] Fix Memory Issues
+- [X] Zoom In with camera
+- [ ] Organize allergies in the setter view
   - Use search bar or sort
-- Have the user add their own allergies
-- Create sub allergens of broad foods
-- Improve api search in some way
-- Log out feature
+- [ ] Have the user add their own allergies
+- [ ] Create sub allergens of broad foods
+- [ ] Improve api search in some way
+- [ ] Log out feature (Maybe won't do)
