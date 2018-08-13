@@ -22,6 +22,8 @@ class TakePhotoViewController: UIViewController {
     
     let cameraController = CameraController()
     
+    let warningController = WarningController()
+    
     let imageView = UIImageView()
     
     override func viewDidLoad() {
@@ -139,8 +141,11 @@ class TakePhotoViewController: UIViewController {
         
         switch cameraAuthorizationStatus {
         case .denied:
-            let blankImage = self.previewView.asImage()
-            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
+//            let blankImage = self.previewView.asImage()
+            let titleString = "Camera not available"
+            let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
+            self.warningController.showWarningMenu(title: titleString, content: contentString)
+//            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
             return
         case .authorized:
             break
