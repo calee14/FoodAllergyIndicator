@@ -60,3 +60,4 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [ ] Create sub allergens of broad foods
 - [ ] Improve api search in some way
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
+- [ ] Make it so that the user doesn't need to enter username and password
