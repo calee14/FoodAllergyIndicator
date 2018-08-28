@@ -61,3 +61,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [ ] Improve api search in some way
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
 - [ ] Make it so that the user doesn't need to enter username and password
+- [ ] Use google's vision API to detect food in picture
+  - [ ] connect to API
+  - [ ] check if there is food in image
+  - [ ] implement allergy check code with google's results
