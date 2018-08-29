@@ -65,3 +65,5 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [ ] connect to API
   - [ ] check if there is food in image
   - [ ] implement allergy check code with google's results
+- [ ] Check clarifai's confidence score to tell if we should look at data
+  - [ ] have a threshold of more than 80 percent from 50.
