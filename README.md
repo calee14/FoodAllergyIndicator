@@ -67,3 +67,4 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [ ] implement allergy check code with google's results
 - [ ] Check clarifai's confidence score to tell if we should look at data
   - [ ] have a threshold of more than 80 percent from 50.
+  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. Raise threshold to 79 or 80 percent.
