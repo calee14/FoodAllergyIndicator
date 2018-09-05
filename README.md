@@ -13,7 +13,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 # Built With
 - [Clarifai](https://clarifai.com) - API that recognizes the ingredients in the food
 - [Firebase](https://firebase.google.com) - Backend for mobile apps
-- [Xcode](https://developer.apple.com/xcode/) - IDE for app development
+- [Xcode](https://developer.apple.com/xcode/) - IDE for iOS app development
 - [RecipePuppy](http://www.recipepuppy.com/about/api/) - API to check ingredients in certain foods
 
 # Authors
