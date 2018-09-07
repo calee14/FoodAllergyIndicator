@@ -68,5 +68,6 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - [ ] check if there is food in image
   - [ ] implement allergy check code with google's results
 - [ ] Check clarifai's confidence score to tell if we should look at data
-  - [ ] have a threshold of more than 80 percent from 50.
+  - ~~[ ] have a threshold of more than 80 percent from 50.~~
+  - [ ] have threshold go to more then 97 percent from 80.
   - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. Raise threshold to 79 or 80 percent.
