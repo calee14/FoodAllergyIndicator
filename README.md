@@ -20,6 +20,15 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - **Cap Lee** - Pretty much going to be the only contributor
 
 # Todo
+- [ ] Improve api search in some way
+  - [ ] Use google's vision API to detect food in picture
+  - [ ] connect to API
+  - [ ] check if there is food in image
+  - [ ] implement allergy check code with google's results
+- [ ] Check clarifai's confidence score to tell if we should look at data
+  - ~~[ ] have a threshold of more than 80 percent from 50.~~
+  - [ ] have threshold go to more then 97 percent from 80.
+  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 97 or 98 percent.
 - [X] Indicate user that they've taken a photo
   - https://stackoverflow.com/questions/48180635/how-to-insert-image-on-uiview
   - https://stackoverflow.com/questions/28485621/create-uibutton-programmatically-with-constraints-in-swift
@@ -60,14 +69,5 @@ It should be intuitive enough to open the app in xCode and running it on a simul
   - Use search bar or sort
 - [ ] Have the user add their own allergies
 - [ ] Create sub allergens of broad foods
-- [ ] Improve api search in some way
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
 - [ ] Make it so that the user doesn't need to enter username and password
-- [ ] Use google's vision API to detect food in picture
-  - [ ] connect to API
-  - [ ] check if there is food in image
-  - [ ] implement allergy check code with google's results
-- [ ] Check clarifai's confidence score to tell if we should look at data
-  - ~~[ ] have a threshold of more than 80 percent from 50.~~
-  - [ ] have threshold go to more then 97 percent from 80.
-  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 97 or 98 percent.
