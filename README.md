@@ -2,7 +2,7 @@
 Allergy Indicator is an app that allows users to take pictures of their food and warn them if there are any ingredients in the food that they are allergic to. This app targets people who have food allergies and will try to prevent them from eating the wrong foods. The app will have multiple features that will help indicate the user if there are any allergies in the food they are eating. The main one is to have the user take a picture of the food and using a API the app should prompt the user if there are any allergies. Another addition to the app is that it will have pictures and data of the food the user is allergic to so I user can recognize the foods the user is allergic to. 
 
 # Getting started
-If you're a developer hoping to make changes to my code or just wants to play around with it you can run:
+If you're a developer hoping to make changes to my code or just wants to play around with it you can type the command below in your terminal:
 ```
 git clone https://github.com/calee14/FoodAllergyIndicator.git
 ```
@@ -28,7 +28,7 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [ ] Check clarifai's confidence score to tell if we should look at data
   - ~~[ ] have a threshold of more than 80 percent from 50.~~
   - [ ] have threshold go to more then 97 percent from 80.
-  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 97 or 98 percent.
+  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 98 or 99 percent.
 - [X] Indicate user that they've taken a photo
   - https://stackoverflow.com/questions/48180635/how-to-insert-image-on-uiview
   - https://stackoverflow.com/questions/28485621/create-uibutton-programmatically-with-constraints-in-swift
