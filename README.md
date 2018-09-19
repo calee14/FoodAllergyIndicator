@@ -6,7 +6,7 @@ If you're a developer hoping to make changes to my code or just wants to play ar
 ```
 git clone https://github.com/calee14/FoodAllergyIndicator.git
 ```
-If you want to use the app you can download it on the App Store. [Link will be soon available]().
+If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due to the long app store review times. 
 # Deployment
 It should be intuitive enough to open the app in xCode and running it on a simulator.
 
