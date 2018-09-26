@@ -1,5 +1,5 @@
 # AllergyIndicator
-Allergy Indicator is an app that allows users to take pictures of their food and warn them if there are any ingredients in the food that they are allergic to. This app targets people who have food allergies and will try to prevent them from eating the wrong foods. The app will have multiple features that will help indicate the user if there are any allergies in the food they are eating. The main one is to have the user take a picture of the food and using a API the app should prompt the user if there are any allergies. Another addition to the app is that it will have pictures and data of the food the user is allergic to so I user can recognize the foods the user is allergic to. 
+Allergy Indicator is an app that allows users to take pictures of their food and warn them if there are any ingredients in the food that they are allergic to. This app targets people who have food allergies and will try to prevent them from eating the wrong foods. The app will have multiple features that will help indicate the user if there are any allergies in the food they are eating. The main one is to have the user take a picture of the food and using a API the app should prompt the user if there are any allergies. Another addition to the app is that it will have pictures and data of the food the user is allergic to so the user can recognize the foods the user is allergic to. 
 
 # Getting started
 If you're a developer hoping to make changes to my code or just wants to play around with it you can type the command below in your terminal:
@@ -72,3 +72,5 @@ It should be intuitive enough to open the app in xCode and running it on a simul
 - [ ] Create sub allergens of broad foods
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
 - [ ] Make it so that the user doesn't need to enter username and password
+# Notes
+- [ ] Maybe won't add the feature where the app will have additional information about food allergies. Too hard to do and waste of time, energy and effort.
