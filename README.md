@@ -9,7 +9,7 @@ git clone https://github.com/calee14/FoodAllergyIndicator.git
 If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due to the long app store review times. 
 # Deployment
 It should be intuitive enough to open the app in xCode and running it on a simulator.
-
+If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due to the long app store review times. 
 # Built With
 - [Clarifai](https://clarifai.com) - API that recognizes the ingredients in the food
 - [Firebase](https://firebase.google.com) - Backend for mobile apps
