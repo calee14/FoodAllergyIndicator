@@ -26,6 +26,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         IAPHelper.shared.getProducts()
+//        // Launch Clarifai SDK
+//        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
 //        IngredientService.addIngredient(ingredientNames: ["egg", "toast", "grapes"]) { (success) in
 //            print(success)
 //        }
