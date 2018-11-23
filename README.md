@@ -19,7 +19,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 # Authors
 - **Cap Lee** - Pretty much going to be the only contributor
 
-# Todo
+# Tasks
 - [ ] Improve api search in some way
   - [ ] Use google's vision API to detect food in picture
   - [ ] connect to API
@@ -74,3 +74,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Make it so that the user doesn't need to enter username and password
 # Notes
 - [ ] Maybe won't add the feature where the app will have additional information about food allergies. Too hard to do ~~and waste of time, energy and effort.~~ and should focus more on the main feature and get that working perfectly.
+
+# Suedo Code for task: check if there is food in image
+```
+menu view controller:
+  configure clarifai sdk
+take pricture view controller:
+  use the general model in the sdk
+  check if there is the 'food' label in the concepts list
+```
