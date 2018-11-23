@@ -6,6 +6,7 @@
 //  Copyright © 2018 Cappillen. All rights reserved.
 //
 
+// import libraries
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -19,6 +20,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var termsBackground: UIView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftButtonBackground: UIView!
+    
+    // MARK: - Properties
     
     // Global class variables
     static var shouldDisplayDisclaimer: Bool = false

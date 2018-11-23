@@ -6,6 +6,7 @@
 //  Copyright © 2018 Cappillen. All rights reserved.
 //
 
+// import libraries
 import UIKit
 import AVFoundation
 import FirebaseStorage
@@ -13,35 +14,44 @@ import Clarifai_Apple_SDK
 import Clarifai
 
 class TakePhotoViewController: UIViewController {
-
+    
+    // Global class ui elements
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var buttonBackground: UIView!
     
     // MARK: - Properties
     
+    // Global class variables
+    
+    // Instance of the CameraController - going to help us take picture
     let cameraController = CameraController()
-    
+    // Instance of the WarningController - displays messages
     let warningController = WarningController()
-    
+    // Image view to display the image the camera took
     let imageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        IAPHelper.shared.getProducts()
-        
+        /* This method is called after the view controller
+         has loaded its view hierarchy into memory. */
         // Do any additional setup after loading the view.
+        
+        //        IAPHelper.shared.getProducts()
+        
         print("Take photo")
         
+        // Start up the camera
         cameraController.prepare {(error) in
+            // Print the error if given one
             if let error = error {
                 print(error)
             }
-            
+            // Display the camera feed on the preiview view
             try? self.cameraController.displayPreview(on: self.previewView)
         }
         
+        // Set up UI elements
         setupLayout()
         
     }
