@@ -36,7 +36,8 @@ struct PredictService {
     
     static func predictFoodImage(image: UIImage, completion: @escaping ([ClarifaiConcept]?) -> Void) {
         // add the api here
-        let app = ClarifaiApp(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        let apikey = ConstantsAPI.clarifaiapi.key
+        let app = ClarifaiApp(apiKey: apikey)
         
         if let app = app {
             app.getModelByName("food-items-v1.0", completion: { (model, error) in
