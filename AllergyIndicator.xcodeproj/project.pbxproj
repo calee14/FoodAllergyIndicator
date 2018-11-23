@@ -39,6 +39,7 @@
 		B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA8402117C67D004E43D1 /* IAPHelper.swift */; };
 		B3CBA8432117FF07004E43D1 /* TermsOfService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CBA8422117FF07004E43D1 /* TermsOfService.storyboard */; };
 		B3CBA84521180083004E43D1 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA84421180083004E43D1 /* TermsViewController.swift */; };
+		B3D2195B21A7DCE4009CF9B5 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -89,6 +90,7 @@
 		B3CBA8402117C67D004E43D1 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		B3CBA8422117FF07004E43D1 /* TermsOfService.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfService.storyboard; sourceTree = "<group>"; };
 		B3CBA84421180083004E43D1 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				B3F902C02104316A00FD552E /* Info.plist */,
 				B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */,
 				B3C0914621078EC20058E046 /* Constants.swift */,
+				B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */,
 				B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */,
 				B3CBA84521180083004E43D1 /* TermsViewController.swift in Sources */,
+				B3D2195B21A7DCE4009CF9B5 /* ConstantsAPI.swift in Sources */,
 				B3921152210BA3BF0048E6DD /* String+Substring.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,

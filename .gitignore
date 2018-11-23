@@ -69,3 +69,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Config files or
+# API keys
+AllergyIndicator/Supporting/ConstantsAPI.swift
