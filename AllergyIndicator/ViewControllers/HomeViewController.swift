@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    // Global class ui elements
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var setAllergiesButton: UIButton!
     @IBOutlet weak var takePhotoBackground: UIView!
@@ -19,15 +20,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftButtonBackground: UIView!
     
+    // Global class variables
     static var shouldDisplayDisclaimer: Bool = false
     
+    // Create an instance of the warning controller
     let warningController = WarningController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* This method is called after the view controller
+         has loaded its view hierarchy into memory. */
+        // Get the in app-purchase products
         IAPHelper.shared.getProducts()
 //        // Launch Clarifai SDK
 //        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        
 //        IngredientService.addIngredient(ingredientNames: ["egg", "toast", "grapes"]) { (success) in
 //            print(success)
 //        }
@@ -47,25 +54,40 @@ class HomeViewController: UIViewController {
 //            }
 //        }
         
+        // Only display the disclaimer once every ten times
         let randNum = arc4random_uniform(10)
+        // Only display the disclaimer only when the user first opens the app
+        /* If the user seques back to the HomeViewController the viewDidLoad function will run again
+        so we only want to display the disclaimer once.
+        */
         if !HomeViewController.shouldDisplayDisclaimer {
             HomeViewController.shouldDisplayDisclaimer = randNum <= 4 ? true : false
         }
+        
+        // Check if we should display the disclaimer
         if HomeViewController.shouldDisplayDisclaimer {
+            // Get the path of the file that contains the contents of the disclaimer
             let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
+            // Retrieve the contents in the file
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
+            // Put a disclaimer on screen
             self.warningController.showWarningMenu(title: "Disclaimer", content: content)
+            // Reset the should-display-disclaimer variable
             HomeViewController.shouldDisplayDisclaimer = false
         }
         
+        // Retrieve the allergies for this user on the firebase database
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
+            // Check check the allergies the user has
             let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
+            // If the user has no allergies
             if doesHaveAllergies.count == 0 {
+                // Move to the SetAllergiesViewController to set the allerigies of the user
                 print("move to next controller")
                 self.goToSetAllergiesViewController()
             } else {
                 // Do something if the user has already set their allergies
-                
+                /* Do nothing for now */
             }
         }
         
@@ -73,17 +95,23 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        /* This method is called before the view controller's view
+         is about to be added to a view hierarchy */
+        // Set UI for the view controller
         setupLayout()
     }
     
     func setupLayout() {
+        // Retrieve colors
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
         
+        // Change the colors of the navigation bar
         self.navigationController?.navigationBar.applyNavigationGradient(colors: [lightblue , cyan])
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.alpha = 0.95
         
+        // Change UI for the first button - the take photo button
         takePhotoButton.backgroundColor = cyan
         
         takePhotoButton.layer.cornerRadius = 6
@@ -92,6 +120,7 @@ class HomeViewController: UIViewController {
         takePhotoBackground.layer.cornerRadius = 6
         takePhotoBackground.layer.masksToBounds = true
         
+        // Change UI for the second button - the set allergies button
         setAllergiesButton.backgroundColor = cyan
 
         setAllergiesButton.layer.cornerRadius = 6
@@ -100,6 +129,7 @@ class HomeViewController: UIViewController {
         setAllergiesBackground.layer.cornerRadius = 6
         setAllergiesBackground.layer.masksToBounds = true
         
+        // Change UI for the third button - the terms of service button
         termsButton.layer.cornerRadius = 6
         termsButton.clipsToBounds = false
         
@@ -108,6 +138,7 @@ class HomeViewController: UIViewController {
         termsBackground.layer.cornerRadius = 6
         termsBackground.layer.masksToBounds = true
         
+        // Change UI for the fourth button - the picture count
         leftButton.layer.cornerRadius = 6
         leftButton.clipsToBounds = false
         
@@ -119,27 +150,33 @@ class HomeViewController: UIViewController {
     }
     
     func toggleTakePhotoButton(status: Bool) {
+        // Change the status of the takePhotoButton
         takePhotoButton.isUserInteractionEnabled = status
     }
     
     func toggleSetAllergiesButton(status: Bool) {
+        // Change the status of the setAllergiesButton
         setAllergiesButton.isUserInteractionEnabled = status
     }
     
     func toggleTermsButton(status: Bool) {
+        // Change the status of the termsButton
         termsButton.isUserInteractionEnabled = status
     }
     
     func toggleLeftButton(status: Bool) {
+        // Change the status of the leftButton
         leftButton.isUserInteractionEnabled = status
     }
     
     func goToSetAllergiesViewController() {
         defer {
+            // Change the status of all the rest of the buttons after performing seque
             toggleTakePhotoButton(status: true)
             toggleTermsButton(status: true)
             toggleLeftButton(status: true)
         }
+        // Seque to the SetAllergiesViewController
         let storyboard = UIStoryboard(name: "SetAllergies", bundle: nil)
         
         let setAllergiesController = storyboard.instantiateViewController(withIdentifier: "SetAllergiesViewController") as! SetAllergiesViewController
@@ -149,10 +186,12 @@ class HomeViewController: UIViewController {
     
     func goToTakePhotoViewController() {
         defer {
+            // Change the status of all the rest of the buttons after performing seque
             toggleSetAllergiesButton(status: true)
             toggleTermsButton(status: true)
             toggleLeftButton(status: true)
         }
+        // Seque to the TakePhotoViewController
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
         let takePhotoController = storyboard.instantiateViewController(withIdentifier: "TakePhotoViewController") as! TakePhotoViewController
@@ -162,10 +201,12 @@ class HomeViewController: UIViewController {
     
     func goToTermsOfServiceViewController() {
         defer {
+            // Change the status of all the rest of the buttons after performing seque
             toggleSetAllergiesButton(status: true)
             toggleTakePhotoButton(status: true)
             toggleLeftButton(status: true)
         }
+        // Seque to the TermsViewController
         let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
         
         let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
@@ -174,15 +215,18 @@ class HomeViewController: UIViewController {
     
     func goDoWhateverLeftButtonDoes() {
         defer {
+            // Change the status of all the rest of the buttons to active after performing seque
             toggleSetAllergiesButton(status: true)
             toggleTakePhotoButton(status: true)
             toggleTermsButton(status: true)
         }
     }
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan
         self.takePhotoButton.setTitleColor(.white, for: .normal)
@@ -191,9 +235,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoHighlight(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -204,9 +250,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoEnd(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.takePhotoButton.backgroundColor = cyan
         self.takePhotoButton.setTitleColor(.white, for: .normal)
@@ -215,9 +263,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.setAllergiesButton.backgroundColor = cyan
         self.setAllergiesBackground.removeGradient()
@@ -226,9 +276,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesHighlight(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -239,9 +291,11 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func setAllergiesEnd(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.setAllergiesButton.backgroundColor = cyan
         self.setAllergiesBackground.removeGradient()
@@ -250,9 +304,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsTapped(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.termsButton.backgroundColor = cyan
         self.termsBackground.removeGradient()
@@ -261,9 +317,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsHighlight(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -274,9 +332,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsEnd(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleLeftButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.termsButton.backgroundColor = cyan
         self.termsBackground.removeGradient()
@@ -285,9 +345,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func leftButtonTapped(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.leftButton.backgroundColor = cyan
         self.leftButtonBackground.removeGradient()
@@ -297,9 +359,11 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func leftButtonHighlighted(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        // change the color of the backgrounds of the button
         UIView.animate(withDuration: 0.1) {
             let lightblue = UIColor(rgb: 0x0093DD)
             let cyan = UIColor(rgb: 0x0AD2A8)
@@ -310,9 +374,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func leftButtonEnd(_ sender: UIButton) {
+        // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
+        // change the color of the backgrounds of the button
         let cyan = UIColor(rgb: 0x0AD2A8)
         self.leftButton.backgroundColor = cyan
         self.leftButtonBackground.removeGradient()
@@ -320,6 +386,5 @@ class HomeViewController: UIViewController {
         self.goDoWhateverLeftButtonDoes()
 //        sender.isSelected = false
     }
-    
     
 }
