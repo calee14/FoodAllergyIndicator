@@ -9,8 +9,9 @@
 import UIKit
 import Clarifai_Apple_SDK
 import Clarifai
+
 struct PredictService {
-    static func predictImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
+    static func predictFoodInImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
         // initialize variables
         var concepts: [Concept] = []
         var model: Model!

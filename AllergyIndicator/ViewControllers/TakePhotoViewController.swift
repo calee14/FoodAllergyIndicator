@@ -193,10 +193,11 @@ class TakePhotoViewController: UIViewController {
                 self.imageView.image = image
                 self.previewView.insertSubview(self.imageView, at: 0)
                 
-    //            PredictService.predictImage(image: image, completion: { (concepts) in
-    //                guard let concepts = concepts else { return }
-    //                self.goToShowResultsViewController(concepts: concepts, image: image)
-    //            })
+                PredictService.predictFoodInImage(image: image, completion: { (concepts) in
+                    guard let concepts = concepts else { return }
+                    // run the check here if food is in the image
+//                    self.goToShowResultsViewController(concepts: concepts, image: image)
+                })
                 
                 PredictService.predictFoodImage(image: image, completion: { (concepts) in
                     guard let concepts = concepts else { return }
