@@ -59,14 +59,19 @@ class TakePhotoViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let screenSize = previewView.bounds.size
         if let touchPoint = touches.first {
+            // Get the x coordinate of the touch
             let x = touchPoint.location(in: previewView).y / screenSize.height
+            // Get the y coordinate of the touch
             let y = 1.0 - touchPoint.location(in: previewView).x / screenSize.width
+            // Create a CGPoint of the touch
             let focusPoint = CGPoint(x: x, y: y)
             
+            // Access the rear camera
             if let device = cameraController.rearCamera {
                 do {
                     try device.lockForConfiguration()
                     
+                    // Camera focus
                     device.focusPointOfInterest = focusPoint
                     device.focusMode = .autoFocus
                     device.exposurePointOfInterest = focusPoint
@@ -81,15 +86,18 @@ class TakePhotoViewController: UIViewController {
     }
     
     func setupLayout() {
+        // Get colors
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
         
+        // Round off the button
         captureButton.layer.zPosition = 10
 //        captureButton.layer.borderColor = UIColor.black.cgColor
         captureButton.layer.borderWidth = 2
         captureButton.layer.borderColor = UIColor.clear.cgColor
         captureButton.layer.cornerRadius = min(captureButton.frame.width, captureButton.frame.height) / 2
         
+        // Add gradients to the background of the button
         buttonBackground.applyGradient(colours: [lightblue, cyan])
         buttonBackground.layer.cornerRadius = min(buttonBackground.frame.width, buttonBackground.frame.height) / 2
         buttonBackground.layer.masksToBounds = true
@@ -98,23 +106,33 @@ class TakePhotoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        /* This method is called before the view controller's
+         view is about to be added to a view hierarchy */
+        
+        // Show the camera view on screen
         self.cameraController.previewLayer?.isHidden = false
+        // Activate the camera button
         self.captureButton.isUserInteractionEnabled = true
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        /* This method is called in response to a
+         view being removed from a view hierarchy */
+        // Remove the image view that stores the picture the user took
         self.imageView.removeFromSuperview()
         print("Disappear")
     }
     
+    // Set variables for the camera zoom
     let minimumZoom: CGFloat = 1.0
     let maximumZoom: CGFloat = 3.0
     var lastZoomFactor: CGFloat = 1.0
 
     @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
         
+        // Access the camera
         guard let device = cameraController.rearCamera else { return }
         
         // Return zoom value between the minimum and maximum zoom values
@@ -124,6 +142,7 @@ class TakePhotoViewController: UIViewController {
         
         func update(scale factor: CGFloat) {
             do {
+                // Zoom camera
                 try device.lockForConfiguration()
                 defer { device.unlockForConfiguration() }
                 device.videoZoomFactor = factor
@@ -132,8 +151,10 @@ class TakePhotoViewController: UIViewController {
             }
         }
         
+        // Get the magnitude of the pinch
         let newScaleFactor = minMaxZoom(sender.scale * lastZoomFactor)
         
+        // Manages the states of the pinch function
         switch sender.state {
         case .began: fallthrough
         case .changed: update(scale: newScaleFactor)
@@ -146,11 +167,15 @@ class TakePhotoViewController: UIViewController {
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         
+        // Get the authorization status of the users camera
         let cameraMediaType = AVMediaType.video
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
         
+        // Manage the different types of status
         switch cameraAuthorizationStatus {
         case .denied:
+            // We don't have access
+            // Use the warning controller to dispaly a message saying they need to allow access for the camera
 //            let blankImage = self.previewView.asImage()
             let titleString = "Camera not available"
             let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
@@ -171,14 +196,17 @@ class TakePhotoViewController: UIViewController {
                 }
             }
         }
-        
+        // Remove the ongoing transactions
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
         if !onGoingtransactions { return }
+        // Decrement the picture count
         Pictures.decrementPictureCount()
+        // Access the picture count
         let pictureCount = Pictures.current.numpictures
         print("Pic \(pictureCount)")
         
         if pictureCount > 0 {
+            // Camera controller takes a picture
             cameraController.captureImage { (image, error) in
                 // get image
                 guard let image = image else {
@@ -193,13 +221,16 @@ class TakePhotoViewController: UIViewController {
                 self.imageView.image = image
                 self.previewView.insertSubview(self.imageView, at: 0)
                 
+                // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (concepts) in
                     guard let concepts = concepts else { return }
                     // run the check here if food is in the image
 //                    self.goToShowResultsViewController(concepts: concepts, image: image)
                 })
                 
+                // Predicts the foods in the image
                 PredictService.predictFoodImage(image: image, completion: { (concepts) in
+                    // Send the concepts to the ShowResultsViewController
                     guard let concepts = concepts else { return }
                     DispatchQueue.main.async {
                         self.goToShowResultsViewController(concepts: concepts, image: image)
@@ -219,6 +250,7 @@ class TakePhotoViewController: UIViewController {
     }
     
     func purchaseMorePictures() {
+        // Prompt the user to purchase more images
         defer {
             self.captureButton.isUserInteractionEnabled = true
         }
@@ -227,16 +259,19 @@ class TakePhotoViewController: UIViewController {
     }
     
     func goToShowResultsViewController(concepts: [ClarifaiConcept], image: UIImage?) {
+        // Retrieve the storyboard the app is going to seque to
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
         let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
         
+        // Send the images and concepts to the PhotoResultsController
         photoResultsController.concepts = concepts
         
         if let image = image {
             photoResultsController.foodImage = image
         }
         
+        // Navigate to the results view controller
         self.navigationController?.pushViewController(photoResultsController, animated: true)
     }
 }
