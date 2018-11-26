@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Firebase
         FirebaseApp.configure()
         
-//        // Launch Clarifai SDK
-//        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        // Launch Clarifai SDK
+//        let apikey = ConstantsAPI.clarifaiapi.key
+//        Clarifai.sharedInstance().start(apiKey: apikey)
 
         // Configure LoginViewController
         configureInitialRootViewController(for: window)

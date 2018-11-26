@@ -224,8 +224,12 @@ class TakePhotoViewController: UIViewController {
                 // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (concepts) in
                     guard let concepts = concepts else { return }
-                    // run the check here if food is in the image
-//                    self.goToShowResultsViewController(concepts: concepts, image: image)
+                    for concept in concepts {
+                        if concept.name == "food" && concept.score >= 0.5 {
+                            print("found food: \(concept.score)")
+                        }
+                    }
+                    
                 })
                 
                 // Predicts the foods in the image

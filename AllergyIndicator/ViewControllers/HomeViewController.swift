@@ -8,6 +8,7 @@
 
 // import libraries
 import UIKit
+import Clarifai_Apple_SDK
 
 class HomeViewController: UIViewController {
     
@@ -35,8 +36,9 @@ class HomeViewController: UIViewController {
          has loaded its view hierarchy into memory. */
         // Get the in app-purchase products
         IAPHelper.shared.getProducts()
-//        // Launch Clarifai SDK
-//        Clarifai.sharedInstance().start(apiKey: "8bf951876b164091909b8c3f54bd642f")
+        // Launch Clarifai SDK
+        let apikey = ConstantsAPI.clarifaiapi.key
+        Clarifai.sharedInstance().start(apiKey: apikey)
         
 //        IngredientService.addIngredient(ingredientNames: ["egg", "toast", "grapes"]) { (success) in
 //            print(success)
