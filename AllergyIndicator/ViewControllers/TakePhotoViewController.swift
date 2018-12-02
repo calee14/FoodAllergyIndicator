@@ -224,20 +224,27 @@ class TakePhotoViewController: UIViewController {
                 // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (concepts) in
                     guard let concepts = concepts else { return }
+                    var foundFood: Bool = false
                     for concept in concepts {
                         if concept.name == "food" && concept.score >= 0.5 {
                             print("found food: \(concept.score)")
+                            foundFood = true
                         }
                     }
-                    
-                })
-                
-                // Predicts the foods in the image
-                PredictService.predictFoodImage(image: image, completion: { (concepts) in
-                    // Send the concepts to the ShowResultsViewController
-                    guard let concepts = concepts else { return }
-                    DispatchQueue.main.async {
-                        self.goToShowResultsViewController(concepts: concepts, image: image)
+                    if foundFood {
+                        // Predicts the foods in the image
+                        PredictService.predictFoodImage(image: image, completion: { (concepts) in
+                            // Send the concepts to the ShowResultsViewController
+                            guard let concepts = concepts else { return }
+                            DispatchQueue.main.async {
+                                self.goToShowResultsViewController(concepts: concepts, image: image)
+                            }
+                        })
+                    } else {
+                        // Go straight to the results view controller and display a message saying there was no food detected
+                        DispatchQueue.main.async {
+                            self.goToShowResultsViewController(image: image)
+                        }
                     }
                 })
 
@@ -247,6 +254,7 @@ class TakePhotoViewController: UIViewController {
             }
     //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
         } else if pictureCount <= 0 {
+            // Buy more pictures
             print("Out of pictures")
             purchaseMorePictures()
 //            Pictures.incrementPictureCount()
@@ -271,6 +279,24 @@ class TakePhotoViewController: UIViewController {
         // Send the images and concepts to the PhotoResultsController
         photoResultsController.concepts = concepts
         
+        if let image = image {
+            photoResultsController.foodImage = image
+        }
+        
+        // Navigate to the results view controller
+        self.navigationController?.pushViewController(photoResultsController, animated: true)
+    }
+    
+    func goToShowResultsViewController(image: UIImage?) {
+        // Retrieve the storyboard the app is going to seque to
+        let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
+        
+        let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
+        
+        // Make sure results view controller knows there is no food in the image
+        photoResultsController.noFood = true
+        
+        // Send the image to the results view controller
         if let image = image {
             photoResultsController.foodImage = image
         }

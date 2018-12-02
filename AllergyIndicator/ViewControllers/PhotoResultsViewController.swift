@@ -20,6 +20,7 @@ class PhotoResultsViewController: UIViewController {
     var allergens: [String] = []
     var safeIngredients: [String] = []
     var ingredientsInFood: [String] = []
+    var noFood: Bool = false
     
     let warningController = WarningController()
     
@@ -31,17 +32,15 @@ class PhotoResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        // if there is no camera access request access
         if concepts == [ClarifaiConcept]() {
-            
-            self.cameraAutherization()
-            
-            ingredientsInFood.append("No data provided.")
-            
-            setupLayout()
-            
-            guard let foodImage = foodImage else { return }
-            self.foodImageView.image = foodImage
-            
+            self.handleNoCamera()
+            return
+        }
+        
+        // If there is no food in the image make message
+        if noFood {
+            self.handleNoFood()
             return
         }
 //        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
@@ -81,7 +80,26 @@ class PhotoResultsViewController: UIViewController {
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
     }
-    
+    func handleNoCamera() {
+        self.cameraAutherization()
+        
+        ingredientsInFood.append("No data provided.")
+        
+        setupLayout()
+        
+        guard let foodImage = foodImage else { return }
+        self.foodImageView.image = foodImage
+    }
+    func handleNoFood() {
+        self.noFoodMessage()
+        
+        ingredientsInFood.append("No food in the given image.")
+        
+        setupLayout()
+        
+        guard let foodImage = foodImage else { return }
+        self.foodImageView.image = foodImage
+    }
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
         ingredientsInFood = allergens + safeIngredients
         self.tableView.reloadData()
@@ -100,6 +118,11 @@ class PhotoResultsViewController: UIViewController {
         let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
         warningController.showWarningMenu(title: titleString, content: contentString)
         
+    }
+    func noFoodMessage() {
+        let titleString = "There is no food in this image"
+        let contentString = "You did not take a picture that contained any type of food. Please take a picture of food to see results."
+        warningController.showWarningMenu(title: titleString, content: contentString)
     }
     func showWarningMenu(allergies: Bool) {
         var titleString = "BE CAREFUL"
