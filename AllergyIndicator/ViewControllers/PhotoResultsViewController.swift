@@ -33,7 +33,7 @@ class PhotoResultsViewController: UIViewController {
         tableView.dataSource = self
         
         // if there is no camera access request access
-        if concepts == [ClarifaiConcept]() {
+        if concepts == [ClarifaiConcept]() && !noFood{
             self.handleNoCamera()
             return
         }
@@ -93,7 +93,7 @@ class PhotoResultsViewController: UIViewController {
     func handleNoFood() {
         self.noFoodMessage()
         
-        ingredientsInFood.append("No food in the given image.")
+        ingredientsInFood.append("No food in the image taken.")
         
         setupLayout()
         
@@ -120,7 +120,7 @@ class PhotoResultsViewController: UIViewController {
         
     }
     func noFoodMessage() {
-        let titleString = "There is no food in this image"
+        let titleString = "No food in image"
         let contentString = "You did not take a picture that contained any type of food. Please take a picture of food to see results."
         warningController.showWarningMenu(title: titleString, content: contentString)
     }
