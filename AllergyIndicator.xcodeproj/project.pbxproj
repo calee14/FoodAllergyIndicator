@@ -316,6 +316,7 @@
 				TargetAttributes = {
 					B3F902B02104316800FD552E = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -655,7 +656,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.FoodAllergyIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = FoodAllergyIndicatorDevelopmentProfile;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -678,7 +679,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.FoodAllergyIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = FoodAllergyIndicatorDistributionProfile;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
