@@ -68,7 +68,7 @@ extension Substring {
 
 extension NSMutableAttributedString {
     @discardableResult func bold(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedStringKey: Any] = [.font: UIFont(name: "AvenirNext-Medium", size: 12)!]
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont(name: "AvenirNext-Medium", size: 12)!]
         let boldString = NSMutableAttributedString(string:text, attributes: attrs)
         append(boldString)
         

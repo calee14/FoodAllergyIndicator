@@ -32,7 +32,7 @@ class TermsViewController: UIViewController {
         
         let string = terms as NSString
         
-        let boldFontAttribute: [NSAttributedStringKey: Any] = [.font: UIFont(name: "AvenirNext-Bold", size: 18)!]
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [.font: UIFont(name: "AvenirNext-Bold", size: 18)!]
         
         let attributedString = NSMutableAttributedString(string: string as String, attributes: [.font: UIFont(name: "AvenirNext-Regular", size: 16)!])
         
