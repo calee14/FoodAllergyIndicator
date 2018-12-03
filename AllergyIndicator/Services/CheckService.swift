@@ -23,7 +23,9 @@ struct CheckService {
                 if j.isAllergic {
                     let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
                     print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
-                    if coefficient * 100.0 > 50.0 {
+                    /* This threshold decides whether the user is allergic to this food */
+                    let threshold = 50.0
+                    if coefficient * 100.0 > threshold {
                         possibleAllergies.append(i.conceptName)
                         foundAllergy = true
                         break
@@ -61,24 +63,34 @@ struct CheckService {
                     
                     // filter out recipes that doesn't match our food string
                     let possibleRecipes: [Recipe] = (result?.results.filter{ (r: Recipe) -> Bool in
-                        var lensum = Double(r.title.count)
-                        if r.title.count < query.count {
-                            lensum = Double(query.count)
-                        }
-                        let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased())!
-                        print("Results \(query)")
-                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
-                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
-                        let coefficient = diceCoefficient(s: r.title, t: query)
-                        
+                        /* String Comparison using levenshteinDistance*/
+//                        var lensum = Double(r.title.count)
+//                        if r.title.count < query.count {
+//                            lensum = Double(query.count)
+//                        }
+//                        let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased())!
+//                        print("Results \(query)")
+//                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0) >= 50)")
+//                        print("Results \(((1.0 - (Double(dist)/lensum)) * 100.0))")
 //                        if let dist = LevenshteinDistance(s: r.title.lowercased(), t: query.lowercased()), ((1.0 - (Double(dist)/lensum)) * 100.0) >= 50 {
 //                            return true
 //                        }
-                        if coefficient * 100.0 >= 35.0 {
+                        
+                        /* String Comparison using dice coefficient */
+                        /* NOTE: Using dice coefficient because it works better for this application */
+                        /* Check the similarity between the recipe name and the
+                         food names from the Clarifai API */
+                        let coefficient = diceCoefficient(s: r.title, t: query)
+                        /* Threshold decides whether we should use recipe */
+                        let threshold = 50.0
+                        if coefficient * 100.0 >= threshold {
+                            // We found a recipe that matches our food
                             return true
                         }
+                        // We didn't find a recipe that matches our food
                         return false
                         })!
+                    /* Get the ingredients from the recipe */
                     for recipe in possibleRecipes {
                         recipeIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
                     }
@@ -113,7 +125,9 @@ struct CheckService {
                     }
 //                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
 //                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
-                    if coefficient*100.0 > 80.0 {
+                    /* This threshold decides whether the use is allergic to the recipe ingredients */
+                    let threshold = 80.0
+                    if coefficient * 100.0 > threshold {
                         if !possibleAllergies.contains(ingredient) {
                             possibleAllergies.append(ingredient)
                         }
@@ -130,6 +144,7 @@ struct CheckService {
     static func getOnlyAllergic(allergens: [Allergy]) -> [Allergy] {
         return allergens.filter { $0.isAllergic }
     }
+    
     static func minimum(a: Int, b: Int, c: Int) -> Int{
         var mi = a
         if b < mi {
