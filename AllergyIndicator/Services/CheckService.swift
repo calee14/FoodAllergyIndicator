@@ -55,6 +55,7 @@ struct CheckService {
         print("foods \(foodQueries)")
         for query in foodQueries {
             group.enter()
+            /* Make a api request to a recipe api and get the ingredients of the recipe */
             Alamofire.request(apiCallString + query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!).validate().responseJSON() { response in
                 switch response.result {
                 case .success:
@@ -105,6 +106,8 @@ struct CheckService {
         group.notify(queue: .main) {
             print("finished all tasks")
             print(recipeIngredients)
+            /* Add all the ingredients from the recipes to the database.
+             This will help by avoiding sending ingredients to the RecipePuppy */
             IngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
                 guard let success = success else { return }
                 print(success)

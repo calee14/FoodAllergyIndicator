@@ -45,15 +45,22 @@ class PhotoResultsViewController: UIViewController {
         }
 //        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
+            /* After retrieving the allergies pass them to the
+            check service to see if the user is allergic to the food */
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
+                /* After getting the concepts from Clarifai
+                 check if any of them are allergens of the user*/
                 guard let allergens = allergens else { return }
                 guard let safeIngredients = safeIngredients else { return }
                 self.allergens = allergens
                 self.safeIngredients = safeIngredients
                 self.combineAllergensAndSafeIngredientsAndUpdateTable()
+                /* Check if any of the foods are ingredients.
+                 If it is an ingredient then don't add it to the recipe search query */
                 var foods = [String]()
                 let group = DispatchGroup()
                 for concept in self.concepts {
+                    /* NOTE: Make sure to only accept concepts above 90 percent confidence */
                     group.enter()
                     IngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
                         if !exist {
