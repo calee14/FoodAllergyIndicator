@@ -37,8 +37,8 @@ class HomeViewController: UIViewController {
         // Get the in app-purchase products
         IAPHelper.shared.getProducts()
         // Launch Clarifai SDK
-        let apikey = ConstantsAPI.clarifaiapi.key
-        launchClarifai(apiKey: apikey)
+//        let apikey = ConstantsAPI.clarifaiapi.key
+//        Clarifai.sharedInstance().start(apiKey: apikey)
         
 //        IngredientService.addIngredient(ingredientNames: ["egg", "toast", "grapes"]) { (success) in
 //            print(success)

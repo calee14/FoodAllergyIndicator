@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-//import Clarifai_Apple_SDK
+import Clarifai_Apple_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Launch Clarifai SDK
-//        let apikey = ConstantsAPI.clarifaiapi.key
-//        Clarifai.sharedInstance().start(apiKey: apikey)
+        let apikey = ConstantsAPI.clarifaiapi.key
+        Clarifai.sharedInstance().start(apiKey: apikey)
 
         // Configure LoginViewController
         configureInitialRootViewController(for: window)
