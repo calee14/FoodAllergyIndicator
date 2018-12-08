@@ -158,7 +158,7 @@ class HomeViewController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .background).async {
             Clarifai.sharedInstance().start(apiKey: apiKey)
             group.leave()
         }
@@ -166,8 +166,8 @@ class HomeViewController: UIViewController {
         // does not wait. But the code in notify() gets run
         // after enter() and leave() calls are balanced
         
-        group.notify(queue: .global(qos: .userInitiated)) {
-            print("finsiehd launching clarifai")
+        group.notify(queue: .global(qos: .background)) {
+            print("finished launching clarifai")
         }
     }
     
