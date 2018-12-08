@@ -153,23 +153,6 @@ class HomeViewController: UIViewController {
         leftButtonBackground.layer.cornerRadius = 6
         leftButtonBackground.layer.masksToBounds = true
     }
-    func launchClarifai(apiKey: String) {
-        
-        let group = DispatchGroup()
-        group.enter()
-        
-        DispatchQueue.global(qos: .background).async {
-            Clarifai.sharedInstance().start(apiKey: apiKey)
-            group.leave()
-        }
-        
-        // does not wait. But the code in notify() gets run
-        // after enter() and leave() calls are balanced
-        
-        group.notify(queue: .global(qos: .background)) {
-            print("finished launching clarifai")
-        }
-    }
     
     func toggleTakePhotoButton(status: Bool) {
         // Change the status of the takePhotoButton
