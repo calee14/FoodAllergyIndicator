@@ -74,6 +74,3 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Make it so that the user doesn't need to enter username and password
 # Notes
 - [ ] Maybe won't add the feature where the app will have additional information about food allergies. Too hard to do ~~and waste of time, energy and effort.~~ and should focus more on the main feature and get that working perfectly.
-- [X ] When using the Clarifai SDK configure it in a less heavy processing enviromnent. Another solution may be to run it on a seperate thread but on a lower priority thread. Consider using the .background thread
-  - [ X] Check out https://medium.com/modernnerd-code/grand-central-dispatch-crash-course-for-swift-3-8bf2652c1cb8 for dispatch queues.
-  - [X ] Another resource for async function calls https://github.com/duemunk/Async
