@@ -61,6 +61,9 @@ class PhotoResultsViewController: UIViewController {
                 let group = DispatchGroup()
                 for concept in self.concepts {
                     /* NOTE: Make sure to only accept concepts above 90 percent confidence */
+                    let threshold: Float = 90.0
+                    if concept.score < threshold { continue }
+                    print("\(concept.score)\(concept.conceptName)")
                     group.enter()
                     IngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
                         if !exist {
