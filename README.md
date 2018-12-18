@@ -26,8 +26,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [X] check if there is food in image
   - [ ] implement allergy check code with google's results
 - [ ] Check clarifai's confidence score to tell if we should look at data
-  - ~~[ ] have a threshold of more than 80 percent from 50.~~
-  - [ ] have threshold go to more then 97 percent from 80.
+  - [X] have threshold go to more then 97 percent from 80. (Mostly done for all threshold checks)
   - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 98 or 99 percent.
   - NOTE: Might have to use a second API request with the general model. The general model will tell if it's a food or not and from there we can run the allergy check on it. Probably won't have to do so much iterating since the general model will classify it as food or not. So the app should only look at items within 10% of 100% confidence. 
 - [X] Indicate user that they've taken a photo
