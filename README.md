@@ -27,7 +27,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Change app colors for rebranding
 - [ ] Improve api search in some way
   - [ ] Use google's vision API to detect food in picture
-  - [ ] connect to API
+  - [ ] connect to google's vision API
   - [X] check if there is food in image
   - [ ] implement allergy check code with google's results
 - [X] Check clarifai's confidence score to tell if we should look at data
