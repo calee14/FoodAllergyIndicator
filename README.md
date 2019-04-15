@@ -20,6 +20,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - **Cap Lee** - Pretty much going to be the only contributor
 
 # Tasks
+- [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [ ] Change app icon for rebranding
     - [ ] Make sure to use vector image designing
 - [ ] Remove a list of allergies
