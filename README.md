@@ -19,6 +19,27 @@ If you want to use the app you can download it on the App Store. [Link will be s
 # Authors
 - **Cap Lee** - Pretty much going to be the only contributor
 
+# Plan of attack
+## SUMMER OF 2019
+## WEEK 1 and maybe WEEK 2
+- [ ] Relearn all of my code
+- [ ] Redesign the set allergens page (NOTE: Use dummy data for now)
+  - [ ] Change the name of the button to "set important ingredients"
+  - [ ] Redesign the set allergens view controller to important ingredients view controller
+    - [ ] Remove the switch
+    - [ ] Add the delete button instead 
+    - [ ] Add a create button to add ingredients to the table
+  - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
+## WEEK 2
+- [ ] Update the database with the user's important ingredients
+  - [ ] Make new services for updating the users important ingredients
+  - [ ] Change the name of the services with the word allergens in them
+  - [ ] Connect the user's ingredients with the database
+## WEEK 3
+- [ ] Change the display results view
+- [ ] Make it so that all important ingredients appear at the top of the results page
+- [ ] Put a confidence score of each ingredient next to it
+- [ ] Display all ingredients from each top recipes when make a request to the recipe api
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [ ] Change app icon for rebranding
@@ -26,46 +47,10 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Remove a list of allergies
     - [ ] Make a user dynamic list of search ingredients
 - [ ] Change app colors for rebranding
-- [ ] Improve api search in some way
+- [X] Improve api search in some way
   - [ ] Use google's vision API to detect food in picture
   - [ ] connect to google's vision API
-  - [X] check if there is food in image
   - [ ] implement allergy check code with google's results
-- [X] Check clarifai's confidence score to tell if we should look at data
-  - [X] have threshold go to more then 97 percent from 80. (Mostly done for all threshold checks)
-  - NOTE: When API is given a picture of a pen the highest confidence score is around 75%. When API is given a picture of a person it can range from 80-97. Raise threshold to 98 or 99 percent.
-  - NOTE: Might have to use a second API request with the general model. The general model will tell if it's a food or not and from there we can run the allergy check on it. Probably won't have to do so much iterating since the general model will classify it as food or not. So the app should only look at items within 10% of 100% confidence. 
-- [X] Indicate user that they've taken a photo
-  - https://stackoverflow.com/questions/48180635/how-to-insert-image-on-uiview
-  - https://stackoverflow.com/questions/28485621/create-uibutton-programmatically-with-constraints-in-swift
-- [X] Alert user about allergies in the the food
-  - Use table view
-- [X] Include recipe API to double check on allergens
-  - http://www.recipepuppy.com/about/api/
-    - Check the title of the recipe is similar to the classification of the api
-    - If they are similar take the ingredients and store them in an array
-    - Then check the possible allergens list and check if they match any of the users allergies
-    - alert the user
-  - https://www.themealdb.com/api.php
-- [X] Add UI
-  - [X] Color Theme: light blue or green cyan (used both)
-- [X] User Dice's Coefficient, which is better than Levenshtein's Distance, to compare strings
-- [X] Improve api search algorithm
-  - [X] Store ingredients on a databse so we don't search it
-  - [X] Update thresholds so that the app will function
-- [X] Add disclaimers
-- [X] Add disclaimers in the home page when the user first logs in
-- [X] Update Terms of Service
-- [X] Add more allergens
-  - [X] Correct spelling of mustard
-  - [X] Remove gutamate
-  - [X] Remove colorants
-  - [X] Add in all the nuts and sea food
-- [X] Add counter for number of pictures (in the home screen page, credits square)
-- [X] Add UI for (good . and bad x results)
-- [X] Fix the api search (tomatoes)
-- [X] Remove email and password authentication (or something like that)
-- [X] Change font size so that all of the text can fit in the box
 # Future Features
 - [ ] Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
