@@ -19,6 +19,27 @@ If you want to use the app you can download it on the App Store. [Link will be s
 # Authors
 - **Cap Lee** - Pretty much going to be the only contributor
 
+# Plan of attack
+## SUMMER OF 2019
+## WEEK 1 and maybe WEEK 2
+- [ ] Relearn all of my code
+- [ ] Redesign the set allergens page (NOTE: Use dummy data for now)
+  - [ ] Change the name of the button to "set important ingredients"
+  - [ ] Redesign the set allergens view controller to important ingredients view controller
+    - [ ] Remove the switch
+    - [ ] Add the delete button instead 
+    - [ ] Add a create button to add ingredients to the table
+  - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
+## WEEK 2
+- [ ] Update the database with the user's important ingredients
+  - [ ] Make new services for updating the users important ingredients
+  - [ ] Change the name of the services with the word allergens in them
+  - [ ] Connect the user's ingredients with the database
+## WEEK 3
+- [ ] Change the display results view
+- [ ] Make it so that all important ingredients appear at the top of the results page
+- [ ] Put a confidence score of each ingredient next to it
+- [ ] Display all ingredients from each top recipes when make a request to the recipe api
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [ ] Change app icon for rebranding
@@ -26,10 +47,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Remove a list of allergies
     - [ ] Make a user dynamic list of search ingredients
 - [ ] Change app colors for rebranding
-- [ ] Improve api search in some way
+- [X] Improve api search in some way
   - [ ] Use google's vision API to detect food in picture
   - [ ] connect to google's vision API
-  - [X] check if there is food in image
   - [ ] implement allergy check code with google's results
 # Future Features
 - [ ] Make it so that it can recognize food packages or food bar scanners to get indgredients on food
