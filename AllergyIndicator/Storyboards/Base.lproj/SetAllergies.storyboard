@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CAa-Hc-le7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CAa-Hc-le7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,38 +22,39 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllergyCell" rowHeight="71" id="FhU-sF-miw" customClass="AllergyTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" rowHeight="71" id="FhU-sF-miw" customClass="IngredientTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FhU-sF-miw" id="fac-uz-qTc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yos-Es-g6l">
-                                                    <rect key="frame" x="309" y="20" width="51" height="31"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5a-cf-0aM">
+                                                    <rect key="frame" x="330" y="21" width="30" height="29"/>
+                                                    <state key="normal" title="X"/>
                                                     <connections>
-                                                        <action selector="isAllergicSwitchToggled:" destination="FhU-sF-miw" eventType="valueChanged" id="sYl-SI-cdn"/>
+                                                        <action selector="deleteButtonPressed:" destination="FhU-sF-miw" eventType="touchUpInside" id="QNC-et-rGj"/>
                                                     </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-Bc-Pe7">
-                                                    <rect key="frame" x="15" y="25" width="45" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-wZ-i8y">
+                                                    <rect key="frame" x="15" y="25" width="141" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Kv8-Bc-Pe7" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="14" id="8Ww-KM-eKy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Yos-Es-g6l" secondAttribute="trailing" constant="2" id="F9G-fR-qgb"/>
-                                                <constraint firstItem="Yos-Es-g6l" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="9" id="dtk-a4-6Aw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Kv8-Bc-Pe7" secondAttribute="bottom" constant="14" id="fKv-V7-RBg"/>
-                                                <constraint firstItem="Kv8-Bc-Pe7" firstAttribute="leading" secondItem="fac-uz-qTc" secondAttribute="leadingMargin" id="nrs-Vi-6aA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Yos-Es-g6l" secondAttribute="bottom" constant="9" id="s0T-PR-CHI"/>
+                                                <constraint firstItem="jy3-wZ-i8y" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="14" id="4bC-Yg-6di"/>
+                                                <constraint firstItem="jy3-wZ-i8y" firstAttribute="leading" secondItem="fac-uz-qTc" secondAttribute="leadingMargin" id="ThN-Yf-x7p"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jy3-wZ-i8y" secondAttribute="bottom" constant="14" id="to7-vD-uUX"/>
+                                                <constraint firstItem="s5a-cf-0aM" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="10" id="uWn-hg-Sr5"/>
+                                                <constraint firstItem="s5a-cf-0aM" firstAttribute="trailing" secondItem="fac-uz-qTc" secondAttribute="trailingMargin" id="yXS-lo-M0O"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="s5a-cf-0aM" secondAttribute="bottom" constant="10" id="yaq-Pb-56k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="allergenName" destination="Kv8-Bc-Pe7" id="SKJ-pY-VjZ"/>
-                                            <outlet property="isAllergicSwitch" destination="Yos-Es-g6l" id="f0Z-bU-VRE"/>
+                                            <outlet property="deleteButton" destination="s5a-cf-0aM" id="tvt-aa-col"/>
+                                            <outlet property="ingredientName" destination="jy3-wZ-i8y" id="9iN-9Q-gg5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
