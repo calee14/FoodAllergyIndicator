@@ -13,10 +13,10 @@ target 'AllergyIndicator' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
 
-  pod 'Clarifai-Apple-SDK', '3.0.0-beta25'
+  pod 'Clarifai-Apple-SDK', '~> 3.0.0'
   pod 'Clarifai'
 
   pod 'SwiftyJSON'
-  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+  pod 'Alamofire', '~> 4.7'
 
 end
