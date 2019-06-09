@@ -22,7 +22,12 @@ class CreateUsernameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if #available(iOS 12.0, *) {
+            passwordTextField.textContentType = .newPassword
+        } else {
+            // Fallback on earlier versions
+        }
+        passwordTextField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
         setupLayout()
     }
