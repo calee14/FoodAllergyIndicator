@@ -92,7 +92,6 @@ class TakePhotoViewController: UIViewController {
         
         // Round off the button
         captureButton.layer.zPosition = 10
-//        captureButton.layer.borderColor = UIColor.black.cgColor
         captureButton.layer.borderWidth = 2
         captureButton.layer.borderColor = UIColor.clear.cgColor
         captureButton.layer.cornerRadius = min(captureButton.frame.width, captureButton.frame.height) / 2
