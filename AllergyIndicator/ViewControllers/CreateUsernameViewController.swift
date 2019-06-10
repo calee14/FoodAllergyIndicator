@@ -72,6 +72,7 @@ class CreateUsernameViewController: UIViewController {
                         self.errorLabel.text = "The password must be 6 characters long or more."
                     })
                 }
+                self.nextButton.isUserInteractionEnabled = true
                 return
             }
             guard (authData?.user) != nil else { return }
