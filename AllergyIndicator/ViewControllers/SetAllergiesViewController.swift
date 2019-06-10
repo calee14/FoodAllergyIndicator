@@ -49,19 +49,33 @@ extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllergyCell") as! AllergyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell") as! IngredientTableViewCell
         cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         return cell
     }
     
-    func configure(cell: AllergyTableViewCell, atIndexPath indexPath: IndexPath) {
+    func configure(cell: IngredientTableViewCell, atIndexPath indexPath: IndexPath) {
         let ingredient = importantIngredients[indexPath.row]
-        cell.allergenName?.text = ingredient.getIngredientName()
-        cell.isAllergicSwitch.isOn = ingredient.getIsImportant()
+        cell.ingredientName?.text = ingredient.getIngredientName()
     }
 }
 
+extension SetAllergiesViewController: DeleteCellDelegate {
+    func didPressDeleteButton(_ deleteButton: UIButton, on cell: IngredientTableViewCell) {
+        print("tried deleting ingredient")
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        self.importantIngredients[indexPath.row].setIsImportant(isImportant: false) // we delete the unimportant ones
+        
+        // delete the ingredient from the table view here
+        // ...
+        self.importantIngredients.remove(at: indexPath.row)
+        self.tableView.reloadData()
+        
+        // remove the ingredient from the database here
+        // ...
+    }
+}
 extension SetAllergiesViewController: IsAllergicCellDelegate {
     func didSwitchAllergicSwitch(_ isAllergicSwitch: UISwitch, on cell: AllergyTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
@@ -71,7 +85,7 @@ extension SetAllergiesViewController: IsAllergicCellDelegate {
         self.importantIngredients[indexPath.row].setIsImportant(isImportant: isAllergicSwitch.isOn)
         
         // update the databse with the ingredient we want here
-        //...
+        // ...
         
         
 //        AllergyService.updateAllergy(for: user, allergy: self.allergens[indexPath.row]) { (snapshot) in
