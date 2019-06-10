@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-protocol IsAllergicCellDelegate: class {
-    func didSwitchAllergicSwitch(_ isAllergicSwitch: UISwitch, on cell: AllergyTableViewCell)
-}
-
-class AllergyTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var isAllergicSwitch: UISwitch!
-    @IBOutlet weak var allergenName: UILabel!
-    
-    weak var delegate: IsAllergicCellDelegate?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
-    @IBAction func isAllergicSwitchToggled(_ sender: UISwitch) {
-        print(sender.isOn)
-        delegate?.didSwitchAllergicSwitch(sender, on: self)
-    }
-}
-
 protocol DeleteCellDelegate: class {
     func didPressDeleteButton(_ deleteButton: UIButton, on cell: IngredientTableViewCell)
 }

@@ -32,7 +32,7 @@
 		B3C0914D2107995E0058E046 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914C2107995E0058E046 /* UserService.swift */; };
 		B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */; };
 		B3C091512107BEA50058E046 /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091502107BEA50058E046 /* Allergy.swift */; };
-		B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */; };
+		B3C091532107C2DE0058E046 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091522107C2DE0058E046 /* IngredientTableViewCell.swift */; };
 		B3C091552107CC630058E046 /* AllergyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C091542107CC630058E046 /* AllergyService.swift */; };
 		B3CBA83A21165264004E43D1 /* UIButton+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA83921165264004E43D1 /* UIButton+Utility.swift */; };
 		B3CBA83C2117C170004E43D1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CBA83B2117C170004E43D1 /* StoreKit.framework */; };
@@ -84,7 +84,7 @@
 		B3C0914C2107995E0058E046 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		B3C091502107BEA50058E046 /* Allergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
-		B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyTableViewCell.swift; sourceTree = "<group>"; };
+		B3C091522107C2DE0058E046 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		B3C091542107CC630058E046 /* AllergyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyService.swift; sourceTree = "<group>"; };
 		B3CBA83921165264004E43D1 /* UIButton+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Utility.swift"; sourceTree = "<group>"; };
 		B3CBA83B2117C170004E43D1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E1EF1D2106830A009B24AA /* CameraController.swift */,
-				B3C091522107C2DE0058E046 /* AllergyTableViewCell.swift */,
+				B3C091522107C2DE0058E046 /* IngredientTableViewCell.swift */,
 				B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */,
 				B3EAE2A6211114AF009311AC /* WarningController.swift */,
 			);
@@ -475,7 +475,7 @@
 				B3C091512107BEA50058E046 /* Allergy.swift in Sources */,
 				B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */,
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
-				B3C091532107C2DE0058E046 /* AllergyTableViewCell.swift in Sources */,
+				B3C091532107C2DE0058E046 /* IngredientTableViewCell.swift in Sources */,
 				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
 				B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */,
 				B3C091552107CC630058E046 /* AllergyService.swift in Sources */,
