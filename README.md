@@ -23,11 +23,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
 ## SUMMER OF 2019
 ## WEEK 1 and maybe WEEK 2
 - [ ] Relearn all of my code
+- [X] Reboot the app and make sure all of the code is working
 - [ ] Redesign the set allergens page (NOTE: Use dummy data for now)
   - [ ] Change the name of the button to "set important ingredients"
   - [ ] Redesign the set allergens view controller to important ingredients view controller
-    - [ ] Remove the switch
-    - [ ] Add the delete button instead 
+    - [X] Remove the switch
+    - [X] Add the delete button instead 
     - [ ] Add a create button to add ingredients to the table
   - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
 ## WEEK 2
