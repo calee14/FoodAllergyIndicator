@@ -46,8 +46,13 @@ class SetAllergiesViewController: UIViewController {
     }
     
     func setupLayout() {
-        let buttonWidth = 50
-        addIngredientButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width / 2 - CGFloat(buttonWidth) / 2, y: self.view.frame.height - 70), size: CGSize(width: buttonWidth, height: buttonWidth))
+        let buttonWidth = 70
+        addIngredientButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width - CGFloat(buttonWidth) - (self.view.frame.width * 0.06), y: self.view.frame.height - (self.view.frame.height * 0.15)), size: CGSize(width: buttonWidth, height: buttonWidth))
+        addIngredientButton.backgroundColor = .black
+        addIngredientButton.layer.zPosition = 10
+        addIngredientButton.layer.borderWidth = 2
+        addIngredientButton.layer.borderColor = UIColor.clear.cgColor
+        addIngredientButton.layer.cornerRadius = min(addIngredientButton.frame.width, addIngredientButton.frame.height) / 2
         
     }
     
