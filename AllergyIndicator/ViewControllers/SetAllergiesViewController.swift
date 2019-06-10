@@ -11,6 +11,7 @@ import UIKit
 class SetAllergiesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addIngredientButton: UIButton!
     
     var allergens = [Allergy]()
     var importantIngredients = [Ingredient]()
@@ -39,7 +40,31 @@ class SetAllergiesViewController: UIViewController {
         importantIngredients = [Ingredient("egg"), Ingredient("cheese"), Ingredient("noodles")]
         self.tableView.reloadData()
         
+        // setup
+        setupLayout()
+        
     }
+    
+    func setupLayout() {
+        let buttonWidth = 50
+        addIngredientButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width / 2 - CGFloat(buttonWidth) / 2, y: self.view.frame.height - 70), size: CGSize(width: buttonWidth, height: buttonWidth))
+        
+    }
+    
+    @IBAction func pressedIngredientButton(_ sender: UIButton) {
+        goToAddIngredientsViewController()
+    }
+    
+    func goToAddIngredientsViewController() {
+        // Retrieve the storyboard the app is going to seque to
+        let storyboard = UIStoryboard(name: "SetAllergies", bundle: nil)
+        
+        let addingredientViewController = storyboard.instantiateViewController(withIdentifier: "AddIngredientViewController") as! AddIngredientViewController
+        
+        // Navigate to the results view controller
+        self.navigationController?.pushViewController(addingredientViewController, animated: true)
+    }
+    
 }
 
 extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource {
