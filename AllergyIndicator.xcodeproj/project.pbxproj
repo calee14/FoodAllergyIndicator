@@ -11,6 +11,7 @@
 		B30831162114B7790088DD64 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* IngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
 		B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01CF22ADCC4D00A2773A /* Ingredient.swift */; };
+		B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */; };
 		B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */; };
 		B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */; };
 		B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */; };
@@ -63,6 +64,7 @@
 		B30831152114B7790088DD64 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+Colors.swift"; sourceTree = "<group>"; };
 		B31C01CF22ADCC4D00A2773A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		B33A06F6210F86910020E0A5 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		B33A06F8210FD93D0020E0A5 /* RecipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResult.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				B3C0914421078D0D0058E046 /* LoginViewController.swift */,
 				B3C0914E21079D500058E046 /* CreateUsernameViewController.swift */,
 				B3CBA84421180083004E43D1 /* TermsViewController.swift */,
+				B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,7 +322,7 @@
 				TargetAttributes = {
 					B3F902B02104316800FD552E = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -451,6 +454,7 @@
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
 				B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */,
 				B30831162114B7790088DD64 /* IngredientService.swift in Sources */,
+				B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */,
 				B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */,
 				B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */,
 				B37FDFC8210A3A8B0066B3FD /* StorageReference+Post.swift in Sources */,
@@ -660,7 +664,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.Ingredients;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IngredientsDevelopmentProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -683,7 +687,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cap.Ingredients;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IngredientsDistributionProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
