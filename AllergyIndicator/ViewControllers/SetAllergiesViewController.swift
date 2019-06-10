@@ -76,25 +76,3 @@ extension SetAllergiesViewController: DeleteCellDelegate {
         // ...
     }
 }
-extension SetAllergiesViewController: IsAllergicCellDelegate {
-    func didSwitchAllergicSwitch(_ isAllergicSwitch: UISwitch, on cell: AllergyTableViewCell) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        isAllergicSwitch.isUserInteractionEnabled = false
-        
-        self.importantIngredients[indexPath.row].setIsImportant(isImportant: isAllergicSwitch.isOn)
-        
-        // update the databse with the ingredient we want here
-        // ...
-        
-        
-//        AllergyService.updateAllergy(for: user, allergy: self.allergens[indexPath.row]) { (snapshot) in
-//            defer {
-//                isAllergicSwitch.isUserInteractionEnabled = true
-//            }
-//            guard snapshot != nil else { return }
-//
-//            self.tableView.reloadRows(at: [indexPath], with: .none)
-//        }
-    }
-}
