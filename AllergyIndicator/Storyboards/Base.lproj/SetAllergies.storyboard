@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CAa-Hc-le7">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,29 +15,29 @@
             <objects>
                 <viewController storyboardIdentifier="SetAllergiesViewController" id="CAa-Hc-le7" customClass="SetAllergiesViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H9e-je-rBY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-RF-TwD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" rowHeight="71" id="FhU-sF-miw" customClass="IngredientTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FhU-sF-miw" id="fac-uz-qTc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5a-cf-0aM">
-                                                    <rect key="frame" x="330" y="21" width="30" height="29"/>
+                                                    <rect key="frame" x="364" y="21" width="30" height="29"/>
                                                     <state key="normal" title="X"/>
                                                     <connections>
                                                         <action selector="deleteButtonPressed:" destination="FhU-sF-miw" eventType="touchUpInside" id="QNC-et-rGj"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-wZ-i8y">
-                                                    <rect key="frame" x="15" y="25" width="141" height="21"/>
+                                                    <rect key="frame" x="20" y="25" width="141" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
                                             <constraints>
                                                 <constraint firstItem="jy3-wZ-i8y" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="14" id="4bC-Yg-6di"/>
                                                 <constraint firstItem="jy3-wZ-i8y" firstAttribute="leading" secondItem="fac-uz-qTc" secondAttribute="leadingMargin" id="ThN-Yf-x7p"/>
+                                                <constraint firstItem="s5a-cf-0aM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jy3-wZ-i8y" secondAttribute="trailing" constant="8" symbolic="YES" id="VPS-Dz-UEa"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jy3-wZ-i8y" secondAttribute="bottom" constant="14" id="to7-vD-uUX"/>
                                                 <constraint firstItem="s5a-cf-0aM" firstAttribute="top" secondItem="fac-uz-qTc" secondAttribute="topMargin" constant="10" id="uWn-hg-Sr5"/>
                                                 <constraint firstItem="s5a-cf-0aM" firstAttribute="trailing" secondItem="fac-uz-qTc" secondAttribute="trailingMargin" id="yXS-lo-M0O"/>
@@ -63,6 +64,15 @@
                                     <outlet property="delegate" destination="CAa-Hc-le7" id="6L5-qJ-uVK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-GD-A8R">
+                                <rect key="frame" x="0.0" y="346" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="pressedIngredientButton:" destination="CAa-Hc-le7" eventType="touchUpInside" id="zgJ-7j-8sR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -76,12 +86,29 @@
                     <navigationItem key="navigationItem" title="Set Allergens" id="8WZ-Yl-3cW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addIngredientButton" destination="Nmd-GD-A8R" id="AXb-1H-zbj"/>
                         <outlet property="tableView" destination="ak9-RF-TwD" id="mQ3-Os-nAc"/>
+                        <segue destination="2Go-kP-fNc" kind="show" id="gC3-8j-6RX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGR-DS-IBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="150"/>
+            <point key="canvasLocation" x="168" y="150"/>
+        </scene>
+        <!--Add Ingredient View Controller-->
+        <scene sceneID="DHx-L2-1px">
+            <objects>
+                <viewController storyboardIdentifier="AddIngredientViewController" id="2Go-kP-fNc" customClass="AddIngredientViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="73x-H5-6tS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4we-g8-lMV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmg-1q-bDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="150"/>
         </scene>
     </scenes>
 </document>
