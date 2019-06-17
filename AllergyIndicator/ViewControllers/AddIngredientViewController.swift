@@ -23,6 +23,11 @@ class AddIngredientViewController: UIViewController {
     
 
     @IBAction func pressedIngredientButton(_ sender: UIButton) {
+        ingredientButton.isUserInteractionEnabled = false
+        var ingredient = addIngredientTextField.text!
+        ingredient = ingredient.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

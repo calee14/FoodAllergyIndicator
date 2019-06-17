@@ -65,7 +65,7 @@ class PhotoResultsViewController: UIViewController {
                     if concept.score < threshold { continue }
                     print("\(concept.score)\(concept.conceptName!)")
                     group.enter()
-                    IngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
+                    DatabaseIngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
                         if !exist {
                             foods.append(concept.conceptName)
                         }
