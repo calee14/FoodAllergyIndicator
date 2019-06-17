@@ -10,6 +10,10 @@ import UIKit
 
 class AddIngredientViewController: UIViewController {
 
+    @IBOutlet weak var ingredientsHeaderLabel: UILabel!
+    @IBOutlet weak var addIngredientTextField: UITextField!
+    @IBOutlet weak var ingredientButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +21,9 @@ class AddIngredientViewController: UIViewController {
     }
     
 
+    @IBAction func pressedIngredientButton(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
