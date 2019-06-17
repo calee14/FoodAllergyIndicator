@@ -29,7 +29,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [ ] Redesign the set allergens view controller to important ingredients view controller
     - [X] Remove the switch
     - [X] Add the delete button instead 
-    - [ ] Add a create button to add ingredients to the table
+    - [X] Add a create button to add ingredients to the table
   - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
 ## WEEK 2
 - [ ] Update the database with the user's important ingredients
