@@ -26,7 +26,11 @@ class AddIngredientViewController: UIViewController {
         ingredientButton.isUserInteractionEnabled = false
         var ingredient = addIngredientTextField.text!
         ingredient = ingredient.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
+            ingredients.forEach({ (i) in
+                print(i.getIngredientName())
+            })
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
