@@ -102,9 +102,53 @@
                     <view key="view" contentMode="scaleToFill" id="73x-H5-6tS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example: eggs, peanuts, salt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ske-st-7LL">
+                                <rect key="frame" x="15" y="153" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="6iX-Ta-m1i"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-cx-sRd">
+                                <rect key="frame" x="15" y="238" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Uld-CE-Jb2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressedIngredientButton:" destination="2Go-kP-fNc" eventType="touchUpInside" id="WRz-Io-SIp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set important ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-pW-yES">
+                                <rect key="frame" x="109.66666666666669" y="99" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ske-st-7LL" firstAttribute="leading" secondItem="4we-g8-lMV" secondAttribute="leading" constant="15" id="1YJ-VH-ePk"/>
+                            <constraint firstItem="9oR-pW-yES" firstAttribute="top" secondItem="4we-g8-lMV" secondAttribute="top" constant="35" id="8S1-32-PrO"/>
+                            <constraint firstItem="ske-st-7LL" firstAttribute="centerX" secondItem="73x-H5-6tS" secondAttribute="centerX" id="9Yc-NE-5Vl"/>
+                            <constraint firstItem="pVd-cx-sRd" firstAttribute="top" secondItem="ske-st-7LL" secondAttribute="bottom" constant="35" id="Jqf-rC-1oE"/>
+                            <constraint firstItem="pVd-cx-sRd" firstAttribute="leading" secondItem="4we-g8-lMV" secondAttribute="leading" constant="15" id="R9h-Vv-CHC"/>
+                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" secondItem="pVd-cx-sRd" secondAttribute="trailing" constant="15" id="Yo0-CI-lAp"/>
+                            <constraint firstItem="pVd-cx-sRd" firstAttribute="centerX" secondItem="73x-H5-6tS" secondAttribute="centerX" id="dcH-fB-P8Q"/>
+                            <constraint firstItem="ske-st-7LL" firstAttribute="top" secondItem="9oR-pW-yES" secondAttribute="bottom" constant="33" id="eC2-Ub-onO"/>
+                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" secondItem="ske-st-7LL" secondAttribute="trailing" constant="15" id="eoc-1L-6xa"/>
+                            <constraint firstItem="9oR-pW-yES" firstAttribute="centerX" secondItem="73x-H5-6tS" secondAttribute="centerX" id="ijV-g3-0l7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4we-g8-lMV"/>
                     </view>
+                    <connections>
+                        <outlet property="addIngredientTextField" destination="ske-st-7LL" id="aYA-M3-0B4"/>
+                        <outlet property="ingredientButton" destination="pVd-cx-sRd" id="N2g-57-f2N"/>
+                        <outlet property="ingredientsHeaderLabel" destination="9oR-pW-yES" id="Fao-9J-L8j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmg-1q-bDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
