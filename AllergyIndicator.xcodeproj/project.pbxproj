@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
-		B30831162114B7790088DD64 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* IngredientService.swift */; };
+		B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* DatabaseIngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
 		B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01CF22ADCC4D00A2773A /* Ingredient.swift */; };
 		B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */; };
@@ -18,6 +18,7 @@
 		B35239DE2118C6140041BA36 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35239DD2118C6140041BA36 /* Pictures.swift */; };
 		B35239E0211B4C830041BA36 /* Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = B35239DF211B4C830041BA36 /* Terms.txt */; };
 		B35239E2211B97770041BA36 /* Disclaimer.txt in Resources */ = {isa = PBXBuildFile; fileRef = B35239E1211B97770041BA36 /* Disclaimer.txt */; };
+		B36A9B8722B84D1000AF5229 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A9B8622B84D1000AF5229 /* IngredientService.swift */; };
 		B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC121092AAF0066B3FD /* StorageService.swift */; };
 		B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC321092E980066B3FD /* PostImageService.swift */; };
 		B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC5210930390066B3FD /* AllergyImagePost.swift */; };
@@ -61,7 +62,7 @@
 		48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
 		5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
 		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B30831152114B7790088DD64 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
+		B30831152114B7790088DD64 /* DatabaseIngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseIngredientService.swift; sourceTree = "<group>"; };
 		B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+Colors.swift"; sourceTree = "<group>"; };
 		B31C01CF22ADCC4D00A2773A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		B35239DD2118C6140041BA36 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		B35239DF211B4C830041BA36 /* Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Terms.txt; sourceTree = "<group>"; };
 		B35239E1211B97770041BA36 /* Disclaimer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Disclaimer.txt; sourceTree = "<group>"; };
+		B36A9B8622B84D1000AF5229 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		B37FDFC121092AAF0066B3FD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B37FDFC321092E980066B3FD /* PostImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageService.swift; sourceTree = "<group>"; };
 		B37FDFC5210930390066B3FD /* AllergyImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyImagePost.swift; sourceTree = "<group>"; };
@@ -189,7 +191,8 @@
 				B37FDFC321092E980066B3FD /* PostImageService.swift */,
 				B37FDFC9210A46950066B3FD /* PredictService.swift */,
 				B392114F210B93400048E6DD /* CheckService.swift */,
-				B30831152114B7790088DD64 /* IngredientService.swift */,
+				B30831152114B7790088DD64 /* DatabaseIngredientService.swift */,
+				B36A9B8622B84D1000AF5229 /* IngredientService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -453,7 +456,7 @@
 				B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
 				B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */,
-				B30831162114B7790088DD64 /* IngredientService.swift in Sources */,
+				B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */,
 				B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */,
 				B37FDFC6210930390066B3FD /* AllergyImagePost.swift in Sources */,
 				B33A06F9210FD93D0020E0A5 /* RecipeResult.swift in Sources */,
@@ -481,6 +484,7 @@
 				B3C0914721078EC20058E046 /* Constants.swift in Sources */,
 				B3C091532107C2DE0058E046 /* IngredientTableViewCell.swift in Sources */,
 				B3C0914F21079D500058E046 /* CreateUsernameViewController.swift in Sources */,
+				B36A9B8722B84D1000AF5229 /* IngredientService.swift in Sources */,
 				B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */,
 				B3C091552107CC630058E046 /* AllergyService.swift in Sources */,
 			);

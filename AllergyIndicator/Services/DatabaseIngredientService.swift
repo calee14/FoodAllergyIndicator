@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-struct IngredientService {
+struct DatabaseIngredientService {
     private static let ingredientsPath = Constants.DatabasePath.ingredients
     
     static func addIngredient(ingredientNames: [String], success: @escaping (Bool?) -> Void) {
