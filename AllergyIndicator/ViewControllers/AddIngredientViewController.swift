@@ -13,6 +13,7 @@ class AddIngredientViewController: UIViewController {
     @IBOutlet weak var ingredientsHeaderLabel: UILabel!
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var ingredientButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
