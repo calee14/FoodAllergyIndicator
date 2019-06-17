@@ -24,6 +24,7 @@ struct Constants {
     struct DatabasePath {
         static let allergies = "allergies"
         static let ingredients = "ingredients"
+        static let userIngredients = "userIngredients"
     }
     struct WarningMenu {
         static let cellID = "cellID"
