@@ -37,12 +37,23 @@ class SetAllergiesViewController: UIViewController {
 //        }
         
         // load ingredients
-        importantIngredients = [Ingredient("egg"), Ingredient("cheese"), Ingredient("noodles")]
-        self.tableView.reloadData()
+        IngredientService.retrieveAllIngredients(for: User.current) { (ingredients) in
+            self.importantIngredients = ingredients
+            self.tableView.reloadData()
+        }
         
         // setup
         setupLayout()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        // Load the ingredients from the db
+        // Required for when the app has to pop a view controller
+        IngredientService.retrieveAllIngredients(for: User.current) { (ingredients) in
+            self.importantIngredients = ingredients
+            self.tableView.reloadData()
+        }
+        self.tableView.reloadData()
     }
     
     func setupLayout() {
@@ -99,10 +110,14 @@ extension SetAllergiesViewController: DeleteCellDelegate {
         
         // delete the ingredient from the table view here
         // ...
-        self.importantIngredients.remove(at: indexPath.row)
-        self.tableView.reloadData()
+//        self.importantIngredients.remove(at: indexPath.row)
+//        self.tableView.reloadData()
         
         // remove the ingredient from the database here
         // ...
+        IngredientService.removeIngredient(for: user, ingredient: importantIngredients[indexPath.row]) { (ingredients) in
+            self.importantIngredients = ingredients
+            self.tableView.reloadData()
+        }
     }
 }
