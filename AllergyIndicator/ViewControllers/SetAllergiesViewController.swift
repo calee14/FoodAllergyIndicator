@@ -36,7 +36,7 @@ class SetAllergiesViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        // setup
+        // setup layout
         setupLayout()
         
     }
