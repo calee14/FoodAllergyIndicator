@@ -29,12 +29,38 @@ struct IngredientService {
             }
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let dict = snapshot.value as? [String : TimeInterval] else { return }
+                // Sorting in ascending order so that the most recent pics are on top
                 let sortedDict = dict.sorted(by: { $0.value > $1.value })
                 
                 var ingredients = [Ingredient]()
                 for ingredient in sortedDict {
                     ingredients.append(Ingredient(ingredient.key))
                 }
+                completion(ingredients)
+            })
+        }
+    }
+    static func retrieveAllIngredients(for user: User, completion: @escaping ([Ingredient]) -> Void) {
+        let ref = Database.database().reference().child(DatabaseIngredientsPath).child(user.uid)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dict = snapshot.value as? [String : TimeInterval] else { return }
+            // Sorting in ascending order so that the most recent pics are on top
+            let sortedDict = dict.sorted(by: { $0.value > $1.value })
+            
+            var ingredients = [Ingredient]()
+            for ingredient in sortedDict {
+                ingredients.append(Ingredient(ingredient.key))
+            }
+            completion(ingredients)
+        })
+    }
+    
+    static func removeIngredient(for user: User, ingredient: Ingredient, completion: @escaping ([Ingredient]) -> Void) {
+        let ingredientKey = ingredient.getIngredientName()
+        let ref = Database.database().reference().child(DatabaseIngredientsPath).child(user.uid).child(ingredientKey)
+        ref.removeValue { (error, ref) in
+            retrieveAllIngredients(for: user, completion: { (ingredients) in
                 completion(ingredients)
             })
         }
