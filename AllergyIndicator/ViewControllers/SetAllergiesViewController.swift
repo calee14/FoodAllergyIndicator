@@ -36,12 +36,6 @@ class SetAllergiesViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        // load ingredients
-        IngredientService.retrieveAllIngredients(for: User.current) { (ingredients) in
-            self.importantIngredients = ingredients
-            self.tableView.reloadData()
-        }
-        
         // setup
         setupLayout()
         
