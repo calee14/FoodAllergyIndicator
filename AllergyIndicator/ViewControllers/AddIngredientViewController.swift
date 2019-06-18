@@ -19,19 +19,42 @@ class AddIngredientViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // setup layout
+        setupLayout()
     }
     
+    func setupLayout() {
+        errorLabel.isHidden = true
+    }
 
     @IBAction func pressedIngredientButton(_ sender: UIButton) {
         ingredientButton.isUserInteractionEnabled = false
+        
         var ingredient = addIngredientTextField.text!
         ingredient = ingredient.trimmingCharacters(in: .whitespacesAndNewlines)
-        IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
-            ingredients.forEach({ (i) in
-                print(i.getIngredientName())
-            })
+        
+        let check = checkTextField(text: ingredient)
+        
+        if(check == "Please enter the name of your ingredient") {
+            errorLabel.isHidden = false
+            errorLabel.text = check
+            ingredientButton.isUserInteractionEnabled = true
+        } else if(check == "Valid text") {
+            IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
+                ingredients.forEach({ (i) in
+                    print(i.getIngredientName())
+                })
+                self.navigationController?.popViewController(animated: true)
+            }
         }
-        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func checkTextField(text: String) -> String {
+        if(text.isEmpty) {
+            return "Please enter the name of your ingredient"
+        }
+        return "Valid text"
     }
     
     /*
