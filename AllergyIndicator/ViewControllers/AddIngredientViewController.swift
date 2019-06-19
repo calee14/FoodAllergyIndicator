@@ -19,6 +19,7 @@ class AddIngredientViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addIngredientTextField.delegate = self
         
         // setup layout
         setupLayout()
@@ -67,4 +68,13 @@ class AddIngredientViewController: UIViewController {
     }
     */
 
+}
+
+extension AddIngredientViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        // run code for updating ingredients here
+        // ...
+        return false
+    }
 }
