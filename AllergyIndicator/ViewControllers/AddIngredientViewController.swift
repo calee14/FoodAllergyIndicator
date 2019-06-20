@@ -19,6 +19,9 @@ class AddIngredientViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddIngredientViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         addIngredientTextField.delegate = self
         
         // setup layout
@@ -27,6 +30,12 @@ class AddIngredientViewController: UIViewController {
     
     func setupLayout() {
         errorLabel.isHidden = true
+    }
+    
+    // Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        // Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     @IBAction func pressedIngredientButton(_ sender: UIButton) {
