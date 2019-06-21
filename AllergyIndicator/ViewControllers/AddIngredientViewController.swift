@@ -51,12 +51,8 @@ class AddIngredientViewController: UIViewController {
             errorLabel.text = check
             ingredientButton.isUserInteractionEnabled = true
         } else if(check == "Valid text") {
-            IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
-                ingredients.forEach({ (i) in
-                    print(i.getIngredientName())
-                })
-                self.navigationController?.popViewController(animated: true)
-            }
+            // add the name of the ingredient to the db and pop back to the previous view controller
+            addIngredientPopVC(ingredient: ingredient)
         }
     }
     
@@ -65,6 +61,15 @@ class AddIngredientViewController: UIViewController {
             return "Please enter the name of your ingredient"
         }
         return "Valid text"
+    }
+    
+    func addIngredientPopVC(ingredient: String) {
+        IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
+            ingredients.forEach({ (i) in
+                print(i.getIngredientName())
+            })
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     /*
@@ -84,6 +89,8 @@ extension AddIngredientViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         // run code for updating ingredients here
         // ...
+        guard let ingredient = self.addIngredientTextField.text else { return false }
+        addIngredientPopVC(ingredient: ingredient)
         return false
     }
 }
