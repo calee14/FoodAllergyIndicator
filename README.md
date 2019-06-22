@@ -39,8 +39,13 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [ ] Prettify the set ingredients view controller
   - [ ] Change some ui designs for the set ingredients view controller
   - [ ] Begin connecting the ingredients to the ai
+    - [ ] Get the AI to use the ingredients first then in week 3 connect the ingredients database
 ## WEEK 3
 - [ ] Change the display results view
+- [ ] Need to make sure the ingredients don't get run into the recipe api
+  - [ ] Get a database and have the app check for ingredients locally
+  - [ ] Upload an ingredients database to firebase once and use the database from then on
+  - [ ] Use a designed api to get ingredients NOTE: least likely
 - [ ] Make it so that all important ingredients appear at the top of the results page
 - [ ] Put a confidence score of each ingredient next to it
 - [ ] Display all ingredients from each top recipes when make a request to the recipe api
