@@ -46,7 +46,8 @@ class PhotoResultsViewController: UIViewController {
 //        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
         AllergyService.retrieveAllergies(for: User.current) { (allergies) in
             /* After retrieving the allergies pass them to the
-            check service to see if the user is allergic to the food */
+            check service to see if the user is allergic to the food.
+             The service also */
             CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
                 /* After getting the concepts from Clarifai
                  check if any of them are allergens of the user*/
@@ -61,13 +62,18 @@ class PhotoResultsViewController: UIViewController {
                 let group = DispatchGroup()
                 for concept in self.concepts {
                     /* NOTE: Make sure to only accept concepts above 90 percent confidence */
-                    let threshold: Float = 90.0
+                    let threshold: Float = 80.0
+                    
+                    print(concept.score)
                     
                     // Handing some threshold stuff
-                    if concept.score < threshold { continue }
+//                    if concept.score < threshold {
+//                        continue
+//                    }
                     
                     group.enter()
                     DatabaseIngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
+                        print("\(concept.conceptName) does exists \(exist)")
                         if !exist {
                             foods.append(concept.conceptName)
                         }
@@ -75,6 +81,7 @@ class PhotoResultsViewController: UIViewController {
                     })
                 }
                 group.notify(queue: .main) {
+                    print(foods)
                     CheckService.checkRecipe(foodQueries: foods) { (result) in
                         guard let ingredients = result else { return }
                         guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
