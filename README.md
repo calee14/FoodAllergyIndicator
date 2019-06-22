@@ -49,6 +49,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Make it so that all important ingredients appear at the top of the results page
 - [ ] Put a confidence score of each ingredient next to it
 - [ ] Display all ingredients from each top recipes when make a request to the recipe api
+## Data
+- https://data.world/datafiniti/food-ingredient-lists
+- https://www.kaggle.com/datafiniti/food-ingredient-lists (same data just a sample size though)
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [ ] Change app icon for rebranding
