@@ -91,6 +91,7 @@ class PhotoResultsViewController: UIViewController {
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
     }
+    
     func handleNoCamera() {
         self.cameraAutherization()
         
@@ -101,6 +102,7 @@ class PhotoResultsViewController: UIViewController {
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
     }
+    
     func handleNoFood() {
         self.noFoodMessage()
         
@@ -111,6 +113,7 @@ class PhotoResultsViewController: UIViewController {
         guard let foodImage = foodImage else { return }
         self.foodImageView.image = foodImage
     }
+    
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
         ingredientsInFood = allergens + safeIngredients
         self.tableView.reloadData()
@@ -130,11 +133,13 @@ class PhotoResultsViewController: UIViewController {
         warningController.showWarningMenu(title: titleString, content: contentString)
         
     }
+    
     func noFoodMessage() {
         let titleString = "No food in image"
         let contentString = "You did not take a picture that contained any type of food. Please take a picture of food to see results."
         warningController.showWarningMenu(title: titleString, content: contentString)
     }
+    
     func showWarningMenu(allergies: Bool) {
         var titleString = "BE CAREFUL"
         var allergyString = "Possiblle Allergens Detected!!! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
@@ -142,14 +147,17 @@ class PhotoResultsViewController: UIViewController {
             titleString = "Should Be Safe To Eat"
             allergyString = "Reminder! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
         }
+        
         warningController.showWarningMenu(title: titleString, content: allergyString)
     }
 }
 
 extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredientsInFood.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
         let ingredientdata = ingredientsInFood[indexPath.row]
