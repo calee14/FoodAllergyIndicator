@@ -39,8 +39,6 @@ class TakePhotoViewController: UIViewController {
         
         //        IAPHelper.shared.getProducts()
         
-        print("Take photo")
-        
         // Start up the camera
         cameraController.prepare {(error) in
             // Print the error if given one
@@ -121,7 +119,6 @@ class TakePhotoViewController: UIViewController {
          view being removed from a view hierarchy */
         // Remove the image view that stores the picture the user took
         self.imageView.removeFromSuperview()
-        print("Disappear")
     }
     
     // Set variables for the camera zoom
@@ -204,7 +201,6 @@ class TakePhotoViewController: UIViewController {
         Pictures.decrementPictureCount()
         // Access the picture count
         let pictureCount = Pictures.current.numpictures
-        print("Pic \(pictureCount)")
         
         if pictureCount > 0 {
             // Camera controller takes a picture
@@ -228,7 +224,6 @@ class TakePhotoViewController: UIViewController {
                     var foundFood: Bool = false
                     for concept in concepts {
                         if concept.name == "food" && concept.score >= 0.5 {
-                            print("found food: \(concept.score)")
                             foundFood = true
                         }
                     }
@@ -256,7 +251,7 @@ class TakePhotoViewController: UIViewController {
     //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
         } else if pictureCount <= 0 {
             // Buy more pictures
-            print("Out of pictures")
+            print("The user ran out of pictures")
             purchaseMorePictures()
 //            Pictures.incrementPictureCount()
         }

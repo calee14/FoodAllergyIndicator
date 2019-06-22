@@ -22,7 +22,6 @@ struct CheckService {
             for j in usersAllergies {
                 if j.isAllergic {
                     let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
-                    print("Coe \(coefficient*100.0) \(i.conceptName) \(j.allergyName)")
                     /* This threshold decides whether the user is allergic to this food */
                     let threshold = 50.0
                     if coefficient * 100.0 > threshold {
@@ -52,7 +51,6 @@ struct CheckService {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
         var recipeIngredients: [String] = [String]()
         let group = DispatchGroup()
-        print("foods \(foodQueries)")
         for query in foodQueries {
             group.enter()
             /* Make a api request to a recipe api and get the ingredients of the recipe */
@@ -95,8 +93,6 @@ struct CheckService {
                     for recipe in possibleRecipes {
                         recipeIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
                     }
-                    print("Results \(possibleRecipes)")
-                    
                 case .failure(let error):
                     print("Error: \(error)")
                 }
@@ -104,13 +100,10 @@ struct CheckService {
             }
         }
         group.notify(queue: .main) {
-            print("finished all tasks")
-            print(recipeIngredients)
             /* Add all the ingredients from the recipes to the database.
              This will help by avoiding sending ingredients to the RecipePuppy */
             DatabaseIngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
                 guard let success = success else { return }
-                print(success)
                 completion(recipeIngredients)
             })
         }
@@ -122,10 +115,6 @@ struct CheckService {
             for allergy in usersAllergies {
                 if allergy.isAllergic {
                     let coefficient = diceCoefficient(s: ingredient, t: allergy.allergyName)
-                    print("Coe \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
-                    if coefficient*100.0 > 90.0 {
-                        print("Greater \(coefficient*100.0) \(ingredient) \(allergy.allergyName)")
-                    }
 //                    let dist = LevenshteinDistance(s: ingredient.lowercased(), t: allergy.allergyName.lowercased())
 //                    if ((1.0 - (Double(dist!)/lsum)) * 100.0) >= 30 {
                     /* This threshold decides whether the use is allergic to the recipe ingredients */
@@ -257,7 +246,6 @@ struct CheckService {
         var bigrams = [String : Int]()
         for i in 0..<s.count - 1 {
             let bigram = String(s[i...i+2])
-            print(bigram)
             var count = 0
             if bigrams[bigram] != nil {
                 count = bigrams[bigram]! + 1

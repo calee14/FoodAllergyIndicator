@@ -98,7 +98,6 @@ extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource
 
 extension SetAllergiesViewController: DeleteCellDelegate {
     func didPressDeleteButton(_ deleteButton: UIButton, on cell: IngredientTableViewCell) {
-        print("tried deleting ingredient")
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         self.importantIngredients[indexPath.row].setIsImportant(isImportant: false) // we delete the unimportant ones
         

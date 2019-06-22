@@ -44,7 +44,6 @@ struct PredictService {
             app.getModelByName("food-items-v1.0", completion: { (model, error) in
                 let clarifaiImage = ClarifaiImage(image: image)!
                 model?.predict(on: [clarifaiImage], completion: { (outputs, error) in
-                    print("%@", error ?? "no error")
                     guard let outputs = outputs else { return completion(nil) }
                     if let output = outputs.first {
                         let concepts = output.concepts

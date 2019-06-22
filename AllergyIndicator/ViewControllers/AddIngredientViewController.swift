@@ -65,9 +65,9 @@ class AddIngredientViewController: UIViewController {
     
     func addIngredientPopVC(ingredient: String) {
         IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
-            ingredients.forEach({ (i) in
-                print(i.getIngredientName())
-            })
+            // list ingredients here if must
+            
+            // move back to the previous view controller once the ingredient has been added
             self.navigationController?.popViewController(animated: true)
         }
     }

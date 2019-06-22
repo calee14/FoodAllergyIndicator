@@ -28,7 +28,6 @@ class IAPHelper: NSObject {
     func purchase(product: IAPProduct) {
         guard let productToPurchase = products.filter({ $0.productIdentifier == product.rawValue }).first else { return }
         let payment = SKPayment(product: productToPurchase)
-        print(payment)
         paymentQueue.add(payment)
     }
 }
@@ -51,7 +50,6 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 break
             case .purchased:
                 Pictures.incrementPictureCount()
-                print(Pictures.current.numpictures)
                 SKPaymentQueue.default().finishTransaction(transaction as SKPaymentTransaction)
                 break
             case .failed:

@@ -62,8 +62,10 @@ class PhotoResultsViewController: UIViewController {
                 for concept in self.concepts {
                     /* NOTE: Make sure to only accept concepts above 90 percent confidence */
                     let threshold: Float = 90.0
+                    
+                    // Handing some threshold stuff
                     if concept.score < threshold { continue }
-                    print("\(concept.score)\(concept.conceptName!)")
+                    
                     group.enter()
                     DatabaseIngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
                         if !exist {
@@ -73,7 +75,6 @@ class PhotoResultsViewController: UIViewController {
                     })
                 }
                 group.notify(queue: .main) {
-                    print(foods)
                     CheckService.checkRecipe(foodQueries: foods) { (result) in
                         guard let ingredients = result else { return }
                         guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
