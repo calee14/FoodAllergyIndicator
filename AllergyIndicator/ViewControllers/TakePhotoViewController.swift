@@ -194,6 +194,8 @@ class TakePhotoViewController: UIViewController {
                     print("Denied access to \(cameraMediaType)")
                 }
             }
+        @unknown default:
+            fatalError()
         }
         // Remove the ongoing transactions
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
