@@ -43,34 +43,38 @@ class PhotoResultsViewController: UIViewController {
             self.handleNoFood()
             return
         }
-//        concepts = [ClarifaiConcept(conceptName: "spaghetti"), ClarifaiConcept(conceptName: "Cookie"), ClarifaiConcept(conceptName: "tomato")]
-        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
-            /* After retrieving the allergies pass them to the
-            check service to see if the user is allergic to the food.
-             The service also */
-            CheckService.checkAllergies(ingreidents: self.concepts, allergies: allergies, completion: { (allergens, safeIngredients) in
-                /* After getting the concepts from Clarifai
-                 check if any of them are allergens of the user*/
-                guard let allergens = allergens else { return }
-                guard let safeIngredients = safeIngredients else { return }
-                self.allergens = allergens
-                self.safeIngredients = safeIngredients
-                self.combineAllergensAndSafeIngredientsAndUpdateTable()
+        
+        IngredientService.retrieveAllIngredients(for: User.current) { (usersIngredients) in
+            /* After retrieving the important ingredients pass them to the
+             check service to see if the ingredients the user wants to find.
+            */
+            CheckService.checkIngredients(concepts: self.concepts, impIngredients: usersIngredients, completion: { (impIngredients, regIngredients) in
+                guard let impIngredients = impIngredients else { return }
+                guard let regIngredients = regIngredients else { return }
+                // need to change to impIngredients no longer called allergens
+                // ...
+                self.allergens = impIngredients
+                // need to change to impIngredients no longer called allergens
+                // ...
+                self.safeIngredients = regIngredients
+                self.combineImportantWithRegularIngredients()
+                
                 /* Check if any of the foods are ingredients.
                  If it is an ingredient then don't add it to the recipe search query */
                 var foods = [String]()
                 let group = DispatchGroup()
                 for concept in self.concepts {
                     /* NOTE: Make sure to only accept concepts above 90 percent confidence */
-                    let threshold: Float = 80.0
+                    let threshold: Float = 95.0
                     
                     print(concept.score)
                     
                     // Handing some threshold stuff
-//                    if concept.score < threshold {
-//                        continue
-//                    }
+                    if concept.score < threshold {
+                        continue
+                    }
                     
+                    // enter into a dispatch group
                     group.enter()
                     DatabaseIngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
                         print("\(concept.conceptName) does exists \(exist)")
@@ -84,9 +88,12 @@ class PhotoResultsViewController: UIViewController {
                     print(foods)
                     CheckService.checkRecipe(foodQueries: foods) { (result) in
                         guard let ingredients = result else { return }
-                        guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: allergies) else { return }
+                        // need to update the check ingredient recipe func
+                        /*
+                        guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: usersIngredients) else { return }
                         self.allergens.append(contentsOf: allergiesInRecipe)
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
+                        */
                         self.showWarningMenu(allergies: self.allergens.count >= 1)
                     }
                 }
@@ -122,6 +129,13 @@ class PhotoResultsViewController: UIViewController {
     }
     
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
+        ingredientsInFood = allergens + safeIngredients
+        self.tableView.reloadData()
+    }
+    
+    func combineImportantWithRegularIngredients() {
+        // note need to change the array names
+        // ...
         ingredientsInFood = allergens + safeIngredients
         self.tableView.reloadData()
     }
