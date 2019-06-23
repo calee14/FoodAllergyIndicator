@@ -38,8 +38,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [X] Connect the user's ingredients with the database
   - [ ] Prettify the set ingredients view controller
   - [ ] Change some ui designs for the set ingredients view controller
-  - [ ] Begin connecting the ingredients to the ai
-    - [ ] Get the AI to use the ingredients first then in week 3 connect the ingredients database
+  - [X] Begin connecting the ingredients to the ai
+    - [X] Get the AI to use the ingredients first 
+        - [ ] Then in week 3 connect the ingredients database
 ## WEEK 3
 - [ ] Change the display results view
 - [ ] Need to make sure the ingredients don't get run into the recipe api
