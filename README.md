@@ -53,6 +53,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
 ## Data
 - https://data.world/datafiniti/food-ingredient-lists
 - https://www.kaggle.com/datafiniti/food-ingredient-lists (same data just a sample size though)
+  - The data gives more infomation than neccessary when describing the ingredient. Will need to use one of the string algorithms to determine if they are close to each other.
+  - But the thing is that I can run a search through the firebase database becuase it will only give me the childs with the matching key or value.
+  - A fix is that I can split all ingredients in the list so that the result is only one word ingredients. So when I add the ingredients to the database I can get ingredients with names such as "mozzarella"
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [ ] Change app icon for rebranding
