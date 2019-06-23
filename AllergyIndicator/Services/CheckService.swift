@@ -12,6 +12,32 @@ import Alamofire
 import SwiftyJSON
 
 struct CheckService {
+    static func checkIngredients(concepts: [ClarifaiConcept], impIngredients: [Ingredient], completion: ([String]?, [String]?) -> Void) {
+        
+        var locatedImpIngredients = [String]()
+        var regularIngredients = [String]()
+        let usersImpIngredients = impIngredients
+        
+        for concept in concepts {
+            var foundAnIngredient = false
+            for ingredient in impIngredients {
+                let coefficient = diceCoefficient(s: concept.conceptName, t: ingredient.getIngredientName())
+                let threshold = 50.0
+                if coefficient * 100.0 > threshold {
+                    locatedImpIngredients.append(concept.conceptName)
+                    foundAnIngredient = true
+                    break
+                }
+            }
+            
+            if !foundAnIngredient {
+                regularIngredients.append(concept.conceptName)
+            }
+        }
+        
+        completion(locatedImpIngredients, regularIngredients)
+    }
+    
     static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?, [String]?) -> Void) {
         var possibleAllergies = [String]()
         var safeIngredients = [String]()
