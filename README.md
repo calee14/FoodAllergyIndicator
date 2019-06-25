@@ -22,7 +22,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 # Plan of attack
 ## SUMMER OF 2019
 ## WEEK 1 and maybe WEEK 2
-- [ ] Relearn all of my code
+- [X] Relearn all of my code (know it well enough)
 - [X] Reboot the app and make sure all of the code is working
 - [ ] Redesign the set allergens page (NOTE: Use dummy data for now)
   - [ ] Change the name of the button to "set important ingredients"
@@ -32,9 +32,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
     - [X] Add a create button to add ingredients to the table
   - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
 ## WEEK 2
-- [ ] Update the database with the user's important ingredients
+- [X] Update the database with the user's important ingredients
   - [X] Make new services for updating the users important ingredients
-  - [ ] Change the name of the services with the word allergens in them
+  - [X] Change the name of the services with the word allergens in them (Made new services with new names)
   - [X] Connect the user's ingredients with the database
   - [ ] Prettify the set ingredients view controller
   - [ ] Change some ui designs for the set ingredients view controller
