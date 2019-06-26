@@ -84,3 +84,5 @@ If you want to use the app you can download it on the App Store. [Link will be s
     - NOTE: well no need for a food allergy information dashboard since the app can no longer contain with any medical advice
 - [X] Ready to resubmit to the Appstore. Make sure to run one last test.
     - NOTE: rejected because of non approved medical service.
+    - Moving away from being a "medical service" 
+    - No longer saying that this app can detect allergies.
