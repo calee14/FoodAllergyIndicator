@@ -128,10 +128,11 @@ struct CheckService {
         group.notify(queue: .main) {
             /* Add all the ingredients from the recipes to the database.
              This will help by avoiding sending ingredients to the RecipePuppy */
-            DatabaseIngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
-                guard let success = success else { return }
-                completion(recipeIngredients)
-            })
+            print(recipeIngredients)
+//            DatabaseIngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
+//                guard let success = success else { return }
+//                completion(recipeIngredients)
+//            })
         }
     }
     static func checkIngredientsInRecipe(recipeIngredients: [String], allergies: [Allergy]) -> [String]? {
