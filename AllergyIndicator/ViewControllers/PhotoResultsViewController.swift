@@ -64,15 +64,15 @@ class PhotoResultsViewController: UIViewController {
                 var foods = [String]()
                 let group = DispatchGroup()
                 for concept in self.concepts {
-                    /* NOTE: Make sure to only accept concepts above 90 percent confidence */
-                    let threshold: Float = 95.0
+                    /* MARK: Make sure to only accept concepts above 90 percent confidence */
+                    let threshold: Float = 50.0
                     
                     print(concept.score)
                     
                     // Handing some threshold stuff
-                    if concept.score < threshold {
-                        continue
-                    }
+//                    if concept.score < threshold {
+//                        continue
+//                    }
                     
                     // enter into a dispatch group
                     group.enter()
