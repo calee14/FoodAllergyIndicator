@@ -10,6 +10,8 @@
 		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
 		B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* DatabaseIngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
+		B31A669522C6E25E00E5463F /* indvl_ingredientv1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B31A669422C6E25E00E5463F /* indvl_ingredientv1.txt */; };
+		B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */; };
 		B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01CF22ADCC4D00A2773A /* Ingredient.swift */; };
 		B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */; };
 		B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */; };
@@ -64,6 +66,8 @@
 		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30831152114B7790088DD64 /* DatabaseIngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseIngredientService.swift; sourceTree = "<group>"; };
 		B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+Colors.swift"; sourceTree = "<group>"; };
+		B31A669422C6E25E00E5463F /* indvl_ingredientv1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indvl_ingredientv1.txt; sourceTree = "<group>"; };
+		B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushIngredientsToDB.swift; sourceTree = "<group>"; };
 		B31C01CF22ADCC4D00A2773A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
@@ -240,8 +244,10 @@
 			children = (
 				B3F902C02104316A00FD552E /* Info.plist */,
 				B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */,
+				B31A669422C6E25E00E5463F /* indvl_ingredientv1.txt */,
 				B3C0914621078EC20058E046 /* Constants.swift */,
 				B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */,
+				B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */,
 				B35239E2211B97770041BA36 /* Disclaimer.txt in Resources */,
 				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
+				B31A669522C6E25E00E5463F /* indvl_ingredientv1.txt in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
 				B35239E0211B4C830041BA36 /* Terms.txt in Resources */,
@@ -455,6 +462,7 @@
 				B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */,
 				B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
+				B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */,
 				B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */,
 				B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */,
 				B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */,
