@@ -61,22 +61,29 @@ class HomeViewController: UIViewController {
         
         // Only display the disclaimer once every ten times
         let randNum = arc4random_uniform(10)
+        
         // Only display the disclaimer only when the user first opens the app
+        
         /* If the user seques back to the HomeViewController the viewDidLoad function will run again
         so we only want to display the disclaimer once.
         */
         if !HomeViewController.shouldDisplayDisclaimer {
+            
             HomeViewController.shouldDisplayDisclaimer = randNum <= 4 ? true : false
         }
         
         // Check if we should display the disclaimer
         if HomeViewController.shouldDisplayDisclaimer {
+            
             // Get the path of the file that contains the contents of the disclaimer
             let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
+            
             // Retrieve the contents in the file
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
+            
             // Put a disclaimer on screen
             self.warningController.showWarningMenu(title: "Disclaimer", content: content)
+            
             // Reset the should-display-disclaimer variable
             HomeViewController.shouldDisplayDisclaimer = false
         }
