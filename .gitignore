@@ -73,3 +73,6 @@ fastlane/test_output
 # Config files or
 # API keys
 AllergyIndicator/Supporting/ConstantsAPI.swift
+
+# Misc
+AllergyIndicator/Supporting/indvl_ingredientv1.txt
