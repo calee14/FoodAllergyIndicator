@@ -28,6 +28,7 @@ struct DatabaseIngredientService {
     }
     
     static func doesIngredientExists(ingredientName: String, completion: @escaping (Bool) -> Void) {
+        print("in the checking func")
         let ref = Database.database().reference().child(ingredientsPath)
         // NOTE: need to check if this func still works
         ref.observeSingleEvent(of: .value) { (snapshot) in
@@ -37,5 +38,22 @@ struct DatabaseIngredientService {
                 completion(false)
             }
         }
+    }
+    
+    static func doesIngredientExists2(ingredientName: String, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("ingredient").child(ingredientName)
+        var exists = false
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                exists = true
+                print("\(ingredientName) is an ingredient")
+            }
+            
+            if !exists {
+                print("\(ingredientName) is a crafted food")
+            }
+        }
+        completion(true)
     }
 }
