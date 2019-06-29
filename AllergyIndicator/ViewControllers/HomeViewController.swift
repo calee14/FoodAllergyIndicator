@@ -35,15 +35,16 @@ class HomeViewController: UIViewController {
         /* This method is called after the view controller
          has loaded its view hierarchy into memory. */
         
-        let data = PushIngredientsToDB.retrieveLocalData()
-        
-        PushIngredientsToDB.addDataToFirebase(ingredientData: data) { (success) in
-            print("\(success) this is the status of the db")
-        }
+//        let data = PushIngredientsToDB.retrieveLocalData()
+//
+//        PushIngredientsToDB.addDataToFirebase(ingredientData: data) { (success) in
+//            print("\(success) this is the status of the db")
+//        }
         
         // Get the in app-purchase products
         IAPHelper.shared.getProducts()
-        // Launch Clarifai SDK
+        
+//        // Launch Clarifai SDK
 //        let apikey = ConstantsAPI.clarifaiapi.key
 //        Clarifai.sharedInstance().start(apiKey: apikey)
         
