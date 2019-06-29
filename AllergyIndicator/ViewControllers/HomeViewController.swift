@@ -51,9 +51,10 @@ class HomeViewController: UIViewController {
 //        IngredientService.addIngredient(ingredientNames: ["egg", "toast", "grapes"]) { (success) in
 //            print(success)
 //        }
-//        IngredientService.doesIngredientExists(ingredientName: "egg") { (exist) in
-//            print(exist)
-//        }
+        DatabaseIngredientService.doesIngredientExists2(ingredientName: "mozzarella") { (exist) in
+            print(exist)
+        }
+        
 //        print("test \(CheckService.diceCoefficient(s: "I bet my life", t: "I bet your life"))")
 //        fatalError()
         // Do any additional setup after loading the view.
