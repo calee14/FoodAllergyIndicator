@@ -63,9 +63,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - A fix is that I can split all ingredients in the list so that the result is only one word ingredients. So when I add the ingredients to the database I can get ingredients with names such as "mozzarella"
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
-- [ ] Change app icon for rebranding
+- [X] Change app icon for rebranding
     - [ ] Make sure to use vector image designing
-- [ ] Remove a list of allergies
+- [X] Remove the list of allergies
     - [ ] Make a user dynamic list of search ingredients
 - [ ] Change app colors for rebranding
 - [X] Improve api search in some way
