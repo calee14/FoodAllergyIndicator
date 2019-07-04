@@ -191,17 +191,16 @@ class HomeViewController: UIViewController {
         
         leftButtonBackground.layer.cornerRadius = 6
         leftButtonBackground.layer.masksToBounds = true
+        
+        // Set up constraints that need to be proportional with the screen
+        setupConstraints()
     }
     
     func setupConstraints() {
-        for constraint in self.takePhotoBackground.constraints {
-            if constraint.identifier == "leftMargin" {
+        for constraint in self.takePhotoBackground.getAllConstraints() {
+            if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
                 constraint.constant = (self.view.frame.width * 0.07)
-            } else if constraint.identifier == "rightMargin" {
-                constraint.constant = (self.view.frame.width * 0.07)
-            } else if constraint.identifier == "topMargin" {
-                constraint.constant = (self.view.frame.height * 0.01)
-            } else if constraint.identifier == "bottomMargin" {
+            } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
                 constraint.constant = (self.view.frame.height * 0.01)
             }
         }
