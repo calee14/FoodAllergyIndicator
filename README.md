@@ -42,6 +42,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
     - [X] Get the AI to use the ingredients first 
         - [ ] Then in week 3 connect the ingredients database
 ## WEEK 3
+- [ ] Make the ui improvements
+  - [ ] add the backgrounds
+  - [ ] change the app icon
+  - [ ] Change the button names
+  - [ ] Make the ui look similar to the flower image recognition app
+## WEEK 4 (final week must ship by then)
 - [ ] Change the display results view
 - [X] Need to make sure the ingredients don't get run into the recipe api
   - [X] Get a database and have the app check for ingredients locally
@@ -63,9 +69,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - A fix is that I can split all ingredients in the list so that the result is only one word ingredients. So when I add the ingredients to the database I can get ingredients with names such as "mozzarella"
 # Tasks
 - [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
-- [ ] Change app icon for rebranding
+- [X] Change app icon for rebranding
     - [ ] Make sure to use vector image designing
-- [ ] Remove a list of allergies
+- [X] Remove the list of allergies
     - [ ] Make a user dynamic list of search ingredients
 - [ ] Change app colors for rebranding
 - [X] Improve api search in some way
