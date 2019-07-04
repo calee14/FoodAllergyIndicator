@@ -51,10 +51,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="top" secondItem="F2r-Qa-iVu" secondAttribute="top" constant="10" id="Ocd-yH-wdp"/>
-                                            <constraint firstAttribute="bottom" secondItem="fsF-HG-MpJ" secondAttribute="bottom" id="g0k-Jp-ux4"/>
-                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="leading" secondItem="F2r-Qa-iVu" secondAttribute="leading" constant="10" id="mT0-WE-PVZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="fsF-HG-MpJ" secondAttribute="trailing" constant="10" id="t8z-fE-3mh"/>
+                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="top" secondItem="F2r-Qa-iVu" secondAttribute="top" constant="10" identifier="topMargin" id="Ocd-yH-wdp"/>
+                                            <constraint firstAttribute="bottom" secondItem="fsF-HG-MpJ" secondAttribute="bottom" identifier="bottomMargin" id="g0k-Jp-ux4"/>
+                                            <constraint firstItem="fsF-HG-MpJ" firstAttribute="leading" secondItem="F2r-Qa-iVu" secondAttribute="leading" constant="10" identifier="leftMargin" id="mT0-WE-PVZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="fsF-HG-MpJ" secondAttribute="trailing" constant="10" identifier="rightMargin" id="t8z-fE-3mh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXd-gz-XNy">
