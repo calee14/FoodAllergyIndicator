@@ -24,13 +24,13 @@ If you want to use the app you can download it on the App Store. [Link will be s
 ## WEEK 1 and maybe WEEK 2
 - [X] Relearn all of my code (know it well enough)
 - [X] Reboot the app and make sure all of the code is working
-- [ ] Redesign the set allergens page (NOTE: Use dummy data for now)
-  - [ ] Change the name of the button to "set important ingredients"
+- [X] Redesign the set allergens page (NOTE: Use dummy data for now)
+  - [X] Change the name of the button to "set important ingredients"
   - [X] Redesign the set allergens view controller to important ingredients view controller
     - [X] Remove the switch
     - [X] Add the delete button instead 
     - [X] Add a create button to add ingredients to the table
-  - [ ] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
+  - [X] Rename some of the variables in the table view and table cell (NOTE: remove the term allergens in most of the views)
 ## WEEK 2
 - [X] Update the database with the user's important ingredients
   - [X] Make new services for updating the users important ingredients
@@ -40,7 +40,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [ ] Change some ui designs for the set ingredients view controller
   - [X] Begin connecting the ingredients to the ai
     - [X] Get the AI to use the ingredients first 
-        - [ ] Then in week 3 connect the ingredients database
+        - [X] Then in week 3 connect the ingredients database
 ## WEEK 3
 - [ ] Make the ui improvements
   - [ ] add the backgrounds
