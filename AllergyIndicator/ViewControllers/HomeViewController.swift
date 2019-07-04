@@ -136,9 +136,9 @@ class HomeViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
         
         // Make the background clear
-        self.buttonStackView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.buttonStackView.backgroundColor = .clear
         
-        self.takePhotoButton.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.takePhotoButton.backgroundColor = .clear
         self.setAllergiesButton.backgroundColor = .clear
         self.leftButton.backgroundColor = .clear
         self.termsButton.backgroundColor = .clear
