@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var termsBackground: UIView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftButtonBackground: UIView!
+    @IBOutlet weak var buttonStackView: UIStackView!
     
     // MARK: - Properties
     
@@ -135,7 +136,9 @@ class HomeViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
         
         // Make the background clear
-        self.takePhotoButton.backgroundColor = .clear
+        self.buttonStackView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        
+        self.takePhotoButton.backgroundColor = UIColor.white.withAlphaComponent(0)
         self.setAllergiesButton.backgroundColor = .clear
         self.leftButton.backgroundColor = .clear
         self.termsButton.backgroundColor = .clear
