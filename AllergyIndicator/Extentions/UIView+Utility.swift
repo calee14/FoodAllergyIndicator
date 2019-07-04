@@ -20,3 +20,27 @@ extension UIView {
         }
     }
 }
+
+extension UIView {
+    
+    // retrieves all constraints that mention the view
+    func getAllConstraints() -> [NSLayoutConstraint] {
+        
+        // array will contain self and all superviews
+        var views = [self]
+        
+        // get all superviews
+        var view = self
+        while let superview = view.superview {
+            views.append(superview)
+            view = superview
+        }
+        
+        // transform views to constraints and filter only those
+        // constraints that include the view itself
+        return views.flatMap({ $0.constraints }).filter { constraint in
+            return constraint.firstItem as? UIView == self ||
+                constraint.secondItem as? UIView == self
+        }
+    }
+}
