@@ -123,6 +123,26 @@ class HomeViewController: UIViewController {
     }
     
     func setupLayout() {
+        // Set background
+        let backgroundimg = UIImage(named: "backgroundv3")
+        
+        let imageView = UIImageView(frame: self.view.bounds)
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = backgroundimg
+        imageView.center = self.view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        // Make the background clear
+        self.takePhotoButton.backgroundColor = .clear
+        self.setAllergiesButton.backgroundColor = .clear
+        self.leftButton.backgroundColor = .clear
+        self.termsButton.backgroundColor = .clear
+        
+        // Hide navbar for the first view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         // Retrieve colors
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
