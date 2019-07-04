@@ -193,6 +193,20 @@ class HomeViewController: UIViewController {
         leftButtonBackground.layer.masksToBounds = true
     }
     
+    func setupConstraints() {
+        for constraint in self.takePhotoBackground.constraints {
+            if constraint.identifier == "leftMargin" {
+                constraint.constant = (self.view.frame.width * 0.07)
+            } else if constraint.identifier == "rightMargin" {
+                constraint.constant = (self.view.frame.width * 0.07)
+            } else if constraint.identifier == "topMargin" {
+                constraint.constant = (self.view.frame.height * 0.01)
+            } else if constraint.identifier == "bottomMargin" {
+                constraint.constant = (self.view.frame.height * 0.01)
+            }
+        }
+    }
+    
     func toggleTakePhotoButton(status: Bool) {
         // Change the status of the takePhotoButton
         takePhotoButton.isUserInteractionEnabled = status
@@ -265,6 +279,7 @@ class HomeViewController: UIViewController {
             toggleTermsButton(status: true)
         }
     }
+    
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
