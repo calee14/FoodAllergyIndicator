@@ -43,9 +43,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
         - [X] Then in week 3 connect the ingredients database
 ## WEEK 3
 - [ ] Make the ui improvements
-  - [ ] add the backgrounds
+  - [X] add the backgrounds
   - [ ] change the app icon
-  - [ ] Change the button names
+  - [X] Change the button names
   - [ ] Make the ui look similar to the flower image recognition app
 ## WEEK 4 (final week must ship by then)
 - [ ] Change the display results view
