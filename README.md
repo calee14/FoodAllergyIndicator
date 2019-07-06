@@ -6,10 +6,10 @@ If you're a developer hoping to make changes to my code or just wants to play ar
 ```
 git clone https://github.com/calee14/FoodAllergyIndicator.git
 ```
-If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due to the long app store review times. 
+If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due refactoring and the long app store review times. 
 # Deployment
 It should be intuitive enough to open the app in xCode and running it on a simulator.
-If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due to the long app store review times. 
+If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due refactoring and the long app store review times. 
 # Built With
 - [Clarifai](https://clarifai.com) - API that recognizes the ingredients in the food
 - [Firebase](https://firebase.google.com) - Backend for mobile apps
@@ -43,9 +43,9 @@ If you want to use the app you can download it on the App Store. [Link will be s
         - [X] Then in week 3 connect the ingredients database
 ## WEEK 3
 - [ ] Make the ui improvements
-  - [ ] add the backgrounds
+  - [X] add the backgrounds
   - [ ] change the app icon
-  - [ ] Change the button names
+  - [X] Change the button names
   - [ ] Make the ui look similar to the flower image recognition app
 ## WEEK 4 (final week must ship by then)
 - [ ] Change the display results view
