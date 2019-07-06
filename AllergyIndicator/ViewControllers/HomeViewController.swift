@@ -123,6 +123,10 @@ class HomeViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        disappear(animated: animated)
+    }
+    
     func setupLayout() {
         // Set background
         let backgroundimg = UIImage(named: "backgroundv3")
@@ -207,6 +211,11 @@ class HomeViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func disappear(animated: Bool) {
+        // Show the navigation bar when we change view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func toggleTakePhotoButton(status: Bool) {
