@@ -197,25 +197,14 @@ class HomeViewController: UIViewController {
     }
     
     func setupConstraints() {
-        for constraint in self.takePhotoBackground.getAllConstraints() {
-            if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
-                constraint.constant = (self.view.frame.width * 0.07)
-            } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
-                constraint.constant = (self.view.frame.height * 0.01)
-            }
-        }
-        for constraint in self.setAllergiesBackground.getAllConstraints() {
-            if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
-                constraint.constant = (self.view.frame.width * 0.07)
-            } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
-                constraint.constant = (self.view.frame.height * 0.01)
-            }
-        }
-        for constraint in self.termsBackground.superview!.getAllConstraints() {
-            if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
-                constraint.constant = (self.view.frame.width * 0.07)
-            } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
-                constraint.constant = (self.view.frame.height * 0.01)
+        let constraintsArray: [[NSLayoutConstraint]] = [self.takePhotoBackground.getAllConstraints(), self.setAllergiesBackground.getAllConstraints(), self.termsBackground.superview!.getAllConstraints()]
+        for constraints in constraintsArray {
+            for constraint in constraints {
+                if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
+                    constraint.constant = (self.view.frame.width * 0.07)
+                } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
+                    constraint.constant = (self.view.frame.height * 0.01)
+                }
             }
         }
     }
