@@ -204,6 +204,13 @@ class HomeViewController: UIViewController {
                 constraint.constant = (self.view.frame.height * 0.01)
             }
         }
+        for constraint in self.setAllergiesBackground.getAllConstraints() {
+            if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
+                constraint.constant = (self.view.frame.width * 0.07)
+            } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
+                constraint.constant = (self.view.frame.height * 0.01)
+            }
+        }
     }
     
     func toggleTakePhotoButton(status: Bool) {
