@@ -19,6 +19,7 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var buttonBackground: UIView!
+    @IBOutlet weak var backHomeButton: UIButton!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonWidth: NSLayoutConstraint!
@@ -97,6 +98,10 @@ class TakePhotoViewController: UIViewController {
         backgroundButtonHeight.constant = 50
         buttonWidth.constant = 40
         buttonHeight.constant = 40
+        
+        // Change the layout and position of button
+        backHomeButton.frame = CGRect(x: 30, y: 45, width: 35, height: 35)
+        backHomeButton.backgroundColor = .gray
         
         // Round off the button
         captureButton.layer.zPosition = 10
