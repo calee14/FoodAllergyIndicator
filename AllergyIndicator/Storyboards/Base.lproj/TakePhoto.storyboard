@@ -73,7 +73,11 @@
                     <navigationItem key="navigationItem" title="Take Photo" id="0sc-rI-6ef"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backgroundButtonHeight" destination="a4d-XD-ozf" id="JSI-u2-d1p"/>
+                        <outlet property="backgroundButtonWidth" destination="4DL-jI-YFU" id="48P-E5-gsG"/>
                         <outlet property="buttonBackground" destination="gRD-NX-g7X" id="xPi-Uo-wc0"/>
+                        <outlet property="buttonHeight" destination="k3N-hK-aLp" id="lGC-pX-dXW"/>
+                        <outlet property="buttonWidth" destination="05d-VC-iOB" id="1Um-ic-XD2"/>
                         <outlet property="captureButton" destination="1Qg-uM-qwM" id="zQf-UJ-o2G"/>
                         <outlet property="previewView" destination="6hu-Xx-COr" id="4k0-fX-U5o"/>
                         <segue destination="LON-i2-Ezs" kind="show" id="bPd-tD-wmh"/>
