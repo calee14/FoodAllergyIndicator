@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     
     // Global class variables
     static var shouldDisplayDisclaimer: Bool = false
+    var showNavagationController: Bool = false
     
     // Create an instance of the warning controller
     let warningController = WarningController()
@@ -215,7 +216,7 @@ class HomeViewController: UIViewController {
     
     func disappear(animated: Bool) {
         // Show the navigation bar when we change view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setNavigationBarHidden(!showNavagationController, animated: animated)
     }
     
     func toggleTakePhotoButton(status: Bool) {
@@ -245,6 +246,9 @@ class HomeViewController: UIViewController {
             toggleTermsButton(status: true)
             toggleLeftButton(status: true)
         }
+        // Make sure the navagational bar will be shown
+        showNavagationController = true
+        
         // Seque to the SetAllergiesViewController
         let storyboard = UIStoryboard(name: "SetAllergies", bundle: nil)
         
@@ -260,6 +264,10 @@ class HomeViewController: UIViewController {
             toggleTermsButton(status: true)
             toggleLeftButton(status: true)
         }
+        
+        // Make sure the navagational bar will not be shown
+        showNavagationController = false
+        
         // Seque to the TakePhotoViewController
         let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         
@@ -275,6 +283,10 @@ class HomeViewController: UIViewController {
             toggleTakePhotoButton(status: true)
             toggleLeftButton(status: true)
         }
+        
+        // Make sure the navagational bar will be shown
+        showNavagationController = true
+        
         // Seque to the TermsViewController
         let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
         
