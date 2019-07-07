@@ -88,6 +88,8 @@ class TakePhotoViewController: UIViewController {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
         
+        // Change the size of the button
+        captureButton
         // Round off the button
         captureButton.layer.zPosition = 10
         captureButton.layer.borderWidth = 2
