@@ -26,8 +26,15 @@
                                     <outletCollection property="gestureRecognizers" destination="7F0-Le-7ZZ" appends="YES" id="tpk-jM-Uyd"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-uh-qX9">
+                                <rect key="frame" x="0.0" y="746" width="414" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AOy-Pa-ob3"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-NX-g7X">
-                                <rect key="frame" x="177" y="762" width="60" height="60"/>
+                                <rect key="frame" x="177" y="782" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-uM-qwM">
                                         <rect key="frame" x="5" y="5" width="50" height="50"/>
@@ -51,9 +58,12 @@
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="EzM-uh-qX9" secondAttribute="bottom" id="48h-st-PLa"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="trailing" secondItem="FpZ-QC-2xn" secondAttribute="trailing" id="BSV-Dz-nBM"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="top" secondItem="99E-8H-WjP" secondAttribute="top" id="ElF-02-FOp"/>
-                            <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="gRD-NX-g7X" secondAttribute="bottom" constant="40" id="QIU-df-E4z"/>
+                            <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="gRD-NX-g7X" secondAttribute="bottom" constant="20" id="QIU-df-E4z"/>
+                            <constraint firstItem="FpZ-QC-2xn" firstAttribute="trailing" secondItem="EzM-uh-qX9" secondAttribute="trailing" id="QKA-Od-tqV"/>
+                            <constraint firstItem="EzM-uh-qX9" firstAttribute="leading" secondItem="FpZ-QC-2xn" secondAttribute="leading" id="oIF-zJ-aq6"/>
                             <constraint firstItem="6hu-Xx-COr" firstAttribute="leading" secondItem="FpZ-QC-2xn" secondAttribute="leading" id="qDc-Eo-n6J"/>
                             <constraint firstItem="FpZ-QC-2xn" firstAttribute="bottom" secondItem="6hu-Xx-COr" secondAttribute="bottom" id="tCe-lR-6dW"/>
                             <constraint firstItem="gRD-NX-g7X" firstAttribute="centerX" secondItem="99E-8H-WjP" secondAttribute="centerX" id="tGb-hp-Aqk"/>
