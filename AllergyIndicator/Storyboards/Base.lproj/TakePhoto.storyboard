@@ -20,6 +20,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-Xx-COr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALS-Lk-a4h">
+                                        <rect key="frame" x="8" y="96" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="X"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -73,6 +80,7 @@
                     <navigationItem key="navigationItem" title="Take Photo" id="0sc-rI-6ef"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backHomeButton" destination="ALS-Lk-a4h" id="5D8-pB-7yd"/>
                         <outlet property="backgroundButtonHeight" destination="a4d-XD-ozf" id="JSI-u2-d1p"/>
                         <outlet property="backgroundButtonWidth" destination="4DL-jI-YFU" id="48P-E5-gsG"/>
                         <outlet property="buttonBackground" destination="gRD-NX-g7X" id="xPi-Uo-wc0"/>
