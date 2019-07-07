@@ -101,7 +101,11 @@ class TakePhotoViewController: UIViewController {
         
         // Change the layout and position of button
         backHomeButton.frame = CGRect(x: 30, y: 45, width: 35, height: 35)
-        backHomeButton.backgroundColor = .gray
+        backHomeButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backHomeButton.backgroundColor = .clear
+        backHomeButton.layer.borderWidth = 1.0
+        backHomeButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
+        backHomeButton.layer.cornerRadius = min(backHomeButton.frame.width, backHomeButton.frame.height) / 2
         
         // Round off the button
         captureButton.layer.zPosition = 10
@@ -174,6 +178,11 @@ class TakePhotoViewController: UIViewController {
             update(scale: lastZoomFactor)
         default: break
         }
+    }
+    
+    @IBAction func backHomeButtonTapped(_ sender: UIButton) {
+        // Go back to the home view controller
+        goToHomeViewController()
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
@@ -314,5 +323,12 @@ class TakePhotoViewController: UIViewController {
         
         // Navigate to the results view controller
         self.navigationController?.pushViewController(photoResultsController, animated: true)
+    }
+    
+    func goToHomeViewController() {
+        defer {
+            self.captureButton.isUserInteractionEnabled = true
+        }
+        self.navigationController?.popViewController(animated: true)
     }
 }
