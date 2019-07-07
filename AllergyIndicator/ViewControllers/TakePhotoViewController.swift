@@ -19,6 +19,10 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var buttonBackground: UIView!
+    @IBOutlet weak var buttonWidth: NSLayoutConstraint!
+    @IBOutlet weak var buttonHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var backgroundButtonHeight: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -89,16 +93,20 @@ class TakePhotoViewController: UIViewController {
         let cyan = UIColor(rgb: 0x0AD2A8)
         
         // Change the size of the button
-        captureButton
+        backgroundButtonWidth.constant = 50
+        backgroundButtonHeight.constant = 50
+        buttonWidth.constant = 40
+        buttonHeight.constant = 40
+        
         // Round off the button
         captureButton.layer.zPosition = 10
         captureButton.layer.borderWidth = 2
         captureButton.layer.borderColor = UIColor.clear.cgColor
-        captureButton.layer.cornerRadius = min(captureButton.frame.width, captureButton.frame.height) / 2
+        captureButton.layer.cornerRadius = min(buttonWidth.constant, buttonHeight.constant) / 2
         
         // Add gradients to the background of the button
         buttonBackground.applyGradient(colours: [lightblue, cyan])
-        buttonBackground.layer.cornerRadius = min(buttonBackground.frame.width, buttonBackground.frame.height) / 2
+        buttonBackground.layer.cornerRadius = min(backgroundButtonWidth.constant, backgroundButtonHeight.constant) / 2
         buttonBackground.layer.masksToBounds = true
         buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
     }
