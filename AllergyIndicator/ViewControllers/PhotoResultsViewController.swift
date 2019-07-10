@@ -153,6 +153,18 @@ class PhotoResultsViewController: UIViewController {
         backPictureButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
         backPictureButton.layer.cornerRadius = min(backPictureButton.frame.width, backPictureButton.frame.height) / 2
         
+        // Change the layout and position of button
+        homeButton.frame = CGRect(x: self.view.bounds.width - 30 - homeButton.frame.width, y: 45, width: 35, height: 35)
+        homeButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        homeButton.backgroundColor = .clear
+        homeButton.layer.borderWidth = 1.0
+        homeButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
+        homeButton.layer.cornerRadius = min(homeButton.frame.width, homeButton.frame.height) / 2
+        
+        // Change image of the home button
+        let homeImage = UIImage(named: "homebutton")
+        homeButton.setImage(homeImage, for: .normal)
+        homeButton.tintColor = .white
     }
     
     @objc func homeTapped() {
