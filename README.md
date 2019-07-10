@@ -48,19 +48,20 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [X] Change the button names
   - [ ] Make the ui look similar to the flower image recognition app
 ## WEEK 4 (final week must ship by then)
-- [ ] Change the display results view
+- [ ] Change the display results view (in progress)
 - [X] Need to make sure the ingredients don't get run into the recipe api
   - [X] Get a database and have the app check for ingredients locally
   - [X] Upload an ingredients database to firebase once and use the database from then on
   - [ ] Use a designed api to get ingredients NOTE: least likely
-- [ ] Now, must figure out how crafted food names don't get mixed in with the ingredients
+- [ ] Make it so that all important ingredients appear at the top of the results page
+- [ ] Put a confidence score of each ingredient next to it
+- [ ] Display all ingredients from each top recipes when make a request to the recipe api
+## WEEK 5 and beyond
+- [ ] Must figure out how crafted food names don't get mixed in with the ingredients
   - [ ] Could remove the foods by hand
   - [ ] Run every concept that has a high confidence
   - [ ] Just let it be ignored and take a chance with hoping that a similar concept has the food name and it gets run into the recipe api
   - [ ] Add a point system so that strings that come up a lot are likly ingredients (seems possible)
-- [ ] Make it so that all important ingredients appear at the top of the results page
-- [ ] Put a confidence score of each ingredient next to it
-- [ ] Display all ingredients from each top recipes when make a request to the recipe api
 ## Data
 - https://data.world/datafiniti/food-ingredient-lists
 - https://www.kaggle.com/datafiniti/food-ingredient-lists (same data just a sample size though)
