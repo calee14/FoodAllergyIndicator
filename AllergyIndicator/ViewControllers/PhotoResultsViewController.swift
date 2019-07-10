@@ -14,6 +14,8 @@ class PhotoResultsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var backPictureButton: UIButton!
     
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
@@ -142,6 +144,15 @@ class PhotoResultsViewController: UIViewController {
     
     func setupLayout() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(homeTapped))
+        
+        // Change the layout and position of button
+        backPictureButton.frame = CGRect(x: 30, y: 45, width: 35, height: 35)
+        backPictureButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backPictureButton.backgroundColor = .clear
+        backPictureButton.layer.borderWidth = 1.0
+        backPictureButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
+        backPictureButton.layer.cornerRadius = min(backPictureButton.frame.width, backPictureButton.frame.height) / 2
+        
     }
     
     @objc func homeTapped() {
