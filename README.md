@@ -42,11 +42,11 @@ If you want to use the app you can download it on the App Store. [Link will be s
     - [X] Get the AI to use the ingredients first 
         - [X] Then in week 3 connect the ingredients database
 ## WEEK 3
-- [ ] Make the ui improvements
+- [X] Make the ui improvements
   - [X] add the backgrounds
-  - [ ] change the app icon
+  - [X] change the app icon
   - [X] Change the button names
-  - [ ] Make the ui look similar to the flower image recognition app
+  - [X] Make the ui look similar to the flower image recognition app
 ## WEEK 4 (final week must ship by then)
 - [ ] Change the display results view (in progress)
 - [X] Need to make sure the ingredients don't get run into the recipe api
