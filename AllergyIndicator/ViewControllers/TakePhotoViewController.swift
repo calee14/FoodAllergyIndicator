@@ -221,8 +221,10 @@ class TakePhotoViewController: UIViewController {
         // Remove the ongoing transactions
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
         if !onGoingtransactions { return }
+        
         // Decrement the picture count
         Pictures.decrementPictureCount()
+        
         // Access the picture count
         let pictureCount = Pictures.current.numpictures
         
