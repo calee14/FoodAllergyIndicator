@@ -122,6 +122,9 @@
                                 <state key="normal" title="X">
                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="backPictureButtonPressed:" destination="LON-i2-Ezs" eventType="touchUpInside" id="0gG-zS-DkZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCk-ky-njo">
                                 <rect key="frame" x="364" y="98" width="30" height="30"/>
@@ -129,6 +132,9 @@
                                 <state key="normal">
                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="homeButtonPressed:" destination="LON-i2-Ezs" eventType="touchUpInside" id="GZy-H8-Q3c"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hfg-qo-smT">
                                 <rect key="frame" x="0.0" y="336" width="414" height="526"/>
