@@ -171,6 +171,14 @@ class PhotoResultsViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func backPictureButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     func cameraAutherization() {
         let titleString = "Camera not available"
         let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
