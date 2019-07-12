@@ -30,6 +30,12 @@ class AddIngredientViewController: UIViewController {
     
     func setupLayout() {
         errorLabel.isHidden = true
+        
+        // Changing properties of the header label
+        ingredientsHeaderLabel.numberOfLines = 0
+        ingredientsHeaderLabel.textAlignment = .center
+        ingredientsHeaderLabel.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
+        
     }
     
     // Calls this function when the tap is recognized.
