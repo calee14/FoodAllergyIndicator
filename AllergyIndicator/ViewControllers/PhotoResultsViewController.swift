@@ -172,10 +172,12 @@ class PhotoResultsViewController: UIViewController {
     }
     
     @IBAction func backPictureButtonPressed(_ sender: UIButton) {
+        // Pop back to the Take Picture View Controller
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func homeButtonPressed(_ sender: UIButton) {
+        // Pop back to the Home View Controller
         self.navigationController?.popToRootViewController(animated: true)
     }
     
