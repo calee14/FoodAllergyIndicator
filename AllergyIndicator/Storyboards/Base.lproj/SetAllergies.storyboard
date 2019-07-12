@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CAa-Hc-le7">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController storyboardIdentifier="SetAllergiesViewController" id="CAa-Hc-le7" customClass="SetAllergiesViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H9e-je-rBY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-RF-TwD">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" rowHeight="71" id="FhU-sF-miw" customClass="IngredientTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FhU-sF-miw" id="fac-uz-qTc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5a-cf-0aM">
@@ -100,17 +100,17 @@
             <objects>
                 <viewController storyboardIdentifier="AddIngredientViewController" id="2Go-kP-fNc" customClass="AddIngredientViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="73x-H5-6tS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set important ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-pW-yES">
-                                <rect key="frame" x="109.66666666666669" y="99" width="195" height="21"/>
+                                <rect key="frame" x="109.5" y="123" width="195" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example: eggs, peanuts, salt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ske-st-7LL">
-                                <rect key="frame" x="15" y="177.33333333333334" width="384" height="50"/>
+                                <rect key="frame" x="15" y="201.5" width="384" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="6iX-Ta-m1i"/>
                                 </constraints>
@@ -119,17 +119,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVd-cx-sRd">
-                                <rect key="frame" x="15" y="237.33333333333337" width="384" height="50"/>
+                                <rect key="frame" x="15" y="261.5" width="384" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Uld-CE-Jb2"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Add ingredient"/>
                                 <connections>
                                     <action selector="pressedIngredientButton:" destination="2Go-kP-fNc" eventType="touchUpInside" id="WRz-Io-SIp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error, please try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-CS-o6b">
-                                <rect key="frame" x="15" y="155" width="384" height="14.333333333333343"/>
+                                <rect key="frame" x="15" y="179" width="384" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -143,12 +143,12 @@
                             <constraint firstItem="ske-st-7LL" firstAttribute="top" secondItem="PoA-CS-o6b" secondAttribute="bottom" constant="8" symbolic="YES" id="H0w-j5-pJE"/>
                             <constraint firstItem="PoA-CS-o6b" firstAttribute="leading" secondItem="4we-g8-lMV" secondAttribute="leading" constant="15" id="KNz-St-ZIR"/>
                             <constraint firstItem="pVd-cx-sRd" firstAttribute="leading" secondItem="4we-g8-lMV" secondAttribute="leading" constant="15" id="R9h-Vv-CHC"/>
-                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" secondItem="PoA-CS-o6b" secondAttribute="trailing" constant="15" id="TED-Ts-DYw"/>
-                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" secondItem="pVd-cx-sRd" secondAttribute="trailing" constant="15" id="Yo0-CI-lAp"/>
+                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PoA-CS-o6b" secondAttribute="trailing" id="TED-Ts-DYw"/>
+                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pVd-cx-sRd" secondAttribute="trailing" id="Yo0-CI-lAp"/>
                             <constraint firstItem="9oR-pW-yES" firstAttribute="centerX" secondItem="4we-g8-lMV" secondAttribute="centerX" id="amo-tg-LOQ"/>
                             <constraint firstItem="pVd-cx-sRd" firstAttribute="centerX" secondItem="73x-H5-6tS" secondAttribute="centerX" id="dcH-fB-P8Q"/>
                             <constraint firstItem="PoA-CS-o6b" firstAttribute="centerX" secondItem="9oR-pW-yES" secondAttribute="centerX" id="eEH-8i-43h"/>
-                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" secondItem="ske-st-7LL" secondAttribute="trailing" constant="15" id="eoc-1L-6xa"/>
+                            <constraint firstItem="4we-g8-lMV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ske-st-7LL" secondAttribute="trailing" id="eoc-1L-6xa"/>
                             <constraint firstItem="PoA-CS-o6b" firstAttribute="top" secondItem="9oR-pW-yES" secondAttribute="bottom" constant="35" id="gGh-yQ-vGj"/>
                             <constraint firstItem="9oR-pW-yES" firstAttribute="centerX" secondItem="73x-H5-6tS" secondAttribute="centerX" id="ijV-g3-0l7"/>
                             <constraint firstItem="pVd-cx-sRd" firstAttribute="top" secondItem="ske-st-7LL" secondAttribute="bottom" constant="10" id="xPr-fh-HhS"/>
