@@ -34,12 +34,17 @@ class AddIngredientViewController: UIViewController {
         
         errorLabel.isHidden = true
         
-        // Changing properties of the header label
+        // Changing properties of the header uitextview
         ingredientHeaderTextView.textAlignment = .center
         ingredientHeaderTextView.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
-        ingredientHeaderTextView.layer.borderWidth = 1
-        ingredientHeaderTextView.layer.cornerRadius = 3
+        ingredientHeaderTextView.layer.borderWidth = 2
+        ingredientHeaderTextView.layer.cornerRadius = 5
         ingredientHeaderTextView.clipsToBounds = true
+        ingredientHeaderTextView.translatesAutoresizingMaskIntoConstraints = true
+        ingredientHeaderTextView.isScrollEnabled = false
+        ingredientHeaderTextView.isUserInteractionEnabled = false
+        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+        ingredientHeaderTextView.sizeToFit()
         
         // Change the layout of the set button
         ingredientButton.backgroundColor = lightblue
