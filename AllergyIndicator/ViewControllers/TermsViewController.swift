@@ -26,6 +26,26 @@ class TermsViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
+        // Run layout code
+        setupLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.isScrollEnabled = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        textView.isScrollEnabled = true
+    }
+    
+    func setupLayout() {
+        // Text view can't be seletable
+        textView.isSelectable = false
     }
     
     func attributedText(terms: String) -> NSAttributedString {
