@@ -36,7 +36,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [X] Make new services for updating the users important ingredients
   - [X] Change the name of the services with the word allergens in them (Made new services with new names)
   - [X] Connect the user's ingredients with the database
-  - [ ] Prettify the set ingredients view controller
+  - [X] Prettify the set ingredients view controller
   - [ ] Change some ui designs for the set ingredients view controller
   - [X] Begin connecting the ingredients to the ai
     - [X] Get the AI to use the ingredients first 
