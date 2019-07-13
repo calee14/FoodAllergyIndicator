@@ -29,6 +29,9 @@ class AddIngredientViewController: UIViewController {
     }
     
     func setupLayout() {
+        // Setting ui colors
+        let lightblue = UIColor(rgb: 0x0093DD)
+        
         errorLabel.isHidden = true
         
         // Changing properties of the header label
@@ -36,6 +39,12 @@ class AddIngredientViewController: UIViewController {
         ingredientsHeaderLabel.textAlignment = .center
         ingredientsHeaderLabel.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
         
+        // Change the layout of the set button
+        ingredientButton.backgroundColor = lightblue
+        ingredientButton.setTitleColor(.white, for: .normal)
+        ingredientButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        ingredientButton.layer.cornerRadius = 6
+        ingredientButton.clipsToBounds = true
     }
     
     // Calls this function when the tap is recognized.
