@@ -159,7 +159,6 @@
                         <outlet property="addIngredientTextField" destination="ske-st-7LL" id="aYA-M3-0B4"/>
                         <outlet property="errorLabel" destination="PoA-CS-o6b" id="q0R-HD-Hop"/>
                         <outlet property="ingredientButton" destination="pVd-cx-sRd" id="N2g-57-f2N"/>
-                        <outlet property="ingredientsHeaderLabel" destination="9oR-pW-yES" id="Fao-9J-L8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmg-1q-bDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
