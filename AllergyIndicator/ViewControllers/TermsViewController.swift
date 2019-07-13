@@ -43,8 +43,6 @@ class TermsViewController: UIViewController {
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "User Submissions — Image, Video, Audio Files"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Disclaimer"))
         
-        
-        // 4
         return attributedString
     }
 }
