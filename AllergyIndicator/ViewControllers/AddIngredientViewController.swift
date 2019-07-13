@@ -10,6 +10,7 @@ import UIKit
 
 class AddIngredientViewController: UIViewController {
 
+    @IBOutlet weak var ingredientHeaderTextView: UITextView!
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var ingredientButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
@@ -34,12 +35,11 @@ class AddIngredientViewController: UIViewController {
         errorLabel.isHidden = true
         
         // Changing properties of the header label
-        ingredientsHeaderLabel.numberOfLines = 0
-        ingredientsHeaderLabel.textAlignment = .center
-        ingredientsHeaderLabel.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
-        ingredientsHeaderLabel.layer.borderWidth = 1
-        ingredientsHeaderLabel.layer.cornerRadius = 3
-        ingredientsHeaderLabel.clipsToBounds = true
+        ingredientHeaderTextView.textAlignment = .center
+        ingredientHeaderTextView.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
+        ingredientHeaderTextView.layer.borderWidth = 1
+        ingredientHeaderTextView.layer.cornerRadius = 3
+        ingredientHeaderTextView.clipsToBounds = true
         
         // Change the layout of the set button
         ingredientButton.backgroundColor = lightblue
