@@ -206,9 +206,9 @@ class HomeViewController: UIViewController {
         for constraints in constraintsArray {
             for constraint in constraints {
                 if constraint.identifier == "leftMargin" || constraint.identifier == "rightMargin" {
-                    constraint.constant = (self.view.frame.width * 0.07)
+                    constraint.constant = (self.view.frame.width * 0.10)
                 } else if constraint.identifier == "topMargin" || constraint.identifier == "bottomMargin" {
-                    constraint.constant = (self.view.frame.height * 0.01)
+                    constraint.constant = (self.view.frame.height * 0.03)
                 }
             }
         }
