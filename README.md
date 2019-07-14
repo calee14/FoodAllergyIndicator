@@ -82,12 +82,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
 # Future Features
 - [ ] Make it so that it can recognize food packages or food bar scanners to get indgredients on food
   - https://www.cloudmersive.com/products
-- [X] Fix Memory Issues
+- [ ] Fix Memory Issues (NOTE: need to check again after changing some ui designs)
 - [X] Zoom In with camera
-- [ ] Organize allergies in the setter view
+- [X] Organize allergies in the setter view (sorts from most recent)
   - Use search bar or sort
 - [ ] Make a dynamic list of ingredients to search for.
-- [ ] Have the user add their own allergies
+- [X] Have the user add their own allergies
 - [ ] Create sub allergens of broad foods
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
 - [ ] Make it so that the user doesn't need to enter username and password
