@@ -69,12 +69,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - But the thing is that I can run a search through the firebase database becuase it will only give me the childs with the matching key or value.
   - A fix is that I can split all ingredients in the list so that the result is only one word ingredients. So when I add the ingredients to the database I can get ingredients with names such as "mozzarella"
 # Tasks
-- [ ] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
+- [X] show a icon to represent sensitive ingredients in food e.g. allergens: nuts, eggs
 - [X] Change app icon for rebranding
-    - [ ] Make sure to use vector image designing
+    - [X] Make sure to use vector image designing
 - [X] Remove the list of allergies
-    - [ ] Make a user dynamic list of search ingredients
-- [ ] Change app colors for rebranding
+    - [X] Make a user dynamic list of search ingredients
+- [X] Change app colors for rebranding
 - [X] Improve api search in some way
   - [ ] Use google's vision API to detect food in picture
   - [ ] connect to google's vision API
