@@ -43,7 +43,7 @@ class AddIngredientViewController: UIViewController {
         ingredientHeaderTextView.translatesAutoresizingMaskIntoConstraints = true
         ingredientHeaderTextView.isScrollEnabled = false
         ingredientHeaderTextView.isUserInteractionEnabled = false
-        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 30)
         ingredientHeaderTextView.sizeToFit()
         
         // Change the layout of the set button
