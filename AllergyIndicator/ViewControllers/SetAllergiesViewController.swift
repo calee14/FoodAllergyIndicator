@@ -51,14 +51,21 @@ class SetAllergiesViewController: UIViewController {
     }
     
     func setupLayout() {
+        
+        // Get colors
+        let lightblue = UIColor(rgb: 0x0093DD)
+        let cyan = UIColor(rgb: 0x0AD2A8)
+        
+        // Changing some properties of the add button
         let buttonWidth = 70
         addIngredientButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width - CGFloat(buttonWidth) - (self.view.frame.width * 0.06), y: self.view.frame.height - (self.view.frame.height * 0.15)), size: CGSize(width: buttonWidth, height: buttonWidth))
-        addIngredientButton.backgroundColor = .black
         addIngredientButton.layer.zPosition = 10
-        addIngredientButton.layer.borderWidth = 2
-        addIngredientButton.layer.borderColor = UIColor.clear.cgColor
+        addIngredientButton.applyGradient(colours: [lightblue, cyan])
+        addIngredientButton.setTitleColor(.white, for: .normal)
         addIngredientButton.layer.cornerRadius = min(addIngredientButton.frame.width, addIngredientButton.frame.height) / 2
-        
+        addIngredientButton.layer.masksToBounds = true
+
+
     }
     
     @IBAction func pressedIngredientButton(_ sender: UIButton) {
