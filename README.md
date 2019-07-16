@@ -11,10 +11,10 @@ If you want to use the app you can download it on the App Store. [Link will be s
 It should be intuitive enough to open the app in xCode and running it on a simulator.
 If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due refactoring and the long app store review times. 
 # Built With
-- [Clarifai](https://clarifai.com) - API that recognizes the ingredients in the food
+- [Clarifai](https://clarifai.com) - Computer Vision API
 - [Firebase](https://firebase.google.com) - Backend for mobile apps
 - [Xcode](https://developer.apple.com/xcode/) - IDE for iOS app development
-- [RecipePuppy](http://www.recipepuppy.com/about/api/) - API to check ingredients in certain foods
+- [RecipePuppy](http://www.recipepuppy.com/about/api/) - Recipe API
 
 # Authors
 - **Cap Lee** - Pretty much going to be the only contributor
