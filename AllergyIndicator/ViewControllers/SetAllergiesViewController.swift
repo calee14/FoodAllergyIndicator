@@ -96,6 +96,11 @@ extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell") as! IngredientTableViewCell
+        cell.deleteButton.setTitle("X", for: .normal)
+        cell.deleteButton.transform.scaledBy(x: 4, y: 4)
+        cell.deleteButton.layer.cornerRadius = min(cell.deleteButton.frame.width, cell.deleteButton.frame.height) / 2
+        cell.deleteButton.layer.borderWidth = 1
+        cell.deleteButton.layer.borderColor = cell.deleteButton.tintColor.cgColor
         cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         return cell
