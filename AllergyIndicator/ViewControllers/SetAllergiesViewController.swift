@@ -64,6 +64,10 @@ class SetAllergiesViewController: UIViewController {
         addIngredientButton.setTitleColor(.white, for: .normal)
         addIngredientButton.layer.cornerRadius = min(addIngredientButton.frame.width, addIngredientButton.frame.height) / 2
         addIngredientButton.layer.masksToBounds = true
+        
+        // Removing the selection of table view cells since it interferes with user's touch when
+        // trying to remove an ingredient
+        self.tableView.allowsSelection = false
 
 
     }
