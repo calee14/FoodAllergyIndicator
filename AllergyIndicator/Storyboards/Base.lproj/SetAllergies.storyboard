@@ -31,6 +31,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5a-cf-0aM">
                                                     <rect key="frame" x="364" y="21" width="30" height="29"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="X"/>
                                                     <connections>
                                                         <action selector="deleteButtonPressed:" destination="FhU-sF-miw" eventType="touchUpInside" id="QNC-et-rGj"/>
