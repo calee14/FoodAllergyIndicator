@@ -19,7 +19,7 @@ class PhotoResultsViewController: UIViewController {
     
     // MARK: - Properties
     var concepts: [ClarifaiConcept] = []
-    var allergens: [String] = []
+    var importantIngredients: [String] = []
     var safeIngredients: [String] = []
     var ingredientsInFood: [String] = []
     var noFood: Bool = false
@@ -55,7 +55,7 @@ class PhotoResultsViewController: UIViewController {
                 guard let regIngredients = regIngredients else { return }
                 // need to change to impIngredients no longer called allergens
                 // ...
-                self.allergens = impIngredients
+                self.importantIngredients = impIngredients
                 // need to change to impIngredients no longer called allergens
                 // ...
                 self.safeIngredients = regIngredients
@@ -96,7 +96,8 @@ class PhotoResultsViewController: UIViewController {
                         self.allergens.append(contentsOf: allergiesInRecipe)
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
                         */
-                        self.showWarningMenu(allergies: self.allergens.count >= 1)
+                        print("reached here")
+                        self.showWarningMenu(allergies: self.importantIngredients.count >= 1)
                     }
                 }
             })
@@ -131,14 +132,14 @@ class PhotoResultsViewController: UIViewController {
     }
     
     func combineAllergensAndSafeIngredientsAndUpdateTable() {
-        ingredientsInFood = allergens + safeIngredients
+        ingredientsInFood = importantIngredients + safeIngredients
         self.tableView.reloadData()
     }
     
     func combineImportantWithRegularIngredients() {
         // note need to change the array names
         // ...
-        ingredientsInFood = allergens + safeIngredients
+        ingredientsInFood = importantIngredients + safeIngredients
         self.tableView.reloadData()
     }
     
@@ -146,18 +147,20 @@ class PhotoResultsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(homeTapped))
         
         // Change the layout and position of button
-        backPictureButton.frame = CGRect(x: 30, y: 45, width: 35, height: 35)
+        backPictureButton.frame = CGRect(x: 30, y: 45, width: 40, height: 40)
         backPictureButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backPictureButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+        backPictureButton.titleLabel?.alpha = 1.0
         backPictureButton.backgroundColor = .clear
-        backPictureButton.layer.borderWidth = 1.0
+        backPictureButton.layer.borderWidth = 2.0
         backPictureButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
         backPictureButton.layer.cornerRadius = min(backPictureButton.frame.width, backPictureButton.frame.height) / 2
         
         // Change the layout and position of button
-        homeButton.frame = CGRect(x: self.view.bounds.width - 30 - homeButton.frame.width, y: 45, width: 35, height: 35)
+        homeButton.frame = CGRect(x: self.view.bounds.width - 30 - homeButton.frame.width, y: 45, width: 40, height: 40)
         homeButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
         homeButton.backgroundColor = .clear
-        homeButton.layer.borderWidth = 1.0
+        homeButton.layer.borderWidth = 2.0
         homeButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
         homeButton.layer.cornerRadius = min(homeButton.frame.width, homeButton.frame.height) / 2
         
@@ -165,6 +168,7 @@ class PhotoResultsViewController: UIViewController {
         let homeImage = UIImage(named: "homebutton")
         homeButton.setImage(homeImage, for: .normal)
         homeButton.tintColor = .white
+        homeButton.imageView?.alpha = 0.8
     }
     
     @objc func homeTapped() {
@@ -216,8 +220,8 @@ extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
         let ingredientdata = ingredientsInFood[indexPath.row]
         cell.ingredientLabel.text = ingredientdata
-        cell.scoreLabel.text = indexPath.row < allergens.count ? "❌" : "✔️"
-        cell.ingredientLabel.textColor = indexPath.row < allergens.count ? .red : .black
+        cell.scoreLabel.text = indexPath.row < importantIngredients.count ? "❌" : "✔️"
+        cell.ingredientLabel.textColor = indexPath.row < importantIngredients.count ? .red : .black
         return cell
     }
 }
