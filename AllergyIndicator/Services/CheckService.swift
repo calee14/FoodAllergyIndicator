@@ -73,6 +73,7 @@ struct CheckService {
         }
         completion(possibleAllergies, safeIngredients)
     }
+    
     static func checkRecipe(foodQueries: [String], completion: @escaping ([String]?) -> Void) {
         let apiCallString = "http://www.recipepuppy.com/api/?q="
         var recipeIngredients: [String] = [String]()
@@ -81,7 +82,9 @@ struct CheckService {
             group.enter()
             /* Make a api request to a recipe api and get the ingredients of the recipe */
             Alamofire.request(apiCallString + query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!).validate().responseJSON() { response in
+                
                 switch response.result {
+                    
                 case .success:
                     let decoder = JSONDecoder()
                     let result = try? decoder.decode(RecipeResult.self, from: response.data!)
@@ -106,19 +109,23 @@ struct CheckService {
                         /* Check the similarity between the recipe name and the
                          food names from the Clarifai API */
                         let coefficient = diceCoefficient(s: r.title, t: query)
+                        
                         /* Threshold decides whether we should use recipe */
                         let threshold = 50.0
                         if coefficient * 100.0 >= threshold {
                             // We found a recipe that matches our food
                             return true
                         }
+                        
                         // We didn't find a recipe that matches our food
                         return false
                         })!
+                    
                     /* Get the ingredients from the recipe */
                     for recipe in possibleRecipes {
                         recipeIngredients.append(contentsOf: recipe.ingredients.components(separatedBy: ", "))
                     }
+                    
                 case .failure(let error):
                     print("Error: \(error)")
                 }
