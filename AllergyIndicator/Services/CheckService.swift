@@ -136,6 +136,7 @@ struct CheckService {
             /* Add all the ingredients from the recipes to the database.
              This will help by avoiding sending ingredients to the RecipePuppy */
             print(recipeIngredients)
+            completion([String]())
 //            DatabaseIngredientService.addIngredient(ingredientNames: recipeIngredients, success: { (success) in
 //                guard let success = success else { return }
 //                completion(recipeIngredients)
