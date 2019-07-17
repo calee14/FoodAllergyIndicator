@@ -100,10 +100,11 @@ class TakePhotoViewController: UIViewController {
         buttonHeight.constant = 40
         
         // Change the layout and position of button
-        backHomeButton.frame = CGRect(x: 30, y: 45, width: 35, height: 35)
+        backHomeButton.frame = CGRect(x: 30, y: 45, width: 40, height: 40)
         backHomeButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backHomeButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
         backHomeButton.backgroundColor = .clear
-        backHomeButton.layer.borderWidth = 1.0
+        backHomeButton.layer.borderWidth = 2.0
         backHomeButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
         backHomeButton.layer.cornerRadius = min(backHomeButton.frame.width, backHomeButton.frame.height) / 2
         
@@ -223,7 +224,7 @@ class TakePhotoViewController: UIViewController {
         if !onGoingtransactions { return }
         
         // Decrement the picture count
-        Pictures.decrementPictureCount()
+//        Pictures.decrementPictureCount()
         
         // Access the picture count
         let pictureCount = Pictures.current.numpictures
