@@ -41,14 +41,13 @@ class AddIngredientViewController: UIViewController {
         ingredientHeaderTextView.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
         ingredientHeaderTextView.layer.cornerRadius = 5
         ingredientHeaderTextView.clipsToBounds = true
-        ingredientHeaderTextView.translatesAutoresizingMaskIntoConstraints = true
+//        ingredientHeaderTextView.translatesAutoresizingMaskIntoConstraints = true
         ingredientHeaderTextView.isScrollEnabled = false
         ingredientHeaderTextView.isUserInteractionEnabled = false
-        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 30)
+//        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 30)
         ingredientHeaderTextView.sizeToFit()
         
         // Change the layout of the set button
-        ingredientButton.backgroundColor = lightblue
         ingredientButton.setTitleColor(.white, for: .normal)
         ingredientButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         ingredientButton.layer.cornerRadius = 6
