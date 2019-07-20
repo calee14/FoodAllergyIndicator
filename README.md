@@ -86,7 +86,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [X] Zoom In with camera
 - [X] Organize allergies in the setter view (sorts from most recent)
   - Use search bar or sort
-- [ ] Make a dynamic list of ingredients to search for.
+- [X] Make a dynamic list of ingredients. (no longer a search bar)
 - [X] Have the user add their own allergies
 - [ ] Create sub allergens of broad foods
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
