@@ -195,6 +195,8 @@ class PhotoResultsViewController: UIViewController {
     func noFoodMessage() {
         let titleString = "No food in image"
         let contentString = "You did not take a picture that contained any type of food. Please take a picture of food to see results."
+        
+        warningController.setDismissButtonTitle(title: "Ok")
         warningController.showWarningMenu(title: titleString, content: contentString)
     }
     

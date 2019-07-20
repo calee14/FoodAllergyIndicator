@@ -102,6 +102,12 @@ class WarningController: NSObject {
         }
     }
     
+    func setDismissButtonTitle(title: String) {
+        // Set the dismiss button title
+        let title = title.uppercased()
+        self.dissmissButton.setTitle(title, for: .normal)
+    }
+    
     @objc func handleDismiss() {
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
