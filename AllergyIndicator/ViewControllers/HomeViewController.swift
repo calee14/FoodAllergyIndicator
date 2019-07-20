@@ -99,6 +99,9 @@ class HomeViewController: UIViewController {
             HomeViewController.shouldDisplayDisclaimer = false
         }
         
+        /* Check if the user has added any ingredients
+        If not then send them to the view controller to add it
+         */
         IngredientService.doesUserHaveIngredients(for: User.current) { (userContains) in
             if !userContains {
                 // Move to the SetAllergiesViewController to set the allerigies of the user
@@ -110,22 +113,6 @@ class HomeViewController: UIViewController {
                 /* Do nothing for now */
             }
         }
-        
-//        // Retrieve the allergies for this user on the firebase database
-//        AllergyService.retrieveAllergies(for: User.current) { (allergies) in
-//            // Check check the allergies the user has
-//            let doesHaveAllergies = allergies.filter { $0.isAllergic != false }
-//            // If the user has no allergies
-//            if doesHaveAllergies.count == 0 {
-//                // Move to the SetAllergiesViewController to set the allerigies of the user
-//                print("move to next controller")
-//                self.goToSetAllergiesViewController()
-//            } else {
-//                // Do something if the user has already set their allergies
-//                /* Do nothing for now */
-//            }
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
