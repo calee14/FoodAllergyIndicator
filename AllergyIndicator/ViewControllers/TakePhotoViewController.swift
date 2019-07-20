@@ -241,6 +241,7 @@ class TakePhotoViewController: UIViewController {
                 // change ui view
                 self.captureButton.isUserInteractionEnabled = false
                 self.cameraController.previewLayer?.isHidden = true
+                self.imageView.contentMode = .scaleAspectFill
                 self.imageView.frame = self.previewView.frame
                 self.imageView.image = image
                 self.previewView.insertSubview(self.imageView, at: 0)
