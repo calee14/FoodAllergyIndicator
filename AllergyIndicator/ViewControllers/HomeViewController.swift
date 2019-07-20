@@ -133,7 +133,7 @@ class HomeViewController: UIViewController {
         let backgroundimg = UIImage(named: "backgroundv3")
         
         let imageView = UIImageView(frame: self.view.bounds)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = backgroundimg
         imageView.center = self.view.center
