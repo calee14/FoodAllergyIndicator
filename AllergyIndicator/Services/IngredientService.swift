@@ -65,4 +65,17 @@ struct IngredientService {
             })
         }
     }
+    
+    static func doesUserHaveIngredients(for user: User, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child(DatabaseIngredientsPath).child(user.uid)
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                // The user has alrady add ingredients
+                completion(true)
+            } else {
+                // The user didn't add any ingredients
+                completion(false)
+            }
+        }
+    }
 }
