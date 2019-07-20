@@ -219,6 +219,7 @@ class TakePhotoViewController: UIViewController {
         @unknown default:
             fatalError()
         }
+        
         // Remove the ongoing transactions
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
         if !onGoingtransactions { return }
@@ -247,21 +248,23 @@ class TakePhotoViewController: UIViewController {
                 self.previewView.insertSubview(self.imageView, at: 0)
                 
                 // Checks if there is a food in the image
-                PredictService.predictFoodInImage(image: image, completion: { (concepts) in
-                    guard let concepts = concepts else { return }
+                PredictService.predictFoodInImage(image: image, completion: { (generalModelConcepts) in
+                    guard let generalModelConcepts = generalModelConcepts else { return }
                     var foundFood: Bool = false
-                    for concept in concepts {
-                        if concept.name == "food" && concept.score >= 0.5 {
+                    for generalConcept in generalModelConcepts {
+                        print("Concept name \(String(describing: generalConcept.name)), and \(generalConcept.score)")
+                        if generalConcept.name == "food" && generalConcept.score >= 0.9 {
+                            print("general model all food \(generalConcept)")
                             foundFood = true
                         }
                     }
                     if foundFood {
                         // Predicts the foods in the image
-                        PredictService.predictFoodImage(image: image, completion: { (concepts) in
+                        PredictService.predictFoodImage(image: image, completion: { (foodModelConcepts) in
                             // Send the concepts to the ShowResultsViewController
-                            guard let concepts = concepts else { return }
+                            guard let foodModelConcept = foodModelConcepts else { return }
                             DispatchQueue.main.async {
-                                self.goToShowResultsViewController(concepts: concepts, image: image)
+                                self.goToShowResultsViewController(concepts: foodModelConcept, image: image)
                             }
                         })
                     } else {
