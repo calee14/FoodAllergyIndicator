@@ -87,13 +87,13 @@ class HomeViewController: UIViewController {
         if HomeViewController.shouldDisplayDisclaimer {
             
             // Get the path of the file that contains the contents of the disclaimer
-            let filePath = Bundle.main.path(forResource: "Disclaimer", ofType: "txt")
+            let filePath = Bundle.main.path(forResource: "PopupContent", ofType: "txt")
             
             // Retrieve the contents in the file
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
             
             // Put a disclaimer on screen
-            self.warningController.showWarningMenu(title: "Disclaimer", content: content)
+            self.warningController.showWarningMenu(title: "What Ingredient", content: content)
             
             // Reset the should-display-disclaimer variable
             HomeViewController.shouldDisplayDisclaimer = false
@@ -180,6 +180,7 @@ class HomeViewController: UIViewController {
         // Change UI for the third button - the terms of service button
         termsButton.layer.cornerRadius = 6
         termsButton.clipsToBounds = false
+        termsButton.titleLabel?.numberOfLines = 0
         
         termsButton.backgroundColor = cyan
         
