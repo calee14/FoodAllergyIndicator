@@ -86,9 +86,9 @@ class CreateUsernameViewController: UIViewController {
                 
                 User.setCurrent(user, writeToUserDefaults: true)
                 
-                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-                    print("The allergy: \(allergy) has been set")
-                })
+//                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
+//                    print("The allergy: \(allergy) has been set")
+//                })
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
                 

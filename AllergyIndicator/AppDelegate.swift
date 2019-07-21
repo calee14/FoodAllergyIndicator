@@ -79,7 +79,8 @@ extension AppDelegate {
                 let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
                 Pictures.setCurrent(picture)
             } else {
-                Pictures.setCurrent(Pictures(numpictures: 100), writeToUserDefaults: true)
+                let initialPicturesCount = 50
+                Pictures.setCurrent(Pictures(numpictures: initialPicturesCount), writeToUserDefaults: true)
             }
             initialViewController = UIStoryboard.initializeViewController(for: .login)
         }
