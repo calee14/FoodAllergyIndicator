@@ -97,7 +97,7 @@ class PhotoResultsViewController: UIViewController {
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
                         */
                         print("reached here")
-                        self.showWarningMenu(allergies: self.importantIngredients.count >= 1)
+                        self.showWarningMenu(doesContainIngredients: self.importantIngredients.count >= 1)
                     }
                 }
             })
@@ -200,15 +200,15 @@ class PhotoResultsViewController: UIViewController {
         warningController.showWarningMenu(title: titleString, content: contentString)
     }
     
-    func showWarningMenu(allergies: Bool) {
-        var titleString = "BE CAREFUL"
-        var allergyString = "Possiblle Allergens Detected!!! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
-        if allergies == false {
-            titleString = "Should Be Safe To Eat"
-            allergyString = "Reminder! \nConfirm with the food preparer to verify ingredients. As always, be careful and consume with caution."
+    func showWarningMenu(doesContainIngredients: Bool) {
+        var titleString = "Found Your Ingredients"
+        var contentString = "The ingredients that you have listed important have been detected."
+        if doesContainIngredients == false {
+            titleString = "Found Ingredients"
+            contentString = "The app has found ingredients that are present in your food."
         }
         
-        warningController.showWarningMenu(title: titleString, content: allergyString)
+        warningController.showWarningMenu(title: titleString, content: contentString)
     }
 }
 

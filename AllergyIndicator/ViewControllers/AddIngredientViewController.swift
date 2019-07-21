@@ -36,7 +36,7 @@ class AddIngredientViewController: UIViewController {
         
         // Changing properties of the header uitextview
         ingredientHeaderTextView.textAlignment = .center
-        ingredientHeaderTextView.text = "Set important ingredients\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
+        ingredientHeaderTextView.text = "Set important ingredients!\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
         ingredientHeaderTextView.layer.borderWidth = 1
         ingredientHeaderTextView.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
         ingredientHeaderTextView.layer.cornerRadius = 5
