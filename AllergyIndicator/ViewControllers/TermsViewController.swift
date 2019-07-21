@@ -61,6 +61,7 @@ class TermsViewController: UIViewController {
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Termination"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "The Site Does Not Provide Medical Advice"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "User Submissions — Image, Video, Audio Files"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Liability of Cappillen Lee and Food Allergy Indicator APP"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Disclaimer"))
         
         return attributedString
