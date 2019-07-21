@@ -60,8 +60,16 @@ struct IngredientService {
         let ingredientKey = ingredient.getIngredientName()
         let ref = Database.database().reference().child(DatabaseIngredientsPath).child(user.uid).child(ingredientKey)
         ref.removeValue { (error, ref) in
-            retrieveAllIngredients(for: user, completion: { (ingredients) in
-                completion(ingredients)
+            doesUserHaveIngredients(for: user, completion: { (userHasIngredients) in
+                // The user still has an ingredients branch
+                if userHasIngredients {
+                    retrieveAllIngredients(for: user, completion: { (ingredients) in
+                        completion(ingredients)
+                    })
+                } else {
+                    // The user removed their last ingredient
+                    completion([Ingredient]())
+                }
             })
         }
     }
@@ -70,7 +78,7 @@ struct IngredientService {
         let ref = Database.database().reference().child(DatabaseIngredientsPath).child(user.uid)
         ref.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists() {
-                // The user has alrady add ingredients
+                // The user has already added ingredients
                 completion(true)
             } else {
                 // The user didn't add any ingredients
