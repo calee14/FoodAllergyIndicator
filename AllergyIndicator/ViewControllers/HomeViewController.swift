@@ -251,6 +251,7 @@ class HomeViewController: UIViewController {
     func goToSetAllergiesViewController() {
         defer {
             // Change the status of all the rest of the buttons after performing seque
+            toggleSetAllergiesButton(status: true)
             toggleTakePhotoButton(status: true)
             toggleTermsButton(status: true)
             toggleLeftButton(status: true)
