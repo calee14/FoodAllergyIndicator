@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         /* This method is called after the view controller
          has loaded its view hierarchy into memory. */
         
+        toggleAllButtons(status: false)
 //        let data = PushIngredientsToDB.retrieveLocalData()
 //
 //        PushIngredientsToDB.addDataToFirebase(ingredientData: data) { (success) in
@@ -111,6 +112,7 @@ class HomeViewController: UIViewController {
             } else if userContains {
                 // Do something if the user has already set their allergies
                 /* Do nothing for now */
+                self.toggleAllButtons(status: true)
             }
         }
     }
@@ -237,6 +239,13 @@ class HomeViewController: UIViewController {
     func toggleLeftButton(status: Bool) {
         // Change the status of the leftButton
         leftButton.isUserInteractionEnabled = status
+    }
+    
+    func toggleAllButtons(status: Bool) {
+        toggleTakePhotoButton(status: status)
+        toggleSetAllergiesButton(status: status)
+        toggleTermsButton(status: status)
+        toggleLeftButton(status: status)
     }
     
     func goToSetAllergiesViewController() {
