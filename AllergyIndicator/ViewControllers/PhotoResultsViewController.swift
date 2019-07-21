@@ -222,8 +222,8 @@ extension PhotoResultsViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell") as! ResultsTableViewCell
         let ingredientdata = ingredientsInFood[indexPath.row]
         cell.ingredientLabel.text = ingredientdata
-        cell.scoreLabel.text = indexPath.row < importantIngredients.count ? "❌" : "✔️"
-        cell.ingredientLabel.textColor = indexPath.row < importantIngredients.count ? .red : .black
+        cell.scoreLabel.text = indexPath.row < importantIngredients.count ? "✅" : ""
+        cell.ingredientLabel.textColor = indexPath.row < importantIngredients.count ? UIColor(rgb: 0x00BD00) : .black
         return cell
     }
 }
