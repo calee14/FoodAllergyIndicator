@@ -225,7 +225,7 @@ class TakePhotoViewController: UIViewController {
         if !onGoingtransactions { return }
         
         // Decrement the picture count
-//        Pictures.decrementPictureCount()
+        Pictures.decrementPictureCount()
         
         // Access the picture count
         let pictureCount = Pictures.current.numpictures
