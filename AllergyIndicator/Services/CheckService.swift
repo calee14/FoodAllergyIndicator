@@ -111,8 +111,10 @@ struct CheckService {
                         let coefficient = diceCoefficient(s: r.title, t: query)
                         
                         /* Threshold decides whether we should use recipe */
-                        let threshold = 50.0
+                        let threshold = 75.0
                         if coefficient * 100.0 >= threshold {
+                            print(r.title)
+                            print(r.ingredients)
                             // We found a recipe that matches our food
                             return true
                         }
