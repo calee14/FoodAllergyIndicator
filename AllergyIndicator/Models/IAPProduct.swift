@@ -9,5 +9,5 @@
 import Foundation
 
 enum IAPProduct: String {
-    case Picture = "com.cap.FoodAllergyIndicator.PictureConsumable"
+    case Picture = "com.cap.Ingredients.PictureConsumable"
 }
