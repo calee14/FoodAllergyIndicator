@@ -81,7 +81,7 @@ class HomeViewController: UIViewController {
         */
         if !HomeViewController.shouldDisplayDisclaimer {
             
-            HomeViewController.shouldDisplayDisclaimer = randNum <= 4 ? true : false
+            HomeViewController.shouldDisplayDisclaimer = randNum <= 10 ? true : false
         }
         
         // Check if we should display the disclaimer
@@ -127,6 +127,16 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         disappear(animated: animated)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /* Cancel touches when they are being moved to avoid
+         the error, failed to make handshake
+         */
+        for touch in touches {
+            touch.view?.isUserInteractionEnabled = false
+        }
+        return
     }
     
     func setupLayout() {
