@@ -47,16 +47,16 @@ If you want to use the app you can download it on the App Store. [Link will be s
   - [X] change the app icon
   - [X] Change the button names
   - [X] Make the ui look similar to the flower image recognition app
-## WEEK 4 (final week must ship by then)
-- [ ] Change the display results view (in progress)
+## WEEK 4 and 5 (final week must ship by then)
+- [X] Change the display results view (in progress)
 - [X] Need to make sure the ingredients don't get run into the recipe api
   - [X] Get a database and have the app check for ingredients locally
   - [X] Upload an ingredients database to firebase once and use the database from then on
   - [ ] Use a designed api to get ingredients NOTE: least likely
-- [ ] Make it so that all important ingredients appear at the top of the results page
-- [ ] Put a confidence score of each ingredient next to it
-- [ ] Display all ingredients from each top recipes when make a request to the recipe api
-## WEEK 5 and beyond
+- [X] Make it so that all important ingredients appear at the top of the results page
+- [X] Put a confidence score of each ingredient next to it NOTE: no longer putting a confidence score.
+- [ ] Display all ingredients from each top recipes when make a request to the recipe api NTOE: still need to connect the recipe api
+## WEEK 6 and beyond
 - [ ] Must figure out how crafted food names don't get mixed in with the ingredients
   - [ ] Could remove the foods by hand
   - [ ] Run every concept that has a high confidence
