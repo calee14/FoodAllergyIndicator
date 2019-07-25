@@ -60,6 +60,7 @@ extension AppDelegate {
     func configureInitialRootViewController(for window: UIWindow?) {
         let defaults = UserDefaults.standard
         let initialViewController: UIViewController
+        let initialPicturesCount = 5
         
         if let _ = Auth.auth().currentUser,
             let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
@@ -68,8 +69,8 @@ extension AppDelegate {
                 let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
                 Pictures.setCurrent(picture)
             } else {
-                let initialPicturesCount = 50
-                Pictures.setCurrent(Pictures(numpictures: initialPicturesCount), writeToUserDefaults: true)
+                let pictureCount = initialPicturesCount
+                Pictures.setCurrent(Pictures(numpictures: pictureCount), writeToUserDefaults: true)
             }
             User.setCurrent(user)
             print("Pictures the current user has \(Pictures.current.numpictures)")
@@ -79,8 +80,8 @@ extension AppDelegate {
                 let picture = try? JSONDecoder().decode(Pictures.self, from: pictureData) {
                 Pictures.setCurrent(picture)
             } else {
-                let initialPicturesCount = 50
-                Pictures.setCurrent(Pictures(numpictures: initialPicturesCount), writeToUserDefaults: true)
+                let pictureCount = initialPicturesCount
+                Pictures.setCurrent(Pictures(numpictures: pictureCount), writeToUserDefaults: true)
             }
             initialViewController = UIStoryboard.initializeViewController(for: .login)
         }
