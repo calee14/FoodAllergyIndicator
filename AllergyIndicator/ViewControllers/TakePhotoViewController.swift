@@ -30,7 +30,7 @@ class TakePhotoViewController: UIViewController {
     // Global class variables
     
     // Instance of the CameraController - going to help us take picture
-    let cameraController = CameraController()
+    var cameraController: CameraController?
     // Instance of the WarningController - displays messages
     let warningController = WarningController()
     // Image view to display the image the camera took
@@ -44,14 +44,15 @@ class TakePhotoViewController: UIViewController {
         
         //        IAPHelper.shared.getProducts()
         
+        cameraController = CameraController()
         // Start up the camera
-        cameraController.prepare {(error) in
+        cameraController?.prepare {(error) in
             // Print the error if given one
             if let error = error {
                 print(error)
             }
             // Display the camera feed on the preiview view
-            try? self.cameraController.displayPreview(on: self.previewView)
+            try? self.cameraController?.displayPreview(on: self.previewView)
         }
         
         // Set up UI elements
@@ -70,7 +71,7 @@ class TakePhotoViewController: UIViewController {
             let focusPoint = CGPoint(x: x, y: y)
             
             // Access the rear camera
-            if let device = cameraController.rearCamera {
+            if let device = cameraController?.rearCamera {
                 do {
                     try device.lockForConfiguration()
                     
@@ -127,7 +128,7 @@ class TakePhotoViewController: UIViewController {
          view is about to be added to a view hierarchy */
         
         // Show the camera view on screen
-        self.cameraController.previewLayer?.isHidden = false
+        self.cameraController?.previewLayer?.isHidden = false
         // Activate the camera button
         self.captureButton.isUserInteractionEnabled = true
         
@@ -139,6 +140,8 @@ class TakePhotoViewController: UIViewController {
          view being removed from a view hierarchy */
         // Remove the image view that stores the picture the user took
         self.imageView.removeFromSuperview()
+        
+        self.cameraController = nil
     }
     
     // Set variables for the camera zoom
@@ -149,7 +152,7 @@ class TakePhotoViewController: UIViewController {
     @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
         
         // Access the camera
-        guard let device = cameraController.rearCamera else { return }
+        guard let device = cameraController?.rearCamera else { return }
         
         // Return zoom value between the minimum and maximum zoom values
         func minMaxZoom(_ factor: CGFloat) -> CGFloat {
@@ -235,7 +238,7 @@ class TakePhotoViewController: UIViewController {
         
         if pictureCount > 0 {
             // Camera controller takes a picture
-            cameraController.captureImage { (image, error) in
+            cameraController?.captureImage { (image, error) in
                 // get image
                 guard let image = image else {
                     print(error ?? "Image capture error")
@@ -243,7 +246,7 @@ class TakePhotoViewController: UIViewController {
                 }
                 
                 // change ui view
-                self.cameraController.previewLayer?.isHidden = true
+                self.cameraController?.previewLayer?.isHidden = true
                 self.imageView.contentMode = .scaleAspectFill
                 self.imageView.frame = self.previewView.frame
                 self.imageView.image = image
