@@ -188,6 +188,9 @@ class TakePhotoViewController: UIViewController {
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         
+        // disable the capture button before we do anything else
+        self.captureButton.isUserInteractionEnabled = false
+        
         // Get the authorization status of the users camera
         let cameraMediaType = AVMediaType.video
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: cameraMediaType)
@@ -240,7 +243,6 @@ class TakePhotoViewController: UIViewController {
                 }
                 
                 // change ui view
-                self.captureButton.isUserInteractionEnabled = false
                 self.cameraController.previewLayer?.isHidden = true
                 self.imageView.contentMode = .scaleAspectFill
                 self.imageView.frame = self.previewView.frame
