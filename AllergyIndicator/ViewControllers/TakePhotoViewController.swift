@@ -40,12 +40,10 @@ class TakePhotoViewController: UIViewController {
         super.viewDidLoad()
         /* This method is called after the view controller
          has loaded its view hierarchy into memory. */
+        
         // Do any additional setup after loading the view.
         
         //        IAPHelper.shared.getProducts()
-        
-        // Initialize the camera controller
-        cameraController = CameraController()
         
         // Start up the camera
         cameraController?.prepare {(error) in
@@ -94,6 +92,32 @@ class TakePhotoViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /* This method is called before the view controller's
+         view is about to be added to a view hierarchy */
+        
+        // Show the camera view on screen
+        self.cameraController?.previewLayer?.isHidden = false
+        // Activate the camera button
+        self.captureButton.isUserInteractionEnabled = true
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        /* This method is called in response to a
+         view being removed from a view hierarchy */
+        
+        // Initialize the camera controller
+        cameraController = CameraController()
+        
+        // Remove the image view that stores the picture the user took
+        self.imageView.removeFromSuperview()
+        
+        self.cameraController = nil
+    }
+    
     func setupLayout() {
         // Get colors
         let lightblue = UIColor(rgb: 0x0093DD)
@@ -125,28 +149,6 @@ class TakePhotoViewController: UIViewController {
         buttonBackground.layer.cornerRadius = min(backgroundButtonWidth.constant, backgroundButtonHeight.constant) / 2
         buttonBackground.layer.masksToBounds = true
         buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        /* This method is called before the view controller's
-         view is about to be added to a view hierarchy */
-        
-        // Show the camera view on screen
-        self.cameraController?.previewLayer?.isHidden = false
-        // Activate the camera button
-        self.captureButton.isUserInteractionEnabled = true
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        /* This method is called in response to a
-         view being removed from a view hierarchy */
-        // Remove the image view that stores the picture the user took
-        self.imageView.removeFromSuperview()
-        
-        self.cameraController = nil
     }
     
     // Set variables for the camera zoom
