@@ -45,16 +45,6 @@ class TakePhotoViewController: UIViewController {
         
         //        IAPHelper.shared.getProducts()
         
-        // Start up the camera
-        cameraController?.prepare {(error) in
-            // Print the error if given one
-            if let error = error {
-                print(error)
-            }
-            // Display the camera feed on the preiview view
-            try? self.cameraController?.displayPreview(on: self.previewView)
-        }
-        
         // Initialize the warning controller
         warningController = WarningController()
         
@@ -97,8 +87,22 @@ class TakePhotoViewController: UIViewController {
         /* This method is called before the view controller's
          view is about to be added to a view hierarchy */
         
+        // Initialize the camera controller
+        cameraController = CameraController()
+        
+        // Start up the camera
+        cameraController?.prepare {(error) in
+            // Print the error if given one
+            if let error = error {
+                print(error)
+            }
+            // Display the camera feed on the preiview view
+            try? self.cameraController?.displayPreview(on: self.previewView)
+        }
+        
         // Show the camera view on screen
         self.cameraController?.previewLayer?.isHidden = false
+        
         // Activate the camera button
         self.captureButton.isUserInteractionEnabled = true
         
@@ -108,9 +112,6 @@ class TakePhotoViewController: UIViewController {
         super.viewWillDisappear(animated)
         /* This method is called in response to a
          view being removed from a view hierarchy */
-        
-        // Initialize the camera controller
-        cameraController = CameraController()
         
         // Remove the image view that stores the picture the user took
         self.imageView.removeFromSuperview()
