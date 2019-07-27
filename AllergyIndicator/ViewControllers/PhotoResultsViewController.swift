@@ -24,17 +24,21 @@ class PhotoResultsViewController: UIViewController {
     var ingredientsInFood: [String] = []
     var noFood: Bool = false
     
-    let warningController = WarningController()
+    var warningController: WarningController?
     
     weak var foodImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Connect the view contoller to the table view delegate
         tableView.delegate = self
         tableView.dataSource = self
         
-        // if there is no camera access request access
+        // Initialize the warning view controller
+        warningController = WarningController()
+        
+        // If there is no camera access request access
         if concepts == [ClarifaiConcept]() && !noFood{
             self.handleNoCamera()
             return
@@ -188,7 +192,7 @@ class PhotoResultsViewController: UIViewController {
     func cameraAutherization() {
         let titleString = "Camera not available"
         let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
-        warningController.showWarningMenu(title: titleString, content: contentString)
+        warningController?.showWarningMenu(title: titleString, content: contentString)
         
     }
     
@@ -196,8 +200,8 @@ class PhotoResultsViewController: UIViewController {
         let titleString = "No food in image"
         let contentString = "You did not take a picture that contained any type of food. Please take a picture of food to see results."
         
-        warningController.setDismissButtonTitle(title: "Ok")
-        warningController.showWarningMenu(title: titleString, content: contentString)
+        warningController?.setDismissButtonTitle(title: "Ok")
+        warningController?.showWarningMenu(title: titleString, content: contentString)
     }
     
     func showWarningMenu(doesContainIngredients: Bool) {
@@ -208,7 +212,7 @@ class PhotoResultsViewController: UIViewController {
             contentString = "The app has found ingredients that are present in your food."
         }
         
-        warningController.showWarningMenu(title: titleString, content: contentString)
+        warningController?.showWarningMenu(title: titleString, content: contentString)
     }
 }
 
