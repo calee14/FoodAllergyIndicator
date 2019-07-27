@@ -32,7 +32,7 @@ class TakePhotoViewController: UIViewController {
     // Instance of the CameraController - going to help us take picture
     var cameraController: CameraController?
     // Instance of the WarningController - displays messages
-    let warningController = WarningController()
+    var warningController: WarningController?
     // Image view to display the image the camera took
     let imageView = UIImageView()
     
@@ -44,7 +44,9 @@ class TakePhotoViewController: UIViewController {
         
         //        IAPHelper.shared.getProducts()
         
+        // Initialize the camera controller
         cameraController = CameraController()
+        
         // Start up the camera
         cameraController?.prepare {(error) in
             // Print the error if given one
@@ -54,6 +56,9 @@ class TakePhotoViewController: UIViewController {
             // Display the camera feed on the preiview view
             try? self.cameraController?.displayPreview(on: self.previewView)
         }
+        
+        // Initialize the warning controller
+        warningController = WarningController()
         
         // Set up UI elements
         setupLayout()
@@ -206,7 +211,7 @@ class TakePhotoViewController: UIViewController {
 //            let blankImage = self.previewView.asImage()
             let titleString = "Camera not available"
             let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
-            self.warningController.showWarningMenu(title: titleString, content: contentString)
+            self.warningController?.showWarningMenu(title: titleString, content: contentString)
 //            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
             return
         case .authorized:
