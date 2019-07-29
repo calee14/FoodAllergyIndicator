@@ -49,7 +49,8 @@ extension IAPHelper: SKPaymentTransactionObserver {
             case .purchasing:
                 break
             case .purchased:
-                Pictures.incrementPictureCount()
+                let pictureAmount = 30
+                Pictures.incrementPictureCount(by: pictureAmount)
                 SKPaymentQueue.default().finishTransaction(transaction as SKPaymentTransaction)
                 break
             case .failed:
