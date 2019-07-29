@@ -40,9 +40,20 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-uh-qX9">
                                 <rect key="frame" x="0.0" y="746" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aibyclarifai" translatesAutoresizingMaskIntoConstraints="NO" id="vZm-fG-VLD">
+                                        <rect key="frame" x="10" y="57" width="75" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="pej-sT-6Bq"/>
+                                            <constraint firstAttribute="height" constant="36" id="xrp-Gg-8K8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="AOy-Pa-ob3"/>
+                                    <constraint firstItem="vZm-fG-VLD" firstAttribute="centerY" secondItem="EzM-uh-qX9" secondAttribute="centerY" id="VdK-46-1kW"/>
+                                    <constraint firstItem="vZm-fG-VLD" firstAttribute="leading" secondItem="EzM-uh-qX9" secondAttribute="leading" constant="10" id="ryu-Oa-ZWF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-NX-g7X">
@@ -204,4 +215,7 @@
             <point key="canvasLocation" x="2196" y="-57.121439280359823"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="aibyclarifai" width="468" height="227.33332824707031"/>
+    </resources>
 </document>
