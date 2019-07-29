@@ -113,6 +113,10 @@ class PhotoResultsViewController: UIViewController {
         self.foodImageView.image = foodImage
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func handleNoCamera() {
         self.cameraAutherization()
         

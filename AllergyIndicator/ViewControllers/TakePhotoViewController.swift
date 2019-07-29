@@ -119,6 +119,10 @@ class TakePhotoViewController: UIViewController {
         self.cameraController = nil
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func setupLayout() {
         // Get colors
         let lightblue = UIColor(rgb: 0x0093DD)
