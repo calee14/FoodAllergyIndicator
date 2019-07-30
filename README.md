@@ -58,7 +58,10 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Display all ingredients from each top recipes when make a request to the recipe api NTOE: still need to connect the recipe api
 - [X] Check for memory leaks (found some linked to the camera controller object)
 - [ ] Make sure the in app purchase works (change the initial amount of pics to 20)
-## WEEK 6 and beyond
+## WEEK 6
+- [ ] Need to make it so that user can sign back into their account.
+  - [ ] Create a seperate button for logging in the user which will take them to a different vc
+## WEEK 7 and beyond
 - [ ] Must figure out how crafted food names don't get mixed in with the ingredients for the recipe api
   - [ ] Could remove the foods by hand
   - [ ] Run every concept that has a high confidence
