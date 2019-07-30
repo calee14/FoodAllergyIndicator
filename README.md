@@ -59,7 +59,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [X] Check for memory leaks (found some linked to the camera controller object)
 - [ ] Make sure the in app purchase works (change the initial amount of pics to 20)
 ## WEEK 6 and beyond
-- [ ] Must figure out how crafted food names don't get mixed in with the ingredients
+- [ ] Must figure out how crafted food names don't get mixed in with the ingredients for the recipe api
   - [ ] Could remove the foods by hand
   - [ ] Run every concept that has a high confidence
   - [ ] Just let it be ignored and take a chance with hoping that a similar concept has the food name and it gets run into the recipe api
