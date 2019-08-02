@@ -52,25 +52,43 @@
                                     <constraint firstAttribute="height" constant="50" id="ZNW-wB-NSn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Tap To Begin"/>
+                                <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Xj8-va-Nih" eventType="touchUpInside" id="vdb-Pv-RY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-VF-7ZX">
+                                <rect key="frame" x="10" y="326" width="394" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Tki-GO-wWp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="actualLoginButtonTapped:" destination="Xj8-va-Nih" eventType="touchUpInside" id="n9d-qQ-gZC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="EZ5-Mb-NF4" firstAttribute="trailing" secondItem="vXj-VF-7ZX" secondAttribute="trailing" constant="10" id="00b-LA-C4F"/>
                             <constraint firstItem="EZ5-Mb-NF4" firstAttribute="trailing" secondItem="AgW-ZW-SIu" secondAttribute="trailing" constant="10" id="6R0-jA-FO7"/>
                             <constraint firstItem="bAa-g2-oys" firstAttribute="leading" secondItem="EZ5-Mb-NF4" secondAttribute="leading" id="79U-ce-Y15"/>
+                            <constraint firstItem="vXj-VF-7ZX" firstAttribute="top" secondItem="AgW-ZW-SIu" secondAttribute="bottom" constant="10" id="817-t2-dv5"/>
                             <constraint firstItem="AgW-ZW-SIu" firstAttribute="top" secondItem="bAa-g2-oys" secondAttribute="bottom" constant="10" id="B04-4z-Bmb"/>
                             <constraint firstItem="EZ5-Mb-NF4" firstAttribute="trailing" secondItem="bAa-g2-oys" secondAttribute="trailing" id="Slr-zW-rUy"/>
                             <constraint firstItem="bAa-g2-oys" firstAttribute="top" secondItem="w5d-Uq-kbm" secondAttribute="top" id="ppx-1L-XU7"/>
+                            <constraint firstItem="vXj-VF-7ZX" firstAttribute="leading" secondItem="EZ5-Mb-NF4" secondAttribute="leading" constant="10" id="uhS-vs-vUQ"/>
                             <constraint firstItem="AgW-ZW-SIu" firstAttribute="leading" secondItem="EZ5-Mb-NF4" secondAttribute="leading" constant="10" id="ul4-Za-0pv"/>
+                            <constraint firstItem="vXj-VF-7ZX" firstAttribute="centerX" secondItem="w5d-Uq-kbm" secondAttribute="centerX" id="uoX-jB-fxi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EZ5-Mb-NF4"/>
                     </view>
                     <navigationItem key="navigationItem" id="4SL-kQ-qk7"/>
                     <connections>
+                        <outlet property="actualLoginButton" destination="vXj-VF-7ZX" id="bcD-VP-iPj"/>
                         <outlet property="backgroundView" destination="bAa-g2-oys" id="INt-da-7cd"/>
                         <outlet property="loginButton" destination="AgW-ZW-SIu" id="ThO-GO-Jwj"/>
                         <segue destination="Lqv-Ac-JgK" kind="show" identifier="toCreateUsername" id="PX1-77-3S1"/>

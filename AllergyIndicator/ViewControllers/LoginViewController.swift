@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var actualLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,19 @@ class LoginViewController: UIViewController {
 //        let authViewController = authUI.authViewController()
 //
 //        present(authViewController, animated: true)
-        
+        /* Perform the seque to the sign up vc */
         self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
     }
+    
+    @IBAction func actualLoginButtonTapped(_ sender: UIButton) {
+        
+        /* Perform the seque to the login vc
+         here ...
+         */
+        
+        
+    }
+    
 }
 
 //extension LoginViewController: FUIAuthDelegate {
