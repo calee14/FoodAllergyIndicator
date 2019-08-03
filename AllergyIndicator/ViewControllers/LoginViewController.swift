@@ -25,6 +25,9 @@ class LoginViewController: UIViewController {
     }
     
     func setupLayout() {
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
         
@@ -33,6 +36,9 @@ class LoginViewController: UIViewController {
         backgroundView.applyGradient(colours: [lightblue, cyan])
         
         loginButton.layer.cornerRadius = CGFloat(10)
+        
+        actualLoginButton.layer.cornerRadius = CGFloat(10)
+        
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -51,7 +57,7 @@ class LoginViewController: UIViewController {
         /* Perform the seque to the login vc
          here ...
          */
-        
+        self.performSegue(withIdentifier: Constants.Segue.loginUser, sender: self)
         
     }
     
