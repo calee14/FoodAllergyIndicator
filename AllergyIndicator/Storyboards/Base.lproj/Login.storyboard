@@ -92,11 +92,61 @@
                         <outlet property="backgroundView" destination="bAa-g2-oys" id="INt-da-7cd"/>
                         <outlet property="loginButton" destination="AgW-ZW-SIu" id="ThO-GO-Jwj"/>
                         <segue destination="Lqv-Ac-JgK" kind="show" identifier="toCreateUsername" id="PX1-77-3S1"/>
+                        <segue destination="o08-W3-RXv" kind="show" identifier="loginUser" id="VFV-ap-XSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psa-50-Eav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="141.67916041979012"/>
+        </scene>
+        <!--Actual User Login View Controller-->
+        <scene sceneID="yEO-Us-mTS">
+            <objects>
+                <viewController id="o08-W3-RXv" customClass="ActualUserLoginViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffK-dV-LsC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUT-Bu-gZI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9W-AQ-b0T">
+                                        <rect key="frame" x="50" y="133" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Allergy Indicator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXp-dY-ogy">
+                                        <rect key="frame" x="50" y="70" width="267" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="z9W-AQ-b0T" firstAttribute="leading" secondItem="FUT-Bu-gZI" secondAttribute="leading" constant="50" id="GVp-kX-6CQ"/>
+                                    <constraint firstItem="z9W-AQ-b0T" firstAttribute="top" secondItem="wXp-dY-ogy" secondAttribute="bottom" constant="30" id="GrP-qR-cHw"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="z9W-AQ-b0T" secondAttribute="trailing" constant="20" symbolic="YES" id="I9G-FD-oIf"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wXp-dY-ogy" secondAttribute="trailing" constant="20" symbolic="YES" id="U6a-Ou-zwo"/>
+                                    <constraint firstAttribute="height" constant="256" id="lbh-o9-lj6"/>
+                                    <constraint firstItem="wXp-dY-ogy" firstAttribute="top" secondItem="FUT-Bu-gZI" secondAttribute="top" constant="70" id="olw-Qm-gqz"/>
+                                    <constraint firstItem="wXp-dY-ogy" firstAttribute="leading" secondItem="FUT-Bu-gZI" secondAttribute="leading" constant="50" id="zTr-Eg-eaf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FUT-Bu-gZI" firstAttribute="top" secondItem="ffK-dV-LsC" secondAttribute="top" id="J1c-h1-lce"/>
+                            <constraint firstAttribute="trailing" secondItem="FUT-Bu-gZI" secondAttribute="trailing" id="OPD-uP-UTG"/>
+                            <constraint firstItem="FUT-Bu-gZI" firstAttribute="leading" secondItem="ffK-dV-LsC" secondAttribute="leading" id="TpJ-hm-1L9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tOy-Dv-6YZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9A4-Eq-fVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="499"/>
         </scene>
         <!--Create Username View Controller-->
         <scene sceneID="Foe-Qm-bcT">
@@ -136,7 +186,7 @@
                                     <constraint firstItem="Ft7-aq-yvp" firstAttribute="top" secondItem="f4h-zN-NM7" secondAttribute="top" constant="70" id="9Kv-bj-dN6"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ft7-aq-yvp" secondAttribute="trailing" constant="20" symbolic="YES" id="Awp-wt-uf9"/>
                                     <constraint firstItem="Ft7-aq-yvp" firstAttribute="centerX" secondItem="f4h-zN-NM7" secondAttribute="centerX" id="Fyo-NI-ceW"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EYu-e3-e3y" secondAttribute="trailing" symbolic="YES" id="My7-8H-Sh9"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EYu-e3-e3y" secondAttribute="trailing" constant="20" symbolic="YES" id="My7-8H-Sh9"/>
                                     <constraint firstItem="EYu-e3-e3y" firstAttribute="leading" secondItem="f4h-zN-NM7" secondAttribute="leading" constant="50" id="Pel-8Z-75c"/>
                                     <constraint firstItem="Ft7-aq-yvp" firstAttribute="leading" secondItem="f4h-zN-NM7" secondAttribute="leading" constant="50" id="Vvf-j8-jbA"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="Xq7-cL-lcG"/>
@@ -203,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlz-S6-jSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="141.67916041979012"/>
+            <point key="canvasLocation" x="2032" y="-165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LMB-3y-Jf2">
