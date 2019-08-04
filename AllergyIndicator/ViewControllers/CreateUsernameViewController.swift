@@ -19,6 +19,7 @@ class CreateUsernameViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,24 @@ class CreateUsernameViewController: UIViewController {
         
         nextButton.layer.cornerRadius = CGFloat(10)
         
+        // Change the layout and position of back button
+        backButton.frame = CGRect(x: 20, y: 45, width: 40, height: 40)
+        backButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+        backButton.backgroundColor = .clear
+        backButton.layer.borderWidth = 2.0
+        backButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
+        backButton.layer.cornerRadius = min(backButton.frame.width, backButton.frame.height) / 2
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {

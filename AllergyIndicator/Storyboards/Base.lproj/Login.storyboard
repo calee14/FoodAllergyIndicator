@@ -122,6 +122,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XS-0u-zrc">
+                                        <rect key="frame" x="12" y="52" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="o08-W3-RXv" eventType="touchUpInside" id="HAJ-jW-LaC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -195,6 +205,7 @@
                         <viewLayoutGuide key="safeArea" id="tOy-Dv-6YZ"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="0XS-0u-zrc" id="4x9-Hu-0kc"/>
                         <outlet property="backgroundView" destination="FUT-Bu-gZI" id="9xl-NI-dmG"/>
                         <outlet property="errorLabel" destination="Xjw-q9-qII" id="efA-gm-l9a"/>
                         <outlet property="loginButton" destination="xW5-Ry-acl" id="hKj-OM-Vhc"/>
@@ -238,6 +249,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-WE-fBu">
+                                        <rect key="frame" x="12" y="52" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="Lqv-Ac-JgK" eventType="touchUpInside" id="Cgi-Xe-4G7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -302,6 +323,7 @@
                         <viewLayoutGuide key="safeArea" id="6Hg-Hl-uqq"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="DPy-WE-fBu" id="uOo-mL-1L9"/>
                         <outlet property="backgroundView" destination="f4h-zN-NM7" id="gys-nL-BOC"/>
                         <outlet property="errorLabel" destination="Uof-Gr-ucQ" id="vcE-Bv-dFn"/>
                         <outlet property="nextButton" destination="4Zh-7V-DwX" id="Lcm-9f-SRb"/>

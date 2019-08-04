@@ -14,6 +14,7 @@ class ActualUserLoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
@@ -48,6 +49,16 @@ class ActualUserLoginViewController: UIViewController {
         backgroundView.applyGradient(colours: [lightblue, cyan])
         
         loginButton.layer.cornerRadius = CGFloat(10)
+        
+        // Change the layout and position of back button
+        backButton.frame = CGRect(x: 20, y: 45, width: 40, height: 40)
+        backButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
+        backButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+        backButton.backgroundColor = .clear
+        backButton.layer.borderWidth = 2.0
+        backButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
+        backButton.layer.cornerRadius = min(backButton.frame.width, backButton.frame.height) / 2
+        
     }
     
     //Calls this function when the tap is recognized.
@@ -56,6 +67,10 @@ class ActualUserLoginViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         /* Login in the user with the credentials they
          inputted */
