@@ -61,6 +61,15 @@ class ActualUserLoginViewController: UIViewController {
         
     }
     
+    /* Checks the text fields if they're empty or not
+     returns true if empty and false if not empty */
+    func textFieldsEmpty() -> Bool {
+        if(usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty) {
+            return true
+        }
+        return false
+    }
+    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -74,6 +83,14 @@ class ActualUserLoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         /* Login in the user with the credentials they
          inputted */
+        
+        // check if the text fields are empty and if so change the error label
+        if(textFieldsEmpty()) {
+            self.errorLabel.isHidden = false
+            UIView.animate(withDuration: 0.1, animations: {
+                self.errorLabel.text = "Make sure to fill out all boxes"
+            })
+        }
         
         loginButton.isUserInteractionEnabled = false
         
