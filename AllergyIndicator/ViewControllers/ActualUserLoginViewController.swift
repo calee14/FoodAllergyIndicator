@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ActualUserLoginViewController: UIViewController {
 
@@ -96,11 +97,47 @@ class ActualUserLoginViewController: UIViewController {
         
         var username = usernameTextField.text!
         username = username.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = passwordTextField.text
+        let password = passwordTextField.text!
         // temporarily create an email until require field for real email
         let email = "\(username)@test.com"
         
-        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authData, error in
+            guard let strongSelf = self else { return }
+            
+            /* Handle user login
+             here ... */
+            
+            if let error = error {
+                
+                self?.errorLabel.isHidden = false
+                print(error.localizedDescription)
+                
+                /* Add conditions for specific error descriptions
+                 here ... */
+                
+                self?.loginButton.isUserInteractionEnabled = true
+                return
+            }
+            guard (authData?.user) != nil else { return }
+            
+            guard let firUser = Auth.auth().currentUser else { return }
+            
+            /* Retrieve the user info from the db,
+             create a new User object with the data from the db,
+             then set the current User for the app to user defaults */
+            UserService.retrieve(firUser, completion: { (user) in
+                guard let user = user else { return }
+                
+                User.setCurrent(user, writeToUserDefaults: true)
+                
+                let initialViewController = UIStoryboard.initializeViewController(for: .main)
+                
+                HomeViewController.shouldDisplayDisclaimer = true
+                
+                strongSelf.view.window?.rootViewController = initialViewController
+                strongSelf.view.window?.makeKeyAndVisible()
+            })
+        }
     }
     
     /*
