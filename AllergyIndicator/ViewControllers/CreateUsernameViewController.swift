@@ -33,6 +33,11 @@ class CreateUsernameViewController: UIViewController {
         setupLayout()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     func setupLayout() {
         let lightblue = UIColor(rgb: 0x0093DD)
         let cyan = UIColor(rgb: 0x0AD2A8)
@@ -56,9 +61,13 @@ class CreateUsernameViewController: UIViewController {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
+    /* Checks the text fields if they're empty or not
+     returns true if empty and false if not empty */
+    func textFieldsEmpty() -> Bool {
+        if(usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty) {
+            return true
+        }
+        return false
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
