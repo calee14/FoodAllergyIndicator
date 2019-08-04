@@ -38,4 +38,13 @@ struct UserService {
             })
         }
     }
+    
+    static func retrieve(_ firUser: FIRUser, completion: @escaping (User?) -> Void) {
+        let ref = Database.database().reference().child("users").child(firUser.uid)
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            let user = User(snapshot: snapshot)
+            completion(user)
+        }
+    }
  }
