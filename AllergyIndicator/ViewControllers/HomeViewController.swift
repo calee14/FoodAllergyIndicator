@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
         /* This method is called after the view controller
          has loaded its view hierarchy into memory. */
         
+        print(User.current.username)
+        
         toggleAllButtons(status: false)
 //        let data = PushIngredientsToDB.retrieveLocalData()
 //
