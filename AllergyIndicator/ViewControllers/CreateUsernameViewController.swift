@@ -78,10 +78,10 @@ class CreateUsernameViewController: UIViewController {
         nextButton.isUserInteractionEnabled = false
         var username = usernameTextField.text!
         username = username.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = passwordTextField.text
+        let password = passwordTextField.text!
         let email = "\(username)@test.com"
         
-        Auth.auth().createUser(withEmail: email, password: password!) { (authData, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
             if let error = error {
                 self.errorLabel.isHidden = false
 //                assertionFailure("Error: creating user: \(error.localizedDescription)")
