@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
          has loaded its view hierarchy into memory. */
         
         print(User.current.username)
+        print(User.current.email)
         
         toggleAllButtons(status: false)
 //        let data = PushIngredientsToDB.retrieveLocalData()
