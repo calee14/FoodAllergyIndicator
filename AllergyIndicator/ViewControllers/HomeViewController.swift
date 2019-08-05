@@ -9,7 +9,6 @@
 // import libraries
 import UIKit
 import Clarifai_Apple_SDK
-import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
