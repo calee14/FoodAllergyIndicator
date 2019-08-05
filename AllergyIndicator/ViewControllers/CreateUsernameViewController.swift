@@ -105,11 +105,48 @@ class CreateUsernameViewController: UIViewController {
         /* This email variable is a concatenation of the username
          The actual email the user inputs is for IAP, receipts, and user contact */
         let email = "\(username)@test.com"
+        let actualUserEmail = emailTextField.text!
+        
+        UserService.doesEmailExist(for: actualUserEmail) { (doesExists) in
+            if doesExists {
+                self.errorLabel.isHidden = false
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.errorLabel.text = "This email is already in use by another account."
+                })
+                return
+            } else if !doesExists {
+                self.createNewUser(email: email, actualUserEmail: actualUserEmail, username: username, password: password)
+            }
+        }
+        
+        
+//        UserService.create(firUser, username: username) { (user) in
+//            guard let user = user else { return }
+//
+//            User.setCurrent(user, writeToUserDefaults: true)
+//
+//            AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
+//                print(allergy)
+//            })
+//
+//            let initialViewController = UIStoryboard.initializeViewController(for: .main)
+//
+//            HomeViewController.shouldDisplayDisclaimer = true
+//
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
+//        }
+    }
+    
+    /* Use Firebase Auth API to create a new user,
+     update the user info in the database,
+     and store the user locally in User defaults */
+    func createNewUser(email: String, actualUserEmail: String, username: String, password: String) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
             if let error = error {
                 self.errorLabel.isHidden = false
-//                assertionFailure("Error: creating user: \(error.localizedDescription)")
+                //                assertionFailure("Error: creating user: \(error.localizedDescription)")
                 print(error.localizedDescription)
                 if error.localizedDescription == "The email address is badly formatted." {
                     UIView.animate(withDuration: 0.1, animations: {
@@ -134,14 +171,14 @@ class CreateUsernameViewController: UIViewController {
                 let username = self.usernameTextField.text,
                 !username.isEmpty else { return }
             
-            UserService.create(firUser, username: username, email: email) { (user) in
+            UserService.create(firUser, username: username, email: actualUserEmail) { (user) in
                 guard let user = user else { return }
                 
                 User.setCurrent(user, writeToUserDefaults: true)
                 
-//                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-//                    print("The allergy: \(allergy) has been set")
-//                })
+                //                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
+                //                    print("The allergy: \(allergy) has been set")
+                //                })
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
                 
@@ -150,26 +187,6 @@ class CreateUsernameViewController: UIViewController {
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }
-            
         }
-        
-//        UserService.create(firUser, username: username) { (user) in
-//            guard let user = user else { return }
-//
-//            User.setCurrent(user, writeToUserDefaults: true)
-//
-//            AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-//                print(allergy)
-//            })
-//
-//            let initialViewController = UIStoryboard.initializeViewController(for: .main)
-//
-//            HomeViewController.shouldDisplayDisclaimer = true
-//
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-//        }
     }
-    
-    
 }
