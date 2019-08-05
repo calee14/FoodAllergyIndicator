@@ -91,6 +91,7 @@ class ActualUserLoginViewController: UIViewController {
             UIView.animate(withDuration: 0.1, animations: {
                 self.errorLabel.text = "Make sure to fill out all boxes"
             })
+            return
         }
         
         loginButton.isUserInteractionEnabled = false
