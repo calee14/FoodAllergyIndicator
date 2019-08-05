@@ -96,6 +96,7 @@ class CreateUsernameViewController: UIViewController {
             return
         }
         
+        /* Disable sign up button so the function isn't called more than once */
         nextButton.isUserInteractionEnabled = false
         
         var username = usernameTextField.text!
@@ -133,7 +134,7 @@ class CreateUsernameViewController: UIViewController {
                 let username = self.usernameTextField.text,
                 !username.isEmpty else { return }
             
-            UserService.create(firUser, username: username) { (user) in
+            UserService.create(firUser, username: username, email: email) { (user) in
                 guard let user = user else { return }
                 
                 User.setCurrent(user, writeToUserDefaults: true)
