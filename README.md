@@ -62,6 +62,14 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [ ] Need to make it so that user can sign back into their account.
   - [ ] Create a seperate button for logging in the user which will take them to a different vc
     - [ ] Will need to use Firebase's Authentication API
+- [ ] Login screen
+- [ ] Login using Firebase Auth API
+- [ ] Add user email to register information
+- [ ] Add ability to log out
+- [ ] Store pictures count in Firebase
+- [ ] Retrieve the picture count from Firebase
+- [ ] Expose the user id some where in the app
+- [ ] Upload receipts to firebase
 ## WEEK 7 and beyond
 - [ ] Must figure out how crafted food names don't get mixed in with the ingredients for the recipe api
   - [ ] Could remove the foods by hand
