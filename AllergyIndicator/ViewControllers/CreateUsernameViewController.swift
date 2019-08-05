@@ -113,6 +113,7 @@ class CreateUsernameViewController: UIViewController {
                 UIView.animate(withDuration: 0.1, animations: {
                     self.errorLabel.text = "This email is already in use by another account."
                 })
+                self.nextButton.isUserInteractionEnabled = true
                 return
             } else if !doesExists {
                 self.createNewUser(email: email, actualUserEmail: actualUserEmail, username: username, password: password)
