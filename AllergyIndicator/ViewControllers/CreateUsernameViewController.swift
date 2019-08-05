@@ -14,6 +14,7 @@ typealias FIRUser = FirebaseAuth.User
 
 class CreateUsernameViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
@@ -75,10 +76,33 @@ class CreateUsernameViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        /* Create a new user with the credentials he or she
+         inputted */
+        
+        // check if the text fields are empty and if so change the error label
+        if(textFieldsEmpty()) {
+            self.errorLabel.isHidden = false
+            UIView.animate(withDuration: 0.1, animations: {
+                self.errorLabel.text = "Make sure to fill out all boxes"
+            })
+            return
+        }
+        
+        if(!emailTextField.text!.isValidEmail()) {
+            self.errorLabel.isHidden = false
+            UIView.animate(withDuration: 0.1, animations: {
+                self.errorLabel.text = "This is an invalid email address."
+            })
+            return
+        }
+        
         nextButton.isUserInteractionEnabled = false
+        
         var username = usernameTextField.text!
         username = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!
+        /* This email variable is a concatenation of the username
+         The actual email the user inputs is for IAP, receipts, and user contact */
         let email = "\(username)@test.com"
         
         Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
@@ -86,6 +110,11 @@ class CreateUsernameViewController: UIViewController {
                 self.errorLabel.isHidden = false
 //                assertionFailure("Error: creating user: \(error.localizedDescription)")
                 print(error.localizedDescription)
+                if error.localizedDescription == "The email address is badly formatted." {
+                    UIView.animate(withDuration: 0.1, animations: {
+                        self.errorLabel.text = "This is an invalid email address."
+                    })
+                }
                 if error.localizedDescription == "The email address is already in use by another account." {
                     UIView.animate(withDuration: 0.1, animations: {
                         self.errorLabel.text = "The username has already been taken."
