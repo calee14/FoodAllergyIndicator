@@ -47,4 +47,16 @@ struct UserService {
             completion(user)
         }
     }
+    
+    static func doesEmailExist(for email: String, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("users")
+        
+        ref.queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
  }
