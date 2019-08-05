@@ -64,6 +64,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
     - [ ] Will need to use Firebase's Authentication API
 - [ ] Login screen
 - [ ] Login using Firebase Auth API
+- [ ] Attempt to sign in anonymously to access data then log out when done
 - [ ] Add user email to register information
 - [ ] Add ability to log out
 - [ ] Store pictures count in Firebase
