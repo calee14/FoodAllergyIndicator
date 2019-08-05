@@ -76,3 +76,6 @@ AllergyIndicator/Supporting/ConstantsAPI.swift
 
 # Misc
 AllergyIndicator/Supporting/indvl_ingredientv1.txt
+
+# Supporting files
+AllergyIndicator/Supporting/GoogleService-Info.plist
