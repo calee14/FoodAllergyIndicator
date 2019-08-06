@@ -9,6 +9,7 @@
 // import libraries
 import UIKit
 import Clarifai_Apple_SDK
+import Firebase
 
 class HomeViewController: UIViewController {
     
@@ -117,6 +118,13 @@ class HomeViewController: UIViewController {
                 /* Do nothing for now */
                 self.toggleAllButtons(status: true)
             }
+        }
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
         }
     }
     
