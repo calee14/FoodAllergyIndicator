@@ -191,6 +191,7 @@
                         <segue destination="0Bf-8W-56m" kind="show" identifier="setAllergySegue" id="KsS-Sz-LGO"/>
                         <segue destination="AGA-dJ-NJG" kind="show" identifier="takePhotoSegue" id="SFs-T3-bpa"/>
                         <segue destination="BrN-ky-zZY" kind="show" id="PuS-v7-Rl7"/>
+                        <segue destination="lYQ-Im-33r" kind="show" identifier="showProfileSeque" id="Rwn-4y-tF6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -203,7 +204,7 @@
                 <viewControllerPlaceholder storyboardName="TakePhoto" id="AGA-dJ-NJG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpw-DD-N6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="-131"/>
+            <point key="canvasLocation" x="1701" y="-48"/>
         </scene>
         <!--SetAllergies-->
         <scene sceneID="Ym6-6k-qZA">
@@ -219,7 +220,15 @@
                 <viewControllerPlaceholder storyboardName="TermsOfService" id="BrN-ky-zZY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8V-y0-kqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="175"/>
+            <point key="canvasLocation" x="1725" y="104"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="TNC-Ka-oHn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="lYQ-Im-33r" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAi-XZ-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DLK-bo-MVa">
