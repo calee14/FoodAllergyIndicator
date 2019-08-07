@@ -215,7 +215,7 @@ class HomeViewController: UIViewController {
         leftButton.clipsToBounds = false
         
         leftButton.backgroundColor = cyan
-        leftButton.setTitle("Pictures: \(Pictures.current.numpictures)", for: .normal)
+        leftButton.setTitle("My Profile", for: .normal)
         
         leftButtonBackground.layer.cornerRadius = 6
         leftButtonBackground.layer.masksToBounds = true
@@ -332,6 +332,16 @@ class HomeViewController: UIViewController {
             toggleTakePhotoButton(status: true)
             toggleTermsButton(status: true)
         }
+        
+        // Make sure the navagational bar will be shown
+        showNavagationController = true
+        
+        // Seque to the TermsViewController
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        
+        let profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(profileViewController, animated: true)
+        
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
