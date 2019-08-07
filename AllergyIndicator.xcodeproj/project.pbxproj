@@ -29,6 +29,8 @@
 		B37FDFCA210A46950066B3FD /* PredictService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37FDFC9210A46950066B3FD /* PredictService.swift */; };
 		B3921150210B93400048E6DD /* CheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392114F210B93400048E6DD /* CheckService.swift */; };
 		B3921152210BA3BF0048E6DD /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3921151210BA3BF0048E6DD /* String+Substring.swift */; };
+		B3AA812A22FB91E2001CEF19 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA812922FB91E2001CEF19 /* Profile.storyboard */; };
+		B3AA812C22FB9300001CEF19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA812B22FB9300001CEF19 /* ProfileViewController.swift */; };
 		B3C0914321078C9B0058E046 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C0914121078C9B0058E046 /* Login.storyboard */; };
 		B3C0914521078D0D0058E046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914421078D0D0058E046 /* LoginViewController.swift */; };
 		B3C0914721078EC20058E046 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0914621078EC20058E046 /* Constants.swift */; };
@@ -86,6 +88,8 @@
 		B37FDFC9210A46950066B3FD /* PredictService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictService.swift; sourceTree = "<group>"; };
 		B392114F210B93400048E6DD /* CheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckService.swift; sourceTree = "<group>"; };
 		B3921151210BA3BF0048E6DD /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
+		B3AA812922FB91E2001CEF19 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B3AA812B22FB9300001CEF19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3C0914221078C9B0058E046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B3C0914421078D0D0058E046 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3C0914621078EC20058E046 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				B3C0914121078C9B0058E046 /* Login.storyboard */,
 				B3F902BD2104316A00FD552E /* LaunchScreen.storyboard */,
 				B3CBA8422117FF07004E43D1 /* TermsOfService.storyboard */,
+				B3AA812922FB91E2001CEF19 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				B3CBA84421180083004E43D1 /* TermsViewController.swift */,
 				B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */,
 				B3381E6F22F618FB00B99112 /* ActualUserLoginViewController.swift */,
+				B3AA812B22FB9300001CEF19 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				B35239E2211B97770041BA36 /* PopupContent.txt in Resources */,
 				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
 				B31A66A122C7100300E5463F /* indvl_ingredientv1.txt in Resources */,
+				B3AA812A22FB91E2001CEF19 /* Profile.storyboard in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
 				B35239E0211B4C830041BA36 /* Terms.txt in Resources */,
@@ -482,6 +489,7 @@
 				B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */,
 				B3CBA84521180083004E43D1 /* TermsViewController.swift in Sources */,
 				B3D2195B21A7DCE4009CF9B5 /* ConstantsAPI.swift in Sources */,
+				B3AA812C22FB9300001CEF19 /* ProfileViewController.swift in Sources */,
 				B3921152210BA3BF0048E6DD /* String+Substring.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
 				B3E1EF1721066E30009B24AA /* TakePhotoViewController.swift in Sources */,
