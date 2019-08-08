@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="En5-d5-i8b">
             <objects>
-                <viewController id="Xj8-va-Nih" customClass="LoginViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Xj8-va-Nih" customClass="LoginViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w5d-Uq-kbm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
