@@ -72,6 +72,7 @@ extension AppDelegate {
                 let pictureCount = initialPicturesCount
                 Pictures.setCurrent(Pictures(numpictures: pictureCount), writeToUserDefaults: true)
             }
+            // initialize the current user everytime the app loads
             User.setCurrent(user)
             print("Pictures the current user has \(Pictures.current.numpictures)")
             initialViewController = UIStoryboard.initializeViewController(for: .main)
