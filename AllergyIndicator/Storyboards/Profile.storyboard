@@ -17,9 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="lpg-dJ-aP7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-Vy-Ev2">
+                                <rect key="frame" x="15" y="787" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GD9-nS-0Qz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonHighlight:" destination="aEZ-uj-6u9" eventType="touchDown" id="9GF-wX-mJV"/>
+                                    <action selector="logoutButtonPressed:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="ILD-qh-zjK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s54-Vy-Ev2" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="d33-1p-MLG"/>
+                            <constraint firstItem="8o6-Xy-mqJ" firstAttribute="bottom" secondItem="s54-Vy-Ev2" secondAttribute="bottom" constant="25" id="dmm-ib-plS"/>
+                            <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="s54-Vy-Ev2" secondAttribute="trailing" constant="15" id="hBv-kc-RrD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8o6-Xy-mqJ"/>
                     </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="s54-Vy-Ev2" id="yTV-aH-2uI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORq-zD-TDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
