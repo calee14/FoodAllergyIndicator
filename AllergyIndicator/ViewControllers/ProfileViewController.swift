@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -33,10 +34,28 @@ class ProfileViewController: UIViewController {
         self.logoutButton.setBackgroundColor(color: .white, forState: .normal)
     }
     
+    func goToLoginStoryboards() {
+        // Seque to the TermsViewController
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        self.navigationController?.pushViewController(loginViewController, animated: true)
+        self.navigationController?.setViewControllers([loginViewController], animated: true)
+    }
+    
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         let red = UIColor.init(red: 255, green: 38, blue: 0)
         self.logoutButton.setTitleColor(red, for: .normal)
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            goToLoginStoryboards()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
+    
     @IBAction func logoutButtonHighlight(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.1) {
