@@ -149,9 +149,12 @@ class HomeViewController: UIViewController {
         /* Cancel touches when they are being moved to avoid
          the error, failed to make handshake
          */
-        for touch in touches {
-            touch.view?.isUserInteractionEnabled = false
-        }
+        // Uncomment this one line
+        // ...
+//        touches.removeAll()
+//        for touch in touches {
+//            touch.view?.isUserInteractionEnabled = false
+//        }
         return
     }
     
@@ -350,6 +353,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -363,6 +367,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoHighlight(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -378,6 +383,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoEnd(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -391,6 +397,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -404,6 +411,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesHighlight(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -419,6 +427,7 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func setAllergiesEnd(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -432,6 +441,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsTapped(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -445,6 +455,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsHighlight(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -460,6 +471,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsEnd(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -473,6 +485,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func leftButtonTapped(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -487,6 +500,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func leftButtonHighlighted(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -502,6 +516,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func leftButtonEnd(_ sender: UIButton) {
+        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -513,6 +528,13 @@ class HomeViewController: UIViewController {
         self.leftButton.setTitleColor(.white, for: .normal)
         self.goDoWhateverLeftButtonDoes()
 //        sender.isSelected = false
+    }
+    
+    @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+            // Perform action.
+            print("swiper")
+        }
     }
     
 }
