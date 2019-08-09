@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     var showNavagationController: Bool = false
     
     // Create an instance of the warning controller
-    let warningController = WarningController()
+    var warningController: WarningController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +76,7 @@ class HomeViewController: UIViewController {
 //            }
 //        }
         
+        warningController = WarningController()
         // Only display the disclaimer once every ten times
         let randNum = arc4random_uniform(10)
         
@@ -99,7 +100,7 @@ class HomeViewController: UIViewController {
             guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
             
             // Put a disclaimer on screen
-            self.warningController.showWarningMenu(title: "What Ingredient", content: content)
+            self.warningController?.showWarningMenu(title: "What Ingredient", content: content)
             
             // Reset the should-display-disclaimer variable
             HomeViewController.shouldDisplayDisclaimer = false
@@ -128,10 +129,20 @@ class HomeViewController: UIViewController {
          is about to be added to a view hierarchy */
         // Set UI for the view controller
         setupLayout()
+        
+        if warningController == nil {
+             warningController = WarningController()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         disappear(animated: animated)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if warningController != nil {
+            warningController?.handleDismiss()
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
