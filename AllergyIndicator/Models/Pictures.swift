@@ -38,6 +38,7 @@ class Pictures: Codable {
         }
         _current = picture
     }
+    
     static func decrementPictureCount() {
         let newPicture = Pictures.current
         newPicture.numpictures -= 1
