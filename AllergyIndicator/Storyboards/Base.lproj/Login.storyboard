@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Ingredient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcG-rc-6vi">
-                                        <rect key="frame" x="49.999999999999986" y="70" width="196.66666666666663" height="33"/>
+                                        <rect key="frame" x="50" y="70" width="314" height="33"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                     <constraint firstItem="Nhz-xo-yEx" firstAttribute="top" secondItem="TcG-rc-6vi" secondAttribute="bottom" constant="30" id="D2i-av-8Jq"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nhz-xo-yEx" secondAttribute="trailing" constant="20" symbolic="YES" id="G0f-sQ-SWx"/>
                                     <constraint firstItem="TcG-rc-6vi" firstAttribute="top" secondItem="bAa-g2-oys" secondAttribute="top" constant="70" id="OLv-ro-wus"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TcG-rc-6vi" secondAttribute="trailing" constant="20" symbolic="YES" id="TlD-1g-GXp"/>
+                                    <constraint firstAttribute="trailing" secondItem="TcG-rc-6vi" secondAttribute="trailing" constant="50" id="TlD-1g-GXp"/>
                                     <constraint firstItem="Nhz-xo-yEx" firstAttribute="leading" secondItem="bAa-g2-oys" secondAttribute="leading" constant="50" id="XbF-Kv-30V"/>
                                     <constraint firstAttribute="height" constant="256" id="nCV-k7-FBl"/>
                                 </constraints>
