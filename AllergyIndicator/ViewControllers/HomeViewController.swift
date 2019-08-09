@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         
         print(User.current.username)
         print(User.current.email)
+        print(Pictures.current.numpictures)
         
         toggleAllButtons(status: false)
 //        let data = PushIngredientsToDB.retrieveLocalData()
