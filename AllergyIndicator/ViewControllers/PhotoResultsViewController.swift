@@ -177,6 +177,8 @@ class PhotoResultsViewController: UIViewController {
         homeButton.setImage(homeImage, for: .normal)
         homeButton.tintColor = .white
         homeButton.imageView?.alpha = 0.8
+        
+        self.tableView.allowsSelection = false
     }
     
     @objc func homeTapped() {
