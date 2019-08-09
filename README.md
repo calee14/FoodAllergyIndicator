@@ -107,6 +107,8 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - [X] Log out feature (Maybe won't do) UPDATE: Won't do
 - [ ] Make it so that the user doesn't need to enter username and password
 # Notes
+- [ ] https://firebase.google.com/docs/database/ios/offline-capabilities
+- [ ] https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift second solution is the best one
 - [X] Maybe won't add the feature where the app will have additional information about food allergies. Too hard to do ~~and waste of time, energy and effort.~~ and should focus more on the main feature and get that working perfectly.
     - NOTE: well no need for a food allergy information dashboard since the app can no longer contain with any medical advice
 - [X] Ready to resubmit to the Appstore. Make sure to run one last test.
