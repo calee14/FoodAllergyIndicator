@@ -43,6 +43,11 @@ class ProfileViewController: UIViewController {
         self.navigationController?.setViewControllers([loginViewController], animated: true)
     }
     
+    func removeUserDefaultsData() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: Constants.UserDefaults.currentUser)
+    }
+    
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         let red = UIColor.init(red: 255, green: 38, blue: 0)
         self.logoutButton.setTitleColor(red, for: .normal)
@@ -50,6 +55,7 @@ class ProfileViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            removeUserDefaultsData()
             goToLoginStoryboards()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
