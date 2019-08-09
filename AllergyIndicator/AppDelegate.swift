@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Database.database().isPersistenceEnabled = true
         
         // Launch Clarifai SDK
-//        let apikey = ConstantsAPI.clarifaiapi.key
-//        Clarifai.sharedInstance().start(apiKey: apikey)
+        let apikey = ConstantsAPI.clarifaiapi.key
+        Clarifai.sharedInstance().start(apiKey: apikey)
 
         // Configure LoginViewController
         configureInitialRootViewController(for: window)
