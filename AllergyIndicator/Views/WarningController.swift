@@ -22,9 +22,9 @@ class WarningController: NSObject {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Warning!"
-        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -33,6 +33,7 @@ class WarningController: NSObject {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = UIFont.systemFont(ofSize: 17)
         textView.isEditable = false
+        textView.isSelectable = false
         textView.textAlignment = .center
         return textView
     }()
@@ -55,7 +56,9 @@ class WarningController: NSObject {
             
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             
-//            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+            
+            dissmissButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
             
             window.addSubview(blackView)
             
@@ -84,10 +87,9 @@ class WarningController: NSObject {
             rectShape.bounds = dissmissButton.frame
             rectShape.position = dissmissButton.center
             rectShape.path = UIBezierPath(roundedRect: dissmissButton.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+            
             //Here I'm masking the textView's layer with rectShape layer
             dissmissButton.layer.mask = rectShape
-            
-            dissmissButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
             
             blackView.frame = window.frame
             blackView.alpha = 0
@@ -140,6 +142,8 @@ class WarningController: NSObject {
         allergiesTextView.leftAnchor.constraint(equalTo: collectionView.leftAnchor).isActive = true
         allergiesTextView.rightAnchor.constraint(equalTo: collectionView.rightAnchor).isActive = true
         allergiesTextView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0).isActive = true
+        
+        warningTitleLabel.font = UIFont(name: warningTitleLabel.font.fontName, size: warningTitleLabel.font.pointSize - CGFloat(5))
         
     }
 }
