@@ -3,15 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */; };
+		14B7FC3C2300875000D3B363 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */; };
+		14B7FC402300896300D3B363 /* indvl_ingredientv1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */; };
+		14B7FC422300C6FF00D3B363 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7FC412300C6FF00D3B363 /* Style.swift */; };
 		B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* DatabaseIngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
 		B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */; };
-		B31A66A122C7100300E5463F /* indvl_ingredientv1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B31A66A022C7100300E5463F /* indvl_ingredientv1.txt */; };
 		B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01CF22ADCC4D00A2773A /* Ingredient.swift */; };
 		B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */; };
 		B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */; };
@@ -47,7 +48,6 @@
 		B3CBA8412117C67D004E43D1 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA8402117C67D004E43D1 /* IAPHelper.swift */; };
 		B3CBA8432117FF07004E43D1 /* TermsOfService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CBA8422117FF07004E43D1 /* TermsOfService.storyboard */; };
 		B3CBA84521180083004E43D1 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBA84421180083004E43D1 /* TermsViewController.swift */; };
-		B3D2195B21A7DCE4009CF9B5 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */; };
 		B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */; };
 		B3E1EF1221065248009B24AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1EF1121065248009B24AA /* HomeViewController.swift */; };
 		B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E1EF1321065905009B24AA /* TakePhoto.storyboard */; };
@@ -61,16 +61,19 @@
 		B3F902BA2104316900FD552E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F902B82104316900FD552E /* Main.storyboard */; };
 		B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F902BB2104316A00FD552E /* Assets.xcassets */; };
 		B3F902BF2104316A00FD552E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F902BD2104316A00FD552E /* LaunchScreen.storyboard */; };
+		DE41A0025E7F285BF70FBB5D /* Pods_AllergyIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A506A29149DA6CFE2F3BCF7D /* Pods_AllergyIndicator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
-		5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
-		81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
+		14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = indvl_ingredientv1.txt; sourceTree = "<group>"; };
+		14B7FC412300C6FF00D3B363 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		41C68C5DED0622DA746970AB /* Pods-AllergyIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.debug.xcconfig"; path = "Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.debug.xcconfig"; sourceTree = "<group>"; };
+		6F579C114AA5299EB094041D /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
+		A506A29149DA6CFE2F3BCF7D /* Pods_AllergyIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllergyIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30831152114B7790088DD64 /* DatabaseIngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseIngredientService.swift; sourceTree = "<group>"; };
 		B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigation+Colors.swift"; sourceTree = "<group>"; };
 		B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushIngredientsToDB.swift; sourceTree = "<group>"; };
-		B31A66A022C7100300E5463F /* indvl_ingredientv1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indvl_ingredientv1.txt; sourceTree = "<group>"; };
 		B31C01CF22ADCC4D00A2773A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
@@ -106,7 +109,6 @@
 		B3CBA8402117C67D004E43D1 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		B3CBA8422117FF07004E43D1 /* TermsOfService.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfService.storyboard; sourceTree = "<group>"; };
 		B3CBA84421180083004E43D1 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
-		B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E1EF1121065248009B24AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3E1EF1421065905009B24AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TakePhoto.storyboard; sourceTree = "<group>"; };
@@ -129,28 +131,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87422257C84ED592DEA74CA /* Pods_AllergyIndicator.framework in Frameworks */,
 				B3CBA83C2117C170004E43D1 /* StoreKit.framework in Frameworks */,
+				DE41A0025E7F285BF70FBB5D /* Pods_AllergyIndicator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A91DF18D134F959BF4391A6F /* Pods */ = {
+		0169FA40028E5E122D387CC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */,
-				48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */,
+				41C68C5DED0622DA746970AB /* Pods-AllergyIndicator.debug.xcconfig */,
+				6F579C114AA5299EB094041D /* Pods-AllergyIndicator.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		AE8E90755B72D8A6B34373DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B3CBA83B2117C170004E43D1 /* StoreKit.framework */,
-				81B352371105499DAECE70AE /* Pods_AllergyIndicator.framework */,
+				A506A29149DA6CFE2F3BCF7D /* Pods_AllergyIndicator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,10 +255,11 @@
 			children = (
 				B3F902C02104316A00FD552E /* Info.plist */,
 				B3E1EF0F21064B35009B24AA /* GoogleService-Info.plist */,
-				B31A66A022C7100300E5463F /* indvl_ingredientv1.txt */,
 				B3C0914621078EC20058E046 /* Constants.swift */,
-				B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */,
 				B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */,
+				14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */,
+				14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */,
+				14B7FC412300C6FF00D3B363 /* Style.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -274,8 +277,8 @@
 			children = (
 				B3F902B32104316800FD552E /* AllergyIndicator */,
 				B3F902B22104316800FD552E /* Products */,
-				A91DF18D134F959BF4391A6F /* Pods */,
 				AE8E90755B72D8A6B34373DB /* Frameworks */,
+				0169FA40028E5E122D387CC9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,12 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F902C32104316A00FD552E /* Build configuration list for PBXNativeTarget "AllergyIndicator" */;
 			buildPhases = (
-				08D09E39310043337FA8FFAA /* [CP] Check Pods Manifest.lock */,
+				43A2DBBB07DD523FF4CD4DEB /* [CP] Check Pods Manifest.lock */,
 				B3F902AD2104316800FD552E /* Sources */,
 				B3F902AE2104316800FD552E /* Frameworks */,
 				B3F902AF2104316800FD552E /* Resources */,
-				4638BEA39AD3C1D7793245A1 /* [CP] Embed Pods Frameworks */,
-				73159E0DDD3F6D73C6A111C7 /* [CP] Copy Pods Resources */,
+				7E30604CE87260A75897795D /* [CP] Embed Pods Frameworks */,
+				096059D57C2986E8B962613C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,12 +380,12 @@
 				B3E1EF1521065905009B24AA /* TakePhoto.storyboard in Resources */,
 				B35239E2211B97770041BA36 /* PopupContent.txt in Resources */,
 				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
-				B31A66A122C7100300E5463F /* indvl_ingredientv1.txt in Resources */,
 				B3AA812A22FB91E2001CEF19 /* Profile.storyboard in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
 				B35239E0211B4C830041BA36 /* Terms.txt in Resources */,
 				B3E1EF1C210675A8009B24AA /* SetAllergies.storyboard in Resources */,
+				14B7FC402300896300D3B363 /* indvl_ingredientv1.txt in Resources */,
 				B3F902BA2104316900FD552E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,16 +393,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08D09E39310043337FA8FFAA /* [CP] Check Pods Manifest.lock */ = {
+		096059D57C2986E8B962613C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43A2DBBB07DD523FF4CD4DEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AllergyIndicator-checkManifestLockResult.txt",
 			);
@@ -408,56 +432,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4638BEA39AD3C1D7793245A1 /* [CP] Embed Pods Frameworks */ = {
+		7E30604CE87260A75897795D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Clarifai/Clarifai.framework",
-				"${PODS_ROOT}/Clarifai-Apple-SDK/Clarifai_Apple_SDK.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai_Apple_SDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73159E0DDD3F6D73C6A111C7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -471,7 +460,9 @@
 				B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */,
 				B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */,
 				B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */,
+				14B7FC3C2300875000D3B363 /* ConstantsAPI.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
+				14B7FC422300C6FF00D3B363 /* Style.swift in Sources */,
 				B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */,
 				B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */,
 				B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */,
@@ -488,7 +479,6 @@
 				B37FDFC421092E980066B3FD /* PostImageService.swift in Sources */,
 				B37FDFC221092AAF0066B3FD /* StorageService.swift in Sources */,
 				B3CBA84521180083004E43D1 /* TermsViewController.swift in Sources */,
-				B3D2195B21A7DCE4009CF9B5 /* ConstantsAPI.swift in Sources */,
 				B3AA812C22FB9300001CEF19 /* ProfileViewController.swift in Sources */,
 				B3921152210BA3BF0048E6DD /* String+Substring.swift in Sources */,
 				B3E1EF1921067177009B24AA /* PhotoResultsViewController.swift in Sources */,
@@ -672,7 +662,7 @@
 		};
 		B3F902C42104316A00FD552E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F71A71C5D99283F065EBDA1 /* Pods-AllergyIndicator.debug.xcconfig */;
+			baseConfigurationReference = 41C68C5DED0622DA746970AB /* Pods-AllergyIndicator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -695,7 +685,7 @@
 		};
 		B3F902C52104316A00FD552E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48817A649DE516C1BFEF8DF6 /* Pods-AllergyIndicator.release.xcconfig */;
+			baseConfigurationReference = 6F579C114AA5299EB094041D /* Pods-AllergyIndicator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
