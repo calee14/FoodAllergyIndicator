@@ -20,6 +20,8 @@ class ActualUserLoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var termsOfUseButton: UIButton!
+    
     let activityData = ActivityData()
 
     override func viewDidLoad() {
@@ -70,6 +72,12 @@ class ActualUserLoginViewController: UIViewController {
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func termOfUseTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
+        let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        self.navigationController?.present(termsViewController, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -135,8 +143,6 @@ class ActualUserLoginViewController: UIViewController {
                 User.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
-                
-                HomeViewController.shouldDisplayDisclaimer = true
                 
                 strongSelf.view.window?.rootViewController = initialViewController
                 strongSelf.view.window?.makeKeyAndVisible()

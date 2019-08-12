@@ -73,7 +73,7 @@ class CreateUsernameViewController: UIViewController {
     
     @IBAction func termsOfUseButtonTapped(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)        
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
         let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
         self.navigationController?.present(termsViewController, animated: true, completion: nil)
     }
@@ -180,9 +180,7 @@ class CreateUsernameViewController: UIViewController {
                 User.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
-                
-                HomeViewController.shouldDisplayDisclaimer = true
-                
+                        
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }

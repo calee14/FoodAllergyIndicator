@@ -9,7 +9,7 @@
 import UIKit
 
 let titleText = "WHATS\nINGREDIENT"
-let descriptionText = "AI-powered camera to easily analyse food ingredients and help you make healthy choices."
+let descriptionText = "AI-powered camera to help you find the general ingredients in your food."
 let registerButtonTitle = "GET STARTED"
 let loginButtonTitle = "Already an user? Sign in!"
 

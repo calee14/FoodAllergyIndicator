@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     
     // Global class variables
-    static var shouldDisplayDisclaimer: Bool = false
     var showNavagationController: Bool = false
     
     // Create an instance of the warning controller
@@ -77,34 +76,6 @@ class HomeViewController: UIViewController {
 //        }
         
         warningController = WarningController()
-        // Only display the disclaimer once every ten times
-        let randNum = arc4random_uniform(10)
-        
-        // Only display the disclaimer only when the user first opens the app
-        
-        /* If the user seques back to the HomeViewController the viewDidLoad function will run again
-        so we only want to display the disclaimer once.
-        */
-        if !HomeViewController.shouldDisplayDisclaimer {
-            
-            HomeViewController.shouldDisplayDisclaimer = randNum <= 10 ? true : false
-        }
-        
-        // Check if we should display the disclaimer
-        if HomeViewController.shouldDisplayDisclaimer {
-            
-            // Get the path of the file that contains the contents of the disclaimer
-            let filePath = Bundle.main.path(forResource: "PopupContent", ofType: "txt")
-            
-            // Retrieve the contents in the file
-            guard let content = try? String(contentsOf: URL(fileURLWithPath: filePath!)) else { return }
-            
-            // Put a disclaimer on screen
-            self.warningController?.showWarningMenu(title: "What Ingredient", content: content)
-            
-            // Reset the should-display-disclaimer variable
-            HomeViewController.shouldDisplayDisclaimer = false
-        }
         
         /* Check if the user has added any ingredients
         If not then send them to the view controller to add it
@@ -143,19 +114,6 @@ class HomeViewController: UIViewController {
         if warningController != nil {
             warningController?.handleDismiss()
         }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        /* Cancel touches when they are being moved to avoid
-         the error, failed to make handshake
-         */
-        // Uncomment this one line
-        // ...
-//        touches.removeAll()
-//        for touch in touches {
-//            touch.view?.isUserInteractionEnabled = false
-//        }
-        return
     }
     
     func setupLayout() {
@@ -353,7 +311,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -367,7 +324,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoHighlight(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -383,7 +339,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func takePhotoEnd(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleSetAllergiesButton(status: false)
         toggleTermsButton(status: false)
@@ -397,7 +352,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesButtonTapped(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -411,7 +365,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func setAllergiesHighlight(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -427,7 +380,6 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func setAllergiesEnd(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleTermsButton(status: false)
@@ -441,7 +393,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsTapped(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -455,7 +406,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsHighlight(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -471,7 +421,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func termsEnd(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -485,7 +434,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func leftButtonTapped(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -500,7 +448,6 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func leftButtonHighlighted(_ sender: UIButton) {
-        print("swiper")
         // Change the status of the other buttons to non-user enabled
         toggleTakePhotoButton(status: false)
         toggleSetAllergiesButton(status: false)
@@ -533,7 +480,6 @@ class HomeViewController: UIViewController {
     @IBAction func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
             // Perform action.
-            print("swiper")
         }
     }
     

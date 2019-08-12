@@ -198,9 +198,25 @@
                                     <action selector="loginButtonPressed:" destination="o08-W3-RXv" eventType="touchUpInside" id="N1b-lC-m8L"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCZ-1A-JdM">
+                                <rect key="frame" x="25" y="431" width="364" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DEi-b3-NT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="By tapping Continue, you agree to our Terms of Service.">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="termOfUseTapped:" destination="o08-W3-RXv" eventType="touchUpInside" id="FFu-tZ-gZE"/>
+                                    <action selector="termsOfUseButtonTapped:" destination="Lqv-Ac-JgK" eventType="touchUpInside" id="R5n-CI-OrG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="RCZ-1A-JdM" firstAttribute="trailing" secondItem="xW5-Ry-acl" secondAttribute="trailing" id="1n3-wq-ssZ"/>
                             <constraint firstItem="F7t-4W-EbO" firstAttribute="top" secondItem="NSF-pl-em1" secondAttribute="bottom" constant="10" id="51c-cY-Rub"/>
                             <constraint firstItem="tOy-Dv-6YZ" firstAttribute="trailing" secondItem="Xjw-q9-qII" secondAttribute="trailing" constant="25" id="6Mq-j4-nfD"/>
                             <constraint firstItem="tOy-Dv-6YZ" firstAttribute="trailing" secondItem="NSF-pl-em1" secondAttribute="trailing" constant="25" id="6jj-V9-G8R"/>
@@ -211,11 +227,13 @@
                             <constraint firstItem="FUT-Bu-gZI" firstAttribute="top" secondItem="ffK-dV-LsC" secondAttribute="top" id="J1c-h1-lce"/>
                             <constraint firstItem="tOy-Dv-6YZ" firstAttribute="trailing" secondItem="F7t-4W-EbO" secondAttribute="trailing" constant="25" id="M6L-mX-D9d"/>
                             <constraint firstAttribute="trailing" secondItem="FUT-Bu-gZI" secondAttribute="trailing" id="OPD-uP-UTG"/>
+                            <constraint firstItem="RCZ-1A-JdM" firstAttribute="leading" secondItem="xW5-Ry-acl" secondAttribute="leading" id="R9F-gY-fcE"/>
                             <constraint firstItem="tOy-Dv-6YZ" firstAttribute="trailing" secondItem="xW5-Ry-acl" secondAttribute="trailing" constant="25" id="Sih-HJ-lbG"/>
                             <constraint firstItem="FUT-Bu-gZI" firstAttribute="leading" secondItem="ffK-dV-LsC" secondAttribute="leading" id="TpJ-hm-1L9"/>
                             <constraint firstItem="NSF-pl-em1" firstAttribute="leading" secondItem="tOy-Dv-6YZ" secondAttribute="leading" constant="25" id="Zuf-nN-s2R"/>
                             <constraint firstItem="Xjw-q9-qII" firstAttribute="top" secondItem="FUT-Bu-gZI" secondAttribute="bottom" constant="15" id="ha1-EH-4f1"/>
                             <constraint firstItem="Xjw-q9-qII" firstAttribute="leading" secondItem="tOy-Dv-6YZ" secondAttribute="leading" constant="25" id="mwP-g5-Vtn"/>
+                            <constraint firstItem="RCZ-1A-JdM" firstAttribute="top" secondItem="xW5-Ry-acl" secondAttribute="bottom" id="wd0-4C-Zq0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tOy-Dv-6YZ"/>
                     </view>
@@ -225,6 +243,7 @@
                         <outlet property="errorLabel" destination="Xjw-q9-qII" id="efA-gm-l9a"/>
                         <outlet property="loginButton" destination="xW5-Ry-acl" id="hKj-OM-Vhc"/>
                         <outlet property="passwordTextField" destination="F7t-4W-EbO" id="I1a-7h-VZe"/>
+                        <outlet property="termsOfUseButton" destination="RCZ-1A-JdM" id="DN1-J3-UuT"/>
                         <outlet property="usernameTextField" destination="NSF-pl-em1" id="yUb-6T-ryK"/>
                     </connections>
                 </viewController>
@@ -332,8 +351,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Frs-D6-SoP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="By tapping Confirm, you agree to our terms of use.">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="By tapping Confirm, you agree to our Terms of Service.">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
