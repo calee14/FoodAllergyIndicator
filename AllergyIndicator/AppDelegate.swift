@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let apikey = ConstantsAPI.clarifaiapi.key
         Clarifai.sharedInstance().start(apiKey: apikey)
 
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
         // Configure LoginViewController
         configureInitialRootViewController(for: window)
         return true
