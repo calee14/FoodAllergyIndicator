@@ -9,6 +9,11 @@
 import Foundation
 
 struct Constants {
+    
+    struct Username {
+        static let domain = "@whatsingredient.com"
+    }
+    
     struct Segue {
         static let toCreateUsername = "toCreateUsername"
         static let loginUser = "loginUser"

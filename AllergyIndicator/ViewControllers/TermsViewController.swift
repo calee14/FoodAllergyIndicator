@@ -10,6 +10,7 @@ import UIKit
 
 class TermsViewController: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
@@ -18,14 +19,9 @@ class TermsViewController: UIViewController {
         
         var text: String?
         
-        // Do any additional setup after loading the view.
-        do {
-            let filePath = Bundle.main.path(forResource: "Terms", ofType: "txt")
-            text = try? String(contentsOf: URL(fileURLWithPath: filePath!))
-            textView.attributedText = attributedText(terms: text!)
-        } catch {
-            print(error.localizedDescription)
-        }
+        let filePath = Bundle.main.path(forResource: "Terms", ofType: "txt")
+        text = try? String(contentsOf: URL(fileURLWithPath: filePath!))
+        textView.attributedText = attributedText(terms: text!)
         
         // Run layout code
         setupLayout()
@@ -46,6 +42,14 @@ class TermsViewController: UIViewController {
     func setupLayout() {
         // Text view can't be seletable
         textView.isSelectable = false
+        
+        let image = UIImage(named:"ic_close")?.withRenderingMode(.alwaysTemplate)
+        backButton.setImage(image, for: .normal)
+        backButton.tintColor = UIColor.darkGray
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func attributedText(terms: String) -> NSAttributedString {

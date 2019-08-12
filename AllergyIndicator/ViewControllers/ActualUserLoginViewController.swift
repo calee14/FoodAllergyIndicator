@@ -8,6 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import NVActivityIndicatorView
+
+let signinButtonTitle = "Continue"
 
 class ActualUserLoginViewController: UIViewController {
 
@@ -17,7 +20,8 @@ class ActualUserLoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
-    
+    let activityData = ActivityData()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,24 +46,11 @@ class ActualUserLoginViewController: UIViewController {
         // Hide the error label until there is an error to display
         self.errorLabel.isHidden = true
         
-        let lightblue = UIColor(rgb: 0x0093DD)
-        let cyan = UIColor(rgb: 0x0AD2A8)
-        
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
+        backgroundView.applyGradient(colours: backgroundGradients)
         
-        backgroundView.applyGradient(colours: [lightblue, cyan])
-        
-        loginButton.layer.cornerRadius = CGFloat(10)
-        
-        // Change the layout and position of back button
-        backButton.frame = CGRect(x: 20, y: 45, width: 40, height: 40)
-        backButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
-        backButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
-        backButton.backgroundColor = .clear
-        backButton.layer.borderWidth = 2.0
-        backButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
-        backButton.layer.cornerRadius = min(backButton.frame.width, backButton.frame.height) / 2
-        
+        loginButton.applyDefaultColoredButtonStyle()
+        loginButton.setTitle(signinButtonTitle, for: .normal)
     }
     
     /* Checks the text fields if they're empty or not
@@ -100,33 +91,45 @@ class ActualUserLoginViewController: UIViewController {
         username = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!
         // temporarily create an email until require field for real email
-        let email = "\(username)@test.com"
+        let email = "\(username)\(Constants.Username.domain)"
         
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authData, error in
-            guard let strongSelf = self else { return }
-            
-            /* Handle user login
-             here ... */
+            guard let strongSelf = self else {
+                self?.loginButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                return
+            }
             
             if let error = error {
                 
                 self?.errorLabel.isHidden = false
                 print(error.localizedDescription)
-                
-                /* Add conditions for specific error descriptions
-                 here ... */
-                
+            
                 self?.loginButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 return
             }
-            guard (authData?.user) != nil else { return }
             
-            guard let firUser = Auth.auth().currentUser else { return }
+            guard (authData?.user) != nil else {
+                self?.loginButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                return
+            }
+            
+            guard let firUser = Auth.auth().currentUser else {
+                self?.loginButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                return
+            }
             
             /* Retrieve the user info from the db,
              create a new User object with the data from the db,
              then set the current User for the app to user defaults */
             UserService.retrieve(firUser, completion: { (user) in
+                strongSelf.loginButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+
                 guard let user = user else { return }
                 
                 User.setCurrent(user, writeToUserDefaults: true)
@@ -140,15 +143,4 @@ class ActualUserLoginViewController: UIViewController {
             })
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

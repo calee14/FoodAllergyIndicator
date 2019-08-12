@@ -24,6 +24,8 @@ class CreateUsernameViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var termsOfUseButton: UIButton!
+    
     let activityData = ActivityData()
 
     override func viewDidLoad() {
@@ -69,6 +71,13 @@ class CreateUsernameViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func termsOfUseButtonTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)        
+        let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        self.navigationController?.present(termsViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         /* Create a new user with the credentials he or she
          inputted */
@@ -98,7 +107,7 @@ class CreateUsernameViewController: UIViewController {
         let password = passwordTextField.text!
         /* This email variable is a concatenation of the username
          The actual email the user inputs is for IAP, receipts, and user contact */
-        let email = "\(username)@whatsingredient.com"
+        let email = "\(username)\(Constants.Username.domain)"
         let actualUserEmail = emailTextField.text!
         
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
