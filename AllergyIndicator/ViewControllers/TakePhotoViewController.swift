@@ -31,6 +31,7 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var pictureLeftLabel: UILabel!
     
     // MARK: - Properties
     
@@ -56,6 +57,7 @@ class TakePhotoViewController: UIViewController {
         // Set up UI elements
         setupLayout()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePictureCount(_:)), name: .pictureCountDidUpdate, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -112,6 +114,11 @@ class TakePhotoViewController: UIViewController {
         // Activate the camera button
         self.captureButton.isUserInteractionEnabled = true
         
+        pictureLeftLabel.text = "\(Pictures.current.numpictures)"
+    }
+    
+    @objc func updatePictureCount(_ notification:Notification) {
+        pictureLeftLabel.text = "\(Pictures.current.numpictures)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -157,6 +164,8 @@ class TakePhotoViewController: UIViewController {
         addIngredientsButton.layer.borderColor = cyan.cgColor
         addIngredientsButton.layer.cornerRadius = 20
         addIngredientsButton.layer.borderWidth = 1.0
+        
+        pictureLeftLabel.textColor = lightBlue
     }
 
     @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {

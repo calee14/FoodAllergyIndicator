@@ -36,3 +36,7 @@ struct Constants {
         static let cellID = "cellID"
     }
 }
+
+extension Notification.Name {
+    static let pictureCountDidUpdate = Notification.Name(rawValue: "pictureCountUpdate")
+}

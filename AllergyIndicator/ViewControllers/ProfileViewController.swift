@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Clarifai_Apple_SDK
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
@@ -15,10 +16,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+
+    @IBOutlet weak var pictureLeftLabel: UILabel!
+    @IBOutlet weak var pictureTakenLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
+        setStrings();
     }
     
     func setupLayout() {
@@ -33,6 +41,13 @@ class ProfileViewController: UIViewController {
         logoutButton.backgroundColor = .clear
         logoutButton.clipsToBounds = true
         logoutButton.setBackgroundColor(color: .white, forState: .normal)
+    }
+    
+    func setStrings() {
+     
+        usernameLabel.text = User.current.username
+        emailLabel.text = User.current.email
+        pictureLeftLabel.text = "\(Pictures.current.numpictures)"
     }
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
