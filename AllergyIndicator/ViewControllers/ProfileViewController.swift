@@ -13,46 +13,27 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         setupLayout()
     }
     
     func setupLayout() {
         
-        let image = UIImage(named:"ic_close")?.withRenderingMode(.alwaysTemplate)
-        dismissButton.setImage(image, for: .normal)
-        dismissButton.tintColor = UIColor.darkGray
-        
-        let red = UIColor.init(red: 255, green: 38, blue: 0)
+        backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
+        backgroundView.applyGradient(colours: backgroundGradients)
         
         // Styles for the logout button
-        logoutButton.layer.borderColor = red.cgColor
+        logoutButton.layer.borderColor = UIColor.init(red: 255, green: 38, blue: 0).cgColor
         logoutButton.layer.borderWidth = CGFloat(2)
-        logoutButton.layer.cornerRadius = CGFloat(10)
+        logoutButton.layer.cornerRadius = 5.0
         logoutButton.backgroundColor = .clear
         logoutButton.clipsToBounds = true
-        self.logoutButton.setBackgroundColor(color: .white, forState: .normal)
+        logoutButton.setBackgroundColor(color: .white, forState: .normal)
     }
-    
-    func goToLoginStoryboards() {
-        // Seque to the TermsViewController
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//        self.navigationController?.pushViewController(loginViewController, animated: true)
-        self.navigationController?.setViewControllers([loginViewController], animated: true)
-    }
-    
-    func removeUserDefaultsData() {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: Constants.UserDefaults.currentUser)
-    }
-    
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -66,10 +47,21 @@ class ProfileViewController: UIViewController {
         do {
             try firebaseAuth.signOut()
             removeUserDefaultsData()
-            goToLoginStoryboards()
+            goToLanding()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    func goToLanding() {
+
+        let initialViewController = UIStoryboard.initializeViewController(for: .login)
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    func removeUserDefaultsData() {
+        UserDefaults.standard.removeObject(forKey: Constants.UserDefaults.currentUser)
     }
     
     @IBAction func logoutButtonHighlight(_ sender: UIButton) {
@@ -79,7 +71,5 @@ class ProfileViewController: UIViewController {
             self.logoutButton.backgroundColor = red
             self.logoutButton.setTitleColor(.white, for: .normal)
         }
-        
     }
-    
 }
