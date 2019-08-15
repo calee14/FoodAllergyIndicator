@@ -21,15 +21,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-g2-oys">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenlaunch" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-7R-qcn">
-                                        <rect key="frame" x="57" y="189" width="300" height="300"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-7R-qcn">
+                                        <rect key="frame" x="107" y="289.66666666666669" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1Fh-7R-qcn" secondAttribute="height" multiplier="1:1" id="E4P-5I-vd9"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Ingredient" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcG-rc-6vi">
-                                        <rect key="frame" x="50" y="519" width="314" height="48"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                        <rect key="frame" x="50" y="519.66666666666663" width="314" height="47.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,6 +42,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="1Fh-7R-qcn" firstAttribute="width" secondItem="bAa-g2-oys" secondAttribute="height" multiplier="0.3" id="4x8-K2-opk"/>
                                     <constraint firstItem="Nhz-xo-yEx" firstAttribute="leading" secondItem="bAa-g2-oys" secondAttribute="leading" constant="20" id="AJf-sS-k2p"/>
                                     <constraint firstItem="Nhz-xo-yEx" firstAttribute="top" secondItem="TcG-rc-6vi" secondAttribute="bottom" constant="30" id="D2i-av-8Jq"/>
                                     <constraint firstAttribute="bottom" secondItem="Nhz-xo-yEx" secondAttribute="bottom" constant="70" id="Rap-fx-es6"/>
@@ -421,6 +422,6 @@
     </scenes>
     <resources>
         <image name="ic_back" width="12.666666984558105" height="20.333333969116211"/>
-        <image name="screenlaunch" width="300" height="300"/>
+        <image name="img_logo" width="1000" height="1000"/>
     </resources>
 </document>

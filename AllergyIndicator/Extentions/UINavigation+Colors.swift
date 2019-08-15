@@ -84,6 +84,7 @@ extension UIView {
 }
 
 extension CALayer {
+    
     func addGradienBorder(colors:[UIColor], width:CGFloat = 1) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame =  CGRect(origin: .zero, size: self.bounds.size)

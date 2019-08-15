@@ -12,6 +12,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class ProfileViewController: UIViewController {
     }
     
     func setupLayout() {
+        
+        let image = UIImage(named:"ic_close")?.withRenderingMode(.alwaysTemplate)
+        dismissButton.setImage(image, for: .normal)
+        dismissButton.tintColor = UIColor.darkGray
         
         let red = UIColor.init(red: 255, green: 38, blue: 0)
         
@@ -46,6 +51,11 @@ class ProfileViewController: UIViewController {
     func removeUserDefaultsData() {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: Constants.UserDefaults.currentUser)
+    }
+    
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {

@@ -15,11 +15,18 @@ import Clarifai
 
 class TakePhotoViewController: UIViewController {
     
+    // Set variables for the camera zoom
+    let minimumZoom: CGFloat = 1.0
+    let maximumZoom: CGFloat = 3.0
+    var lastZoomFactor: CGFloat = 1.0
+    
     // Global class ui elements
+    @IBOutlet weak var addIngredientsButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var tosButton: UIButton!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var buttonBackground: UIView!
-    @IBOutlet weak var backHomeButton: UIButton!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonWidth: NSLayoutConstraint!
@@ -38,8 +45,6 @@ class TakePhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /* This method is called after the view controller
-         has loaded its view hierarchy into memory. */
         
         // Do any additional setup after loading the view.
         
@@ -86,7 +91,8 @@ class TakePhotoViewController: UIViewController {
         super.viewWillAppear(animated)
         /* This method is called before the view controller's
          view is about to be added to a view hierarchy */
-        
+        self.navigationController?.navigationBar.isHidden = true
+
         // Initialize the camera controller
         cameraController = CameraController()
         
@@ -124,24 +130,17 @@ class TakePhotoViewController: UIViewController {
     }
     
     func setupLayout() {
-        // Get colors
-        let lightblue = UIColor(rgb: 0x0093DD)
-        let cyan = UIColor(rgb: 0x0AD2A8)
+        
+        // Change the colors of the navigation bar
+        self.navigationController?.navigationBar.applyNavigationGradient(colors: backgroundGradients)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.alpha = 0.95
         
         // Change the size of the button
         backgroundButtonWidth.constant = 50
         backgroundButtonHeight.constant = 50
         buttonWidth.constant = 40
         buttonHeight.constant = 40
-        
-        // Change the layout and position of button
-        backHomeButton.frame = CGRect(x: 30, y: 45, width: 40, height: 40)
-        backHomeButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
-        backHomeButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
-        backHomeButton.backgroundColor = .clear
-        backHomeButton.layer.borderWidth = 2.0
-        backHomeButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
-        backHomeButton.layer.cornerRadius = min(backHomeButton.frame.width, backHomeButton.frame.height) / 2
         
         // Round off the button
         captureButton.layer.zPosition = 10
@@ -150,16 +149,15 @@ class TakePhotoViewController: UIViewController {
         captureButton.layer.cornerRadius = min(buttonWidth.constant, buttonHeight.constant) / 2
         
         // Add gradients to the background of the button
-        buttonBackground.applyGradient(colours: [lightblue, cyan])
+        buttonBackground.applyGradient(colours: backgroundGradients)
         buttonBackground.layer.cornerRadius = min(backgroundButtonWidth.constant, backgroundButtonHeight.constant) / 2
         buttonBackground.layer.masksToBounds = true
         buttonBackground.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
+        
+        addIngredientsButton.layer.borderColor = cyan.cgColor
+        addIngredientsButton.layer.cornerRadius = 20
+        addIngredientsButton.layer.borderWidth = 1.0
     }
-    
-    // Set variables for the camera zoom
-    let minimumZoom: CGFloat = 1.0
-    let maximumZoom: CGFloat = 3.0
-    var lastZoomFactor: CGFloat = 1.0
 
     @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
         
@@ -196,10 +194,15 @@ class TakePhotoViewController: UIViewController {
         }
     }
     
-    @IBAction func backHomeButtonTapped(_ sender: UIButton) {
-        // Go back to the home view controller
-        goToHomeViewController()
+    @IBAction func addIngredientsButtonTapped(_ sender: Any) {
+        
     }
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func tosButtonTapped(_ sender: Any) {
+    }    
     
     @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
         

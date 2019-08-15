@@ -18,28 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-Vy-Ev2">
-                                <rect key="frame" x="15" y="787" width="384" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWi-y9-Iuc">
+                                <rect key="frame" x="30" y="64" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="GD9-nS-0Qz"/>
+                                    <constraint firstAttribute="width" constant="30" id="DHi-Dy-q7L"/>
+                                    <constraint firstAttribute="height" constant="30" id="JQZ-rb-9b5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="ic_close"/>
                                 <connections>
-                                    <action selector="logoutButtonHighlight:" destination="aEZ-uj-6u9" eventType="touchDown" id="9GF-wX-mJV"/>
-                                    <action selector="logoutButtonPressed:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="ILD-qh-zjK"/>
+                                    <action selector="dismissButtonTapped:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="rMJ-AU-GAR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1P-ZY-FWA">
-                                <rect key="frame" x="15" y="94" width="384" height="21"/>
+                                <rect key="frame" x="15" y="114" width="384" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VK-po-0nZ">
-                                <rect key="frame" x="15" y="125" width="384" height="100"/>
+                                <rect key="frame" x="15" y="145" width="384" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4c-g9-Ibx">
                                         <rect key="frame" x="10" y="10" width="80" height="18"/>
@@ -88,13 +86,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meG-AX-ydR">
-                                <rect key="frame" x="15" y="235" width="384" height="21"/>
+                                <rect key="frame" x="15" y="255" width="384" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucV-rq-hNi">
-                                <rect key="frame" x="15" y="266" width="384" height="100"/>
+                                <rect key="frame" x="15" y="286" width="384" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx0-PZ-U96">
                                         <rect key="frame" x="10" y="10" width="115" height="18"/>
@@ -142,11 +140,28 @@
                                     <constraint firstItem="lID-u4-qPE" firstAttribute="leading" secondItem="DMw-bB-AzD" secondAttribute="trailing" constant="15" id="xCH-kZ-0Ak"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-Vy-Ev2">
+                                <rect key="frame" x="15" y="787" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GD9-nS-0Qz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonHighlight:" destination="aEZ-uj-6u9" eventType="touchDown" id="9GF-wX-mJV"/>
+                                    <action selector="logoutButtonPressed:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="ILD-qh-zjK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f1P-ZY-FWA" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="5iC-RH-WY9"/>
+                            <constraint firstItem="GWi-y9-Iuc" firstAttribute="top" secondItem="8o6-Xy-mqJ" secondAttribute="top" constant="20" id="8kS-Lj-7c2"/>
+                            <constraint firstItem="f1P-ZY-FWA" firstAttribute="top" secondItem="GWi-y9-Iuc" secondAttribute="bottom" constant="20" id="AHi-kc-CRU"/>
                             <constraint firstItem="3VK-po-0nZ" firstAttribute="top" secondItem="f1P-ZY-FWA" secondAttribute="bottom" constant="10" id="BAP-zZ-TtF"/>
+                            <constraint firstItem="GWi-y9-Iuc" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="30" id="DSk-wu-Su0"/>
                             <constraint firstItem="meG-AX-ydR" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="Fpl-5a-Gee"/>
                             <constraint firstItem="ucV-rq-hNi" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="Yhs-H4-IPC"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="meG-AX-ydR" secondAttribute="trailing" constant="15" id="asv-dt-JES"/>
@@ -154,7 +169,6 @@
                             <constraint firstItem="s54-Vy-Ev2" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="d33-1p-MLG"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="bottom" secondItem="s54-Vy-Ev2" secondAttribute="bottom" constant="25" id="dmm-ib-plS"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="s54-Vy-Ev2" secondAttribute="trailing" constant="15" id="hBv-kc-RrD"/>
-                            <constraint firstItem="f1P-ZY-FWA" firstAttribute="top" secondItem="8o6-Xy-mqJ" secondAttribute="top" constant="50" id="hVR-I7-fjs"/>
                             <constraint firstItem="3VK-po-0nZ" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="idi-L1-N5a"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="ucV-rq-hNi" secondAttribute="trailing" constant="15" id="nb5-ln-dCx"/>
                             <constraint firstItem="meG-AX-ydR" firstAttribute="top" secondItem="3VK-po-0nZ" secondAttribute="bottom" constant="10" id="qLs-s0-lYB"/>
@@ -164,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="8o6-Xy-mqJ"/>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="GWi-y9-Iuc" id="Xq1-S9-7O4"/>
                         <outlet property="logoutButton" destination="s54-Vy-Ev2" id="yTV-aH-2uI"/>
                     </connections>
                 </viewController>
@@ -172,4 +187,7 @@
             <point key="canvasLocation" x="182.60869565217394" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_close" width="20" height="20"/>
+    </resources>
 </document>

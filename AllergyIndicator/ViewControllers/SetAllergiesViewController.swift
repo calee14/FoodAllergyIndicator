@@ -25,6 +25,9 @@ class SetAllergiesViewController: UIViewController {
         setupLayout()
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.isHidden = false
+
         // Load the ingredients from the db
         // Required for when the app has to pop a view controller
         IngredientService.retrieveAllIngredients(for: User.current) { (ingredients) in
