@@ -42,7 +42,7 @@ class TakePhotoViewController: UIViewController {
     // Instance of the WarningController - displays messages
     var warningController: WarningController?
     // Image view to display the image the camera took
-    let imageView = UIImageView()
+    var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,23 @@ class TakePhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //        IAPHelper.shared.getProducts()
+        // Initialize the camera controller
+        cameraController = CameraController()
+        
+        // Start up the camera
+        cameraController?.prepare {(error) in
+            // Print the error if given one
+            if let error = error {
+                print(error)
+            }
+            // Display the camera feed on the preiview view
+            try? self.cameraController?.displayPreview(on: self.previewView)
+        }
+        
+        // Show the camera view on screen
+        self.cameraController?.previewLayer?.isHidden = false
+        
+        imageView = UIImageView()
         
         // Initialize the warning controller
         warningController = WarningController()
@@ -95,24 +112,11 @@ class TakePhotoViewController: UIViewController {
          view is about to be added to a view hierarchy */
         self.navigationController?.navigationBar.isHidden = true
 
-        // Initialize the camera controller
-        cameraController = CameraController()
-        
-        // Start up the camera
-        cameraController?.prepare {(error) in
-            // Print the error if given one
-            if let error = error {
-                print(error)
-            }
-            // Display the camera feed on the preiview view
-            try? self.cameraController?.displayPreview(on: self.previewView)
-        }
-        
-        // Show the camera view on screen
-        self.cameraController?.previewLayer?.isHidden = false
         
         // Activate the camera button
         self.captureButton.isUserInteractionEnabled = true
+        
+        cameraController?.previewLayer?.isHidden = false
         
         pictureLeftLabel.text = "\(Pictures.current.numpictures)"
     }
@@ -127,9 +131,9 @@ class TakePhotoViewController: UIViewController {
          view being removed from a view hierarchy */
         
         // Remove the image view that stores the picture the user took
-        self.imageView.removeFromSuperview()
+        self.imageView?.removeFromSuperview()
         
-        self.cameraController = nil
+//        self.cameraController = nil
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -271,10 +275,11 @@ class TakePhotoViewController: UIViewController {
                 
                 // change ui view
                 self.cameraController?.previewLayer?.isHidden = true
-                self.imageView.contentMode = .scaleAspectFill
-                self.imageView.frame = self.previewView.frame
-                self.imageView.image = image
-                self.previewView.insertSubview(self.imageView, at: 0)
+                self.imageView?.contentMode = .scaleAspectFill
+                self.imageView?.frame = self.previewView.frame
+                self.imageView?.image = image
+                self.previewView.insertSubview(self.imageView!, at: 0)
+                print("subviews \(self.previewView.subviews)")
                 
                 // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (generalModelConcepts) in
