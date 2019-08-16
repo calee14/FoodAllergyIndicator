@@ -27,6 +27,10 @@ class Ingredient {
         return self.ingredientName
     }
     
+    func getDisplayIngredientName() -> String {
+        return self.ingredientName.capitalized
+    }
+    
     func getIsImportant() -> Bool {
         return self.isImportant
     }

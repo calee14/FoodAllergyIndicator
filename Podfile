@@ -19,4 +19,7 @@ target 'AllergyIndicator' do
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.7'
 
+  # loading spinner
+  pod 'NVActivityIndicatorView'
+
 end

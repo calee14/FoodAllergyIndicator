@@ -9,8 +9,11 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import NVActivityIndicatorView
 
 typealias FIRUser = FirebaseAuth.User
+
+let signUpButtonTitle = "Confirm"
 
 class CreateUsernameViewController: UIViewController {
 
@@ -21,14 +24,19 @@ class CreateUsernameViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var termsOfUseButton: UIButton!
     
+    let activityData = ActivityData()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if #available(iOS 12.0, *) {
             passwordTextField.textContentType = .newPassword
         } else {
             // Fallback on earlier versions
         }
+        
         passwordTextField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
         setupLayout()
@@ -40,26 +48,14 @@ class CreateUsernameViewController: UIViewController {
     }
     
     func setupLayout() {
-        let lightblue = UIColor(rgb: 0x0093DD)
-        let cyan = UIColor(rgb: 0x0AD2A8)
-        
         errorLabel.isHidden = true
         
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
 
-        backgroundView.applyGradient(colours: [lightblue, cyan])
+        backgroundView.applyGradient(colours: backgroundGradients)
         
-        nextButton.layer.cornerRadius = CGFloat(10)
-        
-        // Change the layout and position of back button
-        backButton.frame = CGRect(x: 20, y: 45, width: 40, height: 40)
-        backButton.titleLabel?.textColor = UIColor(red: 249, green: 248, blue: 248)
-        backButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
-        backButton.backgroundColor = .clear
-        backButton.layer.borderWidth = 2.0
-        backButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
-        backButton.layer.cornerRadius = min(backButton.frame.width, backButton.frame.height) / 2
-        
+        nextButton.applyDefaultColoredButtonStyle()
+        nextButton.setTitle(signUpButtonTitle, for: .normal)
     }
     
     /* Checks the text fields if they're empty or not
@@ -73,6 +69,14 @@ class CreateUsernameViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func termsOfUseButtonTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
+        let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        termsViewController.term = .terms
+        self.navigationController?.present(termsViewController, animated: true, completion: nil)
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -104,9 +108,11 @@ class CreateUsernameViewController: UIViewController {
         let password = passwordTextField.text!
         /* This email variable is a concatenation of the username
          The actual email the user inputs is for IAP, receipts, and user contact */
-        let email = "\(username)@test.com"
+        let email = "\(username)\(Constants.Username.domain)"
         let actualUserEmail = emailTextField.text!
         
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
         UserService.doesEmailExist(for: actualUserEmail) { (doesExists) in
             if doesExists {
                 self.errorLabel.isHidden = false
@@ -114,29 +120,12 @@ class CreateUsernameViewController: UIViewController {
                     self.errorLabel.text = "This email is already in use by another account."
                 })
                 self.nextButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 return
             } else if !doesExists {
                 self.createNewUser(email: email, actualUserEmail: actualUserEmail, username: username, password: password)
             }
         }
-        
-        
-//        UserService.create(firUser, username: username) { (user) in
-//            guard let user = user else { return }
-//
-//            User.setCurrent(user, writeToUserDefaults: true)
-//
-//            AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-//                print(allergy)
-//            })
-//
-//            let initialViewController = UIStoryboard.initializeViewController(for: .main)
-//
-//            HomeViewController.shouldDisplayDisclaimer = true
-//
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-//        }
     }
     
     /* Use Firebase Auth API to create a new user,
@@ -147,8 +136,7 @@ class CreateUsernameViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
             if let error = error {
                 self.errorLabel.isHidden = false
-                //                assertionFailure("Error: creating user: \(error.localizedDescription)")
-                print(error.localizedDescription)
+
                 if error.localizedDescription == "The email address is badly formatted." {
                     UIView.animate(withDuration: 0.1, animations: {
                         self.errorLabel.text = "This is an invalid email address."
@@ -160,31 +148,40 @@ class CreateUsernameViewController: UIViewController {
                     })
                 } else if error.localizedDescription == "The password must be 6 characters long or more." {
                     UIView.animate(withDuration: 0.1, animations: {
-                        self.errorLabel.text = "The password must be 6 characters long or more."
+                        self.errorLabel.text = "The password must be 6 characters long or more.awdawawdawdawd"
                     })
                 }
                 self.nextButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 return
             }
-            guard (authData?.user) != nil else { return }
+            
+            guard (authData?.user) != nil else {
+                self.nextButton.isUserInteractionEnabled = true
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                return
+            }
             
             guard let firUser = Auth.auth().currentUser,
                 let username = self.usernameTextField.text,
-                !username.isEmpty else { return }
+                !username.isEmpty else {
+                    self.nextButton.isUserInteractionEnabled = true
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    return
+            }
             
             UserService.create(firUser, username: username, email: actualUserEmail) { (user) in
-                guard let user = user else { return }
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+
+                guard let user = user else {
+                    self.nextButton.isUserInteractionEnabled = true
+                    return
+                }
                 
                 User.setCurrent(user, writeToUserDefaults: true)
                 
-                //                AllergyService.setAllergies(for: user, allergies: AllergyService.initializeEmptyAllergies(), completion: { (allergy) in
-                //                    print("The allergy: \(allergy) has been set")
-                //                })
-                
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
-                
-                HomeViewController.shouldDisplayDisclaimer = true
-                
+                        
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }

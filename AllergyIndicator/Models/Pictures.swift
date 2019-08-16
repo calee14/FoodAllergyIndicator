@@ -46,6 +46,7 @@ class Pictures: Codable {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }
         _current = newPicture
+        NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
     }
     
     static func incrementPictureCount(by num: Int=100) {
@@ -55,5 +56,6 @@ class Pictures: Codable {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }
         _current = newPicture
+        NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
     }
 }

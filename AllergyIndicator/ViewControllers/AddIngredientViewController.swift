@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class AddIngredientViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class AddIngredientViewController: UIViewController {
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var ingredientButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    let activityData = ActivityData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,30 +31,22 @@ class AddIngredientViewController: UIViewController {
     }
     
     func setupLayout() {
-        // Setting ui colors
-        let lightblue = UIColor(rgb: 0x0093DD)
-        
         errorLabel.isHidden = true
         
         // Changing properties of the header uitextview
         ingredientHeaderTextView.textAlignment = .center
-        ingredientHeaderTextView.text = "Set important ingredients!\n The app will alert you\n when you take a picture of a food\n that contains the ingredient you set."
+        ingredientHeaderTextView.text = "Set important ingredients!\n The app will alert you\n when you take a picture of a food\n that contains the ingredients you set."
         ingredientHeaderTextView.layer.borderWidth = 1
         ingredientHeaderTextView.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
         ingredientHeaderTextView.layer.cornerRadius = 5
         ingredientHeaderTextView.clipsToBounds = true
-//        ingredientHeaderTextView.translatesAutoresizingMaskIntoConstraints = true
         ingredientHeaderTextView.isScrollEnabled = false
         ingredientHeaderTextView.isUserInteractionEnabled = false
-//        ingredientHeaderTextView.textContainerInset = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 30)
         ingredientHeaderTextView.sizeToFit()
         
         // Change the layout of the set button
         ingredientButton.setTitleColor(.white, for: .normal)
-        ingredientButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        ingredientButton.layer.cornerRadius = 6
-        ingredientButton.clipsToBounds = true
-        ingredientButton.backgroundColor = lightblue
+        ingredientButton.applyDefaultColoredButtonStyle()
     }
     
     // Calls this function when the tap is recognized.
@@ -87,24 +81,15 @@ class AddIngredientViewController: UIViewController {
     }
     
     func addIngredientPopVC(ingredient: String) {
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
             // list ingredients here if must
             
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             // move back to the previous view controller once the ingredient has been added
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AddIngredientViewController: UITextFieldDelegate {

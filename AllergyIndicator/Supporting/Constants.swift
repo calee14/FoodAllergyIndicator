@@ -9,6 +9,11 @@
 import Foundation
 
 struct Constants {
+    
+    struct Username {
+        static let domain = "@whatsingredient.com"
+    }
+    
     struct Segue {
         static let toCreateUsername = "toCreateUsername"
         static let loginUser = "loginUser"
@@ -30,4 +35,8 @@ struct Constants {
     struct WarningMenu {
         static let cellID = "cellID"
     }
+}
+
+extension Notification.Name {
+    static let pictureCountDidUpdate = Notification.Name(rawValue: "pictureCountUpdate")
 }

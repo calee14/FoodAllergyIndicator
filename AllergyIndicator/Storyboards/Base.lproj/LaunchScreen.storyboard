@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenlaunch" translatesAutoresizingMaskIntoConstraints="NO" id="7Cu-KE-Bar">
-                                <rect key="frame" x="150" y="296" width="75" height="75"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Cu-KE-Bar">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="Fz8-TI-5G8"/>
-                                    <constraint firstAttribute="height" constant="75" id="hdU-Qn-mD9"/>
+                                    <constraint firstAttribute="height" constant="300" id="MOa-UA-3ba"/>
+                                    <constraint firstAttribute="width" constant="300" id="yge-tK-Nlc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="screenlaunch" width="1000" height="1000"/>
+        <image name="img_logo" width="1000" height="1000"/>
     </resources>
 </document>
