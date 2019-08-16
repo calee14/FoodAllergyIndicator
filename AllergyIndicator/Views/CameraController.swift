@@ -114,7 +114,7 @@ class CameraController : NSObject {
         self.previewLayer?.connection?.videoOrientation = .portrait
         
         view.layer.insertSublayer(self.previewLayer!, at: 0)
-        self.previewLayer?.frame = view.frame
+        self.previewLayer?.frame = view.bounds
     }
     
     func captureImage(completion: @escaping (UIImage?, Error?) -> Void) {
