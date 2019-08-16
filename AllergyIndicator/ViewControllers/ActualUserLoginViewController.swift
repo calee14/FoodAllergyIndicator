@@ -77,6 +77,7 @@ class ActualUserLoginViewController: UIViewController {
     @IBAction func termOfUseTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
         let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        termsViewController.term = .terms
         self.navigationController?.present(termsViewController, animated: true, completion: nil)
     }
     

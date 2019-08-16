@@ -206,7 +206,7 @@
                                     <constraint firstAttribute="height" constant="50" id="DEi-b3-NT1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="By tapping Continue, you agree to our Terms of Service.">
+                                <state key="normal" title="By tapping Continue, you agree to our Terms of Use.">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -353,7 +353,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Frs-D6-SoP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="By tapping Confirm, you agree to our Terms of Service.">
+                                <state key="normal" title="By tapping Confirm, you agree to our Terms of Use.">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

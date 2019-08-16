@@ -8,10 +8,21 @@
 
 import UIKit
 
+let termsFilePath = Bundle.main.path(forResource: "Terms", ofType: "txt")
+let thirdPartyLicenseFilePath = Bundle.main.path(forResource: "ThirdyPartyLicense", ofType: "txt")
+
+enum TermsType: String {
+    case terms
+    case thirdyPartyLicense
+}
+
+
 class TermsViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var textView: UITextView!
+    
+    var term: TermsType = .terms
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +30,14 @@ class TermsViewController: UIViewController {
         
         var text: String?
         
-        let filePath = Bundle.main.path(forResource: "Terms", ofType: "txt")
-        text = try? String(contentsOf: URL(fileURLWithPath: filePath!))
-        textView.attributedText = attributedText(terms: text!)
+        switch (term) {
+        case .terms:
+            text = try? String(contentsOf: URL(fileURLWithPath: termsFilePath!))
+            textView.attributedText = termsAttributedText(terms: text!)
+        case .thirdyPartyLicense:
+            text = try? String(contentsOf: URL(fileURLWithPath: thirdPartyLicenseFilePath!))
+            textView.attributedText = licenseAttributedText(terms: text!)
+        }
         
         // Run layout code
         setupLayout()
@@ -52,7 +68,7 @@ class TermsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func attributedText(terms: String) -> NSAttributedString {
+    func termsAttributedText(terms: String) -> NSAttributedString {
         
         let string = terms as NSString
         
@@ -67,6 +83,25 @@ class TermsViewController: UIViewController {
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "User Submissions — Image, Video, Audio Files"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Liability of Cappillen Lee and What Ingredient APP"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Disclaimer"))
+        
+        return attributedString
+    }
+    
+    func licenseAttributedText(terms: String) -> NSAttributedString {
+        
+        let string = terms as NSString
+        
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [.font: UIFont(name: "AvenirNext-Bold", size: 18)!]
+        
+        let attributedString = NSMutableAttributedString(string: string as String, attributes: [.font: UIFont(name: "AvenirNext-Regular", size: 16)!])
+        
+        // Part of string to be bold
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Third Party Licenses & Notices"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Firebase (firebase-ios-sdk)"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "SwifyJSON"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Alamofire"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "NVActivityIndicatorView"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Clarifai (clarifai-apple-sdk)"))
         
         return attributedString
     }

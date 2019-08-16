@@ -325,9 +325,9 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njN-qe-FtU">
-                                        <rect key="frame" x="292" y="61.666666666666629" width="112" height="30"/>
+                                        <rect key="frame" x="315" y="61.666666666666629" width="89" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Terms of Service">
+                                        <state key="normal" title="Terms of Use">
                                             <color key="titleColor" red="0.1764705882" green="0.2274509804" blue="0.2274509804" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

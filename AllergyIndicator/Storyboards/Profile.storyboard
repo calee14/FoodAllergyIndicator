@@ -160,7 +160,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-Vy-Ev2">
-                                <rect key="frame" x="15" y="787" width="384" height="50"/>
+                                <rect key="frame" x="25" y="787" width="364" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GD9-nS-0Qz"/>
                                 </constraints>
@@ -173,21 +173,45 @@
                                     <action selector="logoutButtonPressed:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="ILD-qh-zjK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czl-zv-ftK">
+                                <rect key="frame" x="25" y="727" width="213" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Thirdy Party Licenses &amp; Notices">
+                                    <color key="titleColor" red="0.1764705882" green="0.2274509804" blue="0.2274509804" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="thirdPartyLicenseButtonTapped:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="jXU-gd-QA4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-Ae-IX0">
+                                <rect key="frame" x="25" y="682" width="89" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Terms of Use">
+                                    <color key="titleColor" red="0.1764705882" green="0.2274509804" blue="0.2274509804" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tosButtonTapped:" destination="aEZ-uj-6u9" eventType="touchUpInside" id="QbJ-xa-31f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HPk-ch-U0N" firstAttribute="trailing" secondItem="8o6-Xy-mqJ" secondAttribute="trailing" id="2xB-VR-bfC"/>
                             <constraint firstItem="f1P-ZY-FWA" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="30" id="5iC-RH-WY9"/>
+                            <constraint firstItem="s54-Vy-Ev2" firstAttribute="top" secondItem="czl-zv-ftK" secondAttribute="bottom" constant="30" id="8UZ-8a-lUM"/>
                             <constraint firstItem="3VK-po-0nZ" firstAttribute="top" secondItem="f1P-ZY-FWA" secondAttribute="bottom" constant="10" id="BAP-zZ-TtF"/>
                             <constraint firstItem="meG-AX-ydR" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="30" id="Fpl-5a-Gee"/>
+                            <constraint firstItem="S0g-Ae-IX0" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="25" id="LBY-S9-QbJ"/>
                             <constraint firstItem="ucV-rq-hNi" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="30" id="Yhs-H4-IPC"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="meG-AX-ydR" secondAttribute="trailing" constant="30" id="asv-dt-JES"/>
                             <constraint firstItem="f1P-ZY-FWA" firstAttribute="top" secondItem="HPk-ch-U0N" secondAttribute="bottom" constant="20" id="c2G-Ac-eaO"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="f1P-ZY-FWA" secondAttribute="trailing" constant="30" id="cU1-6w-VB4"/>
-                            <constraint firstItem="s54-Vy-Ev2" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="15" id="d33-1p-MLG"/>
+                            <constraint firstItem="s54-Vy-Ev2" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="25" id="d33-1p-MLG"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="bottom" secondItem="s54-Vy-Ev2" secondAttribute="bottom" constant="25" id="dmm-ib-plS"/>
+                            <constraint firstItem="czl-zv-ftK" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="25" id="gG8-NL-2PO"/>
+                            <constraint firstItem="czl-zv-ftK" firstAttribute="top" secondItem="S0g-Ae-IX0" secondAttribute="bottom" constant="15" id="gTh-1Q-GL4"/>
                             <constraint firstItem="HPk-ch-U0N" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" id="hBZ-os-0Ua"/>
-                            <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="s54-Vy-Ev2" secondAttribute="trailing" constant="15" id="hBv-kc-RrD"/>
+                            <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="s54-Vy-Ev2" secondAttribute="trailing" constant="25" id="hBv-kc-RrD"/>
                             <constraint firstItem="3VK-po-0nZ" firstAttribute="leading" secondItem="8o6-Xy-mqJ" secondAttribute="leading" constant="30" id="idi-L1-N5a"/>
                             <constraint firstItem="8o6-Xy-mqJ" firstAttribute="trailing" secondItem="ucV-rq-hNi" secondAttribute="trailing" constant="30" id="nb5-ln-dCx"/>
                             <constraint firstItem="meG-AX-ydR" firstAttribute="top" secondItem="3VK-po-0nZ" secondAttribute="bottom" constant="10" id="qLs-s0-lYB"/>

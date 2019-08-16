@@ -50,6 +50,21 @@ class ProfileViewController: UIViewController {
         pictureLeftLabel.text = "\(Pictures.current.numpictures)"
     }
     
+    @IBAction func tosButtonTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
+        let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        termsViewController.term = .terms
+        self.present(termsViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func thirdPartyLicenseButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TermsOfService", bundle: nil)
+        let termsViewController = storyboard.instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        termsViewController.term = .thirdyPartyLicense
+        self.present(termsViewController, animated: true, completion: nil)
+    }
+        
     @IBAction func dismissButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

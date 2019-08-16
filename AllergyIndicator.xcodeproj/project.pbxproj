@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1499925C23065CF600D49517 /* ThirdyPartyLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1499925B23065CF600D49517 /* ThirdyPartyLicense.txt */; };
 		14B7FC3C2300875000D3B363 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */; };
 		14B7FC402300896300D3B363 /* indvl_ingredientv1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */; };
 		14B7FC422300C6FF00D3B363 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7FC412300C6FF00D3B363 /* Style.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1499925B23065CF600D49517 /* ThirdyPartyLicense.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThirdyPartyLicense.txt; sourceTree = "<group>"; };
 		14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = indvl_ingredientv1.txt; sourceTree = "<group>"; };
 		14B7FC412300C6FF00D3B363 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				B35239E1211B97770041BA36 /* PopupContent.txt */,
 				B35239DF211B4C830041BA36 /* Terms.txt */,
+				1499925B23065CF600D49517 /* ThirdyPartyLicense.txt */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				B3C0914321078C9B0058E046 /* Login.storyboard in Resources */,
 				B3AA812A22FB91E2001CEF19 /* Profile.storyboard in Resources */,
 				B3E1EF1021064B36009B24AA /* GoogleService-Info.plist in Resources */,
+				1499925C23065CF600D49517 /* ThirdyPartyLicense.txt in Resources */,
 				B3F902BC2104316A00FD552E /* Assets.xcassets in Resources */,
 				B35239E0211B4C830041BA36 /* Terms.txt in Resources */,
 				B3E1EF1C210675A8009B24AA /* SetAllergies.storyboard in Resources */,
