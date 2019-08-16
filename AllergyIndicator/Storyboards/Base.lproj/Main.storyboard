@@ -262,10 +262,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61N-G8-MX7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHATS INGREDIENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bY-TA-rEm">
-                                        <rect key="frame" x="124.66666666666669" y="17.666666666666671" width="165" height="25"/>
+                                        <rect key="frame" x="124.66666666666669" y="17.666666666666664" width="165" height="25"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -306,8 +306,8 @@
                                     <constraint firstItem="3bY-TA-rEm" firstAttribute="centerY" secondItem="61N-G8-MX7" secondAttribute="centerY" id="zqv-ZG-kak"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Y-Lh-Lsg">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                            <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Y-Lh-Lsg">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -325,7 +325,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njN-qe-FtU">
-                                        <rect key="frame" x="315" y="61.666666666666629" width="89" height="30"/>
+                                        <rect key="frame" x="315" y="60" width="89" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="Terms of Use">
                                             <color key="titleColor" red="0.1764705882" green="0.2274509804" blue="0.2274509804" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
@@ -348,10 +348,13 @@
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="top" secondItem="xW8-oc-Osi" secondAttribute="bottom" constant="10" id="6cm-zw-0bx"/>
                                     <constraint firstAttribute="trailing" secondItem="njN-qe-FtU" secondAttribute="trailing" constant="10" id="8p0-fO-qPz"/>
                                     <constraint firstItem="xW8-oc-Osi" firstAttribute="top" secondItem="Bf9-46-V4M" secondAttribute="top" constant="10" id="Icc-WZ-lkS"/>
+                                    <constraint firstItem="njN-qe-FtU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cYn-SF-G93" secondAttribute="trailing" constant="8" symbolic="YES" id="IhX-ZH-CBx"/>
+                                    <constraint firstAttribute="bottom" secondItem="njN-qe-FtU" secondAttribute="bottom" constant="60" id="QI5-z8-Ngp"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="leading" secondItem="Bf9-46-V4M" secondAttribute="leading" constant="10" id="S6H-gW-eeO"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="centerY" secondItem="Bf9-46-V4M" secondAttribute="centerY" id="bOG-Sh-zFI"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="baseline" secondItem="njN-qe-FtU" secondAttribute="firstBaseline" constant="11" symbolType="layoutAnchor" id="fGu-qK-Fil"/>
                                     <constraint firstItem="xW8-oc-Osi" firstAttribute="centerX" secondItem="cYn-SF-G93" secondAttribute="centerX" id="hzd-0b-TRY"/>
+                                    <constraint firstItem="njN-qe-FtU" firstAttribute="top" secondItem="Bf9-46-V4M" secondAttribute="top" constant="60" id="p8Z-1Q-d2s"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mog-2Y-Mvg">
@@ -396,7 +399,7 @@
                         <viewLayoutGuide key="safeArea" id="Exb-NC-AQB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Take Photo" id="obV-4J-QVx"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addIngredientsButton" destination="yIh-IP-zZp" id="2P3-zw-WgB"/>
                         <outlet property="backgroundButtonHeight" destination="X4V-KV-3jz" id="azG-tW-pmr"/>
