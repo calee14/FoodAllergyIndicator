@@ -49,6 +49,21 @@ class IAPHelper: NSObject {
             completion(iap)
         }
     }
+    
+    static func logTransactionReceipt(for user: User, transaction: SKPaymentTransaction) {
+        let ref = Database.database().reference().child("transactions").childByAutoId()
+        
+        guard let tId = transaction.transactionIdentifier else {
+            return;
+        }
+        let transactionDate = transaction.transactionDate?.timeIntervalSince1970 ?? NSDate().timeIntervalSince1970
+        ref.setValue(["email": user.email,
+                      "id": user.uid,
+                      "transaction_id": tId,
+                      "transaction_date": transactionDate,
+                      "product_id": transaction.payment.productIdentifier,
+                      "quatity": transaction.payment.quantity])
+    }
 }
 
 extension IAPHelper: SKProductsRequestDelegate {
@@ -63,13 +78,13 @@ extension IAPHelper: SKProductsRequestDelegate {
 extension IAPHelper: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
-            print(transaction.transactionState.status(), transaction.payment.productIdentifier)
             switch transaction.transactionState {
             case .purchasing:
                 break
             case .purchased:
                 let pictureAmount = 30
                 Pictures.incrementPictureCount(by: pictureAmount)
+                IAPHelper.logTransactionReceipt(for: User.current, transaction: transaction)
                 SKPaymentQueue.default().finishTransaction(transaction as SKPaymentTransaction)
                 break
             case .failed:
@@ -77,7 +92,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 break
             default:
                 queue.finishTransaction(transaction)
-//                Pictures.incrementPictureCount()
+                break;
             }
         }
     }
@@ -96,6 +111,8 @@ extension SKPaymentTransactionState {
             return "purchasing"
         case .restored:
             return "restored"
+         default:
+            return "unknown"
         }
     }
 }
