@@ -31,7 +31,7 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var backgroundButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var pictureLeftLabel: UILabel!
+    @IBOutlet weak var pictureLeftButton: UIButton!
     
     // MARK: - Properties
     
@@ -118,11 +118,11 @@ class TakePhotoViewController: UIViewController {
         
         cameraController?.previewLayer?.isHidden = false
         
-        pictureLeftLabel.text = "\(Pictures.current.numpictures)"
+        pictureLeftButton.setTitle("\(Pictures.current.numpictures)", for: .normal)
     }
     
     @objc func updatePictureCount(_ notification:Notification) {
-        pictureLeftLabel.text = "\(Pictures.current.numpictures)"
+        pictureLeftButton.setTitle("\(Pictures.current.numpictures)", for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -169,9 +169,20 @@ class TakePhotoViewController: UIViewController {
         addIngredientsButton.layer.cornerRadius = 20
         addIngredientsButton.layer.borderWidth = 1.0
         
-        pictureLeftLabel.textColor = lightBlue
+        pictureLeftButton.setTitleColor(lightBlue, for: .normal)
     }
 
+    @IBAction func purchaseButtonWasTapped(_ sender: Any) {
+        
+        IAPHelper.isIapAllowed(for: User.current) { isAllowed in
+            if (isAllowed) {
+                IAPHelper.shared.purchase(product: .Picture)
+            } else {
+                // no op
+            }
+        }
+    }
+    
     @IBAction func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
         
         // Access the camera
@@ -311,14 +322,17 @@ class TakePhotoViewController: UIViewController {
 
                 // Store image on Firebase server
                 PostImageService.create(for: image)
-//                self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: image)
             }
-    //        self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: nil)
         } else if pictureCount <= 0 {
             // Buy more pictures
-            print("The user ran out of pictures")
-            purchaseMorePictures()
-//            Pictures.incrementPictureCount()
+            // The user ran out of pictures
+            IAPHelper.isIapAllowed(for: User.current) { isAllowed in
+                if (isAllowed) {
+                    self.purchaseMorePictures()
+                } else {
+                    // no op
+                }
+            }
         }
     }
     

@@ -31,6 +31,7 @@ struct Constants {
         static let allergies = "allergies"
         static let ingredients = "ingredient"
         static let userIngredients = "userIngredients"
+        static let iap = "iap"
     }
     struct WarningMenu {
         static let cellID = "cellID"

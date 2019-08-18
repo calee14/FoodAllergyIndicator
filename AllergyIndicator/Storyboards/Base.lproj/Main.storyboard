@@ -335,26 +335,27 @@
                                             <segue destination="BrN-ky-zZY" kind="presentation" id="QR7-CT-uwC"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-oc-Osi">
-                                        <rect key="frame" x="41.666666666666664" y="10" width="12" height="37"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeL-Pg-ho8">
+                                        <rect key="frame" x="32.666666666666664" y="10" width="30" height="37"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <connections>
+                                            <action selector="purchaseButtonWasTapped:" destination="EIg-aq-XL9" eventType="touchUpInside" id="vz9-Y3-Dwu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4c8-TL-v93"/>
-                                    <constraint firstItem="cYn-SF-G93" firstAttribute="top" secondItem="xW8-oc-Osi" secondAttribute="bottom" constant="10" id="6cm-zw-0bx"/>
                                     <constraint firstAttribute="trailing" secondItem="njN-qe-FtU" secondAttribute="trailing" constant="10" id="8p0-fO-qPz"/>
-                                    <constraint firstItem="xW8-oc-Osi" firstAttribute="top" secondItem="Bf9-46-V4M" secondAttribute="top" constant="10" id="Icc-WZ-lkS"/>
+                                    <constraint firstItem="cYn-SF-G93" firstAttribute="top" secondItem="YeL-Pg-ho8" secondAttribute="bottom" constant="10" id="979-c0-N2A"/>
                                     <constraint firstItem="njN-qe-FtU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cYn-SF-G93" secondAttribute="trailing" constant="8" symbolic="YES" id="IhX-ZH-CBx"/>
                                     <constraint firstAttribute="bottom" secondItem="njN-qe-FtU" secondAttribute="bottom" constant="60" id="QI5-z8-Ngp"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="leading" secondItem="Bf9-46-V4M" secondAttribute="leading" constant="10" id="S6H-gW-eeO"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="centerY" secondItem="Bf9-46-V4M" secondAttribute="centerY" id="bOG-Sh-zFI"/>
                                     <constraint firstItem="cYn-SF-G93" firstAttribute="baseline" secondItem="njN-qe-FtU" secondAttribute="firstBaseline" constant="11" symbolType="layoutAnchor" id="fGu-qK-Fil"/>
-                                    <constraint firstItem="xW8-oc-Osi" firstAttribute="centerX" secondItem="cYn-SF-G93" secondAttribute="centerX" id="hzd-0b-TRY"/>
+                                    <constraint firstItem="YeL-Pg-ho8" firstAttribute="centerX" secondItem="cYn-SF-G93" secondAttribute="centerX" id="oK3-kg-wty"/>
                                     <constraint firstItem="njN-qe-FtU" firstAttribute="top" secondItem="Bf9-46-V4M" secondAttribute="top" constant="60" id="p8Z-1Q-d2s"/>
+                                    <constraint firstItem="YeL-Pg-ho8" firstAttribute="top" secondItem="Bf9-46-V4M" secondAttribute="top" constant="10" id="t8K-9u-xgu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mog-2Y-Mvg">
@@ -408,7 +409,7 @@
                         <outlet property="buttonHeight" destination="ARN-pH-8RD" id="M3G-od-GSP"/>
                         <outlet property="buttonWidth" destination="92T-wN-w7S" id="nEq-HJ-C5l"/>
                         <outlet property="captureButton" destination="lni-3K-YXD" id="dqC-e4-sgo"/>
-                        <outlet property="pictureLeftLabel" destination="xW8-oc-Osi" id="IiE-C3-QNY"/>
+                        <outlet property="pictureLeftButton" destination="YeL-Pg-ho8" id="w5N-6o-OsT"/>
                         <outlet property="previewView" destination="Y5Y-Lh-Lsg" id="oRJ-Li-mMB"/>
                         <outlet property="settingsButton" destination="Cwu-eX-GCH" id="RMz-8F-AZr"/>
                         <outlet property="tosButton" destination="njN-qe-FtU" id="Zjt-8I-PAG"/>

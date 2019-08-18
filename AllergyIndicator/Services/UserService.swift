@@ -58,5 +58,5 @@ struct UserService {
                 completion(false)
             }
         }
-    }
+    }    
  }

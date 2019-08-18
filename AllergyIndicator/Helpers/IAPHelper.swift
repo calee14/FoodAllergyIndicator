@@ -8,6 +8,8 @@
 
 import Foundation
 import StoreKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class IAPHelper: NSObject {
     
@@ -16,7 +18,8 @@ class IAPHelper: NSObject {
     
     var products = [SKProduct]()
     let paymentQueue = SKPaymentQueue.default()
-    
+    private static let DatabaseIapPath = Constants.DatabasePath.iap
+
     func getProducts() {
         let products: Set = [IAPProduct.Picture.rawValue]
         let request = SKProductsRequest(productIdentifiers: products)
@@ -29,6 +32,22 @@ class IAPHelper: NSObject {
         guard let productToPurchase = products.filter({ $0.productIdentifier == product.rawValue }).first else { return }
         let payment = SKPayment(product: productToPurchase)
         paymentQueue.add(payment)
+    }
+    
+    static func isIapAllowed(for user: User, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("settings")
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            guard let settings = snapshot.value as? [String: Any] else {
+                completion(false)
+                return
+            }
+            guard let iap = settings["iap"] as? Bool else {
+                completion(false)
+                return
+            }
+            completion(iap)
+        }
     }
 }
 
