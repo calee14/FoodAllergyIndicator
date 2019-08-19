@@ -2,7 +2,7 @@
 //  Style.swift
 //  AllergyIndicator
 //
-//  Created by Chon-Hei Ma on 8/11/19.
+//  Created by Cappillen on 8/11/19.
 //  Copyright © 2019 Cappillen. All rights reserved.
 //
 
