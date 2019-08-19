@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Clarifai
 import Alamofire
 import SwiftyJSON
+import Clarifai_Apple_SDK
 
 struct CheckService {
-    static func checkIngredients(concepts: [ClarifaiConcept], impIngredients: [Ingredient], completion: ([String]?, [String]?) -> Void) {
+    static func checkIngredients(concepts: [Concept], impIngredients: [Ingredient], completion: ([String]?, [String]?) -> Void) {
         
         var locatedImpIngredients = [String]()
         var regularIngredients = [String]()
@@ -21,24 +21,24 @@ struct CheckService {
         for concept in concepts {
             var foundAnIngredient = false
             for ingredient in impIngredients {
-                let coefficient = diceCoefficient(s: concept.conceptName, t: ingredient.getIngredientName())
+                let coefficient = diceCoefficient(s: concept.name, t: ingredient.getIngredientName())
                 let threshold = 50.0
                 if coefficient * 100.0 > threshold {
-                    locatedImpIngredients.append(concept.conceptName)
+                    locatedImpIngredients.append(concept.name)
                     foundAnIngredient = true
                     break
                 }
             }
             
             if !foundAnIngredient {
-                regularIngredients.append(concept.conceptName)
+                regularIngredients.append(concept.name)
             }
         }
         
         completion(locatedImpIngredients, regularIngredients)
     }
     
-    static func checkAllergies(ingreidents: [ClarifaiConcept], allergies: [Allergy], completion: ([String]?, [String]?) -> Void) {
+    static func checkAllergies(ingreidents: [Concept], allergies: [Allergy], completion: ([String]?, [String]?) -> Void) {
         var possibleAllergies = [String]()
         var safeIngredients = [String]()
         let usersAllergies = getOnlyAllergic(allergens: allergies)
@@ -47,11 +47,11 @@ struct CheckService {
             var foundAllergy = false
             for j in usersAllergies {
                 if j.isAllergic {
-                    let coefficient = diceCoefficient(s: i.conceptName, t: j.allergyName)
+                    let coefficient = diceCoefficient(s: i.name, t: j.allergyName)
                     /* This threshold decides whether the user is allergic to this food */
                     let threshold = 50.0
                     if coefficient * 100.0 > threshold {
-                        possibleAllergies.append(i.conceptName)
+                        possibleAllergies.append(i.name)
                         foundAllergy = true
                         break
                     }
@@ -68,7 +68,7 @@ struct CheckService {
                 }
             }
             if !foundAllergy {
-                safeIngredients.append(i.conceptName)
+                safeIngredients.append(i.name)
             }
         }
         completion(possibleAllergies, safeIngredients)

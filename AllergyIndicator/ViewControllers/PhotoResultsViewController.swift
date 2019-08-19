@@ -8,7 +8,6 @@
 
 import UIKit
 import Clarifai_Apple_SDK
-import Clarifai
 
 class PhotoResultsViewController: UIViewController {
 
@@ -18,7 +17,7 @@ class PhotoResultsViewController: UIViewController {
     @IBOutlet weak var backPictureButton: UIButton!
     
     // MARK: - Properties
-    var concepts: [ClarifaiConcept] = []
+    var concepts: [Concept] = []
     var importantIngredients: [String] = []
     var safeIngredients: [String] = []
     var ingredientsInFood: [String] = []
@@ -39,7 +38,7 @@ class PhotoResultsViewController: UIViewController {
         warningController = WarningController()
         
         // If there is no camera access request access
-        if concepts == [ClarifaiConcept]() && !noFood{
+        if concepts == [Concept]() && !noFood{
             self.handleNoCamera()
             return
         }
@@ -82,10 +81,9 @@ class PhotoResultsViewController: UIViewController {
                     
                     // enter into a dispatch group
                     group.enter()
-                    DatabaseIngredientService.doesIngredientExists(ingredientName: concept.conceptName, completion: { (exist) in
-                        print("\(concept.conceptName) does exists \(exist)")
+                    DatabaseIngredientService.doesIngredientExists(ingredientName: concept.name, completion: { (exist) in
                         if !exist {
-                            foods.append(concept.conceptName)
+                            foods.append(concept.name)
                         }
                         group.leave()
                     })
