@@ -28,7 +28,7 @@ struct DatabaseIngredientService {
     }
     
     static func doesIngredientExists(ingredientName: String, completion: @escaping (Bool) -> Void) {
-        print("in the checking func")
+
         let ref = Database.database().reference().child(ingredientsPath)
         // NOTE: need to check if this func still works
         ref.observeSingleEvent(of: .value) { (snapshot) in

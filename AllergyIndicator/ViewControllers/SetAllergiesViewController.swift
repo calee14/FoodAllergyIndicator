@@ -66,7 +66,6 @@ class SetAllergiesViewController: UIViewController {
         // Navigate to the results view controller
         self.navigationController?.pushViewController(addingredientViewController, animated: true)
     }
-    
 }
 
 extension SetAllergiesViewController: UITableViewDelegate, UITableViewDataSource {

@@ -16,7 +16,6 @@ struct CheckService {
         
         var locatedImpIngredients = [String]()
         var regularIngredients = [String]()
-        let usersImpIngredients = impIngredients
         
         for concept in concepts {
             var foundAnIngredient = false

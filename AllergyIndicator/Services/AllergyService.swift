@@ -44,10 +44,7 @@ struct AllergyService {
         
         ref.observeSingleEvent(of: .value) { (snapshot) in
             guard let dict = snapshot.value as? [String : Bool] else { return }
-//            for (key, bool) in dict {
-//                let allergy = Allergy(key, isAllergic: bool)
-//                allergens.append(allergy)
-//            }
+
             for allergyName in Constants.Allergens.allergenNames {
                 if !snapshot.hasChild(allergyName) {
                     let allergy = Allergy(allergyName, isAllergic: false)

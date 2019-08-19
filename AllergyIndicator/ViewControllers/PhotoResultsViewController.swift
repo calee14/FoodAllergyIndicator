@@ -69,16 +69,7 @@ class PhotoResultsViewController: UIViewController {
                 var foods = [String]()
                 let group = DispatchGroup()
                 for concept in self.concepts {
-                    /* MARK: Make sure to only accept concepts above 90 percent confidence */
-                    let threshold: Float = 50.0
-                    
-                    print(concept.score)
-                    
-                    // Handing some threshold stuff
-//                    if concept.score < threshold {
-//                        continue
-//                    }
-                    
+               
                     // enter into a dispatch group
                     group.enter()
                     DatabaseIngredientService.doesIngredientExists(ingredientName: concept.name, completion: { (exist) in
@@ -91,14 +82,13 @@ class PhotoResultsViewController: UIViewController {
                 group.notify(queue: .main) {
                     print(foods)
                     CheckService.checkRecipe(foodQueries: foods) { (result) in
-                        guard let ingredients = result else { return }
+                        guard let _ = result else { return }
                         // need to update the check ingredient recipe func
                         /*
                         guard let allergiesInRecipe = CheckService.checkIngredientsInRecipe(recipeIngredients: ingredients, allergies: usersIngredients) else { return }
                         self.allergens.append(contentsOf: allergiesInRecipe)
                         self.combineAllergensAndSafeIngredientsAndUpdateTable()
                         */
-                        print("reached here")
                         self.showWarningMenu(doesContainIngredients: self.importantIngredients.count >= 1)
                     }
                 }
