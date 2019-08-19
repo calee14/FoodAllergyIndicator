@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = attributes
-        
+
+        IAPHelper.shared.getProducts()
+
         // Configure LoginViewController
         configureInitialRootViewController(for: window)
         return true

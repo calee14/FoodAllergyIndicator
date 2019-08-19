@@ -45,10 +45,7 @@ class TakePhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        //        IAPHelper.shared.getProducts()
+            
         // Initialize the camera controller
         cameraController = CameraController()
         
@@ -268,9 +265,6 @@ class TakePhotoViewController: UIViewController {
         let onGoingtransactions = IAPHelper.shared.paymentQueue.transactions.isEmpty
         if !onGoingtransactions { return }
         
-        // Decrement the picture count
-        Pictures.decrementPictureCount()
-        
         // Access the picture count
         let pictureCount = Pictures.current.numpictures
         
@@ -283,13 +277,15 @@ class TakePhotoViewController: UIViewController {
                     return
                 }
                 
+                // Decrement the picture count
+                Pictures.decrementPictureCount()
+                
                 // change ui view
                 self.cameraController?.previewLayer?.isHidden = true
                 self.imageView?.contentMode = .scaleAspectFill
                 self.imageView?.frame = self.previewView.frame
                 self.imageView?.image = image
                 self.previewView.insertSubview(self.imageView!, at: 0)
-                print("subviews \(self.previewView.subviews)")
                 
                 // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (generalModelConcepts) in
@@ -346,7 +342,7 @@ class TakePhotoViewController: UIViewController {
     
     func goToShowResultsViewController(concepts: [Concept], image: UIImage?) {
         // Retrieve the storyboard the app is going to seque to
-        let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
         
@@ -363,7 +359,7 @@ class TakePhotoViewController: UIViewController {
     
     func goToShowResultsViewController(image: UIImage?) {
         // Retrieve the storyboard the app is going to seque to
-        let storyboard = UIStoryboard(name: "TakePhoto", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let photoResultsController = storyboard.instantiateViewController(withIdentifier: "PhotoResultsViewController") as! PhotoResultsViewController
         
