@@ -2,24 +2,81 @@ Terms and Conditions of Use
 
 PLEASE READ THESE TERMS AND CONDITIONS OF USE CAREFULLY BEFORE USING THIS APP.
 
-By using this app, you signify your acceptance to these Terms and Conditions. If you do not agree to all of these Terms and Conditions of use, do not use this app!
-We may revise and update these Terms and Conditions at any time. We reserve the sole right to modify or terminate the app, including any features at any time without notice to you. Your continued usage of the app will mean you accept those changes.
+Please read these Terms of Service (the “Terms of Service”) fully and carefully before using the Whats Ingredeitn software application. These Terms of Service set forth the legally binding terms and conditions for your use of the app. If you do not agree to be bound by these Terms of Service, you must not access or use the app. By using this app, you signify your acceptance to these Terms and Conditions. We may revise and update these Terms and Conditions of use at any time.
 
-Termination
-We may terminate or suspend access to our app immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms.
-All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+1. Registration
 
-The App Does Not Provide Medical Advice
-All contents of the What Ingredient app, are for informational purposes only. The content is not intended to be a substitute for professional medical advice or diagnosis. Always seek the advice of your physician or any qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this app.
-If you think you may have a medical emergency, call your doctor or 911 immediately. What Ingredient app does not recommend or endorse any specific opinions or information that may be mentioned on the app. Reliance on any information provided by What Ingredient APP is solely at your own risk.
+1.1 Prior to using the WhatsIngredient App and Services, you must register for a user account (an “Account”) using accurate and complete information and keep your Account information updated. You shall not: (i) select or use as a username a name of another person with the intent to impersonate that person; (ii) use as a username a name subject to any rights of a person other than you without appropriate authorization; or (iii) use, as a username, a name that is otherwise offensive, vulgar or obscene. You are solely responsible for the activity that occurs on your Account, and for keeping your Account user name and password secure. You may never use another person’s user account or registration information for the WhatsIngredient App without permission. You must notify us immediately of: (a) any change in your eligibility to use the WhatsIngredient App (including any changes to or revocation of any licenses from state authorities), (b) a breach of security involving your Account, registration information, WhatsIngredient App, or (c) unauthorized use of your Account. You should never publish, distribute or post login information for your Account. If the security of your Account is compromised, please contact WhatsIngredient immediately to delete your Account.
 
-User Submissions — Image, Video, Audio Files
-By taking any photos on the What Ingredient app,  you grant to What Ingredient a perpetual, non-exclusive, worldwide, royalty-free license of use;  you certify that any person pictured in the submitted photo (or, if a minor, his/her parent/legal guardian) authorizes What Ingredient to use; and you agree to indemnify  What Ingredient  and its affiliates and employees and hold them harmless from any and all claims and expenses, including attorneys' fees, arising from the media and/or your failure to comply with these the terms described in this document.
+1.2 As between the parties, Customer hereby grants to WhatsIngredient a non-exclusive, worldwide, royalty-free right to use, copy store, transmit, modify, create derivative works of and display the Customer Data to the extent reasonably necessary to provide the WhatsIngredient Services to Customer.
 
-Liability of Cappillen Lee and What Ingredient APP
-The use of the What Ingredient APP and the Content is at your own risk.
+1.3 We also reserve the right to access, read, preserve, and disclose any information as we reasonably believe is necessary to (i) satisfy any applicable law, regulation, legal process or governmental request, (ii) enforce these Terms of Service, including investigation of potential violations hereof, (iii) detect, prevent, or otherwise address fraud, security or technical issues, (iv) respond to user support requests, or (v) protect the rights, property or safety of us, our users and the public.
 
-Disclaimer
-The information contained on What Ingredient app is for general information purposes only. What Ingredient app assumes no responsibility for errors or omissions in the contents on the Service.
-In no event shall What Ingredient app be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in any action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. What Ingredient does not warrant that the app is free of viruses or other harmful components.
-This app is designed for educational purposes only. You should not rely on this information as a substitute for, nor does it replace, professional medical advice, diagnosis, or treatment.
+2. The application and the service
+
+2.1 The App Does Not Provide Medical Advice. All contents of the What Ingredient app, are for informational purposes only. The content is not intended to be a substitute for professional medical advice or diagnosis. Always seek the advice of your physician or any qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this app. If you think you may have a medical emergency, call your doctor or 911 immediately. What Ingredient app does not recommend or endorse any specific opinions or information that may be mentioned on the app. Reliance on any information provided by What Ingredient APP is solely at your own risk.
+
+2.2 User Submissions — Image, Video, Audio Files. By taking any photos on the Whats Ingredient app,  you grant to Whats Ingredient a perpetual, non-exclusive, worldwide, royalty-free license of use;  you certify that any person pictured in the submitted photo (or, if a minor, his/her parent/legal guardian) authorizes WhatsIngredient to use; and you agree to indemnify  What Ingredient  and its affiliates and employees and hold them harmless from any and all claims and expenses, including attorneys' fees, arising from the media and/or your failure to comply with these the terms described in this document.
+
+3. Limitation on Liability
+
+3.1 Liability of Cappillen Lee and Whats Ingredient app. The use of the What Ingredient APP and the Content is at your own risk.
+
+3.2 THE SITE AND SERVICES ARE PROVIDED ON AN “AS-IS” AND “AS AVAILABLE” BASIS, AND WHATSINGREDIENT EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, ACCURACY, OR NON-INFRINGEMENT. WE MAKE NO WARRANTY THAT THE SITE AND/OR SERVICES WILL MEET YOUR REQUIREMENTS, WILL BE AVAILABLE ON AN UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE BASIS, OR WILL BE ACCURATE, RELIABLE, FREE OF VIRUSES OR OTHER HARMFUL CODE, COMPLETE, LEGAL, OR SAFE.
+
+3.3 The information contained on Whats Ingredient app is for general information purposes only. What Ingredient app assumes no responsibility for errors or omissions in the contents on the Service. In no event shall What Ingredient app be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in any action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. What Ingredient does not warrant that the app is free of viruses or other harmful components. This app is designed for educational purposes only. You should not rely on this information as a substitute for, nor does it replace, professional medical advice, diagnosis, or treatment.
+
+4. Term & Termination
+
+4.1 Termination. We may terminate or suspend access to our app immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms. All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+
+4.2 Effect of Termination. Upon any termination of this Agreement, (i) Customer shall immediately cease all use of and access to the WhatsIngredient Services. Termination of this Agreement is not an exclusive remedy and the exercise of either party of any remedy under this Agreement will be without prejudice to any other remedies it may have under this Agreement, by law, or otherwise.
+
+4.3 Data Storage and Wind Down. We reserve the sole right to modify or terminate the app, including any features at any time without notice to you. Your continued usage of the app will mean you accept those changes.
+
+5. Rules of conduct
+
+5.1 As a condition of use, you promise not to use the WhatsIngredient App for any purpose that is prohibited by these Terms of Service. You are responsible for all of your activity in connection with the WhatsIngredient App.
+
+5.2 You shall not (and shall not permit any third party to) either (a) take any action or (b) upload, download, post, submit or otherwise distribute or facilitate distribution of any Content on or through the Site, Abacus App or Services, including without limitation any User Content, that:
+
+    i. infringes any patent, trademark, trade secret, copyright, right of publicity or other right of any other person or entity or violates any law or contractual duty;
+
+    ii. you know is false, misleading, untruthful or inaccurate;
+
+    iii. is unlawful, threatening, abusive, harassing, defamatory, libelous, deceptive, fraudulent, invasive of another's privacy, tortious, obscene, vulgar, pornographic, offensive, profane, contains or depicts nudity, contains or depicts sexual activity, or is otherwise inappropriate as determined by us in our sole discretion;
+
+    iv. constitutes unauthorized or unsolicited advertising, junk or bulk email (“spamming”);
+
+    v. contains software viruses or any other computer codes, files, or programs that are designed or intended to disrupt, damage, limit or interfere with the proper function of any software, hardware, or telecommunications equipment or to damage or obtain unauthorized access to any system, data, password or other information of ours or of any third party;
+
+    vi. impersonates any person or entity, including any of our employees or representatives; or
+
+    vii. includes anyone’s identification documents or sensitive financial information without that person’s authorization.
+
+5.3 You shall not: (i) take any action that imposes or may impose (as determined by us in our sole discretion) an unreasonable or disproportionately large load on our infrastructure; (ii) interfere or attempt to interfere with the proper working of the WhatsIngredient App; (iii) bypass, circumvent or attempt to bypass or circumvent any measures we may use to prevent or restrict access to the WhatsIngredient app (or other accounts, computer systems or networks connected to the WhatsIngredient App or Services); (iv) run any form of auto-responder or “spam” on the WhatsIngredient App or Services; (v) use manual or automated software, devices, or other processes to “crawl” or “spider” on WhatsIngredient App; (vi) harvest or scrape any Content from WhatsIngredient App or Services; or (vii) otherwise take any action in violation of our guidelines and policies.
+
+6. Ownership
+
+6.1 The WhatsIngredient App are licensed and not sold to you. WhatsIngredient reserves all rights not expressly granted to you in these Terms of Service. These Terms of Service do not grant you any rights to the trademarks or service marks of WhatsIngredient.
+
+7. General
+
+7.1 Waiver of Class or Consolidated Actions.  ALL CLAIMS AND DISPUTES WITHIN THE SCOPE OF THIS ARBITRATION AGREEMENT MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS, AND CLAIMS OF MORE THAN ONE CUSTOMER OR USER CANNOT BE ARBITRATED OR LITIGATED JOINTLY OR CONSOLIDATED WITH THOSE OF ANY OTHER CUSTOMER OR USER.
+
+7.2 Confidentiality.  All aspects of the arbitration proceeding, including the award of the arbitrator and compliance therewith, shall be strictly confidential.  The parties agree to maintain confidentiality unless otherwise required by law. This paragraph shall not prevent a party from submitting to a court of law any information necessary to enforce this Agreement, to enforce an arbitration award, or to seek injunctive or equitable relief.
+
+7.3 Severability.  If any part or parts of this Arbitration Agreement are found under the law to be invalid or unenforceable by a court of competent jurisdiction, then such specific part or parts shall be of no force and effect and shall be severed and the remainder of the Agreement shall continue in full force and effect.
+
+7.4 Right to Waive.  Any or all of the rights and limitations set forth in this Arbitration Agreement may be waived by the party against whom the claim is asserted.  Such waiver shall not waive or affect any other portion of this Arbitration Agreement.
+
+7.5 Survival of Agreement.  This Arbitration Agreement will survive the termination of your relationship with Whats Ingredient application.
+
+7.6 Small Claims Court.  Notwithstanding the foregoing, either Whats Ingredient or you may bring an individual action in small claims court.
+
+7.7 Emergency Equitable Relief.  Notwithstanding the foregoing, either party may seek emergency equitable relief before a state or federal court in order to maintain the status quo pending arbitration.  A request for interim measures shall not be deemed a waiver of any other rights or obligations under this Arbitration Agreement.
+
+7.8 Claims Not Subject to Arbitration.  Notwithstanding the foregoing, claims of defamation, violation of the Computer Fraud and Abuse Act, and infringement or misappropriation of the other party’s patent, copyright, trademark or trade secrets shall not be subject to this Arbitration Agreement.
+
+7.9 Courts. In any circumstances where the foregoing Arbitration Agreement permits the parties to litigate in court, the parties hereby agree to submit to the personal jurisdiction of the courts located within San Francisco County, California, for such purpose
+

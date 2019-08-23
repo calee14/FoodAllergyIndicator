@@ -78,12 +78,14 @@ class TermsViewController: UIViewController {
         
         // Part of string to be bold
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Terms and Conditions of Use"))
-        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Termination"))
-        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "The App Does Not Provide Medical Advice"))
-        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "User Submissions — Image, Video, Audio Files"))
-        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Liability of Cappillen Lee and What Ingredient APP"))
-        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Disclaimer"))
-        
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "1. Registration"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "2. The application and the service"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "3. Limitation on Liability"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "4. Term & Termination"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "5. Rules of conduct"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "6. Ownership"))
+        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "7. General"))
+
         return attributedString
     }
     
