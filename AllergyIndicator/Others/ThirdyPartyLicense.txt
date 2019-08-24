@@ -1,6 +1,6 @@
 Third Party Licenses & Notices
 
-WHATS INGREDIENT use third party open source softwares with licenses. 
+WHATSINGREDIENT use third party open source softwares with licenses. 
 
 Firebase (firebase-ios-sdk)
 
