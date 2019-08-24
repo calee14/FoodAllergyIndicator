@@ -18,9 +18,7 @@ struct PredictService {
         model = Clarifai.sharedInstance().generalModel
         
         let image = Image(image: image)
-        
         let dataAsset = DataAsset.init(image: image)
-        
         let input = Input.init(dataAsset: dataAsset)
         let inputs = [input]
         
@@ -31,7 +29,6 @@ struct PredictService {
             }
             completion(concepts)
         }
-        
     }
     
     static func predictFoodImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
