@@ -12,6 +12,12 @@ If you want to use the app you can download it on the App Store. [Link will be s
 It should be intuitive enough to open the app in Xcode and running it on a simulator. 
 If you want to use the app you can download it on the App Store. [Link will be soon available](). May expect some delays due refactoring and the long app store review times. 
 
+# Compatibility
+- CocoaPods
+- Swift 5
+- Xcode 10+
+- iPhone & iPad
+
 # Built With
 - [Clarifai](https://clarifai.com) - Computer Vision API
 - [Firebase](https://firebase.google.com) - Backend for mobile apps
