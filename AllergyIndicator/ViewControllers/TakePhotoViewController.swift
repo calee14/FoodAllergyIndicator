@@ -45,7 +45,7 @@ class TakePhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         // Initialize the camera controller
         cameraController = CameraController()
         
@@ -130,10 +130,6 @@ class TakePhotoViewController: UIViewController {
         self.imageView?.removeFromSuperview()
         
 //        self.cameraController = nil
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
     func setupLayout() {

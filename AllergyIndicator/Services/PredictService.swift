@@ -13,9 +13,7 @@ struct PredictService {
     static func predictFoodInImage(image: UIImage, completion: @escaping ([Concept]?) -> Void) {
         // initialize variables
         var concepts: [Concept] = []
-        var model: Model!
-        
-        model = Clarifai.sharedInstance().generalModel
+        let model = Clarifai.sharedInstance().generalModel
         
         let image = Image(image: image)
         let dataAsset = DataAsset.init(image: image)
@@ -25,7 +23,9 @@ struct PredictService {
         model.predict(inputs) { (outputs, error) in
             guard let outputs = outputs else { return completion(nil) }
             for output in outputs {
-                concepts.append(contentsOf: output.dataAsset.concepts!)
+                if let dataConcepts = output.dataAsset.concepts {
+                    concepts.append(contentsOf: dataConcepts)
+                }
             }
             completion(concepts)
         }

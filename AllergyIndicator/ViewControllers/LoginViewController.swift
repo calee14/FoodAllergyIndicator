@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
         backgroundView.applyGradient(colours: backgroundGradients)
     
         titleLabel.text = titleText

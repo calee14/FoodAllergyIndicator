@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="krh-jZ-fUW">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -42,7 +42,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="krh-jZ-fUW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bSj-RK-Z86">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
@@ -62,11 +62,11 @@
             <objects>
                 <viewController storyboardIdentifier="TakePhotoViewController" id="EIg-aq-XL9" customClass="TakePhotoViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czI-Wd-v9t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61N-G8-MX7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsIngredient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bY-TA-rEm">
                                         <rect key="frame" x="138.33333333333331" y="17.666666666666664" width="137.33333333333331" height="25"/>
@@ -111,7 +111,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Y-Lh-Lsg">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -119,7 +119,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf9-46-V4M">
-                                <rect key="frame" x="0.0" y="746" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="586" width="414" height="150"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aibyclarifai" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-SF-G93">
                                         <rect key="frame" x="10" y="57" width="75" height="36"/>
@@ -163,7 +163,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mog-2Y-Mvg">
-                                <rect key="frame" x="177" y="782" width="60" height="60"/>
+                                <rect key="frame" x="177" y="631" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lni-3K-YXD">
                                         <rect key="frame" x="5" y="5" width="50" height="50"/>
@@ -188,6 +188,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mog-2Y-Mvg" firstAttribute="centerY" secondItem="njN-qe-FtU" secondAttribute="centerY" id="5i7-k5-XGe"/>
                             <constraint firstItem="Y5Y-Lh-Lsg" firstAttribute="top" secondItem="61N-G8-MX7" secondAttribute="bottom" id="6Ek-Mi-4kA"/>
                             <constraint firstItem="Y5Y-Lh-Lsg" firstAttribute="leading" secondItem="Exb-NC-AQB" secondAttribute="leading" id="9Qo-ZA-HK6"/>
                             <constraint firstItem="Bf9-46-V4M" firstAttribute="leading" secondItem="Exb-NC-AQB" secondAttribute="leading" id="Aci-pm-HzH"/>
@@ -199,7 +200,6 @@
                             <constraint firstItem="Y5Y-Lh-Lsg" firstAttribute="trailing" secondItem="Exb-NC-AQB" secondAttribute="trailing" id="g9X-lX-y1a"/>
                             <constraint firstItem="mog-2Y-Mvg" firstAttribute="centerX" secondItem="czI-Wd-v9t" secondAttribute="centerX" id="lQw-pe-tRm"/>
                             <constraint firstItem="61N-G8-MX7" firstAttribute="top" secondItem="Exb-NC-AQB" secondAttribute="top" id="uEQ-zL-YQj"/>
-                            <constraint firstItem="Exb-NC-AQB" firstAttribute="bottom" secondItem="mog-2Y-Mvg" secondAttribute="bottom" constant="20" id="vUa-Hf-sSj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Exb-NC-AQB"/>
                     </view>
@@ -234,11 +234,11 @@
             <objects>
                 <viewController storyboardIdentifier="PhotoResultsViewController" id="lG4-sI-iUi" customClass="PhotoResultsViewController" customModule="AllergyIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L2G-BW-Tsi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZP-nB-xVJ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="240"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="240"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxq-Ue-qNP">
                                 <rect key="frame" x="10" y="98" width="30" height="30"/>
@@ -261,7 +261,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pMM-X6-DdG">
-                                <rect key="frame" x="0.0" y="292" width="414" height="570"/>
+                                <rect key="frame" x="0.0" y="268" width="414" height="468"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultsCell" rowHeight="43" id="NLd-Od-BE6" customClass="ResultsTableViewCell" customModule="AllergyIndicator" customModuleProvider="target">
