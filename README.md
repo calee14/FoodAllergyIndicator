@@ -1,6 +1,12 @@
 # WhatsIngredient
 WhatsIngredient is an app that allows users to take pictures of their food and identify if there is any ingredients in the picture that is in user's watchlist. 
 
+# Feature List
+- Flexible UI built with Auto Layout
+- Firebase for API side operation and data storage
+- Clarifai for image analyzation 
+- RecipePuppy for recipe API
+
 # Getting started
 If you're a developer hoping to make changes to my code or just wants to play around with it you can type the command below in your terminal:
 ```
