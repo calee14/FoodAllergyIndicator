@@ -34,7 +34,7 @@ If you want to use the app you can download it on the App Store. [Link will be s
 - **Cap Lee** 
 
 # License
-The WhatsIngredient project is available for free use, as described by the LICENSE (Apache 2.0).
+The WhatsIngredient project is available for free use, as described by the [LICENSE](https://github.com/calee14/FoodAllergyIndicator/blob/master/LICENSE) (Apache 2.0).
 
 # Plan of attack
 ## SUMMER OF 2019
