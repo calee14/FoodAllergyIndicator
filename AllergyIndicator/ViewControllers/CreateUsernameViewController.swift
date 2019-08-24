@@ -33,8 +33,6 @@ class CreateUsernameViewController: UIViewController {
         
         if #available(iOS 12.0, *) {
             passwordTextField.textContentType = .newPassword
-        } else {
-            // Fallback on earlier versions
         }
         
         passwordTextField.isSecureTextEntry = true
@@ -51,7 +49,6 @@ class CreateUsernameViewController: UIViewController {
         errorLabel.isHidden = true
         
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: backgroundView.frame.height)
-
         backgroundView.applyGradient(colours: backgroundGradients)
         
         nextButton.applyDefaultColoredButtonStyle()
@@ -61,10 +58,10 @@ class CreateUsernameViewController: UIViewController {
     /* Checks the text fields if they're empty or not
      returns true if empty and false if not empty */
     func textFieldsEmpty() -> Bool {
-        if(usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty) {
-            return true
+        if (usernameTextField.text == nil || passwordTextField.text == nil) {
+            return true;
         }
-        return false
+        return usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

@@ -30,16 +30,12 @@ class ActualUserLoginViewController: UIViewController {
         // For the password text field making sure everything is hidden
         if #available(iOS 12.0, *) {
             passwordTextField.textContentType = .newPassword
-        } else {
-            // Fallback on earlier versions
         }
         passwordTextField.isSecureTextEntry = true
         
-        // Adds tap recoginizer to hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        // Do any additional setup after loading the view.
         setupLayout()
     }
     
@@ -58,10 +54,10 @@ class ActualUserLoginViewController: UIViewController {
     /* Checks the text fields if they're empty or not
      returns true if empty and false if not empty */
     func textFieldsEmpty() -> Bool {
-        if(usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty) {
-            return true
+        if (usernameTextField.text == nil || passwordTextField.text == nil) {
+            return true;
         }
-        return false
+        return usernameTextField.text!.isEmpty && passwordTextField.text!.isEmpty
     }
     
     //Calls this function when the tap is recognized.
@@ -111,10 +107,7 @@ class ActualUserLoginViewController: UIViewController {
             }
             
             if let error = error {
-                
                 self?.errorLabel.isHidden = false
-                print(error.localizedDescription)
-            
                 self?.loginButton.isUserInteractionEnabled = true
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 return
@@ -144,7 +137,6 @@ class ActualUserLoginViewController: UIViewController {
                 User.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
-                
                 strongSelf.view.window?.rootViewController = initialViewController
                 strongSelf.view.window?.makeKeyAndVisible()
             })

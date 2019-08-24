@@ -16,7 +16,6 @@ enum TermsType: String {
     case thirdyPartyLicense
 }
 
-
 class TermsViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!

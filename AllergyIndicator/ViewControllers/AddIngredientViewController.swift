@@ -25,8 +25,6 @@ class AddIngredientViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
         addIngredientTextField.delegate = self
-        
-        // setup layout
         setupLayout()
     }
     
@@ -83,8 +81,7 @@ class AddIngredientViewController: UIViewController {
     func addIngredientPopVC(ingredient: String) {
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         IngredientService.setIngredient(for: User.current, ingredient: Ingredient(ingredient)) { (ingredients) in
-            // list ingredients here if must
-            
+
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             // move back to the previous view controller once the ingredient has been added
             self.navigationController?.popViewController(animated: true)
@@ -95,8 +92,7 @@ class AddIngredientViewController: UIViewController {
 extension AddIngredientViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        // run code for updating ingredients here
-        // ...
+
         guard let ingredient = self.addIngredientTextField.text else { return false }
         addIngredientPopVC(ingredient: ingredient)
         return false

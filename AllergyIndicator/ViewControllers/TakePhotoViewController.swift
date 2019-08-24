@@ -128,8 +128,6 @@ class TakePhotoViewController: UIViewController {
         
         // Remove the image view that stores the picture the user took
         self.imageView?.removeFromSuperview()
-        
-//        self.cameraController = nil
     }
     
     func setupLayout() {
@@ -211,7 +209,6 @@ class TakePhotoViewController: UIViewController {
     }
     
     @IBAction func addIngredientsButtonTapped(_ sender: Any) {
-        
     }
     
     @IBAction func settingsButtonTapped(_ sender: Any) {
@@ -234,11 +231,9 @@ class TakePhotoViewController: UIViewController {
         case .denied:
             // We don't have access
             // Use the warning controller to dispaly a message saying they need to allow access for the camera
-//            let blankImage = self.previewView.asImage()
             let titleString = "Camera not available"
             let contentString = "You did not allow access to camera. Please turn on camera access in the settings to see results."
             self.warningController?.showWarningMenu(title: titleString, content: contentString)
-//            self.goToShowResultsViewController(concepts: [ClarifaiConcept](), image: blankImage)
             return
         case .authorized:
             break
@@ -288,9 +283,7 @@ class TakePhotoViewController: UIViewController {
                     guard let generalModelConcepts = generalModelConcepts else { return }
                     var foundFood: Bool = false
                     for generalConcept in generalModelConcepts {
-                        print("Concept name \(String(describing: generalConcept.name)), and \(generalConcept.score)")
                         if generalConcept.name == "food" && generalConcept.score >= 0.9 {
-                            print("general model all food \(generalConcept)")
                             foundFood = true
                         }
                     }

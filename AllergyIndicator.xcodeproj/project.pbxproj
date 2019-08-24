@@ -65,7 +65,6 @@
 
 /* Begin PBXFileReference section */
 		1499925B23065CF600D49517 /* ThirdyPartyLicense.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThirdyPartyLicense.txt; sourceTree = "<group>"; };
-		14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = indvl_ingredientv1.txt; sourceTree = "<group>"; };
 		14B7FC412300C6FF00D3B363 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		21AC33DB3EC957D397438B28 /* Pods-AllergyIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllergyIndicator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +258,6 @@
 				B3C0914621078EC20058E046 /* Constants.swift */,
 				B3D2195A21A7DCE4009CF9B5 /* ConstantsAPI.swift */,
 				B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */,
-				14B7FC3B2300875000D3B363 /* ConstantsAPI.swift */,
 				14B7FC3F2300896300D3B363 /* indvl_ingredientv1.txt */,
 				14B7FC412300C6FF00D3B363 /* Style.swift */,
 			);

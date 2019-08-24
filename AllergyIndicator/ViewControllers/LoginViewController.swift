@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        /* Perform the seque to the sign up vc */
+
         self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
     }
     
