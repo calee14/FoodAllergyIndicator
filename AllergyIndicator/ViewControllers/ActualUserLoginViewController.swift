@@ -106,7 +106,7 @@ class ActualUserLoginViewController: UIViewController {
                 return
             }
             
-            if let error = error {
+            if let _ = error {
                 self?.errorLabel.isHidden = false
                 self?.loginButton.isUserInteractionEnabled = true
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
@@ -132,8 +132,14 @@ class ActualUserLoginViewController: UIViewController {
                 strongSelf.loginButton.isUserInteractionEnabled = true
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
 
-                guard let user = user else { return }
-                
+                guard let user = user else {
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    return
+                }
+                IAPHelper.retrievePictureCount(for: user, completion: { (count) in
+                    Pictures.setCurrent(Pictures(numpictures: count), writeToUserDefaults: true)
+                    NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
+                })
                 User.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)

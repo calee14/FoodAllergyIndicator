@@ -46,6 +46,7 @@ class Pictures: Codable {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }
         _current = newPicture
+        IAPHelper.setPictureCount(for: User.current, count: newPicture.numpictures)
         NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
     }
     
@@ -56,6 +57,7 @@ class Pictures: Codable {
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentPicture)
         }
         _current = newPicture
+        IAPHelper.setPictureCount(for: User.current, count: newPicture.numpictures)
         NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
     }
 }

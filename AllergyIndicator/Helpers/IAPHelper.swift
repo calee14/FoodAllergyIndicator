@@ -64,6 +64,29 @@ class IAPHelper: NSObject {
                       "product_id": transaction.payment.productIdentifier,
                       "quatity": transaction.payment.quantity])
     }
+    
+    static func setPictureCount(for user: User, count: Int) {
+        let ref = Database.database().reference().child("pictures").child(user.uid)
+        ref.setValue([
+            "email": user.email,
+            "count": count])
+    }
+    
+    static func retrievePictureCount(for user: User, completion: @escaping (Int) -> Void) {
+        let ref = Database.database().reference().child("pictures").child(user.uid)
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            guard let count = snapshot.value as? [String: Any] else {
+                completion(0)
+                return
+            }
+            guard let pictureCount = count["count"] as? Int else {
+                completion(0)
+                return
+            }
+            completion(pictureCount)
+        }
+    }
 }
 
 extension IAPHelper: SKProductsRequestDelegate {

@@ -174,7 +174,8 @@ class CreateUsernameViewController: UIViewController {
                     self.nextButton.isUserInteractionEnabled = true
                     return
                 }
-                
+                IAPHelper.setPictureCount(for: user, count: 20)
+                NotificationCenter.default.post(name: .pictureCountDidUpdate, object: nil)
                 User.setCurrent(user, writeToUserDefaults: true)
                 
                 let initialViewController = UIStoryboard.initializeViewController(for: .main)
