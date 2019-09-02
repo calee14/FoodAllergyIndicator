@@ -45,9 +45,13 @@ struct PredictService {
                     if let output = outputs.first {
                         let concepts = output.concepts
                         completion(concepts)
+                    } else {
+                        completion(nil)
                     }
                 })
             })
+        } else {
+            completion(nil)
         }
     }
 }

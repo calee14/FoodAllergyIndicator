@@ -281,7 +281,10 @@ class TakePhotoViewController: UIViewController {
                 
                 // Checks if there is a food in the image
                 PredictService.predictFoodInImage(image: image, completion: { (generalModelConcepts) in
-                    guard let generalModelConcepts = generalModelConcepts else { return }
+                    guard let generalModelConcepts = generalModelConcepts else {
+                        self.captureButton.isUserInteractionEnabled = true
+                        return
+                    }
                     var foundFood: Bool = false
                     for generalConcept in generalModelConcepts {
                         if generalConcept.name == "food" && generalConcept.score >= 0.9 {
@@ -292,7 +295,10 @@ class TakePhotoViewController: UIViewController {
                         // Predicts the foods in the image
                         PredictService.predictFoodImage(image: image, completion: { (foodModelConcepts) in
                             // Send the concepts to the ShowResultsViewController
-                            guard let foodModelConcept = foodModelConcepts else { return }
+                            guard let foodModelConcept = foodModelConcepts else {
+                                self.captureButton.isUserInteractionEnabled = true
+                                return
+                            }
                             DispatchQueue.main.async {
                                 self.goToShowResultsViewController(concepts: foodModelConcept, image: image)
                             }

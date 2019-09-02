@@ -13,7 +13,6 @@
 		B30831162114B7790088DD64 /* DatabaseIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30831152114B7790088DD64 /* DatabaseIngredientService.swift */; };
 		B30B310921136F1F0053F7AA /* UINavigation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B310821136F1F0053F7AA /* UINavigation+Colors.swift */; };
 		B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A669622C6E29900E5463F /* PushIngredientsToDB.swift */; };
-		B31A66A122C7100300E5463F /* indvl_ingredientv1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B31A66A022C7100300E5463F /* indvl_ingredientv1.txt */; };
 		B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01CF22ADCC4D00A2773A /* Ingredient.swift */; };
 		B31C01D422AEE76400A2773A /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C01D322AEE76400A2773A /* AddIngredientViewController.swift */; };
 		B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224FA8211FC58C00E4B115 /* UIView+Utility.swift */; };
@@ -417,35 +416,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Clarifai/Clarifai.framework",
-				"${PODS_ROOT}/Clarifai-Apple-SDK/Clarifai_Apple_SDK.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Clarifai_Apple_SDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4638BEA39AD3C1D7793245A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -487,17 +467,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllergyIndicator/Pods-AllergyIndicator-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -511,7 +490,6 @@
 				B33A06F7210F86910020E0A5 /* ResultsTableViewCell.swift in Sources */,
 				B31C01D022ADCC4D00A2773A /* Ingredient.swift in Sources */,
 				B3224FA9211FC58C00E4B115 /* UIView+Utility.swift in Sources */,
-				14B7FC3C2300875000D3B363 /* ConstantsAPI.swift in Sources */,
 				B3E1EF1E2106830A009B24AA /* CameraController.swift in Sources */,
 				14B7FC422300C6FF00D3B363 /* Style.swift in Sources */,
 				B31A669722C6E29900E5463F /* PushIngredientsToDB.swift in Sources */,
