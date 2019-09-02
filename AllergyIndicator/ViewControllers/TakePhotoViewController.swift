@@ -315,6 +315,7 @@ class TakePhotoViewController: UIViewController {
                     self.purchaseMorePictures()
                 } else {
                     // no op
+                    self.captureButton.isUserInteractionEnabled = true
                 }
             }
         }
