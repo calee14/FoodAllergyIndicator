@@ -11,6 +11,7 @@ import UIKit
 import AVFoundation
 import FirebaseStorage
 import Clarifai_Apple_SDK
+import Clarifai
 
 class TakePhotoViewController: UIViewController {
     
@@ -330,7 +331,7 @@ class TakePhotoViewController: UIViewController {
         IAPHelper.shared.purchase(product: .Picture)
     }
     
-    func goToShowResultsViewController(concepts: [Concept], image: UIImage?) {
+    func goToShowResultsViewController(concepts: [ClarifaiConcept], image: UIImage?) {
         // Retrieve the storyboard the app is going to seque to
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
