@@ -1,4 +1,4 @@
-# WhatsIngredient
+# Food Allergy Indicator
 WhatsIngredient is an app that allows users to take pictures of their food and identify if there is any ingredients in the picture that is in user's watchlist. 
 
 # Feature List
